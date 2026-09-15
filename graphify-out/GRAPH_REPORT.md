@@ -1,7 +1,7 @@
 # Graph Report - huhcat  (2026-09-15)
 
 ## Corpus Check
-- 1 files · ~131,800 words
+- 1 files · ~136,469 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `423aebf7`
+- Built from commit: `da7af5c2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,7 +18,7 @@
 - HUHCAT Website Handoff — CA Verification & Alignment
 
 ## God Nodes (most connected - your core abstractions)
-1. `HUHCAT Website Handoff — Production Deployment & Public Link` - 3 edges
+1. `HUHCAT Website Handoff — OG Social Preview & Production Deployment` - 3 edges
 2. `1. Summary of Actions` - 1 edges
 3. `2. File Manifest` - 1 edges
 
@@ -29,7 +29,7 @@
 
 ### Community 0 - "HUHCAT Website Handoff — CA Verification & Alignment"
 Cohesion: 0.50
-Nodes (3): 1. Summary of Actions, 2. File Manifest, HUHCAT Website Handoff — Production Deployment & Public Link
+Nodes (3): 1. Summary of Actions, 2. File Manifest, HUHCAT Website Handoff — OG Social Preview & Production Deployment
 
 ## Knowledge Gaps
 - **2 isolated node(s):** `1. Summary of Actions`, `2. File Manifest`
