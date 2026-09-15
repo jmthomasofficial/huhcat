@@ -730,11 +730,8 @@
         history, inscribed<br>on-chain.
       </h1>
       <p class="lead">
-        Minutes after Solana activated <b>V1 transactions</b> on mainnet
-        (slot 447120000, 2026-09-15 01:04:23Z), Huh Cat was written into a Token-2022 mint
-        as a JPEG data URI — not an IPFS link. The tradable coin is <b>A9AHYeq…</b>.
-        The picture lives on companion mint <b>DVD4q…</b>, next slot, seed <b>img:A9AHYeq…</b>.
-        Check it yourself.
+        $HUHCAT on Solana. Play the free arcade, copy the CA, buy on Pump.fun.
+        Same cat. Same coin everyone is trading.
       </p>
       <div class="hero-actions">
         <a href="https://jmthomasofficial.github.io/huhcatgame/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:linear-gradient(90deg, #9945ff, #39ff88);color:#fff;box-shadow:0 8px 30px -8px rgba(153,69,255,.7);">🎮 Play Arcade Game</a>
@@ -742,15 +739,9 @@
         <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border-color:rgba(42,171,238,.5);color:#2aabee;">💬 Telegram Chat</a>
         <a href="#proof" class="btn btn-ghost">🔍 View Proof</a>
       </div>
-      <div class="ca-stack">
-        <div class="ca-box">
-          <span id="caText">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span>
-          <button id="copyBtn" onclick="copyCA()">Copy CA</button>
-        </div>
-        <div class="ca-box">
-          <span id="imgMintText">DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r</span>
-          <button id="copyImgBtn" onclick="copyImgMint()">Copy image mint</button>
-        </div>
+      <div class="ca-box">
+        <span id="caText">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span>
+        <button id="copyBtn" onclick="copyCA()">Copy CA</button>
       </div>
     </div>
 
@@ -760,7 +751,7 @@
         <img src="huhcat-hero-badass.jpg" alt="$HUHCAT on-chain Solana deity hero" onerror="this.src='huhcat.jpg'">
         <div class="scan"></div>
       </div>
-      <div class="float-chip chip1">📦 <span>Token-2022 · DVD4q mint</span></div>
+      <div class="float-chip chip1">📦 <span>Official $HUHCAT CA</span></div>
       <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="float-chip chip2">🟢 <span id="livePrice">chart →</span></a>
     </div>
   </div>
@@ -1192,7 +1183,6 @@
     });
   }
   function copyCA(){ copyField('caText', 'copyBtn'); }
-  function copyImgMint(){ copyField('imgMintText', 'copyImgBtn'); }
 
   // proof tab switcher
   function switchProofTab(tabName, btn){
