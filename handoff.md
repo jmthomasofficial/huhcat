@@ -1,37 +1,40 @@
-# HUHCAT Website Handoff — Hero Overhaul & Media Integration
+# HUHCAT Website Handoff — OG Social Preview & Production Deployment
 
 **Date**: 2026-09-15  
 **Project**: HUHCAT (`g:\JMXTHEGHOST\huhcat`)  
-**Status**: Complete & Verified  
+**Live Public URL**: https://jmthomasofficial.github.io/huhcat/  
+**Live OG Image**: https://jmthomasofficial.github.io/huhcat/og-image.jpg  
+**GitHub Repository**: https://github.com/jmthomasofficial/huhcat  
+**Status**: 100% Deployed & Live  
 
 ---
 
 ## 1. Summary of Actions
-- **Verified Contract Address (CA)**:
-  - Official tradeable Token CA: `A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH`
-  - Fully propagated to all hero, copy-to-clipboard, Solscan, DexScreener, and Pump.fun links.
-- **Custom Badass Hero Visual (Circle-in-Circle)**:
-  - Generated and deployed custom 3D cyberpunk crypto artwork: `huhcat-hero-badass.jpg` (Huh Cat seated on an on-chain Solana throne surrounded by holographic candlestick rings and binary runes).
-  - Converted `.cat-frame` into a glowing circular medallion (`border-radius: 50%`, emerald & purple dual glow).
-  - Removed the clashing standalone green wireframe rings (`.ring { display: none; }`).
-- **Viral Video Integration**:
-  - Downloaded official 95-second 9:16 TikTok origin video locally (`huhcat-video.mp4`, 14.5MB).
-  - Embedded inside a responsive smartphone mockup frame in the lore section (`controls`, `playsinline`, `loop`, with badge overlay).
-- **Official Telegram Chat Integration**:
-  - Linked official portal: `https://t.me/+Bzr4QWDYuMo3ZmVh`
-  - Created **Big Beautiful Telegram Invite Card** (`.tg-hero-card`) in the Community section with glowing pulse indicator, animated button, and live alpha description.
-  - Added Telegram CTAs to the header navigation, hero actions, video lore card, and social grid.
-- **SBS News Lore Feature**:
-  - Linked Ben Cat origin image to the official SBS News article (`target="_blank"`).
+- **Open Graph & Twitter Card Social Preview**:
+  - Generated and polished custom high-resolution 1200x630 social preview card (`og-image.jpg`) from the top hero section.
+  - Formatted for Twitter `summary_large_image`, Telegram preview cards, Discord embeds, and Facebook/iMessage unfurls.
+  - Configured complete meta tags (`og:title`, `og:description`, `og:image`, `og:url`, `twitter:card`, `twitter:image`).
+- **Live Production Deployment**:
+  - Live over global edge CDN with automated HTTPS on GitHub Pages.
+  - All media, video, and stylesheets responding with HTTP 200 OK.
+- **Contract Address Alignment**:
+  - Official Tradeable CA: `A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH`
+- **Visuals & Media**:
+  - Custom 3D cyberpunk on-chain deity hero art (`huhcat-hero-badass.jpg`).
+  - Circular glowing medallion frame (`border-radius: 50%`) with clashing wireframes removed.
+  - Viral 95-second vertical TikTok origin video (`huhcat-video.mp4`).
+  - Ben Cat lore card linked to official SBS News article.
+  - Big Beautiful Telegram Invite Card (`.tg-hero-card`) linking to `https://t.me/+Bzr4QWDYuMo3ZmVh`.
 
 ---
 
 ## 2. File Manifest
-- `index.html`: Fully updated single-page landing site.
-- `huhcat-hero-badass.jpg`: Custom 8K 3D crypto throne hero artwork.
-- `huhcat-video.mp4`: Local copy of viral TikTok origin video.
+- `index.html`: Main landing page with Open Graph and Twitter Card tags.
+- `og-image.jpg`: 1200x630 Open Graph & Twitter card preview image.
+- `huhcat-hero-badass.jpg`: 8K 3D crypto hero portrait.
+- `huhcat-video.mp4`: Local video asset (14.5MB).
 - `chart-drawing-cat.jpg`: Lore chart banner.
-- `huhcat-tiktok-lore.png`: TikTok Ben Cat lore card linked to SBS News.
-- `solana-inscription-proof.png`: On-chain explorer screenshot proof.
-- `base64-decode-proof.png`: Base64 decoder screenshot proof.
-- `huhcat.jpg`: Inscribed token metadata avatar.
+- `huhcat-tiktok-lore.png`: Ben Cat TikTok lore card.
+- `solana-inscription-proof.png`: Solana Explorer on-chain proof.
+- `base64-decode-proof.png`: Base64 decoder proof.
+- `huhcat.jpg`: Token metadata inscribed avatar.

@@ -1,12 +1,12 @@
 {
   "handoff.md": {
-    "mtime": 1789471087.180218,
-    "ast_hash": "865664bf5320467ffad52078a45d196a",
+    "mtime": 1789472350.860861,
+    "ast_hash": "34da05b1ab6a0e4cd8a2f894e8ccbb44",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1789470804.8056188,
-    "ast_hash": "156c84a77e01423a503f0e1b818a572e",
+    "mtime": 1789472226.0711837,
+    "ast_hash": "89667c7eb47b123bfdb228be7c8b0a05",
     "semantic_hash": ""
   },
   "huhcat.jpg": {
@@ -37,6 +37,16 @@
   "solana-inscription-proof.png": {
     "mtime": 1789469279.6602416,
     "ast_hash": "f120cb831721dd9c67979cd419a3ee74",
+    "semantic_hash": ""
+  },
+  "huhcat-hero-badass.jpg": {
+    "mtime": 1789472061.1038144,
+    "ast_hash": "3502c079ee1e1cbed96d0528e49764ab",
+    "semantic_hash": ""
+  },
+  "huhcat-video.mp4": {
+    "mtime": 1789471396.8070333,
+    "ast_hash": "be7039d33c724863a81d5fff158cff9b",
     "semantic_hash": ""
   }
 }

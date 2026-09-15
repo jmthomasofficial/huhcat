@@ -15,15 +15,15 @@
       "norm_label": "handoff.md"
     },
     {
-      "label": "HUHCAT Website Handoff \u2014 CA Verification & Asset Integration",
+      "label": "HUHCAT Website Handoff \u2014 Hero Overhaul & Media Integration",
       "file_type": "document",
       "source_file": "handoff.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "handoff_huhcat_website_handoff_ca_verification_asset_integration",
+      "id": "handoff_huhcat_website_handoff_hero_overhaul_media_integration",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "huhcat website handoff \u2014 ca verification & asset integration"
+      "norm_label": "huhcat website handoff \u2014 hero overhaul & media integration"
     },
     {
       "label": "1. Summary of Actions",
@@ -40,7 +40,7 @@
       "label": "2. File Manifest",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "handoff_2_file_manifest",
       "community": 0,
@@ -57,7 +57,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "handoff",
-      "target": "handoff_huhcat_website_handoff_ca_verification_asset_integration",
+      "target": "handoff_huhcat_website_handoff_hero_overhaul_media_integration",
       "confidence_score": 1.0
     },
     {
@@ -67,7 +67,7 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_huhcat_website_handoff_ca_verification_asset_integration",
+      "source": "handoff_huhcat_website_handoff_hero_overhaul_media_integration",
       "target": "handoff_1_summary_of_actions",
       "confidence_score": 1.0
     },
@@ -75,10 +75,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "handoff.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_huhcat_website_handoff_ca_verification_asset_integration",
+      "source": "handoff_huhcat_website_handoff_hero_overhaul_media_integration",
       "target": "handoff_2_file_manifest",
       "confidence_score": 1.0
     }
