@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$HUHCAT — The First Inscribed Image on Solana V1</title>
+<meta name="description" content="$HUHCAT — the first image ever inscribed on Solana mainnet using V1 transactions, now living on-chain as a coin.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#04050a;
+    --bg2:#0a0d16;
+    --panel:#0d111c;
+    --panel-b:rgba(255,255,255,0.06);
+    --green:#39ff88;
+    --green-d:#00d15c;
+    --purple:#9945ff;
+    --red:#ff3b5c;
+    --text:#eef2f6;
+    --muted:#8a93a6;
+    --mono:'Space Mono', monospace;
+    --head:'Syne', sans-serif;
+    --body:'Space Grotesk', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    overflow-x:hidden;
+    position:relative;
+  }
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  ::selection{background:var(--green);color:#000;}
+
+  /* ---------- scrollbar ---------- */
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--green),var(--purple));border-radius:10px;}
+
+  /* ---------- background fx ---------- */
+  #bg-canvas{
+    position:fixed;inset:0;z-index:0;opacity:.5;pointer-events:none;
+  }
+  .grid-overlay{
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(57,255,136,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57,255,136,.045) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+  }
+  .noise{
+    position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  section, header, footer{position:relative;z-index:3;}
+
+  /* ---------- utility ---------- */
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--green);border:1px solid rgba(57,255,136,.35);
+    background:rgba(57,255,136,.06);
+    padding:6px 14px;border-radius:100px;
+  }
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  .grad-text{
+    background:linear-gradient(90deg, var(--green), #9dffc7 40%, var(--purple));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--body);font-weight:700;font-size:15px;
+    padding:16px 30px;border-radius:12px;cursor:pointer;border:none;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(90deg, var(--green), var(--green-d));
+    color:#001a0a;box-shadow:0 0 0 rgba(57,255,136,0), 0 8px 30px -8px rgba(57,255,136,.7);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px -8px rgba(57,255,136,.9);}
+  .btn-ghost{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.15);
+    color:var(--text);
+    backdrop-filter:blur(6px);
+  }
+  .btn-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-3px);}
+
+  .section-head{max-width:640px;margin:0 auto 60px;text-align:center;}
+  .section-head h2{
+    font-family:var(--head);font-size:clamp(30px,4vw,48px);font-weight:800;
+    margin:18px 0 14px;line-height:1.1;
+  }
+  .section-head p{color:var(--muted);font-size:16px;line-height:1.6;}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- nav ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    padding:18px 0;transition:all .3s ease;
+  }
+  header.scrolled{
+    background:rgba(4,5,10,.75);backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+    padding:12px 0;
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:800;font-size:20px;letter-spacing:.02em;}
+  .logo svg{width:34px;height:34px;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{
+    font-size:14px;font-weight:600;color:var(--muted);position:relative;transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--green);transition:width .25s;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex;gap:12px;align-items:center;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:60;}
+  .burger span{width:26px;height:2px;background:var(--text);transition:.3s;}
+
+  @media(max-width:920px){
+    .nav-links{
+      position:fixed;inset:0 0 0 30%;background:#070a12;
+      flex-direction:column;justify-content:center;gap:36px;
+      transform:translateX(100%);transition:transform .4s ease;
+      border-left:1px solid rgba(255,255,255,.08);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:20px;color:var(--text);}
+    .burger{display:flex;}
+    .nav-cta .btn-ghost{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding:150px 0 90px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+  }
+  .hero h1{
+    font-family:var(--head);font-weight:800;
+    font-size:clamp(46px,6.4vw,84px);line-height:.98;letter-spacing:-.01em;
+    margin:22px 0 20px;
+  }
+  .glitch{position:relative;display:inline-block;}
+  .glitch::before,.glitch::after{
+    content:attr(data-text);position:absolute;left:0;top:0;width:100%;
+    overflow:hidden;background:var(--bg);
+  }
+  .glitch::before{
+    left:2px;text-shadow:-2px 0 var(--purple);animation:glitch1 3.2s infinite linear alternate-reverse;
+  }
+  .glitch::after{
+    left:-2px;text-shadow:2px 0 var(--green);animation:glitch2 2.6s infinite linear alternate-reverse;
+  }
+  @keyframes glitch1{
+    0%{clip-path:inset(10% 0 80% 0);} 20%{clip-path:inset(60% 0 5% 0);}
+    40%{clip-path:inset(30% 0 45% 0);} 60%{clip-path:inset(80% 0 2% 0);}
+    80%{clip-path:inset(5% 0 70% 0);} 100%{clip-path:inset(45% 0 30% 0);}
+  }
+  @keyframes glitch2{
+    0%{clip-path:inset(70% 0 10% 0);} 25%{clip-path:inset(15% 0 60% 0);}
+    50%{clip-path:inset(50% 0 20% 0);} 75%{clip-path:inset(5% 0 85% 0);}
+    100%{clip-path:inset(35% 0 40% 0);}
+  }
+  .hero p.lead{
+    font-size:18px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:34px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:34px;}
+
+  .ca-box{
+    display:flex;align-items:center;gap:12px;
+    background:var(--panel);border:1px solid var(--panel-b);
+    padding:14px 18px;border-radius:14px;max-width:520px;
+  }
+  .ca-box span{
+    font-family:var(--mono);font-size:13px;color:var(--green);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .ca-box button{
+    background:rgba(57,255,136,.1);border:1px solid rgba(57,255,136,.3);
+    color:var(--green);padding:8px 14px;border-radius:8px;font-family:var(--mono);
+    font-size:12px;cursor:pointer;flex-shrink:0;transition:.2s;
+  }
+  .ca-box button:hover{background:var(--green);color:#001a0a;}
+
+  /* hero visual */
+  .hero-visual{
+    position:relative;display:flex;align-items:center;justify-content:center;
+    aspect-ratio:1/1;
+  }
+  .orb{
+    position:absolute;width:110%;height:110%;border-radius:50%;
+    background:radial-gradient(circle at 50% 40%, rgba(57,255,136,.25), transparent 60%);
+    filter:blur(10px);animation:spin 14s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .ring{display:none;}
+  .cat-frame{
+    position:relative;width:82%;aspect-ratio:1/1;border-radius:50%;
+    background:linear-gradient(160deg, #0e1420, #070a12);
+    border:2.5px solid rgba(57,255,136,.55);
+    box-shadow:0 0 70px -10px rgba(57,255,136,.6), 0 0 40px rgba(153,69,255,.35);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .cat-frame img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .cat-frame .fallback-icon{width:60%;height:60%;}
+  .cat-frame .scan{
+    position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);
+    animation:scan 2.4s linear infinite;
+  }
+  @keyframes scan{0%{top:0;}100%{top:100%;}}
+  .float-chip{
+    position:absolute;background:var(--panel);border:1px solid var(--panel-b);
+    padding:10px 14px;border-radius:12px;font-family:var(--mono);font-size:12px;
+    display:flex;align-items:center;gap:8px;backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px -10px rgba(0,0,0,.6);
+  }
+  .chip1{top:6%;left:-6%;animation:floaty 4s ease-in-out infinite;}
+  .chip2{bottom:10%;right:-8%;animation:floaty 5s ease-in-out infinite reverse;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+
+  /* marquee */
+  .marquee{
+    border-top:1px solid var(--panel-b);border-bottom:1px solid var(--panel-b);
+    background:var(--panel);padding:16px 0;overflow:hidden;white-space:nowrap;
+  }
+  .marquee-track{display:inline-flex;gap:60px;animation:scroll 22s linear infinite;}
+  .marquee-track span{
+    font-family:var(--mono);font-size:14px;letter-spacing:.05em;color:var(--muted);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .marquee-track span b{color:var(--green);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- story ---------- */
+  .story{padding:140px 0;}
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .tl-card{
+    background:var(--panel);border:1px solid var(--panel-b);border-radius:20px;
+    padding:30px 26px;position:relative;overflow:hidden;transition:.35s;
+  }
+  .tl-card:hover{transform:translateY(-8px);border-color:rgba(57,255,136,.4);box-shadow:0 20px 50px -20px rgba(57,255,136,.3);}
+  .tl-card .num{
+    font-family:var(--head);font-size:46px;font-weight:800;color:transparent;
+    -webkit-text-stroke:1.5px rgba(57,255,136,.5);margin-bottom:14px;
+  }
+  .tl-card h3{font-family:var(--head);font-size:20px;margin-bottom:10px;}
+  .tl-card p{color:var(--muted);font-size:14.5px;line-height:1.6;}
+  .tl-card .mockshot{
+    margin-top:18px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);
+  }
+  .mockshot .bar{
+    background:#12121a;padding:8px 12px;display:flex;gap:6px;
+  }
+  .mockshot .bar i{width:9px;height:9px;border-radius:50%;background:#333;}
+  .mockshot .body{
+    background:#0a0c12;padding:14px;font-family:var(--mono);font-size:10.5px;color:var(--green);
+    line-height:1.6;word-break:break-all;max-height:110px;overflow:hidden;
+  }
+
+  /* ---------- story visuals ---------- */
+  .chart-feature-card{
+    max-width:980px;margin:0 auto 50px;border-radius:24px;overflow:hidden;
+    background:var(--panel);border:1px solid rgba(57,255,136,.3);
+    box-shadow:0 24px 60px -20px rgba(57,255,136,.35);
+    position:relative;
+  }
+  .chart-feature-card img{
+    width:100%;height:auto;display:block;
+  }
+  .chart-feature-card .scan{
+    position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);
+    animation:scan 3.5s linear infinite;
+  }
+  .lore-grid{
+    display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;
+    margin-top:60px;background:var(--panel);border:1px solid var(--panel-b);
+    border-radius:28px;padding:36px;position:relative;overflow:hidden;
+  }
+  .phone-mockup{
+    position:relative;width:100%;max-width:300px;margin:0 auto;border-radius:24px;
+    background:linear-gradient(160deg,#1c2333,#070a12);padding:10px;
+    border:1px solid rgba(57,255,136,.35);box-shadow:0 0 50px -15px rgba(57,255,136,.3);
+  }
+  .phone-screen{
+    position:relative;border-radius:18px;overflow:hidden;background:#000;
+    aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;
+  }
+  .phone-screen video{
+    width:100%;height:100%;object-fit:cover;display:block;border-radius:18px;
+  }
+  .video-badge{
+    position:absolute;top:12px;left:12px;background:rgba(4,5,10,.82);backdrop-filter:blur(8px);
+    border:1px solid rgba(57,255,136,.4);color:var(--green);font-family:var(--mono);
+    font-size:10.5px;padding:5px 10px;border-radius:100px;pointer-events:none;z-index:2;
+  }
+  .lore-content{display:flex;flex-direction:column;gap:24px;}
+  .lore-img-wrap{
+    display:block;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 15px 40px -10px rgba(0,0,0,.6);transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    cursor:pointer;position:relative;
+  }
+  .lore-img-wrap:hover{
+    transform:translateY(-6px) scale(1.01);border-color:var(--green);
+    box-shadow:0 20px 50px -15px rgba(57,255,136,.35);
+  }
+  .lore-img-wrap img{width:100%;height:auto;display:block;}
+  .lore-img-wrap .link-badge{
+    position:absolute;bottom:14px;right:14px;background:rgba(4,5,10,.85);backdrop-filter:blur(8px);
+    border:1px solid rgba(57,255,136,.4);color:var(--green);font-family:var(--mono);
+    font-size:11.5px;padding:6px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;
+    box-shadow:0 4px 15px rgba(0,0,0,.5);
+  }
+  .lore-info h3{font-family:var(--head);font-size:26px;margin:10px 0 8px;}
+  .lore-info p{color:var(--muted);font-size:14.5px;line-height:1.7;margin-bottom:12px;}
+  .lore-stats{display:flex;gap:24px;margin-top:16px;}
+  .lore-stat-val{font-family:var(--head);font-size:22px;font-weight:800;color:var(--green);}
+  .lore-stat-lbl{font-size:12px;color:var(--muted);text-transform:uppercase;font-family:var(--mono);}
+
+  /* ---------- proof / terminal ---------- */
+  .proof{padding:100px 0;}
+  .terminal{
+    background:#070a10;border:1px solid rgba(57,255,136,.25);border-radius:18px;
+    box-shadow:0 30px 80px -30px rgba(57,255,136,.25);
+    max-width:960px;margin:0 auto;overflow:hidden;
+  }
+  .terminal-top{
+    display:flex;align-items:center;justify-content:space-between;
+    background:#0d1119;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .terminal-top .dots{display:flex;gap:8px;}
+  .terminal-top .dots i{width:11px;height:11px;border-radius:50%;}
+  .terminal-top .dots i:nth-child(1){background:#ff5f56;}
+  .terminal-top .dots i:nth-child(2){background:#ffbd2e;}
+  .terminal-top .dots i:nth-child(3){background:#27c93f;}
+  .terminal-top span{font-family:var(--mono);font-size:12px;color:var(--muted);}
+
+  /* proof interactive tabs */
+  .proof-tabs{
+    display:flex;gap:8px;background:#090d16;padding:12px 18px;
+    border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;
+  }
+  .proof-tab-btn{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    color:var(--muted);padding:8px 16px;border-radius:10px;font-family:var(--mono);
+    font-size:12.5px;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:8px;
+    white-space:nowrap;
+  }
+  .proof-tab-btn:hover{color:var(--text);border-color:rgba(57,255,136,.4);}
+  .proof-tab-btn.active{
+    background:rgba(57,255,136,.14);border-color:var(--green);color:var(--green);
+    font-weight:700;box-shadow:0 0 14px rgba(57,255,136,.25);
+  }
+  .proof-pane{display:none;}
+  .proof-pane.active{display:block;}
+  .proof-pane-img{
+    padding:16px;background:#05070d;display:flex;justify-content:center;align-items:center;
+    min-height:360px;overflow:hidden;
+  }
+  .proof-pane-img img{
+    max-height:500px;width:auto;max-width:100%;border-radius:12px;
+    border:1px solid rgba(255,255,255,.1);box-shadow:0 10px 30px rgba(0,0,0,.7);
+    object-fit:contain;
+  }
+  .proof-caption{
+    padding:12px 20px;background:#0a0d16;border-top:1px solid rgba(255,255,255,.06);
+    font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .proof-caption b{color:var(--green);}
+
+  .terminal-body{padding:26px;font-family:var(--mono);font-size:13px;line-height:1.85;color:#c9d4e0;max-height:420px;overflow:auto;}
+  .terminal-body .k{color:#9dffc7;}
+  .terminal-body .s{color:var(--green);}
+  .terminal-body .c{color:var(--muted);}
+  .terminal-body .p{color:var(--purple);}
+  .proof-links{display:flex;justify-content:center;gap:16px;margin-top:28px;flex-wrap:wrap;}
+
+  /* ---------- tokenomics ---------- */
+  .tokenomics{padding:120px 0;}
+  .tokgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .tokcard{
+    background:var(--panel);border:1px solid var(--panel-b);border-radius:18px;padding:28px 22px;
+    text-align:center;transition:.3s;
+  }
+  .tokcard:hover{border-color:var(--purple);transform:translateY(-6px);}
+  .tokcard .val{font-family:var(--head);font-size:30px;font-weight:800;margin:10px 0 6px;}
+  .tokcard .lab{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+  .split{
+    margin-top:60px;display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;
+  }
+  .pie{
+    width:260px;height:260px;border-radius:50%;margin:0 auto;
+    background:conic-gradient(var(--green) 0% 70%, var(--purple) 70% 88%, #2a2f3d 88% 100%);
+    position:relative;box-shadow:0 0 60px -10px rgba(57,255,136,.35);
+  }
+  .pie::after{
+    content:'';position:absolute;inset:22%;background:var(--bg);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .legend{display:flex;flex-direction:column;gap:16px;}
+  .legend li{display:flex;align-items:center;gap:12px;font-size:15px;}
+  .legend i{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
+
+  /* ---------- roadmap ---------- */
+  .roadmap{padding:120px 0;}
+  .rm-line{
+    position:relative;max-width:900px;margin:0 auto;
+    padding-left:36px;border-left:2px solid rgba(57,255,136,.25);
+  }
+  .rm-item{position:relative;padding-bottom:52px;}
+  .rm-item:last-child{padding-bottom:0;}
+  .rm-item::before{
+    content:'';position:absolute;left:-45px;top:2px;width:16px;height:16px;border-radius:50%;
+    background:var(--green);box-shadow:0 0 0 6px rgba(57,255,136,.15);
+  }
+  .rm-item.done::before{background:var(--purple);box-shadow:0 0 0 6px rgba(153,69,255,.15);}
+  .rm-item h3{font-family:var(--head);font-size:20px;margin-bottom:8px;}
+  .rm-item p{color:var(--muted);font-size:14.5px;line-height:1.6;}
+  .rm-status{
+    display:inline-block;margin-bottom:10px;font-family:var(--mono);font-size:11px;
+    padding:4px 10px;border-radius:100px;letter-spacing:.06em;
+  }
+  .rm-status.live{background:rgba(57,255,136,.12);color:var(--green);border:1px solid rgba(57,255,136,.3);}
+  .rm-status.next{background:rgba(153,69,255,.12);color:#c79bff;border:1px solid rgba(153,69,255,.3);}
+  .rm-status.soon{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.12);}
+
+  /* ---------- community ---------- */
+  .community{padding:120px 0;text-align:center;}
+  .social-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px;}
+  .social-card{
+    width:170px;padding:30px 18px;background:var(--panel);border:1px solid var(--panel-b);
+    border-radius:18px;transition:.3s;
+  }
+  .social-card:hover{transform:translateY(-8px) scale(1.03);border-color:var(--green);box-shadow:0 20px 50px -20px rgba(57,255,136,.4);}
+  .social-card svg{width:30px;height:30px;margin-bottom:12px;fill:var(--text);}
+  .social-card span{display:block;font-weight:600;font-size:14px;}
+
+  /* ---------- big beautiful telegram invite ---------- */
+  .tg-hero-card{
+    position:relative;max-width:960px;margin:50px auto 0;border-radius:26px;overflow:hidden;
+    background:linear-gradient(135deg, rgba(42,171,238,.12), rgba(0,136,204,.05) 50%, var(--panel));
+    border:1.5px solid rgba(42,171,238,.45);
+    box-shadow:0 25px 70px -20px rgba(42,171,238,.35), inset 0 0 40px rgba(42,171,238,.06);
+    padding:40px 46px;text-align:left;
+  }
+  .tg-hero-card::before{
+    content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(circle at 50% 50%, rgba(42,171,238,.12), transparent 60%);
+    pointer-events:none;animation:pulse 4s ease-in-out infinite;
+  }
+  .tg-card-content{
+    position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;
+  }
+  .tg-card-left{display:flex;align-items:center;gap:24px;max-width:560px;}
+  .tg-logo-circle{
+    width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#2aabee,#0088cc);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    box-shadow:0 0 35px rgba(42,171,238,.65);
+  }
+  .tg-logo-circle svg{width:36px;height:36px;fill:#fff;}
+  .tg-text-block h3{font-family:var(--head);font-size:28px;font-weight:800;margin:6px 0 8px;color:#fff;}
+  .tg-text-block p{color:var(--muted);font-size:15px;line-height:1.6;}
+  .tg-pulse-tag{
+    display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;
+    text-transform:uppercase;letter-spacing:.12em;color:#2aabee;font-weight:700;
+  }
+  .tg-pulse-dot{width:7px;height:7px;border-radius:50%;background:#2aabee;box-shadow:0 0 10px #2aabee;animation:pulse 1.4s infinite;}
+  .btn-tg-main{
+    background:linear-gradient(90deg, #2aabee, #0088cc);color:#fff;
+    padding:18px 36px;border-radius:14px;font-family:var(--body);font-size:16.5px;font-weight:800;
+    display:inline-flex;align-items:center;gap:12px;box-shadow:0 10px 35px -8px rgba(42,171,238,.85);
+    transition:transform .25s ease, box-shadow .25s ease;white-space:nowrap;border:none;cursor:pointer;
+  }
+  .btn-tg-main:hover{
+    transform:translateY(-4px) scale(1.02);box-shadow:0 16px 45px -8px rgba(42,171,238,1);color:#fff;
+  }
+  .btn-tg-main svg{width:22px;height:22px;fill:#fff;}
+
+  /* ---------- faq ---------- */
+  .faq{padding:120px 0;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{
+    border-bottom:1px solid var(--panel-b);padding:22px 0;cursor:pointer;
+  }
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:16.5px;}
+  .faq-q .plus{
+    font-size:22px;color:var(--green);transition:transform .3s;flex-shrink:0;margin-left:20px;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+    color:var(--muted);font-size:14.5px;line-height:1.7;
+  }
+  .faq-a p{padding-top:14px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:60px 0 30px;border-top:1px solid var(--panel-b);}
+  .foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .foot-note{color:var(--muted);font-size:13px;text-align:center;margin-top:30px;}
+
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:420px;margin:0 auto;}
+    .timeline{grid-template-columns:1fr;}
+    .tokgrid{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;}
+    .lore-grid{grid-template-columns:1fr;padding:24px;gap:24px;}
+    .phone-mockup{max-width:280px;}
+    .tg-hero-card{padding:30px 24px;}
+    .tg-card-content{flex-direction:column;align-items:flex-start;gap:24px;}
+    .tg-card-left{flex-direction:column;align-items:flex-start;gap:16px;}
+    .btn-tg-main{width:100%;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="noise"></div>
+
+<!-- inline icon sprite -->
+<svg style="display:none">
+  <symbol id="huhcat-icon" viewBox="0 0 100 100">
+    <circle cx="50" cy="58" r="34" fill="#f4f6f8"/>
+    <path d="M20 40 L32 10 L44 38 Z" fill="#f4f6f8"/>
+    <path d="M80 40 L68 10 L56 38 Z" fill="#f4f6f8"/>
+    <path d="M20 40 L30 16 L38 36 Z" fill="#ffb9c6"/>
+    <path d="M80 40 L70 16 L62 36 Z" fill="#ffb9c6"/>
+    <path d="M22 34 C 35 22, 45 40, 50 30 C 55 40, 65 22, 78 34 C 70 46, 30 46, 22 34 Z" fill="#12141a"/>
+    <ellipse cx="38" cy="58" rx="7" ry="9" fill="#12141a"/>
+    <ellipse cx="62" cy="58" rx="7" ry="9" fill="#12141a"/>
+    <path d="M46 72 Q50 76 54 72" stroke="#12141a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="50" cy="67" r="2.4" fill="#ffb9c6"/>
+  </symbol>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header id="siteHeader">
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo"><svg><use href="#huhcat-icon"/></svg> $HUHCAT</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#proof">On-Chain Proof</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:13px;border-color:rgba(42,171,238,.45);color:#2aabee;">💬 Telegram</a>
+        <a href="https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Buy $HUHCAT</a>
+        <div class="burger" id="burger"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="buy">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag"><span class="dot"></span> V1 Transactions Live on Solana Mainnet</span>
+      <h1>
+        <span class="glitch grad-text" data-text="$HUHCAT">$HUHCAT</span><br>
+        history, inscribed<br>on-chain.
+      </h1>
+      <p class="lead">
+        The first image ever inscribed on Solana mainnet using <b>V1 transactions</b> —
+        the very same image that launched the format on testnet — is now permanently
+        etched into a coin. Not a link. Not a CDN. The image lives inside the transaction itself.
+      </p>
+      <div class="hero-actions">
+        <a href="https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🚀 Buy on Pump.fun</a>
+        <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border-color:rgba(42,171,238,.5);color:#2aabee;">💬 Telegram Chat</a>
+        <a href="#proof" class="btn btn-ghost">🔍 View Proof</a>
+      </div>
+      <div class="ca-box">
+        <span id="caText">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span>
+        <button id="copyBtn" onclick="copyCA()">Copy CA</button>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <div class="cat-frame">
+        <img src="huhcat-hero-badass.jpg" alt="$HUHCAT on-chain Solana deity hero" onerror="this.src='huhcat.jpg'">
+        <div class="scan"></div>
+      </div>
+      <div class="float-chip chip1">📦 <span>Token-2022 V1 Inscription</span></div>
+      <div class="float-chip chip2">🟢 <span id="livePrice">$0.00067</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee">
+  <div class="marquee-track" id="marqueeTrack">
+  </div>
+</div>
+
+<!-- ================= STORY ================= -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">The Lore</span>
+      <h2>The chart didn't just pump.<br class="grad-text"> It drew the cat.</h2>
+      <p>From a viral internet phenomenon to a permanent on-chain artifact — here's how $HUHCAT became Solana history.</p>
+    </div>
+
+    <!-- Chart Feature Banner -->
+    <div class="chart-feature-card reveal">
+      <img src="chart-drawing-cat.jpg" alt="$HUHCAT — The Chart Is Drawing The Cat" loading="lazy">
+      <div class="scan"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-card reveal">
+        <div class="num">01</div>
+        <h3>Testnet Genesis</h3>
+        <p>The first image ever inscribed via Solana's new V1 transaction format was deployed on testnet — a proof of concept for on-chain, self-contained media.</p>
+        <div class="mockshot">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">status: confirmed<br>network: testnet<br>format: v1_tx_inscription</div>
+        </div>
+      </div>
+
+      <div class="tl-card reveal">
+        <div class="num">02</div>
+        <h3>Mainnet, For Real</h3>
+        <p>The moment V1 transactions went live on mainnet, that exact same image was inscribed again — this time permanently, on the network that matters.</p>
+        <div class="mockshot">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">Token 2022 Program: InitializeTokenMetadata<br>name: "HUHCAT" · symbol: "HUHCAT"</div>
+        </div>
+      </div>
+
+      <div class="tl-card reveal">
+        <div class="num">03</div>
+        <h3>Minted as $HUHCAT</h3>
+        <p>The inscribed image was bonded directly to the token metadata. The cat isn't a picture pointing at the coin — the cat <i>is</i> the coin.</p>
+        <div class="mockshot">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">uri: "data:image/jpeg;base64,/9j/2wCEAA..."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TikTok Ben Cat Lore Feature with Video Player -->
+    <div class="lore-grid reveal">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <video id="benVideo" playsinline controls loop preload="metadata" poster="huhcat.jpg">
+            <source src="huhcat-video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="video-badge">▶ TikTok Origin • 89.9M Likes</div>
+        </div>
+      </div>
+
+      <div class="lore-content">
+        <a href="https://www.sbs.com.au/news/article/we-met-huh-cat-and-heres-how-the-melbourne-feline-became-a-major-internet-meme/0fyauilgs" target="_blank" rel="noopener noreferrer" class="lore-img-wrap" title="Read the SBS News Feature: We met Huh Cat">
+          <img src="huhcat-tiktok-lore.png" alt="Ben Cat @huhcat_official on TikTok" loading="lazy">
+          <span class="link-badge">📰 Read SBS News Story ↗</span>
+        </a>
+        <div class="lore-info">
+          <span class="tag">Web2 Genesis</span>
+          <h3>Meet Ben Cat — The True Legend</h3>
+          <p>Before becoming Solana's first inscribed image, Ben captured over 3.2 million followers and 89.9 million likes with the most iconic confused face in internet history.</p>
+          <p>Featured on national media including SBS News ("We met Huh Cat"), Ben the Melbourne feline went from a living room rug to permanent immortality on the Solana blockchain.</p>
+          <div class="lore-stats">
+            <div>
+              <div class="lore-stat-val">3.2M+</div>
+              <div class="lore-stat-lbl">Followers</div>
+            </div>
+            <div>
+              <div class="lore-stat-val">89.9M+</div>
+              <div class="lore-stat-lbl">Likes</div>
+            </div>
+            <div>
+              <div class="lore-stat-val">#1</div>
+              <div class="lore-stat-lbl">Inscribed V1</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="https://www.sbs.com.au/news/article/we-met-huh-cat-and-heres-how-the-melbourne-feline-became-a-major-internet-meme/0fyauilgs" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:13px;gap:8px;">
+              📰 Read SBS News Interview ↗
+            </a>
+            <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:10px 20px;font-size:13px;gap:8px;background:linear-gradient(90deg,#0088cc,#2aabee);color:#fff;">
+              💬 Join Official Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF ================= -->
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Verifiable On-Chain</span>
+      <h2>No CDN. No off-chain link. <span class="grad-text">Just the chain.</span></h2>
+      <p>The raw instruction below shows the image embedded directly as a base64 data URI inside the token's metadata — inscribed, not hosted.</p>
+    </div>
+
+    <div class="terminal reveal">
+      <div class="terminal-top">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <span>Token 2022 Program · InitializeTokenMetadata</span>
+      </div>
+
+      <div class="proof-tabs">
+        <button class="proof-tab-btn active" onclick="switchProofTab('explorer', this)">🔍 Solana Explorer Proof</button>
+        <button class="proof-tab-btn" onclick="switchProofTab('base64', this)">🖼️ Base64 Decoder Proof</button>
+        <button class="proof-tab-btn" onclick="switchProofTab('json', this)">💻 Raw Instruction JSON</button>
+      </div>
+
+      <!-- Tab 1: Solana Explorer Screenshot -->
+      <div class="proof-pane active" id="pane-explorer">
+        <div class="proof-pane-img">
+          <img src="solana-inscription-proof.png" alt="Solana Explorer Token 2022 InitializeTokenMetadata Inscription Proof" loading="lazy">
+        </div>
+        <div class="proof-caption">
+          <span><b>On-Chain Instruction:</b> #5 - Token 2022 Program: InitializeTokenMetadata</span>
+          <span><b>Program:</b> TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb</span>
+        </div>
+      </div>
+
+      <!-- Tab 2: Base64 Decoder Screenshot -->
+      <div class="proof-pane" id="pane-base64">
+        <div class="proof-pane-img">
+          <img src="base64-decode-proof.png" alt="Base64 to Image decoding proof verifying Huh Cat" loading="lazy">
+        </div>
+        <div class="proof-caption">
+          <span><b>Direct Render:</b> Raw base64 data URI extracts Huh Cat without IPFS or external hosting</span>
+          <span><b>MIME:</b> data:image/jpeg;base64</span>
+        </div>
+      </div>
+
+      <!-- Tab 3: Raw JSON Terminal -->
+      <div class="proof-pane" id="pane-json">
+        <div class="terminal-body">
+<span class="c">{</span><br>
+&nbsp;&nbsp;<span class="k">"interactWith"</span>: <span class="s">"TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"</span>,<br>
+&nbsp;&nbsp;<span class="k">"instruction"</span>: <span class="s">"initializeTokenMetadata"</span>,<br>
+&nbsp;&nbsp;<span class="k">"info"</span>: <span class="c">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"mint"</span>: <span class="p">"A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"mintAuthority"</span>: <span class="p">"9AgnpU9ZspPtUccPHx2BtAsPWjNFo6Vd1wKbzqhiHRm9"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"name"</span>: <span class="s">"HUHCAT"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"symbol"</span>: <span class="s">"HUHCAT"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"uri"</span>: <span class="s">"data:image/jpeg;base64,/9j/2wCEAA4KCw0LCQ4NDA0QDw4RFiQXFhQU..."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// ↑ the image lives directly inside the transaction</span><br>
+&nbsp;&nbsp;<span class="c">}</span><br>
+<span class="c">}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proof-links">
+      <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">🔗 View on Solscan</a>
+      <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📊 View on DexScreener</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOKENOMICS ================= -->
+<section class="tokenomics" id="tokenomics">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Tokenomics</span>
+      <h2>Fair launch. <span class="grad-text">Zero nonsense.</span></h2>
+      <p>Simple, transparent, and built the Solana way.</p>
+    </div>
+
+    <div class="tokgrid">
+      <div class="tokcard reveal">
+        <div class="lab">Total Supply</div>
+        <div class="val grad-text">1,000,000,000</div>
+        <div class="lab">$HUHCAT</div>
+      </div>
+      <div class="tokcard reveal">
+        <div class="lab">Tax</div>
+        <div class="val grad-text">0 / 0</div>
+        <div class="lab">Buy / Sell</div>
+      </div>
+      <div class="tokcard reveal">
+        <div class="lab">LP Status</div>
+        <div class="val grad-text">Locked 🔒</div>
+        <div class="lab">Burned Forever</div>
+      </div>
+      <div class="tokcard reveal">
+        <div class="lab">Mint / Freeze</div>
+        <div class="val grad-text">Revoked</div>
+        <div class="lab">Fully Renounced</div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="pie reveal"></div>
+      <ul class="legend reveal">
+        <li><i style="background:var(--green)"></i> 70% — Public Liquidity Pool</li>
+        <li><i style="background:var(--purple)"></i> 18% — Community & Airdrops</li>
+        <li><i style="background:#2a2f3d"></i> 12% — Team (Locked 6mo Vesting)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROADMAP ================= -->
+<section class="roadmap" id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Roadmap</span>
+      <h2>From inscription <span class="grad-text">to institution.</span></h2>
+    </div>
+
+    <div class="rm-line">
+      <div class="rm-item done reveal">
+        <span class="rm-status live">✅ complete</span>
+        <h3>Phase 0 — The Inscription</h3>
+        <p>First-ever V1 transaction image inscribed on Solana mainnet. Historical, verifiable, permanent.</p>
+      </div>
+      <div class="rm-item done reveal">
+        <span class="rm-status live">✅ complete</span>
+        <h3>Phase 1 — Fair Launch</h3>
+        <p>$HUHCAT mints with the inscribed image bonded directly to its metadata. LP locked, authorities revoked.</p>
+      </div>
+      <div class="rm-item reveal">
+        <span class="rm-status next">🔥 in progress</span>
+        <h3>Phase 2 — CT Domination</h3>
+        <p>KOL coverage, meme wars, and community-driven virality across Crypto Twitter.</p>
+      </div>
+      <div class="rm-item reveal">
+        <span class="rm-status soon">◻ upcoming</span>
+        <h3>Phase 3 — CEX Listings</h3>
+        <p>Push for Tier 2/3 exchange listings as liquidity and volume milestones are hit.</p>
+      </div>
+      <div class="rm-item reveal">
+        <span class="rm-status soon">◻ upcoming</span>
+        <h3>Phase 4 — On-Chain Museum</h3>
+        <p>A curated gallery of historic Solana inscriptions, starting with $HUHCAT #1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section class="community">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:10px;">
+      <span class="tag">Join the Cult</span>
+      <h2>Be early to <span class="grad-text">history.</span></h2>
+      <p>This isn't just a meme coin — it's a documented first on Solana. Get in the room where it happened.</p>
+    </div>
+
+    <!-- Big Beautiful Telegram Invite Card -->
+    <div class="tg-hero-card reveal">
+      <div class="tg-card-content">
+        <div class="tg-card-left">
+          <div class="tg-logo-circle">
+            <svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.7 10.9c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.9 5.7c.2.6.4.8.9.8.5 0 .7-.2 1-.5l2.4-2.3 4.8 3.6c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.2-.5-1.7-1.6-1.5z"/></svg>
+          </div>
+          <div class="tg-text-block">
+            <span class="tg-pulse-tag"><span class="tg-pulse-dot"></span> Official Community • Live Discussion</span>
+            <h3>Official $HUHCAT SOL CHAT</h3>
+            <p>Direct alpha, dev updates, meme raids, and the on-chain historical movement. Tap in with the Solana $HUHCAT army.</p>
+          </div>
+        </div>
+        <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="btn-tg-main">
+          <svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.7 10.9c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.9 5.7c.2.6.4.8.9.8.5 0 .7-.2 1-.5l2.4-2.3 4.8 3.6c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.2-.5-1.7-1.6-1.5z"/></svg>
+          Join Official Telegram ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="social-grid">
+      <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="social-card reveal">
+        <svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.7 10.9c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.9 5.7c.2.6.4.8.9.8.5 0 .7-.2 1-.5l2.4-2.3 4.8 3.6c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.2-.5-1.7-1.6-1.5z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a href="https://x.com/wewillallmake1t/status/2099663055235817590" target="_blank" rel="noopener noreferrer" class="social-card reveal">
+        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        <span>Twitter / X</span>
+      </a>
+      <a href="https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="social-card reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>Pump.fun</span>
+      </a>
+      <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="social-card reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>Solscan</span>
+      </a>
+      <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="social-card reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
+        <span>DexScreener</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">FAQ</span>
+      <h2>Questions? <span class="grad-text">Answered.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q">Is the image actually stored on-chain? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes. The image is base64-encoded and embedded directly inside the token metadata via a V1 transaction — no IPFS, no CDN, no off-chain dependency.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What are V1 transactions? <span class="plus">+</span></div>
+        <div class="faq-a"><p>V1 transactions are a new Solana transaction format that allows richer, larger inscribed data to live natively inside a transaction — enabling things like fully on-chain images for the first time.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Is the contract safe? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Mint and freeze authorities are revoked, and liquidity is locked/burned. Always DYOR and verify on-chain yourself — links to Explorer and Solscan are above.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Why does this matter? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Because it's a documented Solana first — the same image that launched V1 inscriptions on testnet is now permanently sealed into a mainnet token. That's a piece of chain history you can hold.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a href="#" class="logo"><svg><use href="#huhcat-icon"/></svg> $HUHCAT</a>
+      <div style="display:flex;gap:22px;">
+        <a href="#story">Story</a>
+        <a href="#proof">Proof</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <p class="foot-note">$HUHCAT is a meme token with no intrinsic value or expectation of financial return. There is no formal team or roadmap guarantee. Buy at your own risk. Not financial advice.</p>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // burger menu
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', ()=>{
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>navLinks.classList.remove('open')));
+
+  // copy CA
+  function copyCA(){
+    const text = document.getElementById('caText').innerText;
+    navigator.clipboard.writeText(text).then(()=>{
+      const btn = document.getElementById('copyBtn');
+      const old = btn.innerText;
+      btn.innerText = "Copied!";
+      setTimeout(()=>btn.innerText = old, 1500);
+    });
+  }
+
+  // proof tab switcher
+  function switchProofTab(tabName, btn){
+    document.querySelectorAll('.proof-tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.proof-pane').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    const target = document.getElementById('pane-' + tabName);
+    if(target) target.classList.add('active');
+  }
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const a = item.querySelector('.faq-a');
+    item.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // marquee content
+  const marqueeData = [
+    "🐱 FIRST IMAGE INSCRIBED VIA V1 TRANSACTIONS",
+    "⚡ MINT AUTHORITY REVOKED",
+    "🔒 LP LOCKED & BURNED",
+    "📜 100% ON-CHAIN METADATA",
+    "🚀 SOLANA HISTORY, LITERALLY",
+    "🐱 THE CHART IS DRAWING THE CAT"
+  ];
+  const track = document.getElementById('marqueeTrack');
+  const full = [...marqueeData, ...marqueeData, ...marqueeData, ...marqueeData];
+  track.innerHTML = full.map(t=>`<span><b>●</b> ${t}</span>`).join('');
+
+  // fake live price ticker
+  const priceEl = document.getElementById('livePrice');
+  let price = 0.00042;
+  setInterval(()=>{
+    price += (Math.random()-0.45) * 0.00002;
+    price = Math.max(0.00001, price);
+    priceEl.innerText = "$" + price.toFixed(6);
+  }, 1800);
+
+  // ---------- canvas candlestick background ----------
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let w,h;
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let candles = [];
+  function initCandles(){
+    candles = [];
+    const count = Math.floor(w/26);
+    let base = h*0.6;
+    for(let i=0;i<count;i++){
+      const open = base + (Math.random()-0.5)*40;
+      const close = open + (Math.random()-0.5)*70;
+      const high = Math.max(open,close) + Math.random()*30;
+      const low = Math.min(open,close) - Math.random()*30;
+      base = close;
+      candles.push({x:i*26, open, close, high, low, up: close < open});
+    }
+  }
+  initCandles();
+  window.addEventListener('resize', initCandles);
+
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    t += 0.006;
+    candles.forEach((c,i)=>{
+      const yOff = Math.sin(t + i*0.3) * 8;
+      const green = 'rgba(57,255,136,0.45)';
+      const red = 'rgba(255,59,92,0.35)';
+      ctx.strokeStyle = c.up ? green : red;
+      ctx.fillStyle = c.up ? green : red;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(c.x, c.high + yOff);
+      ctx.lineTo(c.x, c.low + yOff);
+      ctx.stroke();
+      const bodyTop = Math.min(c.open,c.close) + yOff;
+      const bodyH = Math.max(2, Math.abs(c.close-c.open));
+      ctx.fillRect(c.x-6, bodyTop, 12, bodyH);
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+</script>
+
+</body>
+</html>

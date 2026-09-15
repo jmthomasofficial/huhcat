@@ -1,0 +1,42 @@
+{
+  "handoff.md": {
+    "mtime": 1789471087.180218,
+    "ast_hash": "865664bf5320467ffad52078a45d196a",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1789470804.8056188,
+    "ast_hash": "156c84a77e01423a503f0e1b818a572e",
+    "semantic_hash": ""
+  },
+  "huhcat.jpg": {
+    "mtime": 1789469559.0460443,
+    "ast_hash": "de2bdea86761aa7fc2c2e360bed81904",
+    "semantic_hash": ""
+  },
+  "huhcat_official.png": {
+    "mtime": 1789469559.0460443,
+    "ast_hash": "de2bdea86761aa7fc2c2e360bed81904",
+    "semantic_hash": ""
+  },
+  "base64-decode-proof.png": {
+    "mtime": 1789469279.6581447,
+    "ast_hash": "03a02f275f97f9fe3a3c9e8b405ed158",
+    "semantic_hash": ""
+  },
+  "chart-drawing-cat.jpg": {
+    "mtime": 1789469279.6536024,
+    "ast_hash": "404e0f1298134a0e959d61981b86c74a",
+    "semantic_hash": ""
+  },
+  "huhcat-tiktok-lore.png": {
+    "mtime": 1789469348.0721877,
+    "ast_hash": "0c339e0b50aa9152c1864a21a96a51be",
+    "semantic_hash": ""
+  },
+  "solana-inscription-proof.png": {
+    "mtime": 1789469279.6602416,
+    "ast_hash": "f120cb831721dd9c67979cd419a3ee74",
+    "semantic_hash": ""
+  }
+}
