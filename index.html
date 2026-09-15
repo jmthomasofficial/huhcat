@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>$HUHCAT — The First Inscribed Image on Solana V1</title>
-<meta name="description" content="$HUHCAT — the first image ever inscribed on Solana mainnet using V1 transactions, now living on-chain as a coin.">
+<title>$HUHCAT — Huh Cat inscribed in a Solana V1 transaction</title>
+<meta name="description" content="Tradable mint A9AHYeq…. Image lives on companion mint DVD4q… as a JPEG data URI inside a Solana V1 Token-2022 transaction. Verify on Explorer.">
 
 <!-- Open Graph / Facebook / Discord / Telegram -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jmthomasofficial.github.io/huhcat/">
-<meta property="og:title" content="$HUHCAT — The First Inscribed Image on Solana V1">
-<meta property="og:description" content="The first image ever inscribed on Solana mainnet using V1 transactions. Sealed permanently into a coin on-chain.">
+<meta property="og:title" content="$HUHCAT — Huh Cat inscribed in a Solana V1 transaction">
+<meta property="og:description" content="Coin CA A9AHYeq…. JPEG lives on companion mint DVD4q… inside a Solana V1 Token-2022 tx. Check Explorer.">
 <meta property="og:image" content="https://jmthomasofficial.github.io/huhcat/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -18,8 +18,8 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://jmthomasofficial.github.io/huhcat/">
-<meta name="twitter:title" content="$HUHCAT — The First Inscribed Image on Solana V1">
-<meta name="twitter:description" content="The first image ever inscribed on Solana mainnet using V1 transactions. Sealed permanently into a coin on-chain.">
+<meta name="twitter:title" content="$HUHCAT — Huh Cat inscribed in a Solana V1 transaction">
+<meta name="twitter:description" content="Coin CA A9AHYeq…. JPEG lives on companion mint DVD4q… inside a Solana V1 Token-2022 tx. Check Explorer.">
 <meta name="twitter:image" content="https://jmthomasofficial.github.io/huhcat/og-image.jpg">
 
 <!-- Favicon -->
@@ -448,6 +448,36 @@
   .terminal-body .c{color:var(--muted);}
   .terminal-body .p{color:var(--purple);}
   .proof-links{display:flex;justify-content:center;gap:16px;margin-top:28px;flex-wrap:wrap;}
+  .proof-ids{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;
+    max-width:960px;margin:28px auto 0;
+  }
+  .id-card{
+    background:var(--panel);border:1px solid var(--panel-b);border-radius:14px;
+    padding:16px 18px;min-width:0;
+  }
+  .id-card .lbl{
+    font-family:var(--mono);font-size:11px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;
+  }
+  .id-card .val{font-family:var(--mono);font-size:12px;color:var(--green);word-break:break-all;line-height:1.55;}
+  .id-card a{color:var(--green);}
+  .id-card a:hover{text-decoration:underline;}
+  .auth-badge{
+    display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+    font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:100px;
+  }
+  .auth-badge.ok{background:rgba(57,255,136,.12);color:var(--green);border:1px solid rgba(57,255,136,.3);}
+  .auth-badge.warn{background:rgba(255,189,46,.12);color:#ffbd2e;border:1px solid rgba(255,189,46,.35);}
+  .live-decode{padding:22px 18px;background:#05070d;text-align:center;}
+  .live-decode img{
+    width:min(280px,80%);aspect-ratio:1;object-fit:cover;border-radius:18px;
+    border:2px solid rgba(57,255,136,.55);box-shadow:0 0 40px -10px rgba(57,255,136,.5);
+    margin:0 auto 16px;
+  }
+  .live-decode .meta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.7;}
+  .live-decode .meta b{color:var(--green);}
+  .ca-stack{display:flex;flex-direction:column;gap:10px;max-width:520px;width:100%;}
 
   /* ---------- tokenomics ---------- */
   .tokenomics{padding:120px 0;}
@@ -596,6 +626,7 @@
     .terminal-top span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62%;}
     .proof-pane-img{min-height:0;padding:12px;}
     .proof-caption{flex-direction:column;align-items:flex-start;}
+    .proof-ids{grid-template-columns:1fr;}
     .tg-hero-card{padding:30px 24px;}
     .tg-card-content{flex-direction:column;align-items:flex-start;gap:24px;}
     .tg-card-left{flex-direction:column;align-items:flex-start;gap:16px;}
@@ -693,15 +724,17 @@
 <section class="hero" id="buy">
   <div class="wrap hero-grid">
     <div>
-      <span class="tag"><span class="dot"></span> V1 Transactions Live on Solana Mainnet</span>
+      <span class="tag"><span class="dot"></span> V1 live · image mint ~4 min after activation</span>
       <h1>
         <span class="glitch grad-text" data-text="$HUHCAT">$HUHCAT</span><br>
         history, inscribed<br>on-chain.
       </h1>
       <p class="lead">
-        The first image ever inscribed on Solana mainnet using <b>V1 transactions</b> —
-        the very same image that launched the format on testnet — is now permanently
-        etched into a coin. Not a link. Not a CDN. The image lives inside the transaction itself.
+        Minutes after Solana activated <b>V1 transactions</b> on mainnet
+        (slot 447120000, 2026-09-15 01:04:23Z), Huh Cat was written into a Token-2022 mint
+        as a JPEG data URI — not an IPFS link. The tradable coin is <b>A9AHYeq…</b>.
+        The picture lives on companion mint <b>DVD4q…</b>, next slot, seed <b>img:A9AHYeq…</b>.
+        Check it yourself.
       </p>
       <div class="hero-actions">
         <a href="https://jmthomasofficial.github.io/huhcatgame/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:linear-gradient(90deg, #9945ff, #39ff88);color:#fff;box-shadow:0 8px 30px -8px rgba(153,69,255,.7);">🎮 Play Arcade Game</a>
@@ -709,9 +742,15 @@
         <a href="https://t.me/+Bzr4QWDYuMo3ZmVh" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border-color:rgba(42,171,238,.5);color:#2aabee;">💬 Telegram Chat</a>
         <a href="#proof" class="btn btn-ghost">🔍 View Proof</a>
       </div>
-      <div class="ca-box">
-        <span id="caText">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span>
-        <button id="copyBtn" onclick="copyCA()">Copy CA</button>
+      <div class="ca-stack">
+        <div class="ca-box">
+          <span id="caText">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span>
+          <button id="copyBtn" onclick="copyCA()">Copy CA</button>
+        </div>
+        <div class="ca-box">
+          <span id="imgMintText">DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r</span>
+          <button id="copyImgBtn" onclick="copyImgMint()">Copy image mint</button>
+        </div>
       </div>
     </div>
 
@@ -721,8 +760,8 @@
         <img src="huhcat-hero-badass.jpg" alt="$HUHCAT on-chain Solana deity hero" onerror="this.src='huhcat.jpg'">
         <div class="scan"></div>
       </div>
-      <div class="float-chip chip1">📦 <span>Token-2022 V1 Inscription</span></div>
-      <div class="float-chip chip2">🟢 <span id="livePrice">$0.00067</span></div>
+      <div class="float-chip chip1">📦 <span>Token-2022 · DVD4q mint</span></div>
+      <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="float-chip chip2">🟢 <span id="livePrice">chart →</span></a>
     </div>
   </div>
 </section>
@@ -739,7 +778,7 @@
     <div class="section-head reveal">
       <span class="tag">The Lore</span>
       <h2>The chart didn't just pump.<br class="grad-text"> It drew the cat.</h2>
-      <p>From a viral internet phenomenon to a permanent on-chain artifact — here's how $HUHCAT became Solana history.</p>
+      <p>From a viral internet face to two V1 transactions on mainnet — one coin, one image mint. Here's the checkable path.</p>
     </div>
 
     <!-- Chart Feature Banner -->
@@ -751,31 +790,31 @@
     <div class="timeline">
       <div class="tl-card reveal">
         <div class="num">01</div>
-        <h3>Testnet Genesis</h3>
-        <p>The first image ever inscribed via Solana's new V1 transaction format was deployed on testnet — a proof of concept for on-chain, self-contained media.</p>
+        <h3>V1 flips on</h3>
+        <p>Feature gate <b>txv1aq4…</b> activated at slot <b>447120000</b> — 2026-09-15 01:04:23Z. Official format: larger envelope (4096 bytes). Not an inscription protocol.</p>
         <div class="mockshot">
           <div class="bar"><i></i><i></i><i></i></div>
-          <div class="body">status: confirmed<br>network: testnet<br>format: v1_tx_inscription</div>
+          <div class="body">feature: txv1aq4pp281K9um3tnPgkfX8UqtFT6wcVW3hNezGLL<br>slot: 447120000<br>epoch: 1035</div>
         </div>
       </div>
 
       <div class="tl-card reveal">
         <div class="num">02</div>
-        <h3>Mainnet, For Real</h3>
-        <p>The moment V1 transactions went live on mainnet, that exact same image was inscribed again — this time permanently, on the network that matters.</p>
+        <h3>Coin mint (V1)</h3>
+        <p>Four minutes later, tradable mint <b>A9AHYeq…</b> lands in V1 tx <b>ymfySMbr…</b>. Token-2022 metadata URI is IPFS. Mint/freeze revoked on that account.</p>
         <div class="mockshot">
           <div class="bar"><i></i><i></i><i></i></div>
-          <div class="body">Token 2022 Program: InitializeTokenMetadata<br>name: "HUHCAT" · symbol: "HUHCAT"</div>
+          <div class="body">tx: ymfySMbr… · version: 1<br>uri: ipfs://bafkreidsxxk2eko4o5s…<br>mintAuthority: null</div>
         </div>
       </div>
 
       <div class="tl-card reveal">
         <div class="num">03</div>
-        <h3>Minted as $HUHCAT</h3>
-        <p>The inscribed image was bonded directly to the token metadata. The cat isn't a picture pointing at the coin — the cat <i>is</i> the coin.</p>
+        <h3>Image mint (V1)</h3>
+        <p>Next slot: companion mint <b>DVD4q…</b>, seed <b>img:A9AHYeq…</b>, supply 0. <b>This</b> is where the JPEG data URI lives — the Explorer screenshot on this page.</p>
         <div class="mockshot">
           <div class="bar"><i></i><i></i><i></i></div>
-          <div class="body">uri: "data:image/jpeg;base64,/9j/2wCEAA..."</div>
+          <div class="body">tx: 5nqX9Tth… · version: 1<br>mint: DVD4qXDVgjwUTyfPaAdm…<br>uri: data:image/jpeg;base64,/9j/…</div>
         </div>
       </div>
     </div>
@@ -800,7 +839,7 @@
         <div class="lore-info">
           <span class="tag">Web2 Genesis</span>
           <h3>Meet Ben Cat — The True Legend</h3>
-          <p>Before becoming Solana's first inscribed image, Ben captured over 3.2 million followers and 89.9 million likes with the most iconic confused face in internet history.</p>
+          <p>Before the V1 mint, Ben captured over 3.2 million followers and 89.9 million likes with the most iconic confused face in internet history.</p>
           <p>Featured on national media including SBS News ("We met Huh Cat"), Ben the Melbourne feline went from a living room rug to permanent immortality on the Solana blockchain.</p>
           <div class="lore-stats">
             <div>
@@ -812,8 +851,8 @@
               <div class="lore-stat-lbl">Likes</div>
             </div>
             <div>
-              <div class="lore-stat-val">#1</div>
-              <div class="lore-stat-lbl">Inscribed V1</div>
+              <div class="lore-stat-val">V1</div>
+              <div class="lore-stat-lbl">Image mint</div>
             </div>
           </div>
           <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
@@ -836,7 +875,7 @@
     <div class="section-head reveal">
       <span class="tag">Verifiable On-Chain</span>
       <h2>No CDN. No off-chain link. <span class="grad-text">Just the chain.</span></h2>
-      <p>The raw instruction below shows the image embedded directly as a base64 data URI inside the token's metadata — inscribed, not hosted.</p>
+      <p>The Explorer shot is instruction #5 on companion mint <b>DVD4q…</b>, not the tradable CA. Live RPC below decodes that JPEG in your browser. Coin mint URI is IPFS — two accounts, two jobs.</p>
     </div>
 
     <div class="terminal reveal">
@@ -848,6 +887,7 @@
       <div class="proof-tabs">
         <button class="proof-tab-btn active" onclick="switchProofTab('explorer', this)">🔍 Solana Explorer Proof</button>
         <button class="proof-tab-btn" onclick="switchProofTab('base64', this)">🖼️ Base64 Decoder Proof</button>
+        <button class="proof-tab-btn" onclick="switchProofTab('live', this)">📡 Live RPC Decode</button>
         <button class="proof-tab-btn" onclick="switchProofTab('json', this)">💻 Raw Instruction JSON</button>
       </div>
 
@@ -857,7 +897,7 @@
           <img src="solana-inscription-proof.png" alt="Solana Explorer Token 2022 InitializeTokenMetadata Inscription Proof" loading="lazy">
         </div>
         <div class="proof-caption">
-          <span><b>On-Chain Instruction:</b> #5 - Token 2022 Program: InitializeTokenMetadata</span>
+          <span><b>On-Chain Instruction:</b> #5 InitializeTokenMetadata on mint DVD4q…</span>
           <span><b>Program:</b> TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb</span>
         </div>
       </div>
@@ -873,28 +913,62 @@
         </div>
       </div>
 
-      <!-- Tab 3: Raw JSON Terminal -->
+      <!-- Tab 3: Live RPC -->
+      <div class="proof-pane" id="pane-live">
+        <div class="live-decode" id="liveDecode">
+          <p class="meta">Reading companion mint <b>DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r</b>…</p>
+        </div>
+        <div class="proof-caption">
+          <span><b>Source:</b> getAccountInfo jsonParsed · fallback getTransaction 5nqX9Tth… (maxSupportedTransactionVersion: 1)</span>
+          <span id="liveRpcLabel"><b>RPC:</b> pending</span>
+        </div>
+      </div>
+
+      <!-- Tab 4: Raw JSON Terminal -->
       <div class="proof-pane" id="pane-json">
         <div class="terminal-body">
 <span class="c">{</span><br>
 &nbsp;&nbsp;<span class="k">"interactWith"</span>: <span class="s">"TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"</span>,<br>
 &nbsp;&nbsp;<span class="k">"instruction"</span>: <span class="s">"initializeTokenMetadata"</span>,<br>
 &nbsp;&nbsp;<span class="k">"info"</span>: <span class="c">{</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"mint"</span>: <span class="p">"A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"mint"</span>: <span class="p">"DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"mintAuthority"</span>: <span class="p">"9AgnpU9ZspPtUccPHx2BtAsPWjNFo6Vd1wKbzqhiHRm9"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"name"</span>: <span class="s">"HUHCAT"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"symbol"</span>: <span class="s">"HUHCAT"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"uri"</span>: <span class="s">"data:image/jpeg;base64,/9j/2wCEAA4KCw0LCQ4NDA0QDw4RFiQXFhQU..."</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// ↑ the image lives directly inside the transaction</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// ↑ JPEG lives on companion mint DVD4q, created in v1 tx 5nqX9Tth…</span><br>
 &nbsp;&nbsp;<span class="c">}</span><br>
 <span class="c">}</span>
         </div>
       </div>
     </div>
 
+    <div class="proof-ids">
+      <div class="id-card">
+        <div class="lbl">Tradable coin mint</div>
+        <div class="val"><a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</a></div>
+        <div class="auth-badge ok">mint / freeze revoked · URI is IPFS</div>
+      </div>
+      <div class="id-card">
+        <div class="lbl">Image companion mint</div>
+        <div class="val"><a href="https://explorer.solana.com/address/DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r" target="_blank" rel="noopener noreferrer">DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r</a></div>
+        <div class="auth-badge warn" id="sealBadge">update authority still live — not sealed</div>
+      </div>
+      <div class="id-card">
+        <div class="lbl">Coin create tx · version 1</div>
+        <div class="val"><a href="https://explorer.solana.com/tx/ymfySMbrWdhf1oCgU5QTHauKGw9seaq1FJQvk1ET8eZ58wjFLh2uZckEH2uQw7rkqPTaZJs9ASNvPNUvjPCBFPL" target="_blank" rel="noopener noreferrer">ymfySMbr… slot 447120727 · 01:08:15Z</a></div>
+      </div>
+      <div class="id-card">
+        <div class="lbl">Image create tx · version 1</div>
+        <div class="val"><a href="https://explorer.solana.com/tx/5nqX9TthkjHNBR5grSVD8a4uPZLKUxqNKzLuh9fzDhho2uZAQZM6rdnvgBUjiRn4Gd7xQe1TucTkshpYd21YftD7" target="_blank" rel="noopener noreferrer">5nqX9Tth… slot 447120728 · seed img:A9AHYeq…</a></div>
+      </div>
+    </div>
+
     <div class="proof-links">
-      <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">🔗 View on Solscan</a>
-      <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📊 View on DexScreener</a>
+      <a href="https://explorer.solana.com/address/DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🔗 Image mint on Explorer</a>
+      <a href="https://explorer.solana.com/tx/5nqX9TthkjHNBR5grSVD8a4uPZLKUxqNKzLuh9fzDhho2uZAQZM6rdnvgBUjiRn4Gd7xQe1TucTkshpYd21YftD7" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📜 V1 image tx</a>
+      <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">🪙 Coin on Solscan</a>
+      <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📊 DexScreener</a>
     </div>
   </div>
 </section>
@@ -954,12 +1028,12 @@
       <div class="rm-item done reveal">
         <span class="rm-status live">✅ complete</span>
         <h3>Phase 0 — The Inscription</h3>
-        <p>First-ever V1 transaction image inscribed on Solana mainnet. Historical, verifiable, permanent.</p>
+        <p>Companion mint DVD4q… written in V1 tx 5nqX9Tth…, ~4 minutes after V1 activation. JPEG data URI on-chain. Checkable.</p>
       </div>
       <div class="rm-item done reveal">
         <span class="rm-status live">✅ complete</span>
         <h3>Phase 1 — Fair Launch</h3>
-        <p>$HUHCAT mints with the inscribed image bonded directly to its metadata. LP locked, authorities revoked.</p>
+        <p>$HUHCAT coin mint A9AHYeq… in V1 tx ymfySMbr…. Mint/freeze on the coin are revoked. Image mint update authority is a separate seal step.</p>
       </div>
       <div class="rm-item reveal">
         <span class="rm-status next">🔥 in progress</span>
@@ -986,7 +1060,7 @@
     <div class="section-head reveal" style="margin-bottom:10px;">
       <span class="tag">Join the Cult</span>
       <h2>Be early to <span class="grad-text">history.</span></h2>
-      <p>This isn't just a meme coin — it's a documented first on Solana. Get in the room where it happened.</p>
+      <p>This isn't just a meme coin — it's a V1 transaction you can open on Explorer. Get in the room where it happened.</p>
     </div>
 
     <!-- Big Beautiful Telegram Invite Card -->
@@ -1044,19 +1118,23 @@
     <div class="faq-list">
       <div class="faq-item reveal">
         <div class="faq-q">Is the image actually stored on-chain? <span class="plus">+</span></div>
-        <div class="faq-a"><p>Yes. The image is base64-encoded and embedded directly inside the token metadata via a V1 transaction — no IPFS, no CDN, no off-chain dependency.</p></div>
+        <div class="faq-a"><p>Yes — on companion mint <b>DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r</b>. Token-2022 <code>tokenMetadata.uri</code> is a <code>data:image/jpeg;base64,...</code> string (~2535 chars). The tradable coin <b>A9AHYeq…</b> uses an IPFS URI. Two mints. The Explorer screenshot on this page is the companion.</p></div>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q">What are V1 transactions? <span class="plus">+</span></div>
-        <div class="faq-a"><p>V1 transactions are a new Solana transaction format that allows richer, larger inscribed data to live natively inside a transaction — enabling things like fully on-chain images for the first time.</p></div>
+        <div class="faq-a"><p>The third official Solana wire format after legacy and v0 (SIMD-0385 / SIMD-0296). Size limit 4096 bytes, no address lookup tables. It is <b>not</b> an inscription protocol — it is a larger envelope. A 2.5k data URI fits in that envelope. Feature gate <code>txv1aq4pp281K9um3tnPgkfX8UqtFT6wcVW3hNezGLL</code>, activated slot 447120000.</p></div>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q">Is the contract safe? <span class="plus">+</span></div>
-        <div class="faq-a"><p>Mint and freeze authorities are revoked, and liquidity is locked/burned. Always DYOR and verify on-chain yourself — links to Explorer and Solscan are above.</p></div>
+        <div class="faq-a"><p>On the <b>coin</b> mint, mint and freeze authorities are null (revoked). The <b>image</b> mint still has mint + metadata update authority <code>9AgnpU9ZspPtUccPHx2BtAsPWjNFo6Vd1wKbzqhiHRm9</code> until that wallet signs Token-2022 <code>UpdateAuthority</code> with <code>newAuthority = null</code> and disables mint. This site cannot sign that. Always DYOR. Not financial advice.</p></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q">Why does this matter? <span class="plus">+</span></div>
-        <div class="faq-a"><p>Because it's a documented Solana first — the same image that launched V1 inscriptions on testnet is now permanently sealed into a mainnet token. That's a piece of chain history you can hold.</p></div>
+        <div class="faq-q">How do I seal the image mint? <span class="plus">+</span></div>
+        <div class="faq-a"><p>From wallet <code>9AgnpU…</code> (current authority): (1) Token-2022 <code>UpdateAuthority</code> on mint DVD4q… with <code>newAuthority = null</code> — that freezes the JPEG uri. (2) Disable mint authority on the same account. Official helper: <code>tokenMetadataUpdateAuthority(..., newAuthority: null)</code> plus <code>spl-token authorize DVD4q… mint --disable --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb</code>. After both, this page’s seal badge flips to sealed. Irreversible.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Is this the first image on Solana? <span class="plus">+</span></div>
+        <div class="faq-a"><p>No claim we can defend. Metaplex / compressed NFTs stored images years earlier. Honest claim: Huh Cat is a JPEG data URI on a Token-2022 mint created in a <b>version 1</b> transaction ~4 minutes after V1 activated on mainnet. Uniqueness vs every other data-URI mint was not scanned.</p></div>
       </div>
     </div>
   </div>
@@ -1103,16 +1181,18 @@
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> setMenu(false)));
   window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') setMenu(false); });
 
-  // copy CA
-  function copyCA(){
-    const text = document.getElementById('caText').innerText;
+  // copy CA / image mint
+  function copyField(id, btnId){
+    const text = document.getElementById(id).innerText;
     navigator.clipboard.writeText(text).then(()=>{
-      const btn = document.getElementById('copyBtn');
+      const btn = document.getElementById(btnId);
       const old = btn.innerText;
       btn.innerText = "Copied!";
       setTimeout(()=>btn.innerText = old, 1500);
     });
   }
+  function copyCA(){ copyField('caText', 'copyBtn'); }
+  function copyImgMint(){ copyField('imgMintText', 'copyImgBtn'); }
 
   // proof tab switcher
   function switchProofTab(tabName, btn){
@@ -1150,25 +1230,162 @@
 
   // marquee content
   const marqueeData = [
-    "🐱 FIRST IMAGE INSCRIBED VIA V1 TRANSACTIONS",
-    "⚡ MINT AUTHORITY REVOKED",
-    "🔒 LP LOCKED & BURNED",
-    "📜 100% ON-CHAIN METADATA",
-    "🚀 SOLANA HISTORY, LITERALLY",
+    "🐱 JPEG ON MINT DVD4q VIA V1 TX 5nqX9Tth",
+    "⚡ COIN MINT / FREEZE REVOKED",
+    "📡 LIVE RPC DECODE ON THIS PAGE",
+    "🎮 GAME SPRITE READS DVD4q",
+    "📜 TWO MINTS · ONE COIN · ONE IMAGE",
     "🐱 THE CHART IS DRAWING THE CAT"
   ];
   const track = document.getElementById('marqueeTrack');
   const full = [...marqueeData, ...marqueeData, ...marqueeData, ...marqueeData];
   track.innerHTML = full.map(t=>`<span><b>●</b> ${t}</span>`).join('');
 
-  // fake live price ticker
+  // DexScreener price — never invent a number
   const priceEl = document.getElementById('livePrice');
-  let price = 0.00042;
-  setInterval(()=>{
-    price += (Math.random()-0.45) * 0.00002;
-    price = Math.max(0.00001, price);
-    priceEl.innerText = "$" + price.toFixed(6);
-  }, 1800);
+  fetch('https://api.dexscreener.com/latest/dex/tokens/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH')
+    .then(r => r.json())
+    .then(j => {
+      const pairs = Array.isArray(j.pairs) ? j.pairs.slice() : [];
+      pairs.sort((a,b) => (Number(b.liquidity && b.liquidity.usd) || 0) - (Number(a.liquidity && a.liquidity.usd) || 0));
+      const pair = pairs[0];
+      if (pair && pair.priceUsd) {
+        const n = Number(pair.priceUsd);
+        priceEl.innerText = n >= 0.001 ? ('$' + n.toFixed(4)) : ('$' + n.toPrecision(3));
+      } else {
+        priceEl.innerText = 'chart →';
+      }
+    })
+    .catch(() => { priceEl.innerText = 'chart →'; });
+
+  // Live companion-mint decode (same account the Explorer screenshot shows)
+  const IMAGE_MINT = 'DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r';
+  const IMAGE_TX = '5nqX9TthkjHNBR5grSVD8a4uPZLKUxqNKzLuh9fzDhho2uZAQZM6rdnvgBUjiRn4Gd7xQe1TucTkshpYd21YftD7';
+  const RPCS = [
+    'https://api.mainnet-beta.solana.com',
+    'https://solana-rpc.publicnode.com',
+    'https://rpc.ankr.com/solana'
+  ];
+  async function rpcCall(method, params){
+    let last = 'all RPCs failed';
+    for (const rpc of RPCS){
+      const ctrl = new AbortController();
+      const timer = setTimeout(function(){ ctrl.abort(); }, 2500);
+      try {
+        const res = await fetch(rpc, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }),
+          signal: ctrl.signal
+        });
+        if (!res.ok) { last = rpc + ' HTTP ' + res.status; continue; }
+        const json = await res.json();
+        if (json.error) { last = json.error.message || 'rpc error'; continue; }
+        return { rpc, json };
+      } catch (e) { last = e && e.message ? e.message : String(e); }
+      finally { clearTimeout(timer); }
+    }
+    throw new Error(last);
+  }
+  function extractMeta(json){
+    const value = json && json.result && json.result.value;
+    if (!value) return null;
+    const info = value.data && value.data.parsed && value.data.parsed.info;
+    const exts = (info && info.extensions) || [];
+    const tm = exts.find(e => e.extension === 'tokenMetadata');
+    const uri = tm && tm.state && tm.state.uri;
+    if (typeof uri !== 'string' || uri.indexOf('data:image/') !== 0) return null;
+    return {
+      uri: uri,
+      name: tm.state.name,
+      updateAuthority: tm.state.updateAuthority || null,
+      mintAuthority: info.mintAuthority || null,
+      supply: info.supply,
+      space: value.space
+    };
+  }
+  function renderLive(meta, rpc){
+    const box = document.getElementById('liveDecode');
+    const label = document.getElementById('liveRpcLabel');
+    const badge = document.getElementById('sealBadge');
+    if (label) label.innerHTML = '<b>RPC:</b> ' + rpc;
+    const sealed = !meta.updateAuthority;
+    if (badge){
+      badge.className = 'auth-badge ' + (sealed ? 'ok' : 'warn');
+      badge.textContent = sealed
+        ? 'update authority null — sealed'
+        : 'update authority still live — not sealed';
+    }
+    const when = new Date().toISOString();
+    box.innerHTML =
+      '<img src="'+ meta.uri.replace(/"/g,'') +'" alt="On-chain Huh Cat from DVD4q tokenMetadata.uri">'+
+      '<p class="meta">'+
+        '<b>'+ (meta.name || 'HUHCAT') +'</b> · uriLen '+ meta.uri.length +
+        (meta.space != null ? ' · space '+ meta.space : '') +
+        '<br>updateAuth: <b>'+ (meta.updateAuthority || 'null') +'</b>'+
+        '<br>mintAuth: <b>'+ (meta.mintAuthority || 'null') +'</b> · supply '+ (meta.supply || '?') +
+        '<br>fetched '+ when +
+      '</p>';
+  }
+  (async function loadOnChainImage(){
+    const box = document.getElementById('liveDecode');
+    try {
+      const snapRes = await fetch('./onchain-sprite.json');
+      const snap = await snapRes.json();
+      if (snap && typeof snap.uri === 'string' && snap.uri.indexOf('data:image/') === 0) {
+        renderLive({
+          uri: snap.uri,
+          name: 'HUHCAT',
+          updateAuthority: snap.updateAuthority || null,
+          mintAuthority: snap.updateAuthority || null,
+          supply: '0',
+          space: 2944
+        }, 'mainnet snapshot · ' + (snap.fetchedAt || '') + ' · same bytes as DVD4q tokenMetadata.uri');
+      }
+    } catch (e0) { /* try live RPC */ }
+    try {
+      const acc = await rpcCall('getAccountInfo', [IMAGE_MINT, { encoding: 'jsonParsed' }]);
+      const meta = extractMeta(acc.json);
+      if (meta) { renderLive(meta, acc.rpc); return; }
+      throw new Error('account uri is not a data image');
+    } catch (e1) {
+      try {
+        const tx = await rpcCall('getTransaction', [IMAGE_TX, { encoding: 'jsonParsed', maxSupportedTransactionVersion: 1 }]);
+        const result = tx.json && tx.json.result;
+        let uri = null;
+        const walk = (ixs) => {
+          (ixs || []).forEach(ix => {
+            const u = ix && ix.parsed && ix.parsed.info && ix.parsed.info.uri;
+            if (typeof u === 'string' && u.indexOf('data:image/') === 0) uri = u;
+          });
+        };
+        if (result && result.transaction && result.transaction.message) walk(result.transaction.message.instructions);
+        (result && result.meta && result.meta.innerInstructions || []).forEach(g => walk(g.instructions));
+        if (uri) {
+          renderLive({ uri: uri, name: 'HUHCAT', updateAuthority: 'see account', mintAuthority: null, supply: '?', space: null }, tx.rpc);
+          return;
+        }
+        throw new Error('tx had no data URI');
+      } catch (e2) {
+        try {
+          const snapRes = await fetch('./onchain-sprite.json');
+          const snap = await snapRes.json();
+          if (snap && typeof snap.uri === 'string' && snap.uri.indexOf('data:image/') === 0) {
+            renderLive({
+              uri: snap.uri,
+              name: 'HUHCAT',
+              updateAuthority: snap.updateAuthority || null,
+              mintAuthority: snap.updateAuthority || null,
+              supply: '0',
+              space: 2944
+            }, 'bundled mainnet snapshot · ' + (snap.fetchedAt || '') + ' (browser RPC blocked: ' + (e1 && e1.message ? e1.message : e1) + ')');
+            return;
+          }
+        } catch (e3) { /* fall through */ }
+        box.innerHTML = '<p class="meta">Browser RPC blocked ('+ (e1 && e1.message ? e1.message : e1) +'). Open <a href="https://explorer.solana.com/address/'+ IMAGE_MINT +'" target="_blank" rel="noopener noreferrer"><b>Explorer · DVD4q…</b></a> or the V1 tx <a href="https://explorer.solana.com/tx/'+ IMAGE_TX +'" target="_blank" rel="noopener noreferrer"><b>5nqX9Tth…</b></a>.</p>';
+      }
+    }
+  })();
 
   // ---------- canvas candlestick background ----------
   const canvas = document.getElementById('bg-canvas');
