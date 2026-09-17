@@ -1432,7 +1432,9 @@
     const label = document.getElementById('liveRpcLabel');
     const badge = document.getElementById('sealBadge');
     if (label) label.innerHTML = '<b>RPC:</b> ' + rpc;
-    const sealed = !meta.updateAuthority;
+    // Sealed is read from the FULL authority set, not just updateAuthority,
+    // so a snapshot that predates the seal can never re-light the warning badge.
+    const sealed = !meta.updateAuthority && !meta.mintAuthority && !meta.freezeAuthority;
     if (badge){
       badge.className = 'auth-badge ' + (sealed ? 'ok' : 'warn');
       badge.textContent = sealed
@@ -1460,10 +1462,11 @@
           uri: snap.uri,
           name: 'HUHCAT',
           updateAuthority: snap.updateAuthority || null,
-          mintAuthority: snap.updateAuthority || null,
-          supply: '0',
+          mintAuthority: snap.mintAuthority || null,
+          freezeAuthority: snap.freezeAuthority || null,
+          supply: snap.supply || '1',
           space: 2944
-        }, 'mainnet snapshot · ' + (snap.fetchedAt || '') + ' · same bytes as DVD4q tokenMetadata.uri');
+        }, 'mainnet snapshot · ' + (snap.fetchedAt || '') + ' · uri bytes identical to DVD4q tokenMetadata.uri');
       }
     } catch (e0) { /* try live RPC */ }
     try {
