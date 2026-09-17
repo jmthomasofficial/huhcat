@@ -1,4 +1,4 @@
-# huhcatonsol.com — FIND AND REPLACE SHEET FOR REVVIN
+# huhcatonsol.com : FIND AND REPLACE SHEET FOR REVVIN
 
 Every string below is copy-paste ready. Find the left, replace with the right.
 Six changes fix every factual problem on the site.
@@ -7,7 +7,7 @@ Verified live 2026-09-17 against Solana RPC and pump.fun primary sources.
 
 ---
 
-## REPLACE 1 — the testnet line (appears TWICE: hero + timeline)
+## REPLACE 1 : the testnet line (appears TWICE: hero + timeline)
 
 **FIND:**
 ```
@@ -46,7 +46,7 @@ Then renumber the remaining steps so the list reads:
 
 ---
 
-## REPLACE 2 — the current fee rate
+## REPLACE 2 : the current fee rate
 
 **FIND:**
 ```
@@ -62,7 +62,7 @@ The fee is set by market cap and it moves as market cap moves. You can check whi
 
 ---
 
-## REPLACE 3 — the whole fee table
+## REPLACE 3 : the whole fee table
 
 **FIND:**
 ```
@@ -91,7 +91,7 @@ Fee schedule · set by pump.fun, 25 tiers, denominated in SOL
 
 ---
 
-## REPLACE 4 — the liquidity figure
+## REPLACE 4 : the liquidity figure
 
 **FIND:**
 ```
@@ -107,7 +107,7 @@ Every pool on Solana holding HUHCAT added up to roughly 61 million tokens when t
 
 ---
 
-## REPLACE 5 — the vault wording
+## REPLACE 5 : the vault wording
 
 **FIND:**
 ```
@@ -143,7 +143,7 @@ The program's code and its fixed requirement cannot be changed, and its only int
 
 ---
 
-## REPLACE 6 — ADD THIS (it is verified and it is strong)
+## REPLACE 6 : ADD THIS (it is verified and it is strong)
 
 Add to the Holding Pays section, right after the fee table:
 
@@ -177,24 +177,24 @@ The picture itself went into a mainnet transaction.
 
 ---
 
-# DO NOT TOUCH — VERIFIED CORRECT
+# DO NOT TOUCH : VERIFIED CORRECT
 
 Do not let anyone "fix" these. I checked every one against the chain today.
 
-- 959.9M supply — live: 959,904,004.86
-- 0 / 0 buy / sell tax — no transfer fee, hook, or permanent delegate extension
-- Token-2022 — confirmed
-- Mint / freeze both null — confirmed
-- 6 decimals — confirmed
-- 43.83 percent of supply — 420,690,000 / 959,904,004.86 = 43.8263%
-- slot 447120727 coin tx, version 1 — confirmed
-- slot 447120728 image tx, version 1 — confirmed
-- all four authorities revoked, supply 1 — confirmed
-- `data:image/jpeg;base64` URI — confirmed
-- `token → A9AHYeqb` and `mime → image/jpeg` — confirmed
-- 1.81 SOL / 1,807 payments / 207 batches — measured from chain
-- vault program and deed addresses — confirmed
-- upgrade authority `none` — confirmed, control-tested against two programs that still have live authorities
+- 959.9M supply. live: 959,904,004.86
+- 0 / 0 buy / sell tax. no transfer fee, hook, or permanent delegate extension
+- Token-2022 (confirmed)
+- Mint / freeze both null (confirmed)
+- 6 decimals (confirmed)
+- 43.83 percent of supply. 420,690,000 / 959,904,004.86 = 43.8263%
+- slot 447120727 coin tx, version 1 (confirmed)
+- slot 447120728 image tx, version 1 (confirmed)
+- all four authorities revoked, supply 1 (confirmed)
+- `data:image/jpeg;base64` URI (confirmed)
+- `token → A9AHYeqb` and `mime → image/jpeg` (confirmed)
+- 1.81 SOL / 1,807 payments / 207 batches. measured from chain
+- vault program and deed addresses (confirmed)
+- upgrade authority `none` (confirmed), control-tested against two programs that still have live authorities
 
 ---
 
