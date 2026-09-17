@@ -580,6 +580,51 @@
   }
   .btn-tg-main svg{width:22px;height:22px;fill:#fff;}
 
+  /* ---------- seal section ---------- */
+  .seal{padding:120px 0;}
+  .seal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .seal-card{
+    background:var(--panel);border:1px solid var(--panel-b);border-radius:20px;
+    padding:32px 26px;position:relative;transition:.35s;
+  }
+  .seal-card:hover{border-color:rgba(57,255,136,.45);transform:translateY(-6px);box-shadow:0 20px 50px -20px rgba(57,255,136,.3);}
+  .seal-num{
+    font-family:var(--head);font-size:40px;font-weight:800;color:transparent;
+    -webkit-text-stroke:1.5px rgba(57,255,136,.5);margin-bottom:12px;line-height:1;
+  }
+  .seal-card h3{font-family:var(--head);font-size:22px;margin-bottom:10px;}
+  .seal-card > p{color:var(--muted);font-size:14.5px;line-height:1.65;}
+  .seal-list{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+  .seal-list li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    font-family:var(--mono);font-size:12px;padding-bottom:9px;
+    border-bottom:1px solid rgba(255,255,255,.05);
+  }
+  .seal-list li:last-child{border-bottom:none;padding-bottom:0;}
+  .seal-list span{color:var(--muted);flex-shrink:0;}
+  .seal-list b{color:var(--text);text-align:right;word-break:break-word;font-weight:700;}
+  .seal-list b.ok{color:var(--green);}
+  .seal-note{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.6;}
+  .seal-note .mono{font-family:var(--mono);font-size:11.5px;color:var(--green);word-break:break-all;}
+
+  .seal-timeline{margin-top:50px;background:var(--panel);border:1px solid var(--panel-b);border-radius:22px;padding:34px 32px;}
+  .seal-tl-head{margin-bottom:26px;}
+  .seal-tl-head p{color:var(--muted);font-size:14.5px;line-height:1.65;margin-top:14px;max-width:760px;}
+  .seal-tl{display:flex;flex-direction:column;gap:2px;}
+  .seal-step{
+    display:flex;gap:20px;align-items:baseline;padding:11px 0;
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .seal-step:last-child{border-bottom:none;}
+  .seal-step .t{font-family:var(--mono);font-size:13px;color:var(--green);min-width:74px;flex-shrink:0;}
+  .seal-step .d{font-size:14.5px;color:var(--text);}
+
+  .seal-verify{margin-top:50px;text-align:center;}
+  .seal-verify-head h3{font-family:var(--head);font-size:26px;margin-bottom:12px;}
+  .seal-verify-head p{color:var(--muted);font-size:14px;font-family:var(--mono);line-height:1.7;max-width:820px;margin:0 auto;word-break:break-word;}
+  .seal-verify-head p b{color:var(--green);}
+  .seal-verify-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px;}
+
   /* ---------- faq ---------- */
   .faq{padding:120px 0;}
   .faq-list{max-width:760px;margin:0 auto;}
@@ -621,6 +666,12 @@
     .phone-mockup{max-width:280px;}
     .lore-stats{flex-wrap:wrap;gap:16px 22px;}
     .story,.tokenomics,.roadmap,.community,.faq{padding:80px 0;}
+    .seal{padding:80px 0;}
+    .seal-grid{grid-template-columns:1fr;gap:16px;}
+    .seal-timeline{padding:26px 22px;}
+    .seal-step{flex-direction:column;gap:5px;}
+    .seal-list li{flex-direction:column;align-items:flex-start;gap:4px;}
+    .seal-list b{text-align:left;}
     .proof{padding:72px 0;}
     .section-head{margin-bottom:36px;}
     .terminal-top span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62%;}
@@ -704,6 +755,7 @@
         <li><a href="https://jmthomasofficial.github.io/huhcatgame/" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:700;">🎮 Play Game</a></li>
         <li><a href="#story">Story</a></li>
         <li><a href="#proof">On-Chain Proof</a></li>
+        <li><a href="#seal">The Seal</a></li>
         <li><a href="#tokenomics">Tokenomics</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -867,7 +919,7 @@
     <div class="section-head reveal">
       <span class="tag">Verifiable On-Chain</span>
       <h2>No CDN. No off-chain link. <span class="grad-text">Just the chain.</span></h2>
-      <p>The raw instruction below shows the image embedded directly as a base64 data URI inside the token's metadata — inscribed, not hosted.</p>
+      <p>Solana flipped V1 on. Four minutes later this image was written into a mainnet transaction. Two days after that it was sealed: every authority revoked, the JPEG frozen in place, and a single 1/1 deed minted and locked in a vault program nobody can ever change.</p>
     </div>
 
     <div class="terminal reveal">
@@ -944,7 +996,7 @@
       <div class="id-card">
         <div class="lbl">On-chain picture</div>
         <div class="val"><a href="https://explorer.solana.com/address/DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r" target="_blank" rel="noopener noreferrer">DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r</a></div>
-        <div class="auth-badge warn" id="sealBadge">update authority still live — not sealed</div>
+        <div class="auth-badge ok" id="sealBadge">SEALED 17 SEP 2026 · all 4 authorities null · supply 1</div>
       </div>
       <div class="id-card">
         <div class="lbl">Coin create tx · version 1</div>
@@ -961,6 +1013,86 @@
       <a href="https://explorer.solana.com/tx/5nqX9TthkjHNBR5grSVD8a4uPZLKUxqNKzLuh9fzDhho2uZAQZM6rdnvgBUjiRn4Gd7xQe1TucTkshpYd21YftD7" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📜 V1 image tx</a>
       <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">🪙 Coin on Solscan</a>
       <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📊 DexScreener</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE SEAL ================= -->
+<section class="seal" id="seal">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">17 September 2026</span>
+      <h2>The image is sealed. <span class="grad-text">The vault is immutable.</span></h2>
+      <p>Two days after the inscription, before anyone asked and before anyone was watching, the image was locked forever and its deed was put beyond anyone's reach. Here is exactly what the chain shows.</p>
+    </div>
+
+    <div class="seal-grid">
+      <div class="seal-card reveal">
+        <div class="seal-num">01</div>
+        <h3>Sealed</h3>
+        <p>Four authorities were revoked on the image mint. Supply became 1. The JPEG has been frozen in place since.</p>
+        <ul class="seal-list">
+          <li><span>metadata update authority</span><b>null</b></li>
+          <li><span>metadata pointer authority</span><b>null</b></li>
+          <li><span>mint authority</span><b>null</b></li>
+          <li><span>freeze authority</span><b>null</b></li>
+          <li><span>supply</span><b>1</b></li>
+          <li><span>decimals</span><b>0</b></li>
+        </ul>
+      </div>
+
+      <div class="seal-card reveal">
+        <div class="seal-num">02</div>
+        <h3>Vaulted</h3>
+        <p>The single 1/1 deed sits in a purpose-built vault program that has no upgrade authority. It can never be changed.</p>
+        <ul class="seal-list">
+          <li><span>vault program</span><b class="ok">GGTQ55…</b></li>
+          <li><span>upgrade authority</span><b>none</b></li>
+          <li><span>program touches, ever</span><b>2</b></li>
+          <li><span>source hash match</span><b class="ok">exact</b></li>
+        </ul>
+        <p class="seal-note">The deployed program is byte-for-byte identical to the published source. sha256 <span class="mono">bbc47f54…2367c</span></p>
+      </div>
+
+      <div class="seal-card reveal">
+        <div class="seal-num">03</div>
+        <h3>Convertible</h3>
+        <p>The vault has two moves and will only ever have two. Either the deed is inside it, or 420.69M HUHCAT is.</p>
+        <ul class="seal-list">
+          <li><span>claim</span><b>lock 420,690,000 HUHCAT</b></li>
+          <li><span>return</span><b>deed back, coins out</b></li>
+          <li><span>threshold</span><b>fixed at creation</b></li>
+          <li><span>share of supply</span><b>43.83%</b></li>
+        </ul>
+        <p class="seal-note">Every pool on Solana holding HUHCAT adds up to roughly 92.9M tokens. A claim needs 420.69M. The liquidity is not there.</p>
+      </div>
+    </div>
+
+    <div class="seal-timeline reveal">
+      <div class="seal-tl-head">
+        <span class="tag">The six transactions</span>
+        <p>All six ran between 02:35 and 02:36 UTC, in order, from the wallet that launched the project. Verify any of them on Solscan. The timestamps are in the block data.</p>
+      </div>
+      <div class="seal-tl">
+        <div class="seal-step"><span class="t">02:35:49</span><span class="d">metadata update authority set to null</span></div>
+        <div class="seal-step"><span class="t">02:35:50</span><span class="d">metadata pointer authority set to null</span></div>
+        <div class="seal-step"><span class="t">02:36:00</span><span class="d">token account created for the deed</span></div>
+        <div class="seal-step"><span class="t">02:36:01</span><span class="d">the 1/1 minted</span></div>
+        <div class="seal-step"><span class="t">02:36:13</span><span class="d">mint authority set to null</span></div>
+        <div class="seal-step"><span class="t">02:36:29</span><span class="d">the deed moved into the vault</span></div>
+      </div>
+    </div>
+
+    <div class="seal-verify reveal">
+      <div class="seal-verify-head">
+        <h3>Read it from the chain, not from us</h3>
+        <p id="sealVaultState">Checking the vault on a public RPC…</p>
+      </div>
+      <div class="seal-verify-actions">
+        <a href="https://solscan.io/token/DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Sealed image mint ↗</a>
+        <a href="https://solscan.io/account/GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Vault program ↗</a>
+        <a href="https://github.com/weareallgoingtomake1t/huhcat" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Published source ↗</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1248,6 +1380,10 @@
   // Live companion-mint decode (same account the Explorer screenshot shows)
   const IMAGE_MINT = 'DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r';
   const IMAGE_TX = '5nqX9TthkjHNBR5grSVD8a4uPZLKUxqNKzLuh9fzDhho2uZAQZM6rdnvgBUjiRn4Gd7xQe1TucTkshpYd21YftD7';
+  const VAULT_PROGRAM = 'GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3';
+  const VAULT_ACCOUNT = '136gVxQtoq7rTVozniyNu7NfvPY5XKoMYVa99d3AT28g';
+  const CLAIM_AMOUNT = '420,690,000';
+  const DEED_ACCOUNT = 'CKU7yvBoud33q7refZ4kXQiEBEposuqTB9SonEraZ771';
   const RPCS = [
     'https://api.mainnet-beta.solana.com',
     'https://solana-rpc.publicnode.com',
@@ -1300,7 +1436,7 @@
     if (badge){
       badge.className = 'auth-badge ' + (sealed ? 'ok' : 'warn');
       badge.textContent = sealed
-        ? 'update authority null — sealed'
+        ? 'SEALED 17 SEP 2026 · all 4 authorities null · supply 1'
         : 'update authority still live — not sealed';
     }
     const when = new Date().toISOString();
@@ -1370,6 +1506,45 @@
           }
         } catch (e3) { /* fall through */ }
         box.innerHTML = '<p class="meta">Browser RPC blocked ('+ (e1 && e1.message ? e1.message : e1) +'). Open <a href="https://explorer.solana.com/address/'+ IMAGE_MINT +'" target="_blank" rel="noopener noreferrer"><b>Explorer · DVD4q…</b></a> or the V1 tx <a href="https://explorer.solana.com/tx/'+ IMAGE_TX +'" target="_blank" rel="noopener noreferrer"><b>5nqX9Tth…</b></a>.</p>';
+      }
+    }
+  })();
+
+  // ---------- live vault state (the seal section) ----------
+  // Live RPC first. If the browser is blocked, fall back to a bundled read that
+  // carries its own fetch timestamp and the raw bytes, so nobody mistakes it for live.
+  (async function loadVaultState(){
+    const el = document.getElementById('sealVaultState');
+    if (!el) return;
+    try {
+      const acc = await rpcCall('getAccountInfo', [VAULT_ACCOUNT, { encoding: 'base64' }]);
+      const info = acc.json && acc.json.result && acc.json.result.value;
+      if (!info || !info.data) throw new Error('vault account missing');
+      const raw = Uint8Array.from(atob(info.data[0]), c => c.charCodeAt(0));
+      if (raw.length < 76) throw new Error('unexpected vault size');
+      let required = 0n;
+      for (let i = 7; i >= 0; i--) required = (required << 8n) | BigInt(raw[68 + i]);
+      const tokens = Number(required) / 1e6;
+      const deed = await rpcCall('getAccountInfo', [DEED_ACCOUNT, { encoding: 'jsonParsed' }]);
+      const di = deed.json && deed.json.result && deed.json.result.value;
+      const deedAmt = di && di.data && di.data.parsed && di.data.parsed.info
+        ? di.data.parsed.info.tokenAmount.uiAmountString : '?';
+      el.innerHTML = '<b>LIVE.</b> Vault <b>' + VAULT_ACCOUNT.slice(0,8) + '…</b> holds the deed (<b>' + deedAmt + '</b> of 1). '
+        + 'A claim requires <b>' + tokens.toLocaleString('en-US') + ' HUHCAT</b>, read from vault state. '
+        + 'RPC: <b>' + acc.rpc.replace('https://','') + '</b>';
+    } catch (e) {
+      try {
+        const snapRes = await fetch('./vault-state.json');
+        const s = await snapRes.json();
+        const t = (s.vault.requiredRaw / 1e6).toLocaleString('en-US');
+        el.innerHTML = '<b>BUNDLED READ · ' + s.fetchedAt + '</b><br>'
+          + 'This browser could not reach a public RPC, so this is a saved read, not live. '
+          + 'Vault holds the deed (<b>' + s.deed.amount + '</b> of 1). Claim requires <b>' + t + ' HUHCAT</b>. '
+          + 'Program upgrade authority: <b>' + (s.program.upgradeAuthority === null ? 'none' : s.program.upgradeAuthority) + '</b>. '
+          + 'Raw bytes sha256 <b>' + s.vault.rawSha256.slice(0,16) + '…</b> fetched ' + s.fetchedAt + ' from ' + s.sourceRpc.replace('https://','') + '. '
+          + 'Re-check it yourself at <b>' + VAULT_ACCOUNT + '</b>';
+      } catch (e2) {
+        el.innerHTML = 'Read the vault yourself: <b>' + VAULT_ACCOUNT + '</b>';
       }
     }
   })();

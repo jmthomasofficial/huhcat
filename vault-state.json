@@ -1,0 +1,29 @@
+{
+ "fetchedAt": "2026-09-17T11:03:36Z",
+ "sourceRpc": "https://api.mainnet-beta.solana.com",
+ "note": "Bundled read of live mainnet state. Compare against the chain at any time; this file carries its own fetch time on purpose.",
+ "vault": {
+  "address": "136gVxQtoq7rTVozniyNu7NfvPY5XKoMYVa99d3AT28g",
+  "rawHex": "01fffdfeb986262553a414ac95a61611538e87d13ef6ad894bff31a99fced479e2b9ef1587d053e41bc04039c5966a451110e6fda40159a09d5cddeb7438c8176089d62800b402869d7e0100",
+  "rawSha256": "a740702df56843a412c407114d1d65a3647822f25260bba0cca1d8214fea534d",
+  "lamports": 1036320,
+  "space": 76,
+  "discriminator": 1,
+  "bump": 255,
+  "deedBump": 253,
+  "coinBump": 254,
+  "requiredRaw": 420690000000000,
+  "requiredTokens": 420690000
+ },
+ "deed": {
+  "address": "CKU7yvBoud33q7refZ4kXQiEBEposuqTB9SonEraZ771",
+  "amount": "1",
+  "mint": "DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r",
+  "owner": "136gVxQtoq7rTVozniyNu7NfvPY5XKoMYVa99d3AT28g",
+  "state": "initialized"
+ },
+ "program": {
+  "programdata": "DPAM4ZwLrBCRwVu2sqw2HRunJSkmdnExhuE5tp8dD2Gs",
+  "upgradeAuthority": null
+ }
+}
