@@ -580,6 +580,51 @@
   }
   .btn-tg-main svg{width:22px;height:22px;fill:#fff;}
 
+  /* ---------- holder rewards section ---------- */
+  .rewards{padding:120px 0 100px;}
+  .reward-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .reward-card{
+    background:var(--panel);border:1px solid var(--panel-b);border-radius:18px;
+    padding:28px 22px;text-align:center;transition:.3s;
+  }
+  .reward-card:hover{border-color:rgba(57,255,136,.45);transform:translateY(-6px);box-shadow:0 20px 50px -20px rgba(57,255,136,.3);}
+  .reward-val{font-family:var(--head);font-size:34px;font-weight:800;line-height:1.1;}
+  .reward-lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:8px 0 14px;}
+  .reward-card p{color:var(--muted);font-size:13.5px;line-height:1.6;}
+
+  .reward-proof{
+    margin-top:46px;background:var(--panel);border:1px solid rgba(57,255,136,.3);
+    border-radius:22px;padding:34px 32px;box-shadow:0 24px 60px -30px rgba(57,255,136,.3);
+  }
+  .reward-proof-head p{color:var(--muted);font-size:14.5px;line-height:1.65;margin-top:14px;max-width:820px;}
+  .reward-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:28px 0 22px;}
+  .reward-stat{text-align:center;padding:18px 10px;background:rgba(57,255,136,.05);border-radius:14px;border:1px solid rgba(57,255,136,.14);}
+  .rs-val{font-family:var(--head);font-size:26px;font-weight:800;color:var(--green);line-height:1.15;}
+  .rs-lab{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:8px;line-height:1.4;}
+  .reward-proof-note{color:var(--muted);font-size:13.5px;line-height:1.7;}
+
+  .reward-tiers{margin-top:40px;background:var(--panel);border:1px solid var(--panel-b);border-radius:22px;padding:34px 32px;}
+  .reward-tiers-head h3{font-family:var(--head);font-size:24px;margin-bottom:12px;}
+  .reward-tiers-head p{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:820px;}
+  .tier-list{list-style:none;margin:26px 0 20px;display:flex;flex-direction:column;gap:2px;}
+  .tier-list li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding:13px 0;border-bottom:1px solid rgba(255,255,255,.05);
+    font-size:15px;
+  }
+  .tier-list li:last-child{border-bottom:none;}
+  .tier-list span{color:var(--muted);}
+  .tier-list b{font-family:var(--mono);font-size:15px;color:var(--text);}
+  .tier-list b.live-tier{color:var(--green);}
+  .tier-list b.live-tier::after{content:' now';font-size:10px;letter-spacing:.08em;color:var(--green);opacity:.75;}
+  .reward-tiers-note{color:var(--muted);font-size:13.5px;line-height:1.7;}
+  .reward-tiers-note a{color:var(--green);}
+  .reward-tiers-note a:hover{text-decoration:underline;}
+
+  .reward-verify{margin-top:44px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;}
+  .reward-verify h3{font-family:var(--head);font-size:26px;margin-bottom:12px;}
+  .reward-verify p{color:var(--muted);font-size:15px;line-height:1.7;}
+
   /* ---------- seal section ---------- */
   .seal{padding:120px 0;}
   .seal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
@@ -672,6 +717,15 @@
     .seal-step{flex-direction:column;gap:5px;}
     .seal-list li{flex-direction:column;align-items:flex-start;gap:4px;}
     .seal-list b{text-align:left;}
+    .rewards{padding:80px 0 70px;}
+    .reward-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+    .reward-val{font-size:clamp(24px,7vw,30px);}
+    .reward-proof{padding:26px 22px;}
+    .reward-proof-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+    .rs-val{font-size:clamp(19px,5.5vw,23px);}
+    .reward-tiers{padding:26px 22px;}
+    .tier-list li{font-size:14px;}
+    .tier-list b{font-size:14px;}
     .proof{padding:72px 0;}
     .section-head{margin-bottom:36px;}
     .terminal-top span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62%;}
@@ -755,6 +809,7 @@
         <li><a href="https://jmthomasofficial.github.io/huhcatgame/" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:700;">🎮 Play Game</a></li>
         <li><a href="#story">Story</a></li>
         <li><a href="#proof">On-Chain Proof</a></li>
+        <li><a href="#rewards">Holder Rewards</a></li>
         <li><a href="#seal">The Seal</a></li>
         <li><a href="#tokenomics">Tokenomics</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
@@ -1013,6 +1068,85 @@
       <a href="https://explorer.solana.com/tx/5nqX9TthkjHNBR5grSVD8a4uPZLKUxqNKzLuh9fzDhho2uZAQZM6rdnvgBUjiRn4Gd7xQe1TucTkshpYd21YftD7" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📜 V1 image tx</a>
       <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">🪙 Coin on Solscan</a>
       <a href="https://dexscreener.com/solana/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">📊 DexScreener</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOLDER REWARDS ================= -->
+<section class="rewards" id="rewards">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Holder Rewards · Live</span>
+      <h2>Holding pays. <span class="grad-text">Every trade, in SOL.</span></h2>
+      <p>HUHCAT is a Holder Rewards token on pump.fun. The creator fee on every trade goes to the people holding the coin, not to the creator. It is paid automatically, several times an hour, in proportion to what you hold.</p>
+    </div>
+
+    <div class="reward-grid">
+      <div class="reward-card reveal">
+        <div class="reward-val grad-text">0.75%</div>
+        <div class="reward-lab">of every trade</div>
+        <p>The creator fee, set by market cap. Paid to holders, not the creator.</p>
+      </div>
+      <div class="reward-card reveal">
+        <div class="reward-val grad-text">SOL</div>
+        <div class="reward-lab">paid automatically</div>
+        <p>No claiming. No staking. No lockups. You hold the coin and it shows up.</p>
+      </div>
+      <div class="reward-card reveal">
+        <div class="reward-val grad-text">$20</div>
+        <div class="reward-lab">minimum to qualify</div>
+        <p>Hold more than twenty dollars of HUHCAT and you are eligible for every distribution.</p>
+      </div>
+      <div class="reward-card reveal">
+        <div class="reward-val grad-text">~6/hr</div>
+        <div class="reward-lab">distributions</div>
+        <p>Several batches every hour, pro-rata by balance. The ratio is identical every time.</p>
+      </div>
+    </div>
+
+    <div class="reward-proof reveal">
+      <div class="reward-proof-head">
+        <span class="tag">One hour, measured from the chain</span>
+        <p>We summed a full hour of distributions straight from Solana and compared it to the trading volume that paid into it.</p>
+      </div>
+      <div class="reward-proof-grid">
+        <div class="reward-stat">
+          <div class="rs-val">1.81 SOL</div>
+          <div class="rs-lab">sent to holders in one hour</div>
+        </div>
+        <div class="reward-stat">
+          <div class="rs-val">1,807</div>
+          <div class="rs-lab">individual payments</div>
+        </div>
+        <div class="reward-stat">
+          <div class="rs-val">207</div>
+          <div class="rs-lab">separate batches</div>
+        </div>
+        <div class="reward-stat">
+          <div class="rs-val">≈$20,000</div>
+          <div class="rs-lab">pool volume, same hour</div>
+        </div>
+      </div>
+      <p class="reward-proof-note">The creator fee on that volume comes out to roughly 1.8 SOL. That is what left the distribution wallet, and what arrived in holder balances. No projection. Arithmetic, already paid, readable on-chain.</p>
+    </div>
+
+    <div class="reward-tiers reveal">
+      <div class="reward-tiers-head">
+        <h3>The rate is front-loaded, on purpose</h3>
+        <p>The percentage is set by market cap and falls steeply as the coin grows. Holders now are paid the most, and that is written into pump.fun's own fee schedule, not into anything this community controls.</p>
+      </div>
+      <ul class="tier-list">
+        <li><span>Today</span><b class="live-tier">0.75%</b></li>
+        <li><span>At $1M market cap</span><b>0.70%</b></li>
+        <li><span>At $4M market cap</span><b>0.40%</b></li>
+        <li><span>At $10M and above</span><b>0.05%</b></li>
+      </ul>
+      <p class="reward-tiers-note">The fee schedule is published by pump.fun at <a href="https://pump.fun/docs/fees" target="_blank" rel="noopener noreferrer">pump.fun/docs/fees</a>. What does not change is the mechanism: the fee is set by the platform, the distribution is automatic, and once a token switches to Holder Rewards it cannot switch back.</p>
+    </div>
+
+    <div class="reward-verify reveal">
+      <h3>Check it yourself</h3>
+      <p>Open your wallet, compare what arrived against what you hold, then do the same across a second batch a few minutes later. The ratio comes out identical both times, because it is calculated from your balance and from nothing else.</p>
     </div>
   </div>
 </section>
