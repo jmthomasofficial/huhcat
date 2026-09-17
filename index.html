@@ -1455,7 +1455,7 @@
   (async function loadOnChainImage(){
     const box = document.getElementById('liveDecode');
     try {
-      const snapRes = await fetch('./onchain-sprite.json');
+      const snapRes = await fetch('./onchain-sprite.json?v=' + Date.now());
       const snap = await snapRes.json();
       if (snap && typeof snap.uri === 'string' && snap.uri.indexOf('data:image/') === 0) {
         renderLive({
@@ -1494,7 +1494,7 @@
         throw new Error('tx had no data URI');
       } catch (e2) {
         try {
-          const snapRes = await fetch('./onchain-sprite.json');
+          const snapRes = await fetch('./onchain-sprite.json?v=' + Date.now());
           const snap = await snapRes.json();
           if (snap && typeof snap.uri === 'string' && snap.uri.indexOf('data:image/') === 0) {
             renderLive({
@@ -1537,7 +1537,7 @@
         + 'RPC: <b>' + acc.rpc.replace('https://','') + '</b>';
     } catch (e) {
       try {
-        const snapRes = await fetch('./vault-state.json');
+        const snapRes = await fetch('./vault-state.json?v=' + Date.now());
         const s = await snapRes.json();
         const t = (s.vault.requiredRaw / 1e6).toLocaleString('en-US');
         el.innerHTML = '<b>BUNDLED READ · ' + s.fetchedAt + '</b><br>'
