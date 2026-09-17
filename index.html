@@ -974,7 +974,7 @@
     <div class="section-head reveal">
       <span class="tag">Verifiable On-Chain</span>
       <h2>No CDN. No off-chain link. <span class="grad-text">Just the chain.</span></h2>
-      <p>Solana flipped V1 on. Four minutes later this image was written into a mainnet transaction. Two days after that it was sealed: every authority revoked, the JPEG frozen in place, and a single 1/1 deed minted and locked in a vault program nobody can ever change.</p>
+      <p>Solana flipped V1 on. Four minutes later this image was written into a mainnet transaction. Two days after that it was sealed: every authority revoked, the JPEG frozen in place, and a single 1/1 deed minted and locked in a program-controlled vault with no human admin.</p>
     </div>
 
     <div class="terminal reveal">
@@ -1036,6 +1036,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"symbol"</span>: <span class="s">"HUHCAT"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="k">"uri"</span>: <span class="s">"data:image/jpeg;base64,/9j/2wCEAA4KCw0LCQ4NDA0QDw4RFiQXFhQU..."</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// ↑ JPEG lives on companion mint DVD4q, created in v1 tx 5nqX9Tth…</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// ↑ mintAuthority above is the CREATE-TIME value from the instruction,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// &nbsp;&nbsp;set by the deploying wallet. It was revoked on 17 Sep 2026.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// &nbsp;&nbsp;Current on-chain state: mintAuthority null, freezeAuthority null,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">// &nbsp;&nbsp;metadata authority null, metadata pointer null, supply 1, decimals 0.</span><br>
 &nbsp;&nbsp;<span class="c">}</span><br>
 <span class="c">}</span>
         </div>
@@ -1078,14 +1082,14 @@
     <div class="section-head reveal">
       <span class="tag">Holder Rewards · Live</span>
       <h2>Holding pays. <span class="grad-text">Every trade, in SOL.</span></h2>
-      <p>HUHCAT is a Holder Rewards token on pump.fun. The creator fee on every trade goes to the people holding the coin, not to the creator. It is paid automatically, several times an hour, in proportion to what you hold.</p>
+      <p>HUHCAT currently directs its Pump creator rewards to holders. The applicable reward rate follows Pump's current fee schedule and changes with the token's SOL-denominated market-cap tier. Rewards also depend on trading activity and how much HUHCAT an eligible wallet holds. The live schedule can always be checked directly on Pump.</p>
     </div>
 
     <div class="reward-grid">
       <div class="reward-card reveal">
         <div class="reward-val grad-text">0.75%</div>
-        <div class="reward-lab">of every trade</div>
-        <p>The creator fee, set by market cap. Paid to holders, not the creator.</p>
+        <div class="reward-lab">creator fee, current tier</div>
+        <p>The creator fee on every trade, set by the token's SOL-denominated market-cap tier. Directed to holders, not the creator.</p>
       </div>
       <div class="reward-card reveal">
         <div class="reward-val grad-text">SOL</div>
@@ -1098,9 +1102,9 @@
         <p>Hold more than twenty dollars of HUHCAT and you are eligible for every distribution.</p>
       </div>
       <div class="reward-card reveal">
-        <div class="reward-val grad-text">~6/hr</div>
-        <div class="reward-lab">distributions</div>
-        <p>Several batches every hour, pro-rata by balance. The ratio is identical every time.</p>
+        <div class="reward-val grad-text">250+/hr</div>
+        <div class="reward-lab">distribution batches, measured</div>
+        <p>Counted straight off the chain in a one hour window. Paid pro-rata by balance, so the ratio is identical every time.</p>
       </div>
     </div>
 
@@ -1136,12 +1140,13 @@
         <p>The percentage is set by market cap and falls steeply as the coin grows. Holders now are paid the most, and that is written into pump.fun's own fee schedule, not into anything this community controls.</p>
       </div>
       <ul class="tier-list">
-        <li><span>Today</span><b class="live-tier">0.75%</b></li>
-        <li><span>At $1M market cap</span><b>0.70%</b></li>
-        <li><span>At $4M market cap</span><b>0.40%</b></li>
-        <li><span>At $10M and above</span><b>0.05%</b></li>
+        <li><span>Current tier (4,420 to 9,820 SOL)</span><b class="live-tier">0.75%</b></li>
+        <li><span>Next tier (9,820 to 14,740 SOL)</span><b>0.70%</b></li>
+        <li><span>34,380 to 39,300 SOL</span><b>0.45%</b></li>
+        <li><span>39,300 to 44,210 SOL</span><b>0.40%</b></li>
+        <li><span>98,240 SOL and above</span><b>0.05%</b></li>
       </ul>
-      <p class="reward-tiers-note">The fee schedule is published by pump.fun at <a href="https://pump.fun/docs/fees" target="_blank" rel="noopener noreferrer">pump.fun/docs/fees</a>. What does not change is the mechanism: the fee is set by the platform, the distribution is automatic, and once a token switches to Holder Rewards it cannot switch back.</p>
+      <p class="reward-tiers-note">Market-cap tiers are set in SOL. There are 25 of them, stepping from zero all the way up to 98,240 SOL and beyond, and pump.fun publishes the whole table at <a href="https://pump.fun/docs/fees" target="_blank" rel="noopener noreferrer">pump.fun/docs/fees</a> so anyone can read every line and confirm which tier the coin currently occupies.</p>
     </div>
 
     <div class="reward-verify reveal">
@@ -1178,7 +1183,7 @@
       <div class="seal-card reveal">
         <div class="seal-num">02</div>
         <h3>Vaulted</h3>
-        <p>The single 1/1 deed sits in a purpose-built vault program that has no upgrade authority. It can never be changed.</p>
+        <p>The single 1/1 deed sits in a program-controlled vault with no human admin, no pause function, no close function, and no upgrade authority.</p>
         <ul class="seal-list">
           <li><span>vault program</span><b class="ok">GGTQ55…</b></li>
           <li><span>upgrade authority</span><b>none</b></li>
@@ -1191,7 +1196,7 @@
       <div class="seal-card reveal">
         <div class="seal-num">03</div>
         <h3>Convertible</h3>
-        <p>The vault has two moves and will only ever have two. Either the deed is inside it, or 420.69M HUHCAT is.</p>
+        <p>Nobody can alter the program code or the fixed 420.69M requirement. The program carries two intended actions, and those are Claim and Return. Either the deed is inside it, or 420.69M HUHCAT is.</p>
         <ul class="seal-list">
           <li><span>claim</span><b>lock 420,690,000 HUHCAT</b></li>
           <li><span>return</span><b>deed back, coins out</b></li>
