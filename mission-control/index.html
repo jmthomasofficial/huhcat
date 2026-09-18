@@ -121,14 +121,21 @@ img { max-width:100%; display:block; }
 .sfx-toggle.active { color:var(--signal); border-color:var(--signal); background:var(--signal-dim); }
 
 /* ---- HERO SECTION ---- */
-.hero { padding:72px 0 54px; text-align:center; }
+.hero { padding:64px 0 54px; position:relative; }
+.hero-grid-layout {
+  display:grid; grid-template-columns:1.15fr 0.85fr;
+  gap:44px; align-items:center;
+}
+.hero-col-content {
+  display:flex; flex-direction:column; align-items:flex-start; text-align:left;
+}
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(57,255,136,0.06); border:1px solid rgba(57,255,136,0.25);
   padding:6px 14px; border-radius:100px;
   font-family:var(--mono); font-size:11px; font-weight:700;
   color:var(--signal); letter-spacing:0.12em; text-transform:uppercase;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 .hero-badge-tag {
   background:var(--signal); color:var(--void); font-size:9.5px;
@@ -136,22 +143,22 @@ img { max-width:100%; display:block; }
 }
 .hero h1 {
   font-family:var(--display); font-weight:800;
-  font-size:clamp(38px, 9vw, 76px); letter-spacing:-0.03em;
-  line-height:1.02; margin-bottom:14px;
+  font-size:clamp(36px, 5.5vw, 64px); letter-spacing:-0.03em;
+  line-height:1.02; margin-bottom:12px;
 }
 .hero h1 .grad {
   background:linear-gradient(135deg, #ffffff 40%, var(--signal) 100%);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent;
 }
 .hero-sub {
-  font-family:var(--mono); font-size:14px; color:var(--muted);
-  letter-spacing:0.04em; max-width:620px; margin:0 auto 32px;
-  text-transform:uppercase;
+  font-family:var(--mono); font-size:13.5px; color:var(--muted);
+  letter-spacing:0.04em; margin:0 0 24px;
+  text-transform:uppercase; line-height:1.5;
 }
 
 /* heat meter HUD */
 .heat-hud {
-  max-width:540px; margin:0 auto 34px;
+  width:100%; margin:0 0 24px;
   background:var(--graphite); border:1px solid var(--slate);
   border-radius:12px; padding:16px 20px;
 }
@@ -176,7 +183,155 @@ img { max-width:100%; display:block; }
   font-family:var(--mono); font-size:10.5px; color:var(--muted);
 }
 
-.hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.hero-actions { display:flex; gap:14px; justify-content:flex-start; flex-wrap:wrap; margin-bottom:20px; }
+
+/* telemetry pills strip */
+.hero-hud-strip { display:flex; gap:10px; flex-wrap:wrap; }
+.hud-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--mono); font-size:10.5px; font-weight:700;
+  letter-spacing:0.06em; padding:6px 11px; border-radius:6px;
+  background:rgba(255,255,255,0.03); border:1px solid var(--slate);
+  color:var(--muted); text-transform:uppercase;
+}
+.hud-pill-dot { width:6px; height:6px; border-radius:50%; }
+.hud-pill-dot.signal { background:var(--signal); box-shadow:0 0 8px var(--signal); }
+.hud-pill-dot.cyan { background:var(--cyan); box-shadow:0 0 8px var(--cyan); }
+.hud-pill-dot.gold { background:var(--gold); box-shadow:0 0 8px var(--gold); }
+
+/* ---- GLADIATOR HERO ARTWORK FRAME ---- */
+.hero-col-visual {
+  display:flex; justify-content:center; align-items:center;
+}
+.hero-artwork-frame {
+  position:relative; width:100%; max-width:470px;
+}
+.hero-artwork-ambient {
+  position:absolute; inset:-18px; border-radius:28px;
+  background:radial-gradient(circle at 45% 35%, rgba(153,69,255,0.45), rgba(57,255,136,0.32) 45%, rgba(0,229,255,0.2) 75%, transparent 90%);
+  filter:blur(36px); opacity:0.8;
+  animation:ambient-breathe 6s ease-in-out infinite alternate;
+  z-index:0; pointer-events:none;
+}
+@keyframes ambient-breathe {
+  0% { opacity:0.6; transform:scale(0.96); filter:blur(32px); }
+  100% { opacity:0.95; transform:scale(1.03); filter:blur(44px); }
+}
+.hero-card-display {
+  position:relative; border-radius:18px; padding:6px;
+  background:linear-gradient(145deg, rgba(20,28,48,0.95), rgba(8,12,22,0.98));
+  border:1px solid rgba(57,255,136,0.35);
+  box-shadow:
+    0 24px 60px -12px rgba(0,0,0,0.85),
+    0 0 35px -5px rgba(57,255,136,0.22),
+    inset 0 1px 1px rgba(255,255,255,0.18);
+  overflow:hidden;
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-card-display:hover {
+  transform:translateY(-4px) scale(1.01);
+  border-color:rgba(57,255,136,0.7);
+  box-shadow:
+    0 32px 70px -12px rgba(0,0,0,0.92),
+    0 0 50px -2px rgba(57,255,136,0.4),
+    inset 0 1px 2px rgba(255,255,255,0.3);
+}
+
+/* Tactical Corner Brackets */
+.hud-bracket {
+  position:absolute; width:16px; height:16px;
+  border-color:var(--signal); border-style:solid;
+  z-index:4; pointer-events:none;
+}
+.bracket-tl { top:12px; left:12px; border-width:2.5px 0 0 2.5px; }
+.bracket-tr { top:12px; right:12px; border-width:2.5px 2.5px 0 0; }
+.bracket-bl { bottom:12px; left:12px; border-width:0 0 2.5px 2.5px; }
+.bracket-br { bottom:12px; right:12px; border-width:0 2.5px 2.5px 0; }
+
+/* Floating Telemetry Chips */
+.hero-chip {
+  position:absolute; z-index:4;
+  font-family:var(--mono); font-size:9.5px; font-weight:800;
+  letter-spacing:0.08em; text-transform:uppercase;
+  padding:5px 9px; border-radius:6px;
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  display:inline-flex; align-items:center; gap:6px;
+}
+.chip-top-left {
+  top:16px; left:16px;
+  background:rgba(3,4,8,0.85);
+  border:1px solid rgba(57,255,136,0.45);
+  color:var(--signal);
+  box-shadow:0 4px 14px rgba(0,0,0,0.6);
+}
+.chip-top-right {
+  top:16px; right:16px;
+  background:rgba(3,4,8,0.85);
+  border:1px solid rgba(0,229,255,0.45);
+  color:var(--cyan);
+  box-shadow:0 4px 14px rgba(0,0,0,0.6);
+}
+.pulse-indicator {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--signal); box-shadow:0 0 8px var(--signal);
+  animation:radar-ping 1.6s infinite;
+}
+
+/* Animated Radar Scanner Line */
+.hero-scanner-line {
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, transparent 0%, rgba(57,255,136,0.2) 20%, #39ff88 50%, rgba(0,229,255,0.2) 80%, transparent 100%);
+  box-shadow:0 0 16px 2px rgba(57,255,136,0.7);
+  z-index:3; pointer-events:none;
+  animation:scan-sweep 4.5s ease-in-out infinite;
+}
+@keyframes scan-sweep {
+  0% { top:2%; opacity:0; }
+  10% { opacity:1; }
+  90% { opacity:1; }
+  100% { top:98%; opacity:0; }
+}
+
+/* Image Element */
+.hero-gladiator-img {
+  width:100%; height:auto; aspect-ratio:1/1;
+  object-fit:cover; border-radius:12px;
+  display:block; position:relative; z-index:2;
+}
+
+/* Bottom Card Overlay Bar */
+.hero-card-bottom-bar {
+  position:absolute; bottom:14px; left:14px; right:14px; z-index:4;
+  padding:7px 11px; border-radius:8px;
+  background:rgba(3,4,8,0.88);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.12);
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
+}
+.hero-bar-label { color:#f1f5f9; font-weight:700; }
+.hero-bar-status {
+  color:var(--signal); font-weight:800;
+  padding:2px 6px; border-radius:4px;
+  background:rgba(57,255,136,0.14);
+  border:1px solid rgba(57,255,136,0.35);
+}
+
+/* Telemetry Metadata Under Artwork */
+.hero-artwork-meta {
+  margin-top:12px; display:flex; align-items:center;
+  gap:10px; padding:9px 14px;
+  background:rgba(15,20,34,0.7); border:1px solid var(--slate);
+  border-radius:8px; font-family:var(--mono); font-size:11px;
+  position:relative; z-index:1;
+}
+.hero-artwork-meta .meta-tag {
+  color:var(--signal); font-weight:700; white-space:nowrap;
+}
+.hero-artwork-meta .meta-text {
+  color:#cbd5e1; font-size:11px;
+}
+
 .btn {
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   font-family:var(--mono); font-size:12.5px; font-weight:700;
@@ -570,6 +725,15 @@ footer {
 #particle-canvas { position:fixed; inset:0; pointer-events:none; z-index:998; }
 
 /* ---- MOBILE RESPONSIVE ---- */
+@media (max-width:960px) {
+  .hero-grid-layout { grid-template-columns:1fr; gap:36px; }
+  .hero-col-content { align-items:center; text-align:center; }
+  .hero-col-content .hero-sub { margin:0 auto 22px; max-width:540px; }
+  .hero-col-content .heat-hud { max-width:540px; margin:0 auto 22px; }
+  .hero-col-content .hero-actions { justify-content:center; }
+  .hero-hud-strip { justify-content:center; }
+  .hero-artwork-frame { max-width:400px; }
+}
 @media (max-width:840px) {
   .pulse-nav { display:none; }
   .tmr-grid { grid-template-columns:1fr; gap:20px; }
@@ -577,7 +741,11 @@ footer {
 }
 @media (max-width:640px) {
   .pulse-left { gap:12px; font-size:10.5px; }
-  .hero h1 { font-size:38px; }
+  .hero h1 { font-size:36px; }
+  .hero-artwork-frame { max-width:340px; }
+  .hero-chip { font-size:8.5px; padding:4px 7px; }
+  .hero-card-bottom-bar { font-size:9px; padding:5px 8px; }
+  .hero-artwork-meta { font-size:10px; flex-direction:column; align-items:flex-start; gap:4px; }
   .mission-grid { grid-template-columns:1fr; }
   .armory-grid { grid-template-columns:1fr; }
   .doctrine-grid { grid-template-columns:1fr; }
@@ -617,30 +785,82 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-badge">
-      <span class="hero-badge-tag">S1</span> CONTINUITY PROTOCOL // 7-DAY MARATHON
-    </div>
-    <h1>MISSION <span class="grad">CONTROL</span></h1>
-    <p class="hero-sub">7 Days. 21 Missions. The Continuity Engine for $HUHCAT.</p>
+    <div class="hero-grid-layout">
+      <!-- Left: Telemetry & Protocol Controls -->
+      <div class="hero-col-content">
+        <div class="hero-badge">
+          <span class="hero-badge-tag">S1</span> CONTINUITY PROTOCOL // 7-DAY MARATHON
+        </div>
+        <h1>MISSION <span class="grad">CONTROL</span></h1>
+        <p class="hero-sub">7 Days. 21 Missions. The Continuity Engine for $HUHCAT.</p>
 
-    <!-- Heat HUD -->
-    <div class="heat-hud">
-      <div class="heat-top">
-        <span>Today's Execution Index</span>
-        <strong id="heat-pct">0% COMPLETE</strong>
-      </div>
-      <div class="heat-track">
-        <div class="heat-fill" id="heat-fill"></div>
-      </div>
-      <div class="heat-sub">
-        <span id="heat-stats">0 of 3 Missions Done Today</span>
-        <span id="heat-points">0 Total Points</span>
-      </div>
-    </div>
+        <!-- Heat HUD -->
+        <div class="heat-hud">
+          <div class="heat-top">
+            <span>Today's Execution Index</span>
+            <strong id="heat-pct">0% COMPLETE</strong>
+          </div>
+          <div class="heat-track">
+            <div class="heat-fill" id="heat-fill"></div>
+          </div>
+          <div class="heat-sub">
+            <span id="heat-stats">0 of 3 Missions Done Today</span>
+            <span id="heat-points">0 Total Points</span>
+          </div>
+        </div>
 
-    <div class="hero-actions">
-      <a href="#missions" class="btn btn-primary">Engage Today's Missions</a>
-      <a href="#armory" class="btn btn-ghost">Open Content Armory</a>
+        <div class="hero-actions">
+          <a href="#missions" class="btn btn-primary">Engage Today's Missions</a>
+          <a href="#armory" class="btn btn-ghost">Open Content Armory</a>
+        </div>
+
+        <div class="hero-hud-strip">
+          <div class="hud-pill"><span class="hud-pill-dot signal"></span> 21 OPS</div>
+          <div class="hud-pill"><span class="hud-pill-dot cyan"></span> SOLANA MAINNET</div>
+          <div class="hud-pill"><span class="hud-pill-dot gold"></span> 100% COMMUNITY</div>
+        </div>
+      </div>
+
+      <!-- Right: Cyber Gladiator Centerpiece -->
+      <div class="hero-col-visual">
+        <div class="hero-artwork-frame">
+          <div class="hero-artwork-ambient"></div>
+          
+          <div class="hero-card-display">
+            <!-- Corner Brackets -->
+            <span class="hud-bracket bracket-tl"></span>
+            <span class="hud-bracket bracket-tr"></span>
+            <span class="hud-bracket bracket-bl"></span>
+            <span class="hud-bracket bracket-br"></span>
+
+            <!-- Top Floating Telemetry Chips -->
+            <div class="hero-chip chip-top-left">
+              <span class="pulse-indicator"></span> BATTLE READY
+            </div>
+            <div class="hero-chip chip-top-right">
+              TOKEN-2022
+            </div>
+
+            <!-- Animated Radar / Scanner Line -->
+            <div class="hero-scanner-line"></div>
+
+            <!-- The Hero Gladiator Artwork -->
+            <img src="hero-gladiator.jpg" alt="Huh Cat Gladiator Solana To The Moon" class="hero-gladiator-img" width="1024" height="1024">
+
+            <!-- Bottom Floating Telemetry Strip -->
+            <div class="hero-card-bottom-bar">
+              <span class="hero-bar-label">CLASS: GLADIATOR // SOLANA MAINNET</span>
+              <span class="hero-bar-status">ACTIVE</span>
+            </div>
+          </div>
+
+          <!-- Bottom Telemetry Caption Under Artwork -->
+          <div class="hero-artwork-meta">
+            <span class="meta-tag">⚡ VERIFIED FIRST</span>
+            <span class="meta-text">Inscribed inside Solana transaction history. Never going away.</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1646,7 +1866,7 @@ async function initMissionControl() {
   // Pre-load cat asset for Canvas
   CAT_IMAGE = new Image();
   CAT_IMAGE.crossOrigin = 'anonymous';
-  CAT_IMAGE.src = '../huhcat.jpg';
+  CAT_IMAGE.src = 'hero-gladiator.jpg';
   CAT_IMAGE.onload = () => renderRankSection();
 
   renderAll();
