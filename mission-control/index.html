@@ -733,19 +733,19 @@ footer {
   display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;
   border-bottom:1px solid var(--slate); padding-bottom:14px;
 }
-.factory-tab-btn {
+.factory-tab-btn, .dist-tab-btn {
   background:rgba(255,255,255,0.03); border:1px solid var(--slate);
   color:var(--muted); font-family:var(--mono); font-size:11px;
   font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;
   transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em;
 }
-.factory-tab-btn:hover { border-color:var(--signal); color:var(--text); }
-.factory-tab-btn.active {
+.factory-tab-btn:hover, .dist-tab-btn:hover { border-color:var(--signal); color:var(--text); }
+.factory-tab-btn.active, .dist-tab-btn.active {
   background:rgba(57,255,136,0.1); border-color:var(--signal);
   color:var(--signal); box-shadow:0 0 14px rgba(57,255,136,0.2);
 }
-.factory-tab-content { display:none; }
-.factory-tab-content.active { display:block; animation:fadeIn 0.25s ease; }
+.factory-tab-content, .dist-tab-content { display:none; }
+.factory-tab-content.active, .dist-tab-content.active { display:block; animation:fadeIn 0.25s ease; }
 @keyframes fadeIn { from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
 
 .factory-steps-list {
@@ -898,6 +898,7 @@ footer {
       <a href="#missions">MISSIONS</a>
       <a href="#armory">ARMORY</a>
       <a href="#factory">VIDEO STUDIO</a>
+      <a href="#distribution">DEPLOYMENT</a>
       <a href="#rank">RANK</a>
       <a href="#doctrine">DOCTRINE</a>
       <button class="sfx-toggle" id="sfx-btn" title="Toggle cyber sound effects">SFX: ON</button>
@@ -1178,11 +1179,215 @@ footer {
   </div>
 </section>
 
+
+<!-- CROSS-PLATFORM DEPLOYMENT MANUAL -->
+<section id="distribution">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">05 //</span> FIELD DEPLOYMENT PLAYBOOK</div>
+      <h2 class="section-title">Cross-Platform Distribution Manual</h2>
+      <p class="section-desc">
+        Do not let your generated meme clips and visual assets sit idle on your local hard drive because achieving unstoppable cultural reach on Solana requires deploying propaganda across recommendation feeds simultaneously to capture compound traffic from multiple platforms without relying on expensive agency retainers. Strike everywhere. Act now. Film. Animate. Raid. Deploy. Win. Select your target distribution surface below, follow the verified ground truth checklist, and broadcast on-chain culture across the global timeline before anyone can dispute the historical record.
+      </p>
+    </div>
+
+    <!-- Distribution Guide Box -->
+    <div class="factory-guide-box">
+      <div class="factory-tabs-nav" id="dist-tabs-nav">
+        <button class="dist-tab-btn active" onclick="switchDistTab('yt-shorts')">YouTube Shorts</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('tt-profile')">TikTok Profile</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('tt-stories')">TikTok Stories</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('x-profile')">X Profile</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('x-community')">X Community</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('ig-profile')">Instagram Feed</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('ig-reels')">Instagram Reels</button>
+        <button class="dist-tab-btn" onclick="switchDistTab('pinterest')">Pinterest</button>
+      </div>
+
+      <!-- Tab: YouTube Shorts -->
+      <div class="dist-tab-content active" id="dist-yt-shorts">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">YouTube Shorts (Videos)</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">9:16 VERTICAL // 1080x1920</span>
+          </div>
+          <a href="https://studio.youtube.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open YouTube Studio &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Vertical video on YouTube reaches millions of passive viewers through the Shorts algorithm without requiring an existing subscriber base because the recommendation engine serves entertaining short-form media directly to interested audiences based entirely on initial viewer retention and swipe-away rates. Broadcast.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open Mobile App</strong> <p>Launch YouTube and tap the create plus icon at the center of the mobile screen.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Select Create Short</strong> <p>Choose Create a Short and select your rendered vertical video file from device storage.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Add Audio & Text</strong> <p>Pair trending sounds or retain original sound while placing crisp on-screen text overlays.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Pick Thumbnail Frame</strong> <p>Tap the pencil icon on the preview to select a hilarious facial frame before finalizing.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Caption & Hashtags</strong> <p>Paste your copy including $HUHCAT along with #Shorts and the mission control link.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Audience & Publish</strong> <p>Select not made for kids under audience settings and upload to the algorithm.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: TikTok Profile -->
+      <div class="dist-tab-content" id="dist-tt-profile" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">TikTok Profile Feed (Videos)</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">HIGH-COMPLETION FOR YOU FEED</span>
+          </div>
+          <a href="https://www.tiktok.com/upload" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open TikTok Upload &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          TikTok prioritizes high-completion short loops and pushes engaging five-second clips onto millions of For You pages without caring about your follower count as long as watch time and re-watch frequency remain strong. Loop.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open TikTok App</strong> <p>Tap the plus icon in the center of the bottom navigation bar on mobile.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Upload Video Clip</strong> <p>Select your five-second animation clip from local storage and confirm upload duration.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Select Meme Sound</strong> <p>Tap Add sound at the top to layer viral audio that amplifies algorithmic distribution.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Select Cover Frame</strong> <p>Scrub the preview to choose the peak bewildered cat face and attach a bold title sticker.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Paste Viral Caption</strong> <p>Include cashtag $HUHCAT along with #HUHCAT, #solana, and handle @HuhCatOnSol_.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Post to For You Feed</strong> <p>Verify audience is set to Everyone with duets enabled and tap Post.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: TikTok Stories -->
+      <div class="dist-tab-content" id="dist-tt-stories" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">TikTok Stories & Photo CarousELS</strong>
+            <span style="color:var(--gold);font-family:var(--mono);font-size:11px;margin-left:8px;">24H EPHEMERAL & SWIPE CAROUSELS</span>
+          </div>
+          <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open TikTok &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Stories appear inside a glowing blue ring on your profile for twenty-four hours and capture immediate attention from active followers before vanishing into the digital ether. Flash.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Tap Plus in TikTok</strong> <p>Open the camera interface and tap the Upload square on the bottom tray.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Single Story Mode</strong> <p>Choose any generated photo or video clip to prepare for rapid ephemeral deployment.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Tap Your Story Button</strong> <p>Tap the light blue Your Story button to broadcast directly to the twenty-four-hour reel.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Photo Carousel Mode</strong> <p>Tap Select multiple circular button to prepare a horizontal swipe story sequence.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Swipeable Photo Order</strong> <p>Select up to thirty-five images in sequence leading to the verification proof slide.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Publish Carousel</strong> <p>Confirm photo mode playback and tap Your Story to engage active followers.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: X Profile -->
+      <div class="dist-tab-content" id="dist-x-profile" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">X Profile Timeline (Images and Videos)</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">ALGORITHMIC TIMELINE REACH</span>
+          </div>
+          <a href="https://x.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open X &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Native media uploaded straight to X receives strong distribution across algorithmic timeline feeds because the algorithm explicitly deprioritizes external link previews while boosting posts that retain user attention on native video and high-contrast photographic media. Tweet.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open X Composer</strong> <p>Click the blue Post button or tap the compose feather icon on your mobile device.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Attach Media File</strong> <p>Select up to four high-resolution meme images or one video animation up to two minutes.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Write Post Copy</strong> <p>Include cashtag $HUHCAT along with #HUHCAT and the official handle @HuhCatOnSol_.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Add Verification Link</strong> <p>Include the GitHub mission control link so readers can verify on-chain records.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Add Image Alt Text</strong> <p>Click Add description on images to supply searchable descriptive terms for SEO discovery.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Broadcast to Timeline</strong> <p>Click Post to release the publication into the algorithmic timeline feed.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: X Community -->
+      <div class="dist-tab-content" id="dist-x-community" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">X Community (HUHCAT War Room)</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">COMMUNITY ID: 2033348205224530334</span>
+          </div>
+          <a href="https://x.com/i/communities/2033348205224530334" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open HUHCAT Community &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Deploying content directly into the official HUHCAT X community coordinates holders and arms community raiders with instant retweet material while creating an active public archive of community engagement. Raid.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open Community URL</strong> <p>Open the verified community URL at ID 2033348205224530334 in your browser.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Join Community</strong> <p>Click the Join button to participate in the dedicated community feed.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Locate Feed Composer</strong> <p>Find the primary composer box at the top of the community timeline.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Verify Community Tag</strong> <p>Confirm the green HUHCAT community badge appears above your draft text.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Attach Media & Text</strong> <p>Drop your meme image or animation clip along with tactical raid text.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Post to War Room</strong> <p>Click Post to arm fellow community members with high-impact raid material.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Instagram Feed -->
+      <div class="dist-tab-content" id="dist-ig-profile" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">Instagram Profile Grid (Images and Carousels)</strong>
+            <span style="color:var(--gold);font-family:var(--mono);font-size:11px;margin-left:8px;">1:1 SQUARE OR 4:5 PORTRAIT</span>
+          </div>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Instagram &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Permanent feed posts anchor your visual brand identity and support multi-image swipe carousels that encourage repeated user interactions and profile visits. Post.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Tap Plus on Instagram</strong> <p>Open the mobile app and select Post from the bottom menu drawer.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Select Image or Multi</strong> <p>Choose a single visual render or tap stacked squares to select up to twenty slides.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Select 4:5 Crop</strong> <p>Tap the crop icon to pick 4:5 vertical framing to occupy maximum screen real estate.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Pair Background Music</strong> <p>Tap the audio note icon to select upbeat music that matches meme energy.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Write Post Caption</strong> <p>Add your narrative with cashtag $HUHCAT, hashtag #HUHCAT, and @HuhCatOnSol_.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Publish to Grid</strong> <p>Review visual arrangement and tap the blue Share button to publish to your grid.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Instagram Reels -->
+      <div class="dist-tab-content" id="dist-ig-reels" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">Instagram Reels (Videos and Photo Reels)</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">DISCOVERY REACH // TRENDING AUDIO</span>
+          </div>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Instagram &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Instagram Reels deliver discovery reach by serving full-screen vertical video to users browsing algorithmic topic feeds who do not follow your account. Discover.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open Reels Camera</strong> <p>Slide the camera selector to Reel and tap the gallery square to browse files.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Select Video Clip</strong> <p>Pick your five to seven second animation clip or select photos for a beat-synced reel.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Add Trending Audio</strong> <p>Browse trending sounds to give your vertical clip maximum algorithmic momentum.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Add Text Overlay</strong> <p>Use the text tool to add a bold hook sticker across the upper third of the frame.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Select Cover Frame</strong> <p>Tap Edit cover to select a hilarious bewildered facial expression from the video track.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Share to Feed & Reels</strong> <p>Confirm Also share to feed remains active and tap the Share button.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Pinterest -->
+      <div class="dist-tab-content" id="dist-pinterest" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:16px;">Pinterest Visual Search (Pins and Videos)</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">2:3 VERTICAL // PERMANENT SEO REACH</span>
+          </div>
+          <a href="https://www.pinterest.com/pin-creation-tool/" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Pin Builder &rarr;</a>
+        </div>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Pinterest is a visual search engine where pins stay discoverable for months through keyword search queries long after traditional social media posts disappear from chronological feeds. Pin.
+        </p>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open Pin Creator</strong> <p>Go directly to the pin builder screen on desktop or tap plus on mobile.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Upload Image or Video</strong> <p>Select your 2:3 vertical graphic or 9:16 vertical animation file from device storage.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Add Keyword Title</strong> <p>Enter an informative search headline featuring Huh Cat Taken Over by Community.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Write Description</strong> <p>Include searchable phrases covering $HUHCAT, Solana meme cat, and Ben Cat lore.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 05</span> <strong>Add Destination Link</strong> <p>Paste the mission control destination address to drive permanent search traffic.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 06</span> <strong>Publish to Board</strong> <p>Select a community board named Solana Memes and click Publish to index.</p> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RANK CARD GENERATOR -->
 <section id="rank">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-meta"><span class="num">05 //</span> PROOF OF CONVICTION</div>
+      <div class="section-meta"><span class="num">06 //</span> PROOF OF CONVICTION</div>
       <h2 class="section-title">Rank Card Generator</h2>
       <p class="section-desc">
         Your cryptographic identity card. Built straight inside your browser to record your active run and points tally. When you complete seven consecutive days of verified tasks across this marathon, your card reflects your status as an Alpha Cat with verified proof of conviction that demonstrates you were here building the foundation while short-term speculators were getting washed out across the timeline. Save the image to your phone and drop it in the thread.
@@ -2097,6 +2302,23 @@ function renderAll() {
 // ---- MEME FACTORY LOGIC ----
 let MEME_DATA = null;
 let FACTORY_CAT = 'all';
+
+function switchDistTab(tabId) {
+  document.querySelectorAll('#dist-tabs-nav .dist-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.dist-tab-content').forEach(c => {
+    c.style.display = 'none';
+    c.classList.remove('active');
+  });
+  
+  const target = document.getElementById(`dist-${tabId}`);
+  if (target) {
+    target.style.display = 'block';
+    target.classList.add('active');
+  }
+  
+  if (window.event && window.event.target) window.event.target.classList.add('active');
+  playCyberBlip(720, 0.035);
+}
 
 function switchEngineTab(tabId) {
   document.querySelectorAll('.factory-tab-btn').forEach(b => b.classList.remove('active'));

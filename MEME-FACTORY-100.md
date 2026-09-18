@@ -78,14 +78,206 @@ Complete.
 
 ## Part 2: Cross-Platform Deployment Playbook
 
-Do not let your generated clips gather dust because viral traction requires hitting multiple algorithmic feeds simultaneously with unstoppable visual momentum. Execute immediately.
+Do not let your generated clips sit idle on your hard drive because viral reach requires deploying visual assets across algorithmic recommendation feeds simultaneously to capture compound traffic from multiple independent platforms. Strike everywhere. Act now.
 
-Attack.
-1. **TikTok Profile & Stories**: Post the video in 9:16 vertical ratio. Add a trending meme audio track in low volume behind the video. Overlay a text sticker with the punchline. Put the caption in the description.
-2. **Instagram Reels**: Upload as an Instagram Reel. Use relevant audio. Add a link sticker pointing to `https://jmthomasofficial.github.io/huhcat/mission-control/`.
-3. **X (Twitter) Profile & Community**: Post the video directly natively to X. Native video gets algorithmic priority on X feeds. Tag `@HuhCatOnSol_` with `$HUHCAT` and `#HUHCAT`.
-4. **Telegram War Room**: Post your finished video directly in `https://t.me/+O7xyVusP8t9jZTFh` so raiders can download and repost it across their own accounts.
-Ship.
+Deploy. Raid. Win.
+
+### 1. YouTube Shorts (Videos)
+Vertical video on YouTube reaches millions of passive viewers through the Shorts algorithm without requiring an existing subscriber base because the recommendation engine serves entertaining short-form media directly to interested audiences based entirely on initial viewer retention and swipe-away rates.
+
+Specifications:
+- Aspect Ratio: 9:16 vertical (1080x1920 pixels) or 1:1 square.
+- Length: Five to sixty seconds.
+- Format: MP4 or MOV container.
+
+Mobile Application Workflow:
+1. Open the YouTube app on your mobile phone and tap the plus icon located in the center of the bottom navigation bar.
+2. Select Create a Short from the popup drawer.
+3. Tap the gallery thumbnail square in the bottom-left corner to access your device photo library.
+4. Select your exported HUHCAT video animation and tap Done in the bottom-right corner to process the video duration.
+5. Tap the checkmark icon in the bottom-right corner to open the editor.
+6. Tap Next in the top-right corner to proceed to the upload details screen.
+7. Enter your post title in the caption field, including the cashtag $HUHCAT and the hashtag #Shorts.
+8. Tap the pencil edit icon on the video preview thumbnail in the top-left corner, scrub the timeline to pick the most comical facial frame, and tap Done.
+9. Set Visibility to Public and confirm under Audience that you select No, it is not made for kids.
+10. Tap the blue Upload Short button to broadcast your clip to the global Shorts feed.
+Publish. Complete.
+
+Desktop Studio Workflow:
+1. Open `https://studio.youtube.com` in your desktop web browser.
+2. Click Create in the top-right corner and select Upload videos.
+3. Drag and drop your vertical MP4 file into the window, then enter your title with $HUHCAT and #Shorts.
+4. Paste your post caption and verification link into the description box.
+5. Select No, it is not made for kids under Audience.
+6. Click through the checks, choose Public visibility, and click Publish.
+Done.
+
+### 2. TikTok Profile (Videos)
+TikTok prioritizes high-completion short loops and pushes engaging five-second clips onto millions of For You pages without caring about your follower count as long as watch time and re-watch frequency remain strong.
+
+Specifications:
+- Aspect Ratio: 9:16 vertical (1080x1920 pixels).
+- Format: MP4 or MOV.
+- Caption Limit: Up to 4,000 characters.
+
+Mobile Application Workflow:
+1. Open the TikTok app and tap the plus icon in the center of the bottom navigation bar.
+2. Tap the Upload square to the right of the red record button.
+3. Select your five to seven second HUHCAT video clip and tap Next.
+4. Tap Add sound at the top to select trending meme audio tracks.
+5. Tap the red Next button in the bottom-right corner.
+6. Paste your social caption into the description box, including $HUHCAT, #HUHCAT, #solana, and @HuhCatOnSol_.
+7. Tap Select cover on the video preview, scrub to pick the peak bewildered cat face, add an on-screen text hook, and tap Save.
+8. Confirm Who can watch this video is set to Everyone.
+9. Confirm comments along with duets and stitches remain toggled on.
+10. Tap the red Post button to distribute your clip across the algorithm.
+Broadcast.
+
+Desktop Web Workflow:
+1. Go to `https://www.tiktok.com/upload` in your desktop browser.
+2. Drag and drop your MP4 file into the upload zone.
+3. Enter your caption with cashtag $HUHCAT and project handle tags.
+4. Pick your cover frame from the timeline slider.
+5. Click the red Post button.
+Shipped.
+
+### 3. TikTok Stories (Video Feeds and Photo Carousels)
+Stories appear inside a glowing blue ring on your profile for twenty-four hours and capture immediate attention from active followers before vanishing into the digital ether.
+
+Specifications:
+- Expiration: Active for twenty-four hours from posting.
+- Media Types: Single video clips, single static photos, or multi-photo swipe carousels.
+
+Single Video or Photo Story Workflow:
+1. Open the TikTok app and tap the plus icon at the bottom.
+2. Tap Upload and select your generated HUHCAT photo or video.
+3. Add text stickers or audio if desired.
+4. Locate the bottom action buttons: note the red Next button and the light blue Your Story button.
+5. Tap the light blue Your Story button to publish immediately to your twenty-four-hour story reel without posting to your main profile grid.
+Speed.
+
+Photo Carousel Story Workflow:
+1. Open TikTok and tap the plus icon.
+2. Tap Upload.
+3. Tap the Select multiple circular button in the bottom-left corner.
+4. Select up to thirty-five images in your chosen sequence, starting with the meme hook and ending with Mission Control verification.
+5. Tap the red Next button to enter Photo Mode.
+6. Swipe horizontally to verify the slide order and tap Add sound to pair music.
+7. Tap the light blue Your Story button to publish as a swipeable story carousel, or tap the red Post button to publish to the permanent profile feed.
+Active.
+
+### 4. X Profile (Images and Videos)
+Native media uploaded straight to X receives strong distribution across algorithmic timeline feeds because the algorithm explicitly deprioritizes external link previews while boosting posts that retain user attention on native video and high-contrast photographic media.
+
+Specifications:
+- Image Limit: Up to four images per post (JPEG, PNG, WebP).
+- Video Limit: One MP4 or MOV file up to two minutes and twenty seconds for standard accounts.
+
+Posting Workflow:
+1. Open `https://x.com` or launch the X mobile application.
+2. Click the blue Post button or tap the compose feather icon.
+3. Click the media picture icon at the bottom of the composer box.
+4. Select up to four static meme renders or one video animation file.
+5. Write your text in the composer, incorporating $HUHCAT, #HUHCAT, @HuhCatOnSol_, and your verification link `https://jmthomasofficial.github.io/huhcat/mission-control/`.
+6. Click Add description on static images to write accessibility keywords.
+7. Click the blue Post button to broadcast to the global timeline.
+Fired.
+
+### 5. X Community (Images and Videos)
+Deploying content directly into the official HUHCAT X community coordinates holders and arms community raiders with instant retweet material while creating an active public archive of community engagement.
+
+Target Community URL:
+`https://x.com/i/communities/2033348205224530334`
+
+Direct Community Feed Workflow:
+1. Open `https://x.com/i/communities/2033348205224530334` in your browser or mobile app.
+2. Click the black Join button if you are not already an enrolled member.
+3. Locate the composer box at the top of the community feed with the prompt What is happening?!.
+4. Confirm the green HUHCAT community icon is visible above the input field.
+5. Click the media icon and attach your meme images or video file.
+6. Paste your raid caption, cashtag $HUHCAT, and call to action.
+7. Click the blue Post button to drop your content directly into the war room.
+Raid.
+
+Composer Dropdown Workflow:
+1. Click the standard Post compose button from any feed on X.
+2. Tap the audience selector button at the top of the composer window, which defaults to Everyone.
+3. Select HUHCAT from your joined communities list.
+4. Attach your media, paste your text, and click Post.
+Synced.
+
+### 6. Instagram Profile Feed (Images and Videos)
+Permanent feed posts anchor your visual brand identity and support multi-image swipe carousels that encourage repeated user interactions and profile visits.
+
+Specifications:
+- Aspect Ratio: 1:1 square (1080x1080 pixels) or 4:5 vertical portrait (1080x1350 pixels).
+- Carousel Limit: Up to twenty photos or videos in a single post.
+
+Mobile Application Workflow:
+1. Open the Instagram app and tap the plus icon.
+2. Select POST from the bottom tray.
+3. For single images, tap the double-arrow crop icon on the preview to select 1:1 square or 4:5 vertical portrait framing.
+4. For multi-photo carousels, tap the stacked squares icon and choose up to twenty photos or videos in sequence.
+5. Tap Next in the top-right corner.
+6. Add background music if desired by tapping the audio note icon.
+7. Tap Next to enter the final sharing screen.
+8. Write your post description, adding $HUHCAT, #HUHCAT, and @HuhCatOnSol_.
+9. Tap the blue Share button to publish to your profile grid.
+Locked.
+
+Desktop Web Workflow:
+1. Open `https://www.instagram.com` in your desktop browser.
+2. Click Create in the left sidebar navigation menu.
+3. Drag and drop your image or video files.
+4. Choose 1:1 or 4:5 crop, enter your caption with tags, and click Share.
+Shared.
+
+### 7. Instagram Reels (Videos and Images)
+Instagram Reels deliver discovery reach by serving full-screen vertical video to users browsing algorithmic topic feeds who do not follow your account.
+
+Specifications:
+- Aspect Ratio: 9:16 vertical full-screen (1080x1920 pixels).
+- Length: Up to ninety seconds, with five to seven seconds performing best for loop completion rates.
+
+Mobile Application Workflow:
+1. Open Instagram, tap the plus icon, and slide the bottom selector to REEL.
+2. Tap the gallery square in the bottom-left corner to access your files.
+3. Select your five to seven second video clip, or select multiple still photos to generate a beat-synced photo reel.
+4. Tap Add in the top-right corner, then tap Next.
+5. Tap the Audio music note icon to browse trending audio tracks and balance volume levels.
+6. Tap the Aa text tool to place a bold hook sticker over the video.
+7. Tap Next to open the share settings screen.
+8. Tap Edit cover on the preview, scrub to choose a comical facial frame, or upload a custom static still from your photo library, and tap Done.
+9. Write your post caption with $HUHCAT, #HUHCAT, and relevant hashtags.
+10. Verify that Also share to feed is turned on so your followers see the Reel on your grid.
+11. Tap the blue Share button.
+Live.
+
+### 8. Pinterest (Images and Videos)
+Pinterest is a visual search engine where pins stay discoverable for months through keyword search queries long after traditional social media posts disappear from chronological feeds.
+
+Specifications:
+- Static Pin Ratio: 2:3 vertical (1000x1500 pixels) or 1:1 square.
+- Video Pin Ratio: 9:16 vertical or 2:3 vertical (under two gigabytes, MP4 or MOV).
+- Destination URL: Direct link to project resources.
+
+Desktop Web Workflow:
+1. Go to `https://www.pinterest.com/pin-creation-tool/` in your web browser.
+2. Drag and drop your meme image or MP4 video into the upload box.
+3. In the Title field, type an informative headline: Huh Cat Taken Over by Community // $HUHCAT Solana Memecoin.
+4. In the Description field, enter your explanation and include searchable terms: $HUHCAT, Solana meme cat, crypto humor, Ben Cat.
+5. In the Link field, paste the destination link: `https://jmthomasofficial.github.io/huhcat/mission-control/`.
+6. Open the board dropdown in the top-right corner and choose or create a board named Solana Memes or Crypto Culture.
+7. Click the red Publish button.
+Indexed.
+
+Mobile Application Workflow:
+1. Open the Pinterest mobile app.
+2. Tap the plus icon in the bottom navigation bar and select Pin.
+3. Select your photo or video from your device photo library and tap Next.
+4. Enter your Title, Description, and paste the Destination Link.
+5. Tap Next, pick your target board, and tap Save.
+Complete.
 
 ---
 
