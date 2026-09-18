@@ -724,6 +724,121 @@ footer {
 .toast-notice.show { transform:translateX(-50%) translateY(0); opacity:1; }
 #particle-canvas { position:fixed; inset:0; pointer-events:none; z-index:998; }
 
+/* ---- MEME FACTORY SECTION ---- */
+.factory-guide-box {
+  background:var(--graphite); border:1px solid var(--slate);
+  border-radius:14px; padding:24px; margin-bottom:32px;
+}
+.factory-tabs-nav {
+  display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;
+  border-bottom:1px solid var(--slate); padding-bottom:14px;
+}
+.factory-tab-btn {
+  background:rgba(255,255,255,0.03); border:1px solid var(--slate);
+  color:var(--muted); font-family:var(--mono); font-size:11px;
+  font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;
+  transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em;
+}
+.factory-tab-btn:hover { border-color:var(--signal); color:var(--text); }
+.factory-tab-btn.active {
+  background:rgba(57,255,136,0.1); border-color:var(--signal);
+  color:var(--signal); box-shadow:0 0 14px rgba(57,255,136,0.2);
+}
+.factory-tab-content { display:none; }
+.factory-tab-content.active { display:block; animation:fadeIn 0.25s ease; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+
+.factory-steps-list {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px; margin:16px 0 20px;
+}
+.factory-step-card {
+  background:rgba(3,4,8,0.6); border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px; padding:14px; font-size:12px;
+}
+.factory-step-num {
+  display:inline-block; font-family:var(--mono); font-size:10px;
+  font-weight:800; color:var(--signal); background:rgba(57,255,136,0.12);
+  padding:2px 7px; border-radius:4px; margin-bottom:8px;
+}
+.factory-step-card strong { color:#f1f5f9; display:block; margin-bottom:4px; font-size:12.5px; }
+.factory-step-card p { color:var(--muted); font-size:11.5px; line-height:1.45; margin:0; }
+
+.factory-filter-strip { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+.factory-chip {
+  background:var(--graphite); border:1px solid var(--slate);
+  color:var(--muted); font-family:var(--mono); font-size:10.5px;
+  font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;
+  transition:all 0.2s; text-transform:uppercase; letter-spacing:0.04em;
+}
+.factory-chip:hover { border-color:var(--signal); color:var(--text); }
+.factory-chip.active { background:var(--signal); color:var(--void); border-color:var(--signal); font-weight:800; }
+
+.factory-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(330px, 1fr));
+  gap:20px;
+}
+.factory-card {
+  background:var(--graphite); border:1px solid var(--slate);
+  border-radius:12px; padding:18px; display:flex; flex-direction:column;
+  justify-content:space-between; transition:all 0.25s ease;
+  position:relative; overflow:hidden;
+}
+.factory-card:hover {
+  border-color:rgba(57,255,136,0.5); transform:translateY(-3px);
+  box-shadow:0 12px 30px -10px rgba(0,0,0,0.8), 0 0 20px -5px rgba(57,255,136,0.15);
+}
+.factory-card-head {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:12px; font-family:var(--mono); font-size:10.5px;
+}
+.factory-card-tag {
+  color:var(--cyan); background:rgba(0,229,255,0.08);
+  padding:3px 8px; border-radius:4px; font-weight:700; text-transform:uppercase;
+}
+.factory-card-num { color:var(--muted); font-weight:700; }
+.factory-card-title {
+  font-family:var(--display); font-size:16px; font-weight:700;
+  color:#f1f5f9; margin-bottom:12px; line-height:1.25;
+}
+.factory-card-block {
+  background:rgba(3,4,8,0.7); border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px; padding:10px 12px; margin-bottom:10px;
+}
+.factory-card-label {
+  font-family:var(--mono); font-size:9.5px; font-weight:800;
+  color:var(--signal); text-transform:uppercase; letter-spacing:0.06em;
+  margin-bottom:5px; display:flex; justify-content:space-between;
+}
+.factory-card-text {
+  font-size:11.5px; color:#cbd5e1; line-height:1.45;
+  max-height:80px; overflow-y:auto; word-break:break-word;
+}
+.factory-card-actions {
+  display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;
+}
+.factory-btn {
+  flex:1 1 auto; padding:8px 10px; font-family:var(--mono);
+  font-size:10px; font-weight:700; text-transform:uppercase;
+  border-radius:6px; cursor:pointer; transition:all 0.2s;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  border:1px solid transparent; text-decoration:none;
+}
+.factory-btn-primary {
+  background:rgba(57,255,136,0.12); color:var(--signal);
+  border-color:rgba(57,255,136,0.35);
+}
+.factory-btn-primary:hover {
+  background:var(--signal); color:var(--void);
+}
+.factory-btn-ghost {
+  background:rgba(255,255,255,0.03); color:var(--text);
+  border-color:var(--slate);
+}
+.factory-btn-ghost:hover {
+  border-color:var(--signal); color:var(--signal);
+}
+
 /* ---- MOBILE RESPONSIVE ---- */
 @media (max-width:960px) {
   .hero-grid-layout { grid-template-columns:1fr; gap:36px; }
@@ -775,6 +890,7 @@ footer {
       <a href="#tomorrow">TOMORROW</a>
       <a href="#missions">MISSIONS</a>
       <a href="#armory">ARMORY</a>
+      <a href="#factory">MEME FACTORY</a>
       <a href="#rank">RANK</a>
       <a href="#doctrine">DOCTRINE</a>
       <button class="sfx-toggle" id="sfx-btn" title="Toggle cyber sound effects">SFX: ON</button>
@@ -917,7 +1033,7 @@ footer {
       <div class="section-meta"><span class="num">03 //</span> SOCIAL WEAPONRY</div>
       <h2 class="section-title">Content Armory</h2>
       <p class="section-desc">
-        Zero blank-canvas paralysis. Grab pre-written tweet weapons with verified community narratives. The numbers never lie.
+        Zero blank-canvas paralysis. Grab pre-written tweet weapons with verified community narratives directly from this armory so your entire timeline sees real proof of on-chain continuity every single hour of the day. The numbers never lie.
       </p>
     </div>
 
@@ -933,11 +1049,133 @@ footer {
   </div>
 </section>
 
+
+<!-- MEME FACTORY & VIRAL ARTILLERY -->
+<section id="factory">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">04 //</span> VIRAL ARTILLERY</div>
+      <h2 class="section-title">The 100 Meme Factory</h2>
+      <p class="section-desc">
+        Every single viral meme prompt in this armory has been meticulously engineered from the ground up to produce maximum visual impact across modern feeds using completely free artificial intelligence models, allowing every single community member to generate high-resolution visual propaganda at zero cost while copying matching on-chain verification metadata straight to their personal feeds without relying on expensive software subscriptions or complicated graphic design tools. Pick your engine above. Generate. Post. Win. Pick your favorite generator tab above, grab any prompt with one click, and deploy on-chain meme culture across the Solana timeline before anyone can dispute the historical record.
+      </p>
+    </div>
+
+    <!-- Step-by-Step Generator Guide Box -->
+    <div class="factory-guide-box">
+      <div class="factory-tabs-nav">
+        <button class="factory-tab-btn active" onclick="switchEngineTab('qwen')">Qwen 3.8-Max [Free Pick]</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('grok')">Grok Imagine</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('gemini')">Google Gemini</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('chatgpt')">OpenAI Web Chat</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('copilot')">Microsoft Copilot</button>
+      </div>
+
+      <!-- Tab: Qwen -->
+      <div class="factory-tab-content active" id="tab-qwen">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:15px;">Qwen 3.8-Max + Qwen-Image 3.0 Engine</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">RECOMMENDED FREE CHOICE</span>
+          </div>
+          <a href="https://chat.qwen.ai" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open chat.qwen.ai &rarr;</a>
+        </div>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open chat.qwen.ai</strong> <p>Sign in free.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Select Qwen 3.8-Max</strong> <p>Select model.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Click + &rarr; Create Image</strong> <p>Click plus icon.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Paste Prompt & Generate</strong> <p>Generate render.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Grok -->
+      <div class="factory-tab-content" id="tab-grok">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:15px;">Grok Imagine Engine on X</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">FAST WORKFLOW</span>
+          </div>
+          <a href="https://x.com/i/grok" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Grok on X &rarr;</a>
+        </div>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open Grok on X</strong> <p>Open tool.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Type /imagine Command</strong> <p>Type imagine.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Save Image File</strong> <p>Save file.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Quote Post on X</strong> <p>Quote post.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Gemini -->
+      <div class="factory-tab-content" id="tab-gemini">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:15px;">Google Gemini With Imagen 3</strong>
+            <span style="color:var(--gold);font-family:var(--mono);font-size:11px;margin-left:8px;">CLEAN RENDERS</span>
+          </div>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Gemini &rarr;</a>
+        </div>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open gemini.google.com</strong> <p>Sign in.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Type Generate Command</strong> <p>Type prompt.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Save Direct File</strong> <p>Download image.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Deploy to Socials</strong> <p>Post socials.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: ChatGPT -->
+      <div class="factory-tab-content" id="tab-chatgpt">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:15px;">OpenAI Web Chat Free Tier</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">DALL-E 3 ACCESS</span>
+          </div>
+          <a href="https://chat.openai.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Chat &rarr;</a>
+        </div>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open chat.openai.com</strong> <p>Sign in.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Type Photo Command</strong> <p>Type prompt.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Download High-Res</strong> <p>Download image.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Post Cross-Platform</strong> <p>Post socials.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Copilot -->
+      <div class="factory-tab-content" id="tab-copilot">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:15px;">Microsoft Copilot Designer</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">15 DAILY BOOSTS</span>
+          </div>
+          <a href="https://copilot.microsoft.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Copilot &rarr;</a>
+        </div>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open copilot.microsoft.com</strong> <p>Sign in.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Paste Prompt Direct</strong> <p>Paste prompt.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Pick Favorite Render</strong> <p>Download image.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Raid the Timeline</strong> <p>Post socials.</p> </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filters & Search Controls -->
+    <div class="armory-controls">
+      <div class="factory-filter-strip" id="factory-chips"></div>
+      <div class="armory-search">
+        <svg class="armory-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="armory-search-input" id="factory-query" placeholder="Search 100 prompts (e.g. Wall Street, Space, Movie)...">
+      </div>
+    </div>
+
+    <!-- 100 Meme Cards Grid -->
+    <div class="factory-grid" id="factory-grid"></div>
+  </div>
+</section>
+
 <!-- RANK CARD GENERATOR -->
 <section id="rank">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-meta"><span class="num">04 //</span> PROOF OF CONVICTION</div>
+      <div class="section-meta"><span class="num">05 //</span> PROOF OF CONVICTION</div>
       <h2 class="section-title">Rank Card Generator</h2>
       <p class="section-desc">
         Your cryptographic identity card. Built straight inside your browser to record your active run and points tally. When you complete seven consecutive days of verified tasks across this marathon, your card reflects your status as an Alpha Cat with verified proof of conviction that demonstrates you were here building the foundation while short-term speculators were getting washed out across the timeline. Save the image to your phone and drop it in the thread.
@@ -988,7 +1226,7 @@ footer {
 <section id="doctrine">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-meta"><span class="num">05 //</span> WAR ROOM INTEL</div>
+      <div class="section-meta"><span class="num">06 //</span> WAR ROOM INTEL</div>
       <h2 class="section-title">The Continuity Doctrine</h2>
       <p class="section-desc">
         While every typical memecoin dies within seventy-two hours because deployers abandon their chats, this community continues deploying permanent decentralized infrastructure, verifiable holder tools, and community coordinate systems straight onto Solana mainnet without stopping for market noise. When outsiders ask why a community takeover succeeds where developer tokens fail, point directly to our structured sprint architecture, our daily raid coordination, and the undeniable reality that an active holder collective working in public will always outlast a solitary developer who dumps his supply and abandons his community within forty-eight hours of launch. Read the doctrine. Act now.
@@ -1849,15 +2087,131 @@ function renderAll() {
   renderRankSection();
 }
 
+// ---- MEME FACTORY LOGIC ----
+let MEME_DATA = null;
+let FACTORY_CAT = 'all';
+
+function switchEngineTab(tabId) {
+  document.querySelectorAll('.factory-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.factory-tab-content').forEach(c => c.classList.remove('active'));
+  
+  const targetContent = document.getElementById(`tab-${tabId}`);
+  if (targetContent) targetContent.classList.add('active');
+  
+  if (event && event.target) event.target.classList.add('active');
+  playCyberBlip(750, 0.04);
+}
+
+function renderFactoryFilters() {
+  if (!MEME_DATA) return;
+  const container = document.getElementById('factory-chips');
+  if (!container) return;
+  
+  container.innerHTML = MEME_DATA.categories.map(c => `
+    <button class="factory-chip ${FACTORY_CAT === c.id ? 'active' : ''}" data-cat="${c.id}">${c.name}</button>
+  `).join('');
+
+  container.querySelectorAll('.factory-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      FACTORY_CAT = btn.dataset.cat;
+      renderFactoryFilters();
+      renderFactoryGrid();
+      playCyberBlip(680, 0.035);
+    });
+  });
+}
+
+function renderFactoryGrid() {
+  if (!MEME_DATA) return;
+  const grid = document.getElementById('factory-grid');
+  if (!grid) return;
+  
+  const query = (document.getElementById('factory-query')?.value || '').toLowerCase().trim();
+  
+  let list = MEME_DATA.memes;
+  if (FACTORY_CAT !== 'all') {
+    list = list.filter(m => m.category === FACTORY_CAT);
+  }
+  if (query) {
+    list = list.filter(m => 
+      m.title.toLowerCase().includes(query) ||
+      m.prompt.toLowerCase().includes(query) ||
+      m.caption.toLowerCase().includes(query) ||
+      m.tags.some(t => t.toLowerCase().includes(query))
+    );
+  }
+
+  if (list.length === 0) {
+    grid.innerHTML = '<p style="color:var(--muted);grid-column:1/-1;padding:30px;text-align:center;font-family:var(--mono);">No meme weapons found matching criteria.</p>';
+    return;
+  }
+
+  grid.innerHTML = list.map(m => `
+    <div class="factory-card">
+      <div>
+        <div class="factory-card-head">
+          <span class="factory-card-tag">${m.category_name}</span>
+          <span class="factory-card-num">#${String(m.num).padStart(3, '0')}</span>
+        </div>
+        <div class="factory-card-title">${m.title}</div>
+
+        <div class="factory-card-block">
+          <div class="factory-card-label">
+            <span>AI Image Prompt</span>
+            <span>QWEN-IMAGE 3.0</span>
+          </div>
+          <div class="factory-card-text">${m.prompt}</div>
+        </div>
+
+        <div class="factory-card-block">
+          <div class="factory-card-label">
+            <span>Social Post Caption</span>
+            <span>METADATA</span>
+          </div>
+          <div class="factory-card-text">${m.caption}</div>
+        </div>
+      </div>
+
+      <div class="factory-card-actions">
+        <button class="factory-btn factory-btn-primary" onclick="copyMemePrompt(${m.num}, event)">Copy Prompt</button>
+        <button class="factory-btn factory-btn-ghost" onclick="copyMemeCaption(${m.num}, event)">Copy Caption</button>
+        <a class="factory-btn factory-btn-ghost" href="https://chat.qwen.ai" target="_blank" rel="noopener" title="Open Qwen in new tab">Launch Qwen &rarr;</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+function copyMemePrompt(num, evt) {
+  const meme = MEME_DATA?.memes.find(m => m.num === num);
+  if (!meme) return;
+  navigator.clipboard.writeText(meme.prompt).then(() => {
+    showToast(`PROMPT #${String(num).padStart(3, '0')} COPIED // READY FOR QWEN`);
+    playSuccessChime();
+    if (evt && evt.clientX) triggerSparks(evt.clientX, evt.clientY);
+  });
+}
+
+function copyMemeCaption(num, evt) {
+  const meme = MEME_DATA?.memes.find(m => m.num === num);
+  if (!meme) return;
+  navigator.clipboard.writeText(meme.caption).then(() => {
+    showToast(`CAPTION #${String(num).padStart(3, '0')} COPIED // READY TO POST`);
+    playCyberBlip(900, 0.05);
+    if (evt && evt.clientX) triggerSparks(evt.clientX, evt.clientY);
+  });
+}
+
 // ---- BOOT SEQUENCE ----
 async function initMissionControl() {
   try {
-    const [mRes, cRes] = await Promise.all([
+    const [mRes, cRes, fRes] = await Promise.all([
       fetch('missions.json').then(r => r.json()),
-      fetch('content-kit.json').then(r => r.json())
+      fetch('content-kit.json').then(r => r.json()),
+      fetch('meme-factory.json').then(r => r.json())
     ]);
     MISSIONS = mRes;
     CONTENT = cRes;
+    MEME_DATA = fRes;
   } catch(e) {
     document.getElementById('mission-grid').innerHTML = '<p style="color:var(--alert);padding:20px;">Telemetry feeds failed to load. Please refresh.</p>';
     return;
@@ -1872,6 +2226,9 @@ async function initMissionControl() {
   renderAll();
   renderArmoryFilters();
   renderArmoryGrid();
+  renderFactoryFilters();
+  renderFactoryGrid();
+  document.getElementById('factory-query')?.addEventListener('input', renderFactoryGrid);
 
   // Active timers
   setInterval(() => {
