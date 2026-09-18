@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "total": 100,
   "updated": "2026-09-18",
   "categories": [
@@ -50,7 +50,8 @@
         "suit",
         "wallstreet",
         "takeover"
-      ]
+      ],
+      "video_prompt": "Slow cinematic camera push-in from wide boardroom shot to tight portrait of Huh Cat. The cat turns its head slightly toward the lens and blinks slowly with flat pinned ears while shocked executives in the background frantically point at green candlestick charts on their laptops. Subtle 24fps film motion, golden sunlight drifting across mahogany table, 5-second fluid loop."
     },
     {
       "id": "meme-002",
@@ -65,7 +66,8 @@
         "news",
         "interview",
         "tv"
-      ]
+      ],
+      "video_prompt": "Live television studio broadcast camera slowly zooming in on Huh Cat sitting in the news chair. The cat gives a single slow, puzzled blink with mouth slightly open while ticker graphics flash neon green below and the human host in the background throws his hands up in disbelief. Studio spotlights shifting slightly, 6-second viral clip."
     },
     {
       "id": "meme-003",
@@ -80,7 +82,8 @@
         "bell",
         "stocks",
         "traders"
-      ]
+      ],
+      "video_prompt": "Dramatic high-angle crane shot descending toward the NYSE balcony. Huh Cat pulls down on the brass bell rope with its paws as the bell vibrates. Golden confetti rains down from above and floor traders below jump and toss trade tickets into the air. Kinetic crowd motion, 5-second high-energy loop."
     },
     {
       "id": "meme-004",
@@ -95,7 +98,8 @@
         "trading",
         "night",
         "charts"
-      ]
+      ],
+      "video_prompt": "Moody slow dolly track across the multi-screen Bloomberg terminal desk. The green and purple charts pulse with live data ticks reflecting in Huh Cat's wide yellow eyes. The cat taps a single paw on the orange Bloomberg key as its ears twitch slightly. Cyber noir atmosphere, 6-second fluid loop."
     },
     {
       "id": "meme-005",
@@ -110,7 +114,8 @@
         "printer",
         "money",
         "cash"
-      ]
+      ],
+      "video_prompt": "Steampunk industrial camera pan from the roaring gears of the currency press to Huh Cat. Fresh green 100 SOL bills fly off the conveyor belt into swirling air currents. The cat looks straight into the camera lens with its tongue peeking out and blinks once in total confusion. Industrial steam rising, 5-second clip."
     },
     {
       "id": "meme-006",
@@ -125,7 +130,8 @@
         "gold",
         "swiss",
         "audit"
-      ]
+      ],
+      "video_prompt": "Low-angle tracking shot moving past towering stacks of Swiss gold bars. Huh Cat sits atop the gold pyramid, slowly tilting its head from left to right with flat ears as a nervous bank inspector in a suit checks off a clipboard below. Polished gold reflections shifting in overhead lights, 6-second loop."
     },
     {
       "id": "meme-007",
@@ -140,7 +146,8 @@
         "magazine",
         "turtleneck",
         "cover"
-      ]
+      ],
+      "video_prompt": "Cinematic magazine shoot video. Camera slowly zooms out revealing the Forbes cover frame. Huh Cat in the black turtleneck maintains a deadpan blank stare while studio rim lights flare softly across its whiskers and fur. Subtle breathing motion, magazine headline text shimmering, 5-second loop."
     },
     {
       "id": "meme-008",
@@ -155,7 +162,8 @@
         "monaco",
         "luxury",
         "whale"
-      ]
+      ],
+      "video_prompt": "Sunny luxury drone shot sweeping smoothly around the Monaco yacht sunbed. Mediterranean waves sparkle in turquoise blue behind. Huh Cat lounges with gold sunglasses sliding slightly down its nose, blinking calmly as a silver platter of fresh sashimi reflects the afternoon sun. Luxury travel aesthetic, 6-second loop."
     },
     {
       "id": "meme-009",
@@ -170,7 +178,8 @@
         "flight",
         "sunset",
         "lifestyle"
-      ]
+      ],
+      "video_prompt": "Interior Gulfstream jet cabin tracking shot. Camera glides from the cabin aisle toward the leather captain seat. Huh Cat gazes out the oval window as sunset clouds drift by at high speed. The cat turns its head slowly toward the viewer with wide bewildered eyes. Soft warm cabin light, 5-second loop."
     },
     {
       "id": "meme-010",
@@ -185,7 +194,8 @@
         "keynote",
         "stage",
         "conference"
-      ]
+      ],
+      "video_prompt": "Grand arena camera tracking shot at Davos. Huge LED background screen pulses with the text 'CONTINUITY > VAPOURWARE'. Huh Cat stands behind the glass podium with microphones, turning its head slightly to survey the cheering world leaders while maintaining a completely vacant expression. Conference spotlights sweeping, 6-second loop."
     },
     {
       "id": "meme-011",
@@ -200,7 +210,8 @@
         "pitch",
         "startup",
         "investors"
-      ]
+      ],
+      "video_prompt": "Handheld mockumentary style camera zooming into the Silicon Valley VC whiteboard. Huh Cat draws a squiggly green arrow upward with a blue marker, then turns around with mouth agape as venture capitalists jump up out of their chairs eagerly offering checks. Comedic office timing, 5-second loop."
     },
     {
       "id": "meme-012",
@@ -215,7 +226,8 @@
         "pool",
         "rooftop",
         "night"
-      ]
+      ],
+      "video_prompt": "Dubai rooftop camera panning slowly across the neon-lit infinity pool. Fireworks burst in purple and gold over the distant Burj Khalifa. Huh Cat floats on the green raft holding an iPad with green candle charts, looking up at the fireworks with flat ears and open mouth. Water ripples reflecting city lights, 6-second loop."
     },
     {
       "id": "meme-013",
@@ -230,7 +242,8 @@
         "countryclub",
         "cart",
         "rich"
-      ]
+      ],
+      "video_prompt": "Sunny country club fairway tracking shot. The chrome golf cart rolls forward slowly across green grass. Huh Cat sits behind the steering wheel in a white visor, paws resting on the wheel as its whiskers twitch in the morning breeze. Two astonished golfers in polo shirts watch from the rough. Smooth gimbal motion, 5-second loop."
     },
     {
       "id": "meme-014",
@@ -245,7 +258,8 @@
         "cubicle",
         "analyst",
         "work"
-      ]
+      ],
+      "video_prompt": "Chaotic trading floor pan ending in a close-up on Huh Cat's messy cubicle. Surrounding traders scream into desk phones and wave papers in panic. In the center, Huh Cat sits calm and motionless on a pile of SEC filings, blinking once with total clueless serenity. Fluorescent office hum, 6-second loop."
     },
     {
       "id": "meme-015",
@@ -260,7 +274,8 @@
         "chips",
         "vip",
         "vegas"
-      ]
+      ],
+      "video_prompt": "Rich Las Vegas casino table camera track. The dealer slides a huge pile of chips toward Huh Cat. The cat uses one paw to push the entire stack into the center of the green felt table, then looks directly up into the camera with its signature flat-eared blank gaze. Chandelier crystal reflections shifting, 5-second loop."
     },
     {
       "id": "meme-016",
@@ -275,7 +290,8 @@
         "stage",
         "solana",
         "crowd"
-      ]
+      ],
+      "video_prompt": "Massive convention stage camera pulling back into the dark crowd at Solana Breakpoint. Purple and cyan spotlights sweep across the stage. Huh Cat stands center stage under the giant glowing Solana screen, blinking once with ears flat as 10,000 phone flashlights wave in the dark auditorium. Concert scale energy, 6-second loop."
     },
     {
       "id": "meme-017",
@@ -290,7 +306,8 @@
         "pumpfun",
         "party",
         "bondingcurve"
-      ]
+      ],
+      "video_prompt": "Explosive party scene slow-motion camera. Confetti cannons blast gold and green streamers across the rooftop bar. Huh Cat in the tiny graduation cap tilts its head in pure bewilderment as surrounding meme characters cheer and hold up drinks. High-energy celebration motion, 5-second loop."
     },
     {
       "id": "meme-018",
@@ -305,7 +322,8 @@
         "pool",
         "liquidity",
         "raydium"
-      ]
+      ],
+      "video_prompt": "Sunny beach drone shot lowering toward the tall white lifeguard tower. The pool below glows with neon purple and green liquid. Huh Cat sits in the red vest holding a rescue buoy, scanning the pool surface with wide yellow eyes and flat ears as palm fronds sway in the breeze. Saturated summer aesthetic, 6-second loop."
     },
     {
       "id": "meme-019",
@@ -320,7 +338,8 @@
         "billboard",
         "phone",
         "nyc"
-      ]
+      ],
+      "video_prompt": "Times Square street-level camera tilting straight up from the busy pedestrian crowd to the 10-story curved digital screen. The giant billboard displays Huh Cat's face animated in ultra-crisp detail, slowly blinking down at the entire city of New York. Neon city reflections on wet asphalt, 6-second loop."
     },
     {
       "id": "meme-020",
@@ -335,7 +354,8 @@
         "inscription",
         "microscope",
         "science"
-      ]
+      ],
+      "video_prompt": "Sci-fi cleanroom camera gliding around a holographic laser workstation. Purple laser beams etch circuitry onto a glowing silicon chip while a floating holographic monitor displays Huh Cat's on-chain inscription. Huh Cat looks through the microscope and pulls back with wide astonished eyes. High-tech lab motion, 5-second loop."
     },
     {
       "id": "meme-021",
@@ -350,7 +370,8 @@
         "ethereum",
         "solana",
         "receipt"
-      ]
+      ],
+      "video_prompt": "Split-screen comedy shot. On the left, an Ethereum bank teller aggressively stamps a huge red fee slip. On the right, Huh Cat sits with a tiny receipt, looking over at the stressed human with flat ears and pure bewildered pity. Subtle comedic timing, 5-second loop."
     },
     {
       "id": "meme-022",
@@ -365,7 +386,8 @@
         "charts",
         "green",
         "climb"
-      ]
+      ],
+      "video_prompt": "Vertical ascending camera shot moving up a colossal glowing emerald candlestick pillar into the starry sky. Huh Cat sits perched on the highest wick, looking down past the clouds with paws tucked into a loaf while green particle sparks float upward. Epic fantasy sci-fi scale, 6-second loop."
     },
     {
       "id": "meme-023",
@@ -380,7 +402,8 @@
         "telegram",
         "warroom",
         "command"
-      ]
+      ],
+      "video_prompt": "Cyber bunker tracking shot moving past banks of glowing monitors. Telegram raid notifications flash rapidly in green across the wall display. Huh Cat in the oversized pilot headset frantically taps mechanical keyboard keys while keeping its face entirely blank and perplexed. Tactical blue neon atmosphere, 5-second loop."
     },
     {
       "id": "meme-024",
@@ -395,7 +418,8 @@
         "halloffame",
         "legend",
         "history"
-      ]
+      ],
+      "video_prompt": "Museum gallery tracking shot passing visitors with audio guides. Spotlight shines down on a velvet-roped glass display where Huh Cat sits on a red cushion next to an engraved brass plaque. The cat slowly blinks and twitches one flat ear as museum guests snap photos in awe. Classical museum serenity, 6-second loop."
     },
     {
       "id": "meme-025",
@@ -410,7 +434,8 @@
         "validator",
         "servers",
         "solana"
-      ]
+      ],
+      "video_prompt": "Subterranean arctic server vault camera tracking shot. Frost mist billows across rows of green server lights. Huh Cat in a miniature parka walks slowly down the center aisle, looking around at the humming Solana validator racks with wide glowing eyes. Crisp cyan and white frost aesthetic, 6-second loop."
     },
     {
       "id": "meme-026",
@@ -425,7 +450,8 @@
         "coldstorage",
         "vault",
         "security"
-      ]
+      ],
+      "video_prompt": "Macro camera tracking slowly into the open steel safe. The hardware ledger key rests on a velvet pedestal. Huh Cat stands guard beside it in tiny armor holding a toothpick spear, blinking resolutely into the vault spotlight without moving a muscle. Dramatic shadow play, 5-second loop."
     },
     {
       "id": "meme-027",
@@ -440,7 +466,8 @@
         "airdrop",
         "crates",
         "action"
-      ]
+      ],
+      "video_prompt": "Airborne camera looking out the open cargo bay of a military helicopter. Craters of green $HUHCAT supply crates float down toward the skyline below on golden parachutes. Huh Cat in aviator goggles sits on the bay ramp, watching the airdrop with wind blowing its whiskers. High-speed aviation realism, 6-second loop."
     },
     {
       "id": "meme-028",
@@ -455,7 +482,8 @@
         "launch",
         "space",
         "pump"
-      ]
+      ],
+      "video_prompt": "Cape Canaveral rocket launch pad camera tracking past giant support towers. Steam vents blast white clouds as the green and white rocket engines ignite with orange fire. In the control booth, Huh Cat presses the red launch button with one paw, staring with open mouth as the rocket lifts off. Cinematic scale, 6-second loop."
     },
     {
       "id": "meme-029",
@@ -470,7 +498,8 @@
         "wallet",
         "balance",
         "shock"
-      ]
+      ],
+      "video_prompt": "Nighttime bedroom camera moving slowly toward the phone screen. A hand holds a phone showing Phantom wallet rocket upward with green numbers. Huh Cat pokes its head out from under the blanket beside the phone, staring in shock with giant circular yellow eyes. Soft purple screen glow, 5-second relatable loop."
     },
     {
       "id": "meme-030",
@@ -485,7 +514,8 @@
         "banquet",
         "throne",
         "rewards"
-      ]
+      ],
+      "video_prompt": "Medieval banqueting hall tracking shot along the wooden feast table. Silver platters overflow with glowing Solana tokens and fresh salmon steaks. Huh Cat sits on the high throne in the center, turning its head slowly with a comically blank expression as candlelight flickers across the stone hall. Regal fantasy atmosphere, 6-second loop."
     },
     {
       "id": "meme-031",
@@ -500,7 +530,8 @@
         "redpill",
         "scifi",
         "cinema"
-      ]
+      ],
+      "video_prompt": "Green digital rain stream falling down window glass. Camera slowly pushes in on Huh Cat sitting in the cracked leather armchair wearing tiny black sunglasses. Opposite, Morpheus cat extends a red pill and a blue pill. Huh Cat stares between the two pills with wide bewildered eyes and flat ears. Iconic Wachowski matrix aesthetic, 6-second loop."
     },
     {
       "id": "meme-032",
@@ -515,7 +546,8 @@
         "mafia",
         "tuxedo",
         "movie"
-      ]
+      ],
+      "video_prompt": "Chiaroscuro study tracking shot with Venetian blind shadows. Huh Cat sits in the grand leather chair in a tailored tuxedo with red rose lapel. A mobster bows low to kiss its paw. Huh Cat stares deadpan over the mobster's head into the dark study without blinking. Classic 1970s film grain, 5-second loop."
     },
     {
       "id": "meme-033",
@@ -530,7 +562,8 @@
         "diner",
         "tarantino",
         "90s"
-      ]
+      ],
+      "video_prompt": "Retro diner booth camera sliding across the table. Two suited hitmen hold classic revolvers pointed across the table. In the center, Huh Cat sits in a skinny black tie next to a plate of pancakes, looking back and forth between the gun barrels with total goofy confusion. Tarantino 90s cinema style, 6-second loop."
     },
     {
       "id": "meme-034",
@@ -545,7 +578,8 @@
         "jedi",
         "lightsaber",
         "scifi"
-      ]
+      ],
+      "video_prompt": "Circular Jedi Council chamber camera panning across high-backed chairs at sunset. Coruscant skyline traffic glides in the window behind. Huh Cat in the hooded brown Jedi robe rests its paw beside a glowing green lightsaber, blinking with deep cosmic perplexity. Star Wars fantasy scale, 5-second loop."
     },
     {
       "id": "meme-035",
@@ -560,7 +594,8 @@
         "mountdoom",
         "ring",
         "fantasy"
-      ]
+      ],
+      "video_prompt": "Fiery volcanic ledge camera slowly descending toward boiling red lava inside Mount Doom. Huh Cat in an elven cloak holds a glowing golden Solana ring over the volcanic abyss, looking down with saucer eyes and flat ears as embers float past its whiskers. Peter Jackson epic fantasy atmosphere, 6-second loop."
     },
     {
       "id": "meme-036",
@@ -575,7 +610,8 @@
         "rome",
         "colosseum",
         "battle"
-      ]
+      ],
+      "video_prompt": "Sweeping 360-degree gladiator arena camera in the Roman Colosseum. 80,000 spectators roar and wave white cloths. In the dusty center, Huh Cat in bronze armor and purple Solana shield raises a tiny gladius sword, staring into the bright arena sun with open mouth. Golden dust particles floating, 6-second loop."
     },
     {
       "id": "meme-037",
@@ -590,7 +626,8 @@
         "pilot",
         "cockpit",
         "fighterjet"
-      ]
+      ],
+      "video_prompt": "Top Gun fighter jet cockpit camera spinning through a slow barrel roll above the ocean. Huh Cat sits in the pilot seat wearing an olive helmet and aviator sunglasses, staring through the cockpit glass as another jet passes inverted overhead. High-speed aviation photography, 5-second loop."
     },
     {
       "id": "meme-038",
@@ -605,7 +642,8 @@
         "vintage",
         "explosion",
         "cinema"
-      ]
+      ],
+      "video_prompt": "1940s desert observation bunker camera slowly tracking toward the window. Through the glass, a blinding fireball explosion blooms silently into the orange sky. In the foreground, Huh Cat sits in a wide-brimmed felt hat and brown suit, staring forward with blank existential bewilderment. Christopher Nolan 70mm film look, 6-second loop."
     },
     {
       "id": "meme-039",
@@ -620,7 +658,8 @@
         "cyborg",
         "robot",
         "scifi"
-      ]
+      ],
+      "video_prompt": "Grim futuristic battlefield camera tracking across dark ruins. Atmospheric rain and toxic smoke drift through twisted metal wreckage. Huh Cat stands center frame with half its face normal fur and half gleaming chrome endoskeleton with glowing red robotic eye, turning its head to look forward with signature flat-eared confusion. Cyberpunk sci-fi lighting, 6-second loop."
     },
     {
       "id": "meme-040",
@@ -635,7 +674,8 @@
         "sandworm",
         "desert",
         "arrakis"
-      ]
+      ],
+      "video_prompt": "Epic desert camera rising over massive orange Arrakis sand dunes. A colossal sandworm erupts from the sand into the sky. Huh Cat in a desert stillsuit rides the top ridge of the worm holding maker hooks, staring into the sandstorm with flat ears and open mouth. Denis Villeneuve cinematic masterwork, 6-second loop."
     },
     {
       "id": "meme-041",
@@ -650,7 +690,8 @@
         "spiritedaway",
         "anime",
         "train"
-      ]
+      ],
+      "video_prompt": "Studio Ghibli anime style train tracking shot. The vintage train car glides across calm shallow ocean water reflecting pastel sunset clouds. Huh Cat sits on the velvet seat beside the quiet figure of No-Face, holding a paper ticket and watching the water ripple with flat ears. Soft nostalgic watercolor animation, 6-second loop."
     },
     {
       "id": "meme-042",
@@ -665,7 +706,8 @@
         "nightcity",
         "neon",
         "rain"
-      ]
+      ],
+      "video_prompt": "Neon alley tracking shot in Night City. Magenta holographic billboards and neon signboards flicker overhead as heavy rain splashes down on wet asphalt. Huh Cat in a tiny leather biker jacket sits on a dumpster, turning its head slowly as a flying car zooms through the smoky sky above. Blade Runner cyberpunk aesthetic, 6-second loop."
     },
     {
       "id": "meme-043",
@@ -680,7 +722,8 @@
         "gritty",
         "boxing",
         "basement"
-      ]
+      ],
+      "video_prompt": "Dark concrete basement circle camera panning around shirtless bruised fighters. A single bare hanging light bulb swings gently. In the center, Huh Cat stands on a wooden table with wrapped paws, staring into the dim light with total flat-eared bewilderment. Gritty Fincher film grain, 5-second loop."
     },
     {
       "id": "meme-044",
@@ -695,7 +738,8 @@
         "spinningcoin",
         "dream",
         "cinema"
-      ]
+      ],
+      "video_prompt": "Minimalist Parisian hotel room camera tracking in close on a silver Solana coin spinning endlessly on a polished wooden table. The room tilts slightly in dreamlike distortion. Huh Cat leans in with giant yellow eyes, tracking the spinning coin with complete hypnotic fascination. Inception cinematic style, 6-second loop."
     },
     {
       "id": "meme-045",
@@ -710,7 +754,8 @@
         "timetravel",
         "80s",
         "retro"
-      ]
+      ],
+      "video_prompt": "1985 mall parking lot camera tracking past the open gull-wing door of the stainless-steel DeLorean. Dense white smoke and crackling blue electrical arcs hiss off the hot vehicle body. Huh Cat steps out in an orange down vest, looking around at the twin burning tire tracks on the asphalt with pure wide-eyed astonishment. Saturated 80s movie look, 5-second loop."
     },
     {
       "id": "meme-046",
@@ -725,7 +770,8 @@
         "monday",
         "morning",
         "relatable"
-      ]
+      ],
+      "video_prompt": "Cozy bedroom morning camera zooming into the red digital alarm clock flashing 06:00 AM. Huh Cat sits bolt upright in bed with crazy bedhead fur, blanket clutched to chest, staring straight into the camera with wide terrified yellow eyes and flat ears. Relatable morning comedy, 5-second viral loop."
     },
     {
       "id": "meme-047",
@@ -740,7 +786,8 @@
         "office",
         "work",
         "alttab"
-      ]
+      ],
+      "video_prompt": "Corporate cubicle tracking shot from behind the computer monitor. A spreadsheet screen is rapidly minimized to show a spiking pump.fun chart. The human boss walks past in the background as Huh Cat's face freezes in hilarious wide-eyed panic with ears pinned sideways. Authentic workplace comedy, 5-second loop."
     },
     {
       "id": "meme-048",
@@ -755,7 +802,8 @@
         "fastfood",
         "window",
         "relatable"
-      ]
+      ],
+      "video_prompt": "Fast food drive-thru window point-of-view camera from inside a customer's car. The sliding window opens and Huh Cat in a paper uniform hat hands out a brown takeout bag stamped with a green $HUHCAT logo, staring into the car with total blank-faced confusion. Fast food lighting, 5-second loop."
     },
     {
       "id": "meme-049",
@@ -770,7 +818,8 @@
         "waiting",
         "queue",
         "relatable"
-      ]
+      ],
+      "video_prompt": "Bleak DMV waiting room camera panning past rows of exhausted humans on orange plastic chairs. Huh Cat sits holding a paper queue ticket that reads #999 while the red wall sign displays #14. The cat blinks slowly with flat ears, staring into the distance with pure deadpan resignation. Sterile office lighting, 6-second loop."
     },
     {
       "id": "meme-050",
@@ -785,7 +834,8 @@
         "furniture",
         "assembly",
         "confusion"
-      ]
+      ],
+      "video_prompt": "Living room floor camera tracking across dozens of loose wooden furniture panels, screws, and an upside-down table leg. In the center, Huh Cat sits holding a tiny hex wrench, looking directly into the camera with jaw dropped and flat ears in total assembly defeat. Domestic comedy realism, 5-second loop."
     },
     {
       "id": "meme-051",
@@ -800,7 +850,8 @@
         "blackcard",
         "tuna",
         "flex"
-      ]
+      ],
+      "video_prompt": "Supermarket checkout conveyor belt camera tracking. One single 50-cent can of tuna glides forward. Huh Cat stands upright sliding a matte-black metal credit card into the payment terminal with one paw as the cashier stares in shock. The cat looks at the terminal with zero comprehension. Bright grocery lighting, 5-second loop."
     },
     {
       "id": "meme-052",
@@ -815,7 +866,8 @@
         "family",
         "dinner",
         "grandma"
-      ]
+      ],
+      "video_prompt": "Thanksgiving dinner table camera tracking past the roast turkey. Huh Cat sits in a high chair with a white napkin tucked into its collar, holding a butter knife like a pointer and looking passionately at grandma while gesturing about on-chain token history. Warm holiday candlelight, 6-second loop."
     },
     {
       "id": "meme-053",
@@ -830,7 +882,8 @@
         "benchpress",
         "weights",
         "workout"
-      ]
+      ],
+      "video_prompt": "Powerlifting gym camera tracking down from the ceiling toward the weight bench. An Olympic bar loaded with six heavy 45-pound iron plates on each side hovers over Huh Cat's chest. The cat grips the bar with its paws, staring up in pure wide-eyed horror and flat ears as chalk dust drifts. Gym comedy realism, 5-second loop."
     },
     {
       "id": "meme-054",
@@ -845,7 +898,8 @@
         "commute",
         "car",
         "rain"
-      ]
+      ],
+      "video_prompt": "Rainy highway morning commute camera from inside the car looking through windshield wipers. Standstill red brake lights reflect off wet glass. On the phone dashboard mount, the chart spikes green. Huh Cat in the driver seat holds the steering wheel, looking through the rain with a deadpan confused expression. Moody commute lighting, 6-second loop."
     },
     {
       "id": "meme-055",
@@ -860,7 +914,8 @@
         "chair",
         "clinic",
         "relatable"
-      ]
+      ],
+      "video_prompt": "Dentist examination room camera zooming down into the dental chair under the bright circular examination lamp. Huh Cat lies reclined with mouth open, tongue slightly out, and saucer yellow eyes staring into the blinding beam while a masked dentist holds a mirror. Humorous clinical realism, 5-second loop."
     },
     {
       "id": "meme-056",
@@ -875,7 +930,8 @@
         "barber",
         "bowlcut",
         "mirror"
-      ]
+      ],
+      "video_prompt": "Vintage barbershop mirror reflection camera. The barber holds scissors proudly behind the chair. In the seat, Huh Cat looks directly into the mirror at its ridiculous razor-sharp bowl cut fade, ears flat out sideways and mouth half open in total disbelief. Barbershop nostalgia, 5-second loop."
     },
     {
       "id": "meme-057",
@@ -890,7 +946,8 @@
         "airport",
         "security",
         "travel"
-      ]
+      ],
+      "video_prompt": "Airport security scanner camera. Huh Cat steps through the full-body X-ray arch with paws raised in the air. On the security officer's screen beside the arch, the X-ray reveals a glowing golden Solana token inside its chest as officers stare in confusion. Bright terminal lighting, 6-second loop."
     },
     {
       "id": "meme-058",
@@ -905,7 +962,8 @@
         "sink",
         "water",
         "disaster"
-      ]
+      ],
+      "video_prompt": "Cramped dark cabinet under the kitchen sink with water spraying wildly from a broken copper pipe. Huh Cat sits soaked holding a red pipe wrench, staring into the flashlight beam with water dripping off its nose and ears pinned flat in total plumbing catastrophe. Action comedy, 5-second loop."
     },
     {
       "id": "meme-059",
@@ -920,7 +978,8 @@
         "meeting",
         "webcam",
         "work"
-      ]
+      ],
+      "video_prompt": "Laptop screen recording of a corporate Zoom conference call with 12 serious executive tiles. In the featured center tile, Huh Cat sits in bed in pajamas eating dry cereal directly from a bowl, staring in shock into the webcam after realizing its camera is turned on. Authentic remote work comedy, 5-second loop."
     },
     {
       "id": "meme-060",
@@ -935,7 +994,8 @@
         "3am",
         "snack",
         "relatable"
-      ]
+      ],
+      "video_prompt": "Pitch-black kitchen at 3:15 AM lit solely by the glowing yellow interior of a microwave with timer ticking down 03... 02... 01. Huh Cat sits on the counter with face pressed against the glass door, watching pizza rolls rotate with wide-eyed nighttime fixation. Cozy relatable lighting, 5-second loop."
     },
     {
       "id": "meme-061",
@@ -950,7 +1010,8 @@
         "louvre",
         "art",
         "renaissance"
-      ]
+      ],
+      "video_prompt": "Museum camera slowly pushing in through the gilded baroque frame inside the Louvre. The oil painting portrait of Mona Lisa Huh Cat comes to life as the painted cat slowly shifts its eyes from side to side with flat ears and puzzled goofy expression. Cracked oil varnish texture, museum spotlight, 6-second loop."
     },
     {
       "id": "meme-062",
@@ -965,7 +1026,8 @@
         "king",
         "crown",
         "royalty"
-      ]
+      ],
+      "video_prompt": "Notre Dame Cathedral royal coronation camera tracking upward toward the golden throne. The Archbishop places a heavy gold crown upon Huh Cat's head, causing the crown to tilt comically over its left ear. The cat in purple ermine cape blinks once as stained-glass sunlight streams through cathedral mist. Grand historical painting style, 6-second loop."
     },
     {
       "id": "meme-063",
@@ -980,7 +1042,8 @@
         "1776",
         "history",
         "quill"
-      ]
+      ],
+      "video_prompt": "Philadelphia 1776 assembly room camera panning across the candlelit desk. Alongside Thomas Jefferson and Benjamin Franklin, Huh Cat presses an inky paw firmly onto the parchment next to John Hancock's signature, leaving a perfect black cat paw print labeled $HUHCAT. Rich historical oil painting motion, 6-second loop."
     },
     {
       "id": "meme-064",
@@ -995,7 +1058,8 @@
         "horse",
         "alps",
         "heroic"
-      ]
+      ],
+      "video_prompt": "Romantic 19th-century oil painting camera tracking across snowy alpine rocks. Napoleon Huh Cat sits atop a rearing white stallion, wearing a gold-trimmed bicorne hat and pointing forward with one paw as snow whips in the wind. The cat looks at the summit with its iconic flat-eared perplexed stare. Jacques-Louis David epic style, 6-second loop."
     },
     {
       "id": "meme-065",
@@ -1010,7 +1074,8 @@
         "pharaoh",
         "hieroglyphics",
         "ancient"
-      ]
+      ],
+      "video_prompt": "Ancient Egyptian stone tomb camera tracking across golden sandstone hieroglyphics. Torches flicker along the corridor. On the wall mural, the carved profile of Pharaoh Huh Cat with golden nemes headdress blinks its painted eye in ancient stone relief as dust drifts past. Mystical archaeology lighting, 6-second loop."
     },
     {
       "id": "meme-066",
@@ -1025,7 +1090,8 @@
         "senate",
         "toga",
         "ancient"
-      ]
+      ],
+      "video_prompt": "Marble Roman Senate rostrum camera panning across shouting senators in white togas. In the center, Huh Cat wrapped in imperial purple toga stands with paws on the marble railing, slowly turning its head with an utterly vacant, flat-eared stare that silences the entire room. Grand classical architecture, 6-second loop."
     },
     {
       "id": "meme-067",
@@ -1040,7 +1106,8 @@
         "monocle",
         "portrait",
         "oilpainting"
-      ]
+      ],
+      "video_prompt": "Victorian study oil painting camera slowly zooming in on the dark walnut wall. In the painting, Huh Cat sits in a tweed suit with gold monocle over one eye and smoking pipe in mouth, slowly blinking behind the monocle with distinguished aristocratic bewilderment. Canvas texture, warm firelight, 6-second loop."
     },
     {
       "id": "meme-068",
@@ -1055,7 +1122,8 @@
         "sword",
         "arthur",
         "fantasy"
-      ]
+      ],
+      "video_prompt": "Misty medieval forest glade camera tracking toward the stone anvil. Knights in plate armor step back in disbelief as Huh Cat in a peasant tunic effortlessly pulls the glowing Excalibur sword out with one paw. Golden magical light radiates from the blade across the cat's astonished face. Arthurian fantasy majesty, 6-second loop."
     },
     {
       "id": "meme-069",
@@ -1070,7 +1138,8 @@
         "torch",
         "nyc",
         "landmark"
-      ]
+      ],
+      "video_prompt": "Aerial sunset drone shot circling the Statue of Liberty in New York Harbor. The colossal copper-green monument features Huh Cat's massive granite face looking across the water with flat ears, while its raised torch burns with a brilliant green Solana flame. Cinematic landmark scale, 6-second loop."
     },
     {
       "id": "meme-070",
@@ -1085,7 +1154,8 @@
         "granite",
         "monument",
         "sculpture"
-      ]
+      ],
+      "video_prompt": "Helicopter camera sweeping past Mount Rushmore granite cliffs under bright blue sky. Alongside Washington and Lincoln, the colossal 60-foot granite carving of Huh Cat stands permanently etched in stone, with tourists below looking through observation binoculars in awe. Epic monumental scale, 6-second loop."
     },
     {
       "id": "meme-071",
@@ -1100,7 +1170,8 @@
         "ship",
         "storm",
         "captain"
-      ]
+      ],
+      "video_prompt": "Violent ocean storm camera shaking violently on the wooden deck of a pirate galleon. Giant waves crash over the gunwales. At the helm, Huh Cat in captain's tricorn hat and eyepatch turns the heavy wooden ship wheel, staring through the torrential rain with unshakeable bewildered resolve. Cinematic pirate action, 6-second loop."
     },
     {
       "id": "meme-072",
@@ -1115,7 +1186,8 @@
         "apollo",
         "astronaut",
         "space"
-      ]
+      ],
+      "video_prompt": "Moon landing camera tracking across the stark grey lunar surface. Earth shines like a blue marble in the pitch-black sky. Huh Cat in a white Apollo spacesuit presses a bright green '$HUHCAT TO THE MOON' flag firmly into the lunar dust, then turns to face the NASA camera visor with flat ears. 70mm Hasselblad film motion, 6-second loop."
     },
     {
       "id": "meme-073",
@@ -1130,7 +1202,8 @@
         "airplane",
         "vintage",
         "history"
-      ]
+      ],
+      "video_prompt": "Sepia vintage historical film reel of Kitty Hawk dunes in 1903. The Wright Flyer biplane glides ten feet above the sand as Orville Wright runs alongside waving his cap. Prone on the wing, Huh Cat in leather aviator goggles grips the flight cables, looking forward with wide astonishment at powered flight. Authentic vintage flickering film grain, 5-second loop."
     },
     {
       "id": "meme-074",
@@ -1145,7 +1218,8 @@
         "philosopher",
         "athens",
         "parthenon"
-      ]
+      ],
+      "video_prompt": "Sunlit marble steps of the Parthenon in Athens. Classical Greek philosophers in togas gather closely around Huh Cat. The cat wrapped in a linen toga sits on a stone block with mouth open, staring blankly into the Mediterranean sky as philosophers nod in deep agreement with its silence. Classical Mediterranean beauty, 6-second loop."
     },
     {
       "id": "meme-075",
@@ -1160,7 +1234,8 @@
         "roaring20s",
         "champagne",
         "toast"
-      ]
+      ],
+      "video_prompt": "Roaring 20s Gatsby mansion party camera gliding up the terrace steps. Champagne fountains bubble and gold streamers drift through the air. Huh Cat in a formal tuxedo raises a crystal coupe of champagne in a toast toward the viewer, fireworks bursting across the dark bay behind. Glamorous art-deco cinematic style, 6-second loop."
     },
     {
       "id": "meme-076",
@@ -1175,7 +1250,8 @@
         "alien",
         "tractorbeam",
         "scifi"
-      ]
+      ],
+      "video_prompt": "Nighttime cornfield camera tracking upward inside a conical beam of neon-green UFO tractor beam light. Huh Cat floats slowly toward the hovering flying saucer, with paws dangling and a completely relaxed, flat-eared blank gaze as corn stalks sway below in the wind. High-budget sci-fi thriller cinematography, 6-second loop."
     },
     {
       "id": "meme-077",
@@ -1190,7 +1266,8 @@
         "president",
         "podium",
         "politics"
-      ]
+      ],
+      "video_prompt": "Live presidential debate television camera slowly cutting between two podiums. A red-faced human politician shouts passionately into his microphone. The camera cuts to Huh Cat standing on a wooden crate at the other podium in a tiny red tie, giving the camera a single slow, confused blink. TV broadcast lighting, 5-second loop."
     },
     {
       "id": "meme-078",
@@ -1205,7 +1282,8 @@
         "submarine",
         "squid",
         "ocean"
-      ]
+      ],
+      "video_prompt": "Deep ocean submersible cockpit camera looking out into the pitch-black abyss of the Mariana Trench. A colossal bioluminescent giant squid eye floats into the viewport glass. Inside, Huh Cat at the submarine steering wheel stares directly into the giant eye with its own yellow eyes, totally unfazed. Mysterious deep-sea bioluminescence, 6-second loop."
     },
     {
       "id": "meme-079",
@@ -1220,7 +1298,8 @@
         "trex",
         "jurassic",
         "jungle"
-      ]
+      ],
+      "video_prompt": "Rain-drenched Jurassic jungle camera looking through the open window of a safari jeep. A terrifying 40-foot T-Rex roars with its massive jaws inches from the glass. Sitting in the passenger seat, Huh Cat holding a warm coffee cup glances up into the dinosaur jaws with flat ears and pure unimpressed bewilderment. Action adventure cinema, 6-second loop."
     },
     {
       "id": "meme-080",
@@ -1235,7 +1314,8 @@
         "pitstop",
         "racing",
         "speed"
-      ]
+      ],
+      "video_prompt": "Formula 1 pit box high-speed camera tracking. Mechanics in fire suits swarm the green and purple race car with pneumatic air guns. Inside the cockpit, Huh Cat wears a racing helmet with visor up, gripping the wheel and looking around with wide open-mouthed confusion as tires are changed in 1.8 seconds. Motorsport kinetic energy, 5-second loop."
     },
     {
       "id": "meme-081",
@@ -1250,7 +1330,8 @@
         "sprint",
         "goldmedal",
         "sports"
-      ]
+      ],
+      "video_prompt": "Olympic track finish line camera in super slow-motion. Huh Cat charges across the finish line on all fours, snapping the red winner tape chest-first as the digital clock flashes '9.42s // WORLD RECORD'. Elite human runners trail far behind in agony. High-speed sports photography, 5-second loop."
     },
     {
       "id": "meme-082",
@@ -1265,7 +1346,8 @@
         "mountain",
         "snow",
         "summit"
-      ]
+      ],
+      "video_prompt": "Mount Everest summit camera sweeping across the frozen Himalayan peaks at 29,000 feet. Heavy snow sweeps across the rocks. Huh Cat sits on the highest peak wearing a wool beanie, holding a steaming green $HUHCAT mug and gazing serenely into the freezing clouds with flat ears. Majestic sub-zero atmosphere, 6-second loop."
     },
     {
       "id": "meme-083",
@@ -1280,7 +1362,8 @@
         "concert",
         "stagedive",
         "rock"
-      ]
+      ],
+      "video_prompt": "Heavy metal arena concert camera tracking backward through the roaring crowd. Pyrotechnic flames blast into the dark air. Huh Cat in a spiked collar is captured mid-air in slow motion, stage diving off the stage into a sea of thousands of raised hands while maintaining its trademark blank stare. Electrifying rock concert motion, 6-second loop."
     },
     {
       "id": "meme-084",
@@ -1295,7 +1378,8 @@
         "detective",
         "fedora",
         "rain"
-      ]
+      ],
+      "video_prompt": "Rain-slicked 1940s film noir alleyway camera tracking past a street lamp beam. Steam rises from a sewer grate. Huh Cat in a belted trench coat and fedora inspects a muddy paw print with a brass magnifying glass, looking up into the shadows with high-contrast Humphrey Bogart intensity. Dramatic shadows, 5-second loop."
     },
     {
       "id": "meme-085",
@@ -1310,7 +1394,8 @@
         "michelin",
         "kitchen",
         "cooking"
-      ]
+      ],
+      "video_prompt": "Gleaming Michelin-star French kitchen camera tracking toward the copper stove. A brigade of nervous white-aproned chefs watches with bated breath as Huh Cat in a tall chef hat tastes soup from a silver spoon with tongue out, delivering a slow analytical Huh face. Commercial culinary photography, 5-second loop."
     },
     {
       "id": "meme-086",
@@ -1325,7 +1410,8 @@
         "fortknox",
         "spoon",
         "vault"
-      ]
+      ],
+      "video_prompt": "Fort Knox underground gold vault camera tracking past armed security guards. Flashlight beams light up a neat round hole in the thick concrete wall. Sitting on the floor beside the hole is Huh Cat holding a white plastic spoon, staring into the security camera with pure clueless innocence. Heist movie suspense, 5-second loop."
     },
     {
       "id": "meme-087",
@@ -1340,7 +1426,8 @@
         "spacewalk",
         "orbit",
         "earth"
-      ]
+      ],
+      "video_prompt": "Space station exterior camera gliding over planet Earth's glowing blue atmosphere. Huh Cat floats in open space in a mini-spacesuit with safety tether, holding a tiny screwdriver and pretending to tighten a solar panel bolt while staring directly into the camera visor with wide yellow eyes. Breathtaking NASA orbital photography, 6-second loop."
     },
     {
       "id": "meme-088",
@@ -1355,7 +1442,8 @@
         "lava",
         "marshmallow",
         "fire"
-      ]
+      ],
+      "video_prompt": "Active volcanic crater camera hovering over bubbling red magma. Heat distortion ripples through the air. Sitting on the crumbling stone edge, Huh Cat in dark aviator sunglasses holds a wooden stick roasting a marshmallow over the fiery lava, looking down with unbothered flat-eared calm. Epic volcanic action, 6-second loop."
     },
     {
       "id": "meme-089",
@@ -1370,7 +1458,8 @@
         "theater",
         "levitation",
         "stage"
-      ]
+      ],
+      "video_prompt": "Victorian theater stage camera tracking backward. A magician in a cape drops his jaw as an empty box is revealed. Floating suspended three feet in the air above the stage is Huh Cat, slowly levitating upside down while smoke and purple glitter swirl around its flat ears. Theatrical magical spectacle, 5-second loop."
     },
     {
       "id": "meme-090",
@@ -1385,7 +1474,8 @@
         "physics",
         "quantum",
         "collider"
-      ]
+      ],
+      "video_prompt": "CERN Large Hadron Collider subterranean tunnel camera tracking along the curving particle beam tube. Glowing purple electromagnetic rings light up the chamber. Floating in the beam intersection surrounded by swirling quantum particle trails is Huh Cat curled in a loaf, peacefully blinking at the speed of light. Particle physics sci-fi motion, 6-second loop."
     },
     {
       "id": "meme-091",
@@ -1400,7 +1490,8 @@
         "action",
         "sunglasses",
         "heroic"
-      ]
+      ],
+      "video_prompt": "Action movie hero camera tracking backward in super slow-motion. An enormous 50-foot gasoline explosion erupts behind in fiery orange plumes and black smoke. In the foreground, Huh Cat in dark sunglasses walks steadily toward the camera without looking back, whiskers blowing gently in the shockwave heat. Michael Bay blockbuster aesthetic, 6-second viral loop."
     },
     {
       "id": "meme-092",
@@ -1415,7 +1506,8 @@
         "fashion",
         "gold",
         "redcarpet"
-      ]
+      ],
+      "video_prompt": "Met Gala red carpet camera sweeping up the iconic grand staircase. Hundreds of paparazzi flashbulbs pop in blinding white bursts. Huh Cat in an avant-garde sculpted 24k gold plate outfit walks up the carpet, turning its head with deadpan bewildered poise to face the roaring photographers. High-fashion couture glamour, 6-second loop."
     },
     {
       "id": "meme-093",
@@ -1430,7 +1522,8 @@
         "gold",
         "warriors",
         "king"
-      ]
+      ],
+      "video_prompt": "Colossal obsidian and gold throne room camera tracking down the grand central carpet toward the raised dais. Banners with the $HUHCAT insignia hang from towering pillars. Legions of diamond-hand raiders salute as Huh Cat sits atop the golden throne wearing an emerald wreath, looking over the hall with royal serenity. Epic fantasy majesty, 6-second loop."
     },
     {
       "id": "meme-094",
@@ -1445,7 +1538,8 @@
         "ascension",
         "cosmic",
         "divine"
-      ]
+      ],
+      "video_prompt": "Cosmic ascension camera tracking slowly around Huh Cat floating in a divine halo of golden and white light. Swirling green nebulae and glowing Solana constellations orbit its body as the cat gazes into the infinite cosmos with peaceful flat-eared majesty. Renaissance celestial masterpiece motion, 6-second loop."
     },
     {
       "id": "meme-095",
@@ -1460,7 +1554,8 @@
         "lamborghini",
         "garage",
         "luxury"
-      ]
+      ],
+      "video_prompt": "Billionaire subterranean garage camera panning across five rare exotic supercars painted in electric Solana emerald green. Huh Cat stands on the polished mirror floor holding a carbon-fiber key fob in its mouth, looking back and forth between the cars with a comically indecisive stare as headlights pulse. Luxury automotive showroom, 5-second loop."
     },
     {
       "id": "meme-096",
@@ -1475,7 +1570,8 @@
         "yacht",
         "helicopter",
         "jamesbond"
-      ]
+      ],
+      "video_prompt": "Sunset mega yacht helipad camera tracking backward as a sleek black helicopter blades spin down. Sea spray kicks up in golden hour light. Huh Cat in a tailored white suit walks down the helicopter ramp toward the teak yacht deck while crew members salute. James Bond cinematic action lifestyle, 6-second loop."
     },
     {
       "id": "meme-097",
@@ -1490,7 +1586,8 @@
         "sunrise",
         "flag",
         "victory"
-      ]
+      ],
+      "video_prompt": "Dawn cliff overlook camera sweeping around Huh Cat standing on the highest peak above ruined old-world financial towers. The sun rises over the horizon casting bright green light across the sky. A green Solana flag billows behind the cat as it looks out over the dawn with indestructible flat-eared resolve. Rebirth of civilization concept art, 6-second loop."
     },
     {
       "id": "meme-098",
@@ -1505,7 +1602,8 @@
         "judge",
         "gavel",
         "ruling"
-      ]
+      ],
+      "video_prompt": "Supreme Court chamber camera tracking down the mahogany bench. Nine justices watch in silence as Chief Justice Huh Cat in an oversized black judicial robe brings down a heavy wooden gavel with a solid strike on the sound block, looking out with total blank authority. Grand neoclassical judicial lighting, 5-second loop."
     },
     {
       "id": "meme-099",
@@ -1520,7 +1618,8 @@
         "2050",
         "portal",
         "future"
-      ]
+      ],
+      "video_prompt": "Futuristic time portal camera tracking as a swirling cyan lightning vortex opens in the street. Huh Cat in chrome cybernetic armor steps through from the future, holding a transparent holographic ledger displaying the year 2050 and the eternal $HUHCAT continuity chart. Sci-fi time-travel spectacle, 6-second loop."
     },
     {
       "id": "meme-100",
@@ -1535,7 +1634,8 @@
         "victory",
         "toast",
         "finale"
-      ]
+      ],
+      "video_prompt": "Grand celebration hall camera rising high over golden confetti falling from the ceiling. Laser lights flash across thousands of cheering holders. On top of the giant golden #1 podium, Huh Cat in a diamond championship belt raises a sparkling champagne goblet, looking over the crowd as giant screens flash 'CONTINUITY LOCKED'. Ultimate champion finale, 6-second loop."
     }
   ]
 }

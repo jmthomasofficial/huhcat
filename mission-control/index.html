@@ -815,10 +815,10 @@ footer {
   max-height:80px; overflow-y:auto; word-break:break-word;
 }
 .factory-card-actions {
-  display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;
+  display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px;
 }
 .factory-btn {
-  flex:1 1 auto; padding:8px 10px; font-family:var(--mono);
+  padding:8px 10px; font-family:var(--mono);
   font-size:10px; font-weight:700; text-transform:uppercase;
   border-radius:6px; cursor:pointer; transition:all 0.2s;
   display:inline-flex; align-items:center; justify-content:center; gap:6px;
@@ -830,6 +830,13 @@ footer {
 }
 .factory-btn-primary:hover {
   background:var(--signal); color:var(--void);
+}
+.factory-btn-cyan {
+  background:rgba(0,229,255,0.12); color:var(--cyan);
+  border-color:rgba(0,229,255,0.35);
+}
+.factory-btn-cyan:hover {
+  background:var(--cyan); color:var(--void);
 }
 .factory-btn-ghost {
   background:rgba(255,255,255,0.03); color:var(--text);
@@ -890,7 +897,7 @@ footer {
       <a href="#tomorrow">TOMORROW</a>
       <a href="#missions">MISSIONS</a>
       <a href="#armory">ARMORY</a>
-      <a href="#factory">MEME FACTORY</a>
+      <a href="#factory">VIDEO STUDIO</a>
       <a href="#rank">RANK</a>
       <a href="#doctrine">DOCTRINE</a>
       <button class="sfx-toggle" id="sfx-btn" title="Toggle cyber sound effects">SFX: ON</button>
@@ -1050,41 +1057,58 @@ footer {
 </section>
 
 
-<!-- MEME FACTORY & VIRAL ARTILLERY -->
+<!-- MEME & VIDEO STUDIO -->
 <section id="factory">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-meta"><span class="num">04 //</span> VIRAL ARTILLERY</div>
-      <h2 class="section-title">The 100 Meme Factory</h2>
+      <div class="section-meta"><span class="num">04 //</span> VIRAL VIDEO ARTILLERY</div>
+      <h2 class="section-title">The 100 Meme & Video Studio</h2>
       <p class="section-desc">
-        Every single viral meme prompt in this armory has been meticulously engineered from the ground up to produce maximum visual impact across modern feeds using completely free artificial intelligence models, allowing every single community member to generate high-resolution visual propaganda at zero cost while copying matching on-chain verification metadata straight to their personal feeds without relying on expensive software subscriptions or complicated graphic design tools. Pick your engine above. Generate. Post. Win. Pick your favorite generator tab above, grab any prompt with one click, and deploy on-chain meme culture across the Solana timeline before anyone can dispute the historical record.
+        Every single viral meme prompt and camera motion sequence in this war room has been built from the ground up to produce maximum organic reach across modern feeds using free artificial intelligence models, allowing every community member to generate high-resolution visual propaganda and fluid animation clips at zero cost while copying matching on-chain verification metadata straight to their personal feeds without relying on expensive software subscriptions or complicated video editing tools. Pick your engine above. Generate. Post. Win. Pick your favorite generator tab above, grab any prompt with one click, and deploy on-chain meme culture across the Solana timeline before anyone can dispute the historical record.
       </p>
     </div>
 
     <!-- Step-by-Step Generator Guide Box -->
     <div class="factory-guide-box">
       <div class="factory-tabs-nav">
-        <button class="factory-tab-btn active" onclick="switchEngineTab('qwen')">Qwen 3.8-Max [Free Pick]</button>
+        <button class="factory-tab-btn active" onclick="switchEngineTab('qwen')">Qwen 3.8-Max Video [Top Pick]</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('meta')">Meta AI Video</button>
         <button class="factory-tab-btn" onclick="switchEngineTab('grok')">Grok Imagine</button>
-        <button class="factory-tab-btn" onclick="switchEngineTab('gemini')">Google Gemini</button>
-        <button class="factory-tab-btn" onclick="switchEngineTab('chatgpt')">OpenAI Web Chat</button>
-        <button class="factory-tab-btn" onclick="switchEngineTab('copilot')">Microsoft Copilot</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('google')">Google VideoFX</button>
+        <button class="factory-tab-btn" onclick="switchEngineTab('hailuo')">Hailuo AI</button>
       </div>
 
       <!-- Tab: Qwen -->
       <div class="factory-tab-content active" id="tab-qwen">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
           <div>
-            <strong style="color:#f1f5f9;font-size:15px;">Qwen 3.8-Max + Qwen-Image 3.0 Engine</strong>
-            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">RECOMMENDED FREE CHOICE</span>
+            <strong style="color:#f1f5f9;font-size:15px;">Qwen 3.8-Max Video Studio (chat.qwen.ai)</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">RECOMMENDED FREE PICK</span>
           </div>
           <a href="https://chat.qwen.ai" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open chat.qwen.ai &rarr;</a>
         </div>
         <div class="factory-steps-list">
           <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open chat.qwen.ai</strong> <p>Sign in free.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Select Qwen 3.8-Max</strong> <p>Select model.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Click + &rarr; Create Image</strong> <p>Click plus icon.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Paste Prompt & Generate</strong> <p>Generate render.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Select Qwen 3.8-Max</strong> <p>Pick model from top menu.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Click + &rarr; Create Video</strong> <p>Choose 16:9 or 9:16 ratio.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Paste Prompt & Generate</strong> <p>Save MP4 video.</p> </div>
+        </div>
+      </div>
+
+      <!-- Tab: Meta AI -->
+      <div class="factory-tab-content" id="tab-meta">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
+          <div>
+            <strong style="color:#f1f5f9;font-size:15px;">Meta AI Video & Animate (meta.ai)</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">FREE ANIMATION</span>
+          </div>
+          <a href="https://meta.ai" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open meta.ai &rarr;</a>
+        </div>
+        <div class="factory-steps-list">
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open meta.ai</strong> <p>Sign in free.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Image Animate Flow</strong> <p>Click animate on image.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Text Video Flow</strong> <p>Type Create a video of.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Download MP4 File</strong> <p>Post to Reels.</p> </div>
         </div>
       </div>
 
@@ -1092,67 +1116,50 @@ footer {
       <div class="factory-tab-content" id="tab-grok">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
           <div>
-            <strong style="color:#f1f5f9;font-size:15px;">Grok Imagine Engine on X</strong>
-            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">FAST WORKFLOW</span>
+            <strong style="color:#f1f5f9;font-size:15px;">Grok Imagine Engine (x.com / grok.com)</strong>
+            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">FAST WORKFLOW</span>
           </div>
           <a href="https://x.com/i/grok" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Grok on X &rarr;</a>
         </div>
         <div class="factory-steps-list">
           <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open Grok on X</strong> <p>Open tool.</p> </div>
           <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Type /imagine Command</strong> <p>Type imagine.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Save Image File</strong> <p>Save file.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Quote Post on X</strong> <p>Quote post.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Save Media File</strong> <p>Save file.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Quote Post on X</strong> <p>Deploy caption.</p> </div>
         </div>
       </div>
 
-      <!-- Tab: Gemini -->
-      <div class="factory-tab-content" id="tab-gemini">
+      <!-- Tab: Google VideoFX -->
+      <div class="factory-tab-content" id="tab-google">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
           <div>
-            <strong style="color:#f1f5f9;font-size:15px;">Google Gemini With Imagen 3</strong>
-            <span style="color:var(--gold);font-family:var(--mono);font-size:11px;margin-left:8px;">CLEAN RENDERS</span>
+            <strong style="color:#f1f5f9;font-size:15px;">Google VideoFX Studio (labs.google/fx)</strong>
+            <span style="color:var(--gold);font-family:var(--mono);font-size:11px;margin-left:8px;">EXPERIMENTAL RENDERS</span>
           </div>
-          <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Gemini &rarr;</a>
+          <a href="https://labs.google/fx/tools/video-fx" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open VideoFX &rarr;</a>
         </div>
         <div class="factory-steps-list">
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open gemini.google.com</strong> <p>Sign in.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Type Generate Command</strong> <p>Type prompt.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Save Direct File</strong> <p>Download image.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Deploy to Socials</strong> <p>Post socials.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open labs.google/fx</strong> <p>Sign in free.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Paste Video Prompt</strong> <p>Paste action prompt.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Generate Scene</strong> <p>Render clip.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Save MP4 File</strong> <p>Download clip.</p> </div>
         </div>
       </div>
 
-      <!-- Tab: ChatGPT -->
-      <div class="factory-tab-content" id="tab-chatgpt">
+      <!-- Tab: Hailuo AI -->
+      <div class="factory-tab-content" id="tab-hailuo">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
           <div>
-            <strong style="color:#f1f5f9;font-size:15px;">OpenAI Web Chat Free Tier</strong>
-            <span style="color:var(--signal);font-family:var(--mono);font-size:11px;margin-left:8px;">DALL-E 3 ACCESS</span>
+            <strong style="color:#f1f5f9;font-size:15px;">Hailuo AI Video Engine (hailuoai.video)</strong>
+            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">CAMERA SWEEPS</span>
           </div>
-          <a href="https://chat.openai.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Chat &rarr;</a>
+          <a href="https://hailuoai.video" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Hailuo AI &rarr;</a>
         </div>
         <div class="factory-steps-list">
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open chat.openai.com</strong> <p>Sign in.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Type Photo Command</strong> <p>Type prompt.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Download High-Res</strong> <p>Download image.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Post Cross-Platform</strong> <p>Post socials.</p> </div>
-        </div>
-      </div>
-
-      <!-- Tab: Copilot -->
-      <div class="factory-tab-content" id="tab-copilot">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
-          <div>
-            <strong style="color:#f1f5f9;font-size:15px;">Microsoft Copilot Designer</strong>
-            <span style="color:var(--cyan);font-family:var(--mono);font-size:11px;margin-left:8px;">15 DAILY BOOSTS</span>
-          </div>
-          <a href="https://copilot.microsoft.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;min-height:36px;font-size:11px;">Open Copilot &rarr;</a>
-        </div>
-        <div class="factory-steps-list">
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open copilot.microsoft.com</strong> <p>Sign in.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Paste Prompt Direct</strong> <p>Paste prompt.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Pick Favorite Render</strong> <p>Download image.</p> </div>
-          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Raid the Timeline</strong> <p>Post socials.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 01</span> <strong>Open hailuoai.video</strong> <p>Sign in free.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 02</span> <strong>Upload Meme Image</strong> <p>Upload photo.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 03</span> <strong>Add Motion Prompt</strong> <p>Paste prompt.</p> </div>
+          <div class="factory-step-card"> <span class="factory-step-num">STEP 04</span> <strong>Save Video File</strong> <p>Download clip.</p> </div>
         </div>
       </div>
     </div>
@@ -2136,6 +2143,7 @@ function renderFactoryGrid() {
     list = list.filter(m => 
       m.title.toLowerCase().includes(query) ||
       m.prompt.toLowerCase().includes(query) ||
+      (m.video_prompt && m.video_prompt.toLowerCase().includes(query)) ||
       m.caption.toLowerCase().includes(query) ||
       m.tags.some(t => t.toLowerCase().includes(query))
     );
@@ -2157,25 +2165,34 @@ function renderFactoryGrid() {
 
         <div class="factory-card-block">
           <div class="factory-card-label">
-            <span>AI Image Prompt</span>
-            <span>QWEN-IMAGE 3.0</span>
+            <span>AI Static Image Prompt</span>
+            <span>QWEN-IMAGE 3.0 / GROK</span>
           </div>
-          <div class="factory-card-text">${m.prompt}</div>
+          <div class="factory-card-text">${escapeHtml(m.prompt)}</div>
         </div>
 
         <div class="factory-card-block">
           <div class="factory-card-label">
-            <span>Social Post Caption</span>
-            <span>METADATA</span>
+            <span>5-7s Video Animation Prompt</span>
+            <span>QWEN VIDEO / META AI</span>
           </div>
-          <div class="factory-card-text">${m.caption}</div>
+          <div class="factory-card-text">${escapeHtml(m.video_prompt || '')}</div>
+        </div>
+
+        <div class="factory-card-block">
+          <div class="factory-card-label">
+            <span>Social Post Caption & Metadata</span>
+            <span>X / TIKTOK / REELS</span>
+          </div>
+          <div class="factory-card-text">${escapeHtml(m.caption)}</div>
         </div>
       </div>
 
       <div class="factory-card-actions">
-        <button class="factory-btn factory-btn-primary" onclick="copyMemePrompt(${m.num}, event)">Copy Prompt</button>
-        <button class="factory-btn factory-btn-ghost" onclick="copyMemeCaption(${m.num}, event)">Copy Caption</button>
-        <a class="factory-btn factory-btn-ghost" href="https://chat.qwen.ai" target="_blank" rel="noopener" title="Open Qwen in new tab">Launch Qwen &rarr;</a>
+        <button class="factory-btn factory-btn-primary" onclick="copyMemePrompt(${m.num}, event)">Copy Image</button>
+        <button class="factory-btn factory-btn-cyan" onclick="copyMemeVideoPrompt(${m.num}, event)">Copy Video</button>
+        <button class="factory-btn factory-btn-ghost" onclick="copyMemeCaption(${m.num}, event)">Copy Post</button>
+        <a class="factory-btn factory-btn-ghost" href="https://chat.qwen.ai" target="_blank" rel="noopener" title="Open Qwen Video in new tab">Qwen Video &rarr;</a>
       </div>
     </div>
   `).join('');
@@ -2185,7 +2202,17 @@ function copyMemePrompt(num, evt) {
   const meme = MEME_DATA?.memes.find(m => m.num === num);
   if (!meme) return;
   navigator.clipboard.writeText(meme.prompt).then(() => {
-    showToast(`PROMPT #${String(num).padStart(3, '0')} COPIED // READY FOR QWEN`);
+    toast(`IMAGE PROMPT #${String(num).padStart(3, '0')} COPIED // READY FOR QWEN`);
+    playSuccessChime();
+    if (evt && evt.clientX) triggerSparks(evt.clientX, evt.clientY);
+  });
+}
+
+function copyMemeVideoPrompt(num, evt) {
+  const meme = MEME_DATA?.memes.find(m => m.num === num);
+  if (!meme) return;
+  navigator.clipboard.writeText(meme.video_prompt || '').then(() => {
+    toast(`VIDEO PROMPT #${String(num).padStart(3, '0')} COPIED // 5-7S MOTION READY`);
     playSuccessChime();
     if (evt && evt.clientX) triggerSparks(evt.clientX, evt.clientY);
   });
@@ -2195,7 +2222,7 @@ function copyMemeCaption(num, evt) {
   const meme = MEME_DATA?.memes.find(m => m.num === num);
   if (!meme) return;
   navigator.clipboard.writeText(meme.caption).then(() => {
-    showToast(`CAPTION #${String(num).padStart(3, '0')} COPIED // READY TO POST`);
+    toast(`METADATA #${String(num).padStart(3, '0')} COPIED // READY TO POST`);
     playCyberBlip(900, 0.05);
     if (evt && evt.clientX) triggerSparks(evt.clientX, evt.clientY);
   });
