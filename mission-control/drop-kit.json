@@ -53,25 +53,179 @@
       "line": "Getting paid in SOL while I nap. Hold more than $20. Watch your wallet."
     },
     {
+      "id": "watching-faders",
+      "title": "Watching people fade",
+      "still": "watching-faders.jpg",
+      "clip": "watching-faders.mp4",
+      "line": "Me watching people fade Solana history."
+    },
+    {
+      "id": "walking-in",
+      "title": "Walking in",
+      "still": "walking-in.jpg",
+      "clip": "walking-in.mp4",
+      "line": "Solana history walking in."
+    },
+    {
+      "id": "vault-code",
+      "title": "After the vault code",
+      "still": "vault-code.jpg",
+      "clip": "vault-code.mp4",
+      "line": "Me after reading the vault code. No admin. No pause. No upgrade key."
+    },
+    {
       "id": "scale",
-      "title": "The bag",
+      "title": "Market cap looking healthy",
       "still": "scale.jpg",
       "clip": "scale.mp4",
-      "line": "Weighing the bag."
+      "line": "Market cap looking healthy."
+    },
+    {
+      "id": "scale-heavy",
+      "title": "Bags looking heavy",
+      "still": "scale-heavy.jpg",
+      "clip": "scale-heavy.mp4",
+      "line": "Bags looking heavy."
     },
     {
       "id": "sol-landed",
-      "title": "SOL landed",
+      "title": "You still not in?",
       "still": "sol-landed.jpg",
       "clip": "sol-landed.mp4",
-      "line": "SOL just landed."
+      "line": "Huh? You still not in?"
     },
     {
       "id": "still-holding",
       "title": "Still holding",
       "still": "still-holding.jpg",
       "clip": "still-holding.mp4",
-      "line": "Still holding."
+      "line": "Still holding through the dip."
+    },
+    {
+      "id": "vault-sealed",
+      "title": "The vault is sealed",
+      "still": "vault-sealed.jpg",
+      "clip": "vault-sealed.mp4",
+      "line": "The vault is sealed."
+    },
+    {
+      "id": "vault-forever",
+      "title": "On-chain",
+      "still": "vault-forever.jpg",
+      "clip": "vault-forever.mp4",
+      "line": "On-chain. Sealed."
+    },
+    {
+      "id": "sleeping-sol",
+      "title": "Sleeping on it",
+      "still": "sleeping-sol.jpg",
+      "clip": "sleeping-sol.mp4",
+      "line": "Me sleeping on $HUHCAT while holders collect SOL."
+    },
+    {
+      "id": "inscribed-faded",
+      "title": "Inscribed and faded",
+      "still": "inscribed-faded.jpg",
+      "clip": "inscribed-faded.mp4",
+      "line": "The picture is inscribed on Solana v1 Mainnet."
+    },
+    {
+      "id": "v1-didnt-buy",
+      "title": "Still did not buy",
+      "still": "v1-didnt-buy.jpg",
+      "clip": "v1-didnt-buy.mp4",
+      "line": "The picture is in the block. Solana v1 Mainnet."
+    },
+    {
+      "id": "earn-sol",
+      "title": "You earn SOL",
+      "still": "earn-sol.jpg",
+      "clip": "earn-sol.mp4",
+      "line": "You earn SOL from holding. Hold more than $20. Watch your wallet."
+    },
+    {
+      "id": "wake-faded",
+      "title": "Woke up faded",
+      "still": "wake-faded.jpg",
+      "clip": "wake-faded.mp4",
+      "line": "When you wake up and see you faded."
+    },
+    {
+      "id": "collage",
+      "title": "$HUHCAT collage",
+      "still": "collage.jpg",
+      "wide": true,
+      "line": "$HUHCAT. The real cat."
+    },
+    {
+      "id": "sticker",
+      "title": "Greenscreen sticker",
+      "still": "sticker.jpg",
+      "clip": "sticker.webm",
+      "line": "The real cat. Greenscreen ready."
+    },
+    {
+      "id": "quote-aristoteles",
+      "title": "Aristoteles",
+      "still": "quote-aristoteles.jpg",
+      "wide": true,
+      "line": "To understand $HUH you must first understand that higher is inevitable."
+    },
+    {
+      "id": "quote-plato",
+      "title": "Platoo",
+      "still": "quote-plato.jpg",
+      "wide": true,
+      "line": "To hold $HUHCAT is to understand that the dip is temporary and the moon is not."
+    },
+    {
+      "id": "quote-machiavelli",
+      "title": "Machiavelli",
+      "still": "quote-machiavelli.jpg",
+      "wide": true,
+      "line": "First they faded $HUH. Then $HUH printed. Then they asked for the entry."
+    },
+    {
+      "id": "quote-confucius",
+      "title": "Confucius",
+      "still": "quote-confucius.jpg",
+      "wide": true,
+      "line": "He who sells $HUHCAT does not lack coins. He lacks conviction."
+    },
+    {
+      "id": "quote-300bc",
+      "title": "$HUH, 300 BC",
+      "still": "quote-300bc.jpg",
+      "wide": true,
+      "line": "Do not pray for a pump. Become so early that the pump prays for you."
+    },
+    {
+      "id": "quote-paperhands",
+      "title": "The chart",
+      "still": "quote-paperhands.jpg",
+      "wide": true,
+      "line": "The chart does not lie. Paper hands do."
+    },
+    {
+      "id": "quote-suntzu",
+      "title": "Sun Tzu",
+      "still": "quote-suntzu.jpg",
+      "wide": true,
+      "line": "Give a man a pump and he eats for a day. Teach a man to hold $HUH and he eats forever."
+    },
+    {
+      "id": "quote-nietzsche",
+      "title": "Nietzsche",
+      "still": "quote-nietzsche.jpg",
+      "wide": true,
+      "line": "I fear not the red candle. I fear the man who sold at the first one."
+    },
+    {
+      "id": "quote-refuse",
+      "title": "Refuse to leave",
+      "still": "quote-refuse.jpg",
+      "wide": true,
+      "line": "On SOL chain we do not wait for permission to go higher. We refuse to leave."
     }
   ]
 }

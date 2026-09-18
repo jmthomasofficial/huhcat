@@ -261,6 +261,8 @@ img { max-width:100%; display:block; }
   background:var(--graphite-card); border:1px solid var(--slate-purple);
   border-radius:14px; overflow:hidden; display:flex; flex-direction:column;
 }
+.drop-card.is-wide { grid-column: span 2; }
+.drop-card.is-wide .drop-media { aspect-ratio:16/9; }
 .drop-media {
   position:relative; aspect-ratio:9/16; background:#000; cursor:pointer;
 }
@@ -1318,6 +1320,7 @@ footer {
     scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
   }
   .drop-card { flex:0 0 min(78vw, 280px); scroll-snap-align:start; }
+  .drop-card.is-wide { flex-basis:min(92vw, 420px); }
   .rank-stats-grid { grid-template-columns:repeat(3, 1fr); }
   .mc-action-row { flex-direction:column; }
   .mc-btn { width:100%; }
@@ -2779,7 +2782,7 @@ function renderDropKit() {
   grid.innerHTML = DROP_KIT.items.map(item => {
     const still = item.still ? dropUrl(item.still) : '';
     const clip = item.clip ? dropUrl(item.clip) : '';
-    return `<article class="drop-card" data-drop="${item.id}">
+    return `<article class="drop-card${item.wide ? ' is-wide' : ''}" data-drop="${item.id}">
       <div class="drop-media" onclick="playDropClip('${item.id}')">
         ${still ? `<img src="${still}" alt="${item.title}" width="360" height="640" loading="lazy">` : ''}
         ${clip ? `<video src="${clip}" loop muted playsinline preload="none" style="display:none"></video>
