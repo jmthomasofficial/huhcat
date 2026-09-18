@@ -276,7 +276,7 @@ async function checkWallet(){
       out.innerHTML = '<p class="err">Zero HUHCAT found at that address. Holding more than $20 worth is what starts the rewards.</p>';
     }
   }catch(e){
-    out.innerHTML = '<p class="err">The public RPC refused the read. Rate limits happen. Wait a moment and try again.</p>';
+    out.innerHTML = '<p class="err">The public RPC refused the read. Rate limits happen.</p><p class="pill" style="margin-top:6px">Check it manually meanwhile: open <a href="https://solscan.io/account/' + addr + '" target="_blank" rel="noopener">your account on Solscan</a> and look for the HUHCAT token row. Holding more than $20 worth is the floor.</p>';
   }
 }
 
