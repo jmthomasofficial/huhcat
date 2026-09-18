@@ -684,7 +684,7 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
 
 /* ---- CONTINUITY DOCTRINE ---- */
 .doctrine-grid {
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  display:grid; grid-template-columns:repeat(3, 1fr);
   gap:16px;
 }
 .doctrine-card {
@@ -708,6 +708,83 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
 }
 .doctrine-body {
   font-size:15px; color:var(--muted); line-height:1.65;
+}
+.doctrine-banner-card {
+  grid-column:span 2;
+  background:var(--graphite-card);
+  border:1px solid rgba(153, 69, 255, 0.4);
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 12px 36px -10px rgba(0,0,0,0.8), 0 0 24px -6px rgba(153,69,255,0.25);
+  transition:all 0.3s ease;
+}
+.doctrine-banner-card:hover {
+  border-color:rgba(20, 241, 149, 0.6);
+  transform:translateY(-2px);
+  box-shadow:0 18px 45px -10px rgba(0,0,0,0.9), 0 0 30px -4px rgba(20,241,149,0.35);
+}
+.doctrine-banner-img-wrap {
+  position:relative;
+  width:100%;
+  height:100%;
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.doctrine-banner-img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(0.82) contrast(1.08);
+  transition:transform 0.5s ease;
+}
+.doctrine-banner-card:hover .doctrine-banner-img {
+  transform:scale(1.025);
+}
+.doctrine-banner-overlay {
+  position:relative;
+  z-index:2;
+  padding:22px 24px;
+  background:linear-gradient(0deg, rgba(6,7,13,0.96) 0%, rgba(6,7,13,0.72) 55%, transparent 100%);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
+.doctrine-banner-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--signal);
+  background:rgba(20,241,149,0.12);
+  border:1px solid rgba(20,241,149,0.35);
+  padding:3px 9px;
+  border-radius:4px;
+  margin-bottom:8px;
+}
+.doctrine-banner-title {
+  font-family:var(--display);
+  font-size:20px;
+  font-weight:800;
+  color:#ffffff;
+  letter-spacing:-0.02em;
+  margin-bottom:6px;
+  line-height:1.2;
+}
+.doctrine-banner-body {
+  font-size:14px;
+  color:var(--muted-bright);
+  line-height:1.55;
 }
 
 /* ---- FOOTER ---- */
@@ -801,7 +878,7 @@ footer {
 .factory-chip.active { background:linear-gradient(135deg, var(--signal), var(--cyan)); color:#06070d; border-color:var(--signal); font-weight:800; }
 
 .factory-grid {
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(330px, 1fr));
+  display:grid; grid-template-columns:repeat(3, 1fr);
   gap:20px;
 }
 .factory-card {
@@ -871,6 +948,90 @@ footer {
 .factory-btn-ghost:hover {
   border-color:var(--signal); color:var(--signal);
 }
+.factory-banner-card {
+  grid-column:span 2;
+  background:linear-gradient(145deg, rgba(28,22,54,0.92), rgba(9,13,24,0.96));
+  border:1.5px solid rgba(153,69,255,0.45);
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 14px 40px -10px rgba(0,0,0,0.85), 0 0 25px -4px rgba(153,69,255,0.28);
+  transition:all 0.3s ease;
+}
+.factory-banner-card:hover {
+  border-color:rgba(20,241,149,0.7);
+  transform:translateY(-3px);
+  box-shadow:0 20px 50px -10px rgba(0,0,0,0.95), 0 0 35px -3px rgba(20,241,149,0.38);
+}
+.factory-banner-img-wrap {
+  position:relative;
+  width:100%;
+  height:100%;
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.factory-banner-img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(0.85) contrast(1.08);
+  transition:transform 0.5s ease;
+}
+.factory-banner-card:hover .factory-banner-img {
+  transform:scale(1.03);
+}
+.factory-banner-overlay {
+  position:relative;
+  z-index:2;
+  padding:22px 24px;
+  background:linear-gradient(0deg, rgba(6,7,13,0.96) 0%, rgba(6,7,13,0.72) 58%, transparent 100%);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
+.factory-banner-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--signal);
+  background:rgba(20,241,149,0.12);
+  border:1px solid rgba(20,241,149,0.35);
+  padding:3px 9px;
+  border-radius:4px;
+  margin-bottom:8px;
+}
+.factory-banner-title {
+  font-family:var(--display);
+  font-size:22px;
+  font-weight:800;
+  color:#ffffff;
+  letter-spacing:-0.02em;
+  margin-bottom:6px;
+  line-height:1.2;
+}
+.factory-banner-desc {
+  font-size:13.5px;
+  color:var(--muted-bright);
+  line-height:1.55;
+  margin-bottom:14px;
+  max-width:620px;
+}
+.factory-banner-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
 /* ---- MOBILE RESPONSIVE ---- */
 @media (max-width:960px) {
@@ -881,6 +1042,10 @@ footer {
   .hero-col-content .hero-actions { justify-content:center; }
   .hero-hud-strip { justify-content:center; }
   .hero-artwork-frame { max-width:400px; }
+  .doctrine-grid { grid-template-columns:repeat(2, 1fr); }
+  .doctrine-banner-card { grid-column:span 2; }
+  .factory-grid { grid-template-columns:repeat(2, 1fr); }
+  .factory-banner-card { grid-column:span 2; }
 }
 @media (max-width:840px) {
   .pulse-nav { display:none; }
@@ -897,6 +1062,17 @@ footer {
   .mission-grid { grid-template-columns:1fr; }
   .armory-grid { grid-template-columns:1fr; }
   .doctrine-grid { grid-template-columns:1fr; }
+  .doctrine-banner-card { grid-column:span 1; min-height:240px; }
+  .doctrine-banner-overlay { padding:16px; }
+  .doctrine-banner-title { font-size:18px; }
+  .doctrine-banner-body { font-size:13px; }
+  .factory-grid { grid-template-columns:1fr; }
+  .factory-banner-card { grid-column:span 1; min-height:300px; }
+  .factory-banner-overlay { padding:16px; }
+  .factory-banner-title { font-size:18px; }
+  .factory-banner-desc { font-size:13px; margin-bottom:12px; }
+  .factory-banner-actions { flex-direction:column; }
+  .factory-banner-actions .factory-btn { width:100%; }
   .rank-stats-grid { grid-template-columns:repeat(3, 1fr); }
   .mc-action-row { flex-direction:column; }
   .mc-btn { width:100%; }
@@ -1523,6 +1699,19 @@ footer {
           <p class="doctrine-body">
             Bender is an authentic internet icon with 3.4 million TikTok fans and over 100 million organic hearts. Most tokens fabricate lore from scratch. HUHCAT represents pre-existing global internet culture.
           </p>
+        </div>
+      </div>
+
+      <div class="doctrine-banner-card">
+        <div class="doctrine-banner-img-wrap">
+          <img src="doctrine-citadel.jpg" alt="HUHCAT Continuity Citadel on Solana" class="doctrine-banner-img" loading="lazy">
+          <div class="doctrine-banner-overlay">
+            <div class="doctrine-banner-badge">PERMANENT DECENTRALIZED CITADEL</div>
+            <div class="doctrine-banner-title">The Community Always Outlasts the Deployer</div>
+            <div class="doctrine-banner-body">
+              Solana mainnet infrastructure built by holders. Zero dev wallet risk. True autonomous continuity.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2506,7 +2695,7 @@ function renderFactoryGrid() {
     return;
   }
 
-  grid.innerHTML = list.map(m => `
+  let html = list.map(m => `
     <div class="factory-card">
       <div>
         <div class="factory-card-head">
@@ -2548,6 +2737,27 @@ function renderFactoryGrid() {
       </div>
     </div>
   `).join('');
+
+  if (FACTORY_CAT === 'all' && !query) {
+    html += `
+      <div class="factory-banner-card">
+        <div class="factory-banner-img-wrap">
+          <img src="factory-victory.jpg" alt="HUHCAT Cyberpunk Victory Arena" class="factory-banner-img" loading="lazy">
+          <div class="factory-banner-overlay">
+            <div class="factory-banner-badge">WAR ROOM ARSENAL // UNRESTRICTED ASSET</div>
+            <div class="factory-banner-title">Community War Room Victory Arena</div>
+            <div class="factory-banner-desc">One hundred custom prompts primed for Qwen 3.8-Max, Grok Imagine, and Meta AI. Produce unstoppable meme volleys, dominate social timelines, and push Solana transaction velocity.</div>
+            <div class="factory-banner-actions">
+              <a href="https://chat.qwen.ai" target="_blank" rel="noopener" class="factory-btn factory-btn-primary">Launch Qwen Image</a>
+              <a href="https://t.me/+O7xyVusP8t9jZTFh" target="_blank" rel="noopener" class="factory-btn factory-btn-cyan">Drop in Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  grid.innerHTML = html;
 }
 
 function copyMemePrompt(num, evt) {
