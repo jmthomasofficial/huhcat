@@ -272,7 +272,7 @@
     "streak_bonus": 15
   },
   "ranks": [
-    {"min_streak": 0, "title": "Observer", "color": "#828d9f"},
+    {"min_streak": 0, "title": "Observer", "color": "#cbd5e1"},
     {"min_streak": 1, "title": "Kitten", "color": "#39ff88"},
     {"min_streak": 3, "title": "Cat", "color": "#00e5ff"},
     {"min_streak": 5, "title": "Top Cat", "color": "#ffbe2e"},
