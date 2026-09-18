@@ -66,7 +66,13 @@ img { max-width:100%; display:block; }
 ::-webkit-scrollbar-thumb { background:rgba(57,255,136,0.3); border-radius:8px; }
 ::-webkit-scrollbar-thumb:hover { background:var(--signal); }
 
-/* ambient background grid */
+/* static background layer */
+.bg-static-layer {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:#06070d url('war-room-bg.jpg') center top / cover no-repeat;
+  opacity:0.42;
+}
+/* ambient background grid & stair-step chart canvas */
 #candle-canvas {
   position:fixed; inset:0; z-index:0; pointer-events:none;
   width:100%; height:100%;
@@ -1081,6 +1087,7 @@ footer {
 </style>
 </head>
 <body>
+<div class="bg-static-layer"></div>
 <canvas id="candle-canvas"></canvas>
 
 <div class="cyber-grid"></div>
@@ -1095,7 +1102,8 @@ footer {
       <span class="pulse-brand"><span class="pulse-dot"></span> HUHCAT WAR ROOM</span>
       <div class="pulse-item"><span class="pulse-val" id="p-day">DAY -</span></div>
       <div class="pulse-item">MARATHON <span class="pulse-val cyan">SEASON 1</span></div>
-      <div class="pulse-item">STREAK <span class="pulse-val gold" id="p-streak">0</span></div>
+      <div class="pulse-item">TARGET <span class="pulse-val gold">$100M CAP</span></div>
+      <div class="pulse-item">STREAK <span class="pulse-val signal" id="p-streak">0</span></div>
     </div>
     <div class="pulse-nav">
       <a href="#tomorrow">TOMORROW</a>
@@ -1117,10 +1125,10 @@ footer {
       <!-- Left: Telemetry & Protocol Controls -->
       <div class="hero-col-content">
         <div class="hero-badge">
-          <span class="hero-badge-tag">S1</span> CONTINUITY PROTOCOL // 7-DAY MARATHON
+          <span class="hero-badge-tag">MISSION</span> 7 DAYS TO $100M MARKET CAP // CONTINUITY PROTOCOL
         </div>
         <h1>MISSION <span class="grad">CONTROL</span></h1>
-        <p class="hero-sub">7 Days. 21 Missions. The Continuity Engine for $HUHCAT.</p>
+        <p class="hero-sub">7 Days. 21 Missions. The Stair-Step to $100M+ Market Cap for $HUHCAT.</p>
 
         <!-- Heat HUD -->
         <div class="heat-hud">
@@ -1144,8 +1152,9 @@ footer {
 
         <div class="hero-hud-strip">
           <div class="hud-pill"><span class="hud-pill-dot signal"></span> 21 OPS</div>
+          <div class="hud-pill"><span class="hud-pill-dot gold"></span> TARGET: $100M+ CAP</div>
           <div class="hud-pill"><span class="hud-pill-dot cyan"></span> SOLANA MAINNET</div>
-          <div class="hud-pill"><span class="hud-pill-dot gold"></span> 100% COMMUNITY</div>
+          <div class="hud-pill"><span class="hud-pill-dot signal"></span> 100% COMMUNITY</div>
         </div>
       </div>
 
@@ -1815,100 +1824,297 @@ function playSuccessChime() {
 }
 
 
-// ---- ASCENDING SOLANA CANDLESTICK CANVAS ENGINE ----
-(function initCandleBackground() {
+// ---- 7-DAY STAIR-STEPPING CHART TO $100M+ ENGINE ----
+(function initStairStepChart() {
   const canvas = document.getElementById('candle-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let w, h;
   const dpr = window.devicePixelRatio || 1;
 
-  function resize() {
+  // 7-Day Sprint Milestones to $100M Market Cap
+  const STEPS = [
+    { day: 1, cap: '$1M', label: 'DAY 1 // $1M BASE', fracY: 0.86 },
+    { day: 2, cap: '$5M', label: 'DAY 2 // $5M SHELF', fracY: 0.74 },
+    { day: 3, cap: '$10M', label: 'DAY 3 // $10M BREAKOUT', fracY: 0.61 },
+    { day: 4, cap: '$25M', label: 'DAY 4 // $25M EXPANSION', fracY: 0.47 },
+    { day: 5, cap: '$50M', label: 'DAY 5 // $50M SUPERCYCLE', fracY: 0.33 },
+    { day: 6, cap: '$75M', label: 'DAY 6 // $75M VELOCITY', fracY: 0.19 },
+    { day: 7, cap: '$100M+', label: 'DAY 7 // $100M+ SUMMIT', fracY: 0.08 }
+  ];
+
+  let candles = [];
+  let chartPoints = [];
+
+  function buildChart() {
     w = window.innerWidth;
     h = window.innerHeight;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
     ctx.scale(dpr, dpr);
-  }
-  window.addEventListener('resize', resize);
-  resize();
 
-  const numCols = Math.max(14, Math.floor(w / 44));
-  const colWidth = w / numCols;
-  const candles = [];
+    const padX = Math.max(36, w * 0.04);
+    const padYTop = Math.max(70, h * 0.09);
+    const padYBot = Math.max(48, h * 0.08);
+    const availW = w - padX * 2;
+    const availH = h - padYTop - padYBot;
 
-  const PALETTE = [
-    { fill: 'rgba(20, 241, 149, 0.28)', stroke: 'rgba(20, 241, 149, 0.65)', glow: 'rgba(20, 241, 149, 0.45)' },
-    { fill: 'rgba(20, 241, 149, 0.22)', stroke: 'rgba(20, 241, 149, 0.55)', glow: 'rgba(20, 241, 149, 0.35)' },
-    { fill: 'rgba(153, 69, 255, 0.25)', stroke: 'rgba(153, 69, 255, 0.65)', glow: 'rgba(153, 69, 255, 0.42)' },
-    { fill: 'rgba(0, 240, 255, 0.25)', stroke: 'rgba(0, 240, 255, 0.65)', glow: 'rgba(0, 240, 255, 0.42)' }
-  ];
+    candles = [];
+    chartPoints = [];
 
-  for (let i = 0; i < numCols; i++) {
-    const count = 2 + Math.floor(Math.random() * 2);
-    for (let j = 0; j < count; j++) {
-      const x = i * colWidth + (Math.random() - 0.5) * (colWidth * 0.45);
-      const y = Math.random() * (h + 300);
-      candles.push(createCandle(x, y));
+    const numSteps = STEPS.length;
+    const stepW = availW / numSteps;
+
+    for (let i = 0; i < numSteps; i++) {
+      const step = STEPS[i];
+      const startX = padX + i * stepW;
+      const endX = startX + stepW;
+      const shelfW = stepW * 0.64;
+      const rampW = stepW * 0.36;
+      const stepY = padYTop + step.fracY * availH;
+
+      const nextY = (i < numSteps - 1)
+        ? padYTop + STEPS[i + 1].fracY * availH
+        : stepY - availH * 0.06;
+
+      chartPoints.push({ x: startX, y: stepY, day: step.day, cap: step.cap, label: step.label });
+      chartPoints.push({ x: startX + shelfW, y: stepY });
+
+      const candleCount = Math.max(3, Math.min(6, Math.floor(shelfW / 18)));
+      const cGap = shelfW / (candleCount + 1);
+
+      for (let c = 0; c < candleCount; c++) {
+        const cx = startX + (c + 1) * cGap + (Math.random() - 0.5) * 4;
+        const cy = stepY + (Math.random() - 0.5) * 16;
+        const isBull = Math.random() > 0.22;
+        const bodyH = 8 + Math.random() * 22;
+        const bodyW = Math.max(4, Math.min(10, cGap * 0.65));
+        const wickUp = 4 + Math.random() * 14;
+        const wickDn = 4 + Math.random() * 14;
+
+        candles.push({
+          x: cx,
+          y: cy,
+          bodyW,
+          bodyH,
+          wickUp,
+          wickDn,
+          isBull,
+          isApex: false
+        });
+      }
+
+      const rampCandles = 2;
+      for (let r = 0; r < rampCandles; r++) {
+        const t = (r + 1) / (rampCandles + 1);
+        const rx = startX + shelfW + t * rampW;
+        const ry = stepY + (nextY - stepY) * t;
+        const isGod = (i >= 3);
+        const bodyH = isGod ? (24 + Math.random() * 32) : (14 + Math.random() * 18);
+        const bodyW = Math.max(5, Math.min(11, rampW * 0.28));
+
+        candles.push({
+          x: rx,
+          y: ry,
+          bodyW,
+          bodyH,
+          wickUp: 6 + Math.random() * 18,
+          wickDn: 6 + Math.random() * 14,
+          isBull: true,
+          isGod,
+          isApex: false
+        });
+      }
+
+      if (i === numSteps - 1) {
+        chartPoints.push({ x: endX, y: nextY, day: 7, cap: '$100M+', label: 'DAY 7 // $100M+ SUMMIT' });
+        candles.push({
+          x: endX - stepW * 0.12,
+          y: nextY,
+          bodyW: 14,
+          bodyH: 52,
+          wickUp: 28,
+          wickDn: 16,
+          isBull: true,
+          isGod: true,
+          isApex: true
+        });
+      }
     }
   }
 
-  function createCandle(x, y) {
-    const roll = Math.random();
-    let col = PALETTE[0];
-    if (roll < 0.5) col = PALETTE[0];
-    else if (roll < 0.76) col = PALETTE[1];
-    else if (roll < 0.90) col = PALETTE[2];
-    else col = PALETTE[3];
-
-    return {
-      x: x,
-      y: y,
-      bodyW: 6 + Math.random() * 8,
-      bodyH: 18 + Math.random() * 55,
-      wickUp: 8 + Math.random() * 26,
-      wickDown: 8 + Math.random() * 26,
-      speed: 0.35 + Math.random() * 0.75,
-      palette: col
-    };
-  }
+  window.addEventListener('resize', buildChart);
+  buildChart();
 
   let isVisible = true;
   document.addEventListener('visibilitychange', () => {
     isVisible = !document.hidden;
   });
 
-  function render() {
+  let startTime = performance.now();
+
+  function render(now) {
     if (isVisible) {
       ctx.clearRect(0, 0, w, h);
-      ctx.lineWidth = 1;
+      const elapsed = (now - startTime) * 0.001;
+
+      STEPS.forEach((step, idx) => {
+        const padYTop = Math.max(70, h * 0.09);
+        const padYBot = Math.max(48, h * 0.08);
+        const availH = h - padYTop - padYBot;
+        const y = padYTop + step.fracY * availH;
+
+        ctx.strokeStyle = (idx === STEPS.length - 1)
+          ? 'rgba(20, 241, 149, 0.28)'
+          : 'rgba(255, 255, 255, 0.04)';
+        ctx.lineWidth = (idx === STEPS.length - 1) ? 1.5 : 1;
+        ctx.setLineDash([4, 6]);
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.font = '700 10.5px "JetBrains Mono", monospace';
+        ctx.fillStyle = (idx === STEPS.length - 1)
+          ? '#14f195'
+          : 'rgba(203, 213, 225, 0.4)';
+        ctx.textAlign = 'right';
+        ctx.fillText(step.cap, w - 14, y - 4);
+      });
+
+      if (chartPoints.length > 0) {
+        ctx.beginPath();
+        ctx.moveTo(chartPoints[0].x, h);
+        for (let pt of chartPoints) {
+          ctx.lineTo(pt.x, pt.y);
+        }
+        ctx.lineTo(chartPoints[chartPoints.length - 1].x, h);
+        ctx.closePath();
+        const areaGrad = ctx.createLinearGradient(0, 0, 0, h);
+        areaGrad.addColorStop(0, 'rgba(20, 241, 149, 0.06)');
+        areaGrad.addColorStop(0.5, 'rgba(153, 69, 255, 0.035)');
+        areaGrad.addColorStop(1, 'rgba(6, 7, 13, 0)');
+        ctx.fillStyle = areaGrad;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(chartPoints[0].x, chartPoints[0].y);
+        for (let i = 1; i < chartPoints.length; i++) {
+          ctx.lineTo(chartPoints[i].x, chartPoints[i].y);
+        }
+        ctx.strokeStyle = 'rgba(20, 241, 149, 0.35)';
+        ctx.lineWidth = 2;
+        ctx.shadowColor = 'rgba(20, 241, 149, 0.45)';
+        ctx.shadowBlur = 6;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
 
       for (let i = 0; i < candles.length; i++) {
         const c = candles[i];
-        c.y -= c.speed;
-        if (c.y + c.bodyH + c.wickDown < -50) {
-          c.y = h + 50 + Math.random() * 60;
-          c.bodyH = 18 + Math.random() * 55;
-          c.speed = 0.35 + Math.random() * 0.75;
-        }
+        const top = c.y - c.bodyH / 2;
+        const bot = c.y + c.bodyH / 2;
 
-        const top = c.y;
-        const bottom = c.y + c.bodyH;
+        const strokeColor = c.isApex
+          ? '#14f195'
+          : c.isGod
+          ? 'rgba(20, 241, 149, 0.85)'
+          : c.isBull
+          ? 'rgba(20, 241, 149, 0.55)'
+          : 'rgba(255, 71, 87, 0.45)';
 
-        // Wick
-        ctx.strokeStyle = c.palette.stroke;
+        const fillColor = c.isApex
+          ? 'rgba(20, 241, 149, 0.45)'
+          : c.isGod
+          ? 'rgba(20, 241, 149, 0.32)'
+          : c.isBull
+          ? 'rgba(20, 241, 149, 0.20)'
+          : 'rgba(255, 71, 87, 0.18)';
+
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(c.x, top - c.wickUp);
-        ctx.lineTo(c.x, bottom + c.wickDown);
+        ctx.lineTo(c.x, bot + c.wickDn);
         ctx.stroke();
 
-        // Candle Body
-        ctx.fillStyle = c.palette.fill;
-        ctx.shadowColor = c.palette.glow;
-        ctx.shadowBlur = 6;
+        ctx.fillStyle = fillColor;
+        if (c.isGod || c.isApex) {
+          ctx.shadowColor = 'rgba(20, 241, 149, 0.6)';
+          ctx.shadowBlur = c.isApex ? 12 : 8;
+        }
         ctx.fillRect(c.x - c.bodyW / 2, top, c.bodyW, c.bodyH);
         ctx.strokeRect(c.x - c.bodyW / 2, top, c.bodyW, c.bodyH);
         ctx.shadowBlur = 0;
+      }
+
+      if (chartPoints.length > 1) {
+        const loopDur = 8;
+        const progress = (elapsed % loopDur) / loopDur;
+        const totalSegments = chartPoints.length - 1;
+        const targetSeg = progress * totalSegments;
+        const segIdx = Math.min(Math.floor(targetSeg), totalSegments - 1);
+        const segT = targetSeg - segIdx;
+
+        const p1 = chartPoints[segIdx];
+        const p2 = chartPoints[segIdx + 1];
+        const px = p1.x + (p2.x - p1.x) * segT;
+        const py = p1.y + (p2.y - p1.y) * segT;
+
+        ctx.shadowColor = 'rgba(20, 241, 149, 0.9)';
+        ctx.shadowBlur = 14;
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(px, py, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(20, 241, 149, 0.4)';
+        ctx.beginPath();
+        ctx.arc(px, py, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      STEPS.forEach((step, idx) => {
+        const padX = Math.max(36, w * 0.04);
+        const availW = w - padX * 2;
+        const stepW = availW / STEPS.length;
+        const sx = padX + idx * stepW;
+
+        ctx.font = '700 9.5px "JetBrains Mono", monospace';
+        ctx.fillStyle = 'rgba(203, 213, 225, 0.35)';
+        ctx.textAlign = 'left';
+        ctx.fillText(`D${step.day}: ${step.cap}`, sx, h - 20);
+      });
+
+      if (chartPoints.length > 0) {
+        const apexPt = chartPoints[chartPoints.length - 1];
+        const pingTime = (elapsed * 1.5) % 2;
+        const pingRadius = 8 + pingTime * 22;
+        const pingAlpha = Math.max(0, 1 - pingTime / 2);
+
+        ctx.strokeStyle = `rgba(20, 241, 149, ${pingAlpha * 0.7})`;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(apexPt.x - 12, apexPt.y, pingRadius, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = '#14f195';
+        ctx.shadowColor = 'rgba(20, 241, 149, 0.85)';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.arc(apexPt.x - 12, apexPt.y, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        ctx.font = '800 11px "JetBrains Mono", monospace';
+        ctx.fillStyle = '#14f195';
+        ctx.textAlign = 'right';
+        ctx.fillText('MISSION: $100M+', apexPt.x - 24, apexPt.y - 12);
+        ctx.font = '700 9px "JetBrains Mono", monospace';
+        ctx.fillStyle = '#00f0ff';
+        ctx.fillText('7-DAY APEX', apexPt.x - 24, apexPt.y + 2);
       }
     }
     requestAnimationFrame(render);
