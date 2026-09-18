@@ -1,106 +1,281 @@
 {
-  "season": 1,
-  "marathon_name": "PROVE THE CAT",
-  "start": "2026-09-21T09:00:00-04:00",
-  "end": "2026-09-27T22:00:00-04:00",
+  "season": {
+    "id": 1,
+    "name": "PROVE THE CAT",
+    "start": "2026-09-18T00:00:00-04:00",
+    "end": "2026-09-24T23:59:59-04:00"
+  },
   "days": [
     {
       "day": 1,
-      "date": "2026-09-21",
-      "theme": "The cat is real",
-      "platform": "X",
+      "date": "2026-09-18",
+      "theme": "The Cat is Real",
       "missions": [
-        {"id": "d1m1", "title": "Post the SBS News story of Bender the Melbourne cat with one personal line on why a real famous cat is different.", "points": 10, "type": "post"},
-        {"id": "d1m2", "title": "Post the cat's reach next to the market cap and ask what it means that this exact cat is inscribed on Solana. Personal angle mandatory.", "points": 10, "type": "post"},
-        {"id": "d1m3", "title": "Reply to 3 non-holder posts about Solana meme history with a genuine take and the decoder link. Value first, link last.", "points": 10, "type": "reply"}
-      ],
-      "ritual": "Top 3 quality replies pinned on X at 9 PM ET."
+        {
+          "id": "d1m1",
+          "title": "Decode the cat",
+          "description": "Open the proof panel on huhcatonsol.com and watch the image decode from the chain in your browser. Screenshot it.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "verify",
+          "action_url": "https://huhcatonsol.com/#proof",
+          "content_kit_id": "proof-01"
+        },
+        {
+          "id": "d1m2",
+          "title": "Post your first proof",
+          "description": "Post about the on-chain inscription to X. Use the Content Armory below for a ready template, or write your own.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "proof-02"
+        },
+        {
+          "id": "d1m3",
+          "title": "Drop it in the room",
+          "description": "Share your proof post (or any HUHCAT fact) in the Telegram group. Let the room see you showed up.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        }
+      ]
     },
     {
       "day": 2,
-      "date": "2026-09-22",
-      "theme": "The picture is in the block",
-      "platform": "TikTok and YouTube Shorts",
+      "date": "2026-09-19",
+      "theme": "Numbers Talk",
       "missions": [
-        {"id": "d2m1", "title": "Ship a 15 to 30 second video: the real cat, then the explorer, then the base64 URI, then the decoded JPEG. Use Script 1 in the Content Kit.", "points": 25, "type": "video"},
-        {"id": "d2m2", "title": "Screenshot the base64 metadata on Explorer and post your read on why this beats an image pointing at IPFS.", "points": 10, "type": "post"},
-        {"id": "d2m3", "title": "Tag one friend who needs to see the decoder, with a line about why you sent it to them.", "points": 10, "type": "reply"}
-      ],
-      "ritual": "Best video of the day reshared by the official account at 9 PM ET."
+        {
+          "id": "d2m1",
+          "title": "Read the fee schedule",
+          "description": "Open pump.fun/docs/fees and find the current HUHCAT tier. Know the number before you post it.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "verify",
+          "action_url": "https://pump.fun/docs/fees",
+          "content_kit_id": null
+        },
+        {
+          "id": "d2m2",
+          "title": "Post the numbers",
+          "description": "Share a verified metric about HUHCAT on X: the supply, the fee rate, or the measured payout data. Template ready below.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "proof-04"
+        },
+        {
+          "id": "d2m3",
+          "title": "Check your own wallet",
+          "description": "Open huhcatonsol.com/rewards, paste your wallet, see what the cat paid you. Screenshot the result.",
+          "difficulty": "easy",
+          "points": 15,
+          "action_type": "verify",
+          "action_url": "https://huhcatonsol.com/rewards",
+          "content_kit_id": null
+        }
+      ]
     },
     {
       "day": 3,
-      "date": "2026-09-23",
-      "theme": "The vault holds the deed",
-      "platform": "X",
+      "date": "2026-09-20",
+      "theme": "The Room Grows",
       "missions": [
-        {"id": "d3m1", "title": "Post the vault numbers in your own words: 420,690,000 to claim, 43.83 percent of supply, no admin, no upgrade key, hash published.", "points": 10, "type": "post"},
-        {"id": "d3m2", "title": "Run a poll: would you lock 43.83 percent of supply for the 1 of 1 deed? Add your own reasoning.", "points": 10, "type": "post"},
-        {"id": "d3m3", "title": "Screen record 30 seconds walking the vault program on Solscan and post it with one line of commentary.", "points": 10, "type": "video"}
-      ],
-      "ritual": "Clearest vault explainer of the day gets pinned at 9 PM ET."
+        {
+          "id": "d3m1",
+          "title": "Bring one person",
+          "description": "Send the Telegram invite link to one person who would find HUHCAT interesting. Not spam. One real invite.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        },
+        {
+          "id": "d3m2",
+          "title": "Reply to someone curious",
+          "description": "Find someone on X asking about new Solana projects or memecoins. Reply with a HUHCAT fact (not hype). Use the Reply Arsenal below.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "reply-01"
+        },
+        {
+          "id": "d3m3",
+          "title": "Play the game",
+          "description": "Open the HUHCAT browser game, play one round, screenshot your score. Post it if you want.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "verify",
+          "action_url": "https://jmthomasofficial.github.io/huhcatgame/",
+          "content_kit_id": null
+        }
+      ]
     },
     {
       "day": 4,
-      "date": "2026-09-24",
-      "theme": "Holding pays you in SOL",
-      "platform": "Instagram launch day, all platforms",
+      "date": "2026-09-21",
+      "theme": "Rewards Receipt",
       "missions": [
-        {"id": "d4m1", "title": "First Instagram post: the launch carousel from the Content Kit. Real cat, then the inscription, then SOL landing in a wallet.", "points": 10, "type": "post"},
-        {"id": "d4m2", "title": "Post your own rewards receipt: screenshot of SOL received plus your balance, with the twenty dollar floor fact.", "points": 10, "type": "post"},
-        {"id": "d4m3", "title": "Explain the tier system in plain words: the rate is set by market cap, it moves both ways, and pump.fun publishes the whole table.", "points": 10, "type": "post"}
-      ],
-      "ritual": "Instagram launch celebrated in TG, best carousel pinned at 9 PM ET."
+        {
+          "id": "d4m1",
+          "title": "Post your rewards proof",
+          "description": "Check your rewards on huhcatonsol.com/rewards and post the SOL you have received. Real numbers. Your numbers.",
+          "difficulty": "medium",
+          "points": 25,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "holder-04"
+        },
+        {
+          "id": "d4m2",
+          "title": "Explain how rewards work",
+          "description": "Post a short explanation of how HUHCAT holder rewards work. Use the Content Armory for a fact-checked template.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "proof-05"
+        },
+        {
+          "id": "d4m3",
+          "title": "Share the receipts in TG",
+          "description": "Drop your rewards screenshot or your X post link in the Telegram group.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        }
+      ]
     },
     {
       "day": 5,
-      "date": "2026-09-25",
-      "theme": "The game is free",
-      "platform": "The browser game, all platforms",
+      "date": "2026-09-22",
+      "theme": "Builder's Log",
       "missions": [
-        {"id": "d5m1", "title": "Play the game and post your high score screenshot with a one line honest review.", "points": 10, "type": "post"},
-        {"id": "d5m2", "title": "Invite one non-holder friend to play. It costs nothing and needs no wallet. Post their score or reaction.", "points": 10, "type": "post"},
-        {"id": "d5m3", "title": "Make a meme with the meme maker on this page and post it with your own caption.", "points": 10, "type": "post"}
-      ],
-      "ritual": "Best meme of the day reshared at 9 PM ET."
+        {
+          "id": "d5m1",
+          "title": "List what exists",
+          "description": "Post on X about what the community has built so far: website, game, proof system, rewards tracker, mission control. All holder-built.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "holder-05"
+        },
+        {
+          "id": "d5m2",
+          "title": "Quote a proof post",
+          "description": "Find an existing HUHCAT proof post on X (yours or someone else's) and quote-tweet it with your take.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "quote-01"
+        },
+        {
+          "id": "d5m3",
+          "title": "Verify the vault source",
+          "description": "Open the vault source code on GitHub. Confirm the program exists. That is the Builder's Log.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "verify",
+          "action_url": "https://github.com/weareallgoingtomake1t/huhcat",
+          "content_kit_id": null
+        }
+      ]
     },
     {
       "day": 6,
-      "date": "2026-09-26",
-      "theme": "The community took over",
-      "platform": "X and Telegram",
+      "date": "2026-09-23",
+      "theme": "The Vault",
       "missions": [
-        {"id": "d6m1", "title": "Post your personal takeover story: when you found the coin and why you stayed after the deployer left.", "points": 10, "type": "post"},
-        {"id": "d6m2", "title": "Post what a coordinated 237 person room can do, without promising anything about price.", "points": 10, "type": "post"},
-        {"id": "d6m3", "title": "Answer one takeover skeptic with the proof kit: deployer wallet holds zero, all authorities revoked, source published, hash matches.", "points": 10, "type": "reply"}
-      ],
-      "ritual": "Best story of the day read at the 9 PM ET ceremony."
+        {
+          "id": "d6m1",
+          "title": "Read the vault state",
+          "description": "Open the vault program on Solana Explorer. Check that the upgrade authority reads 'none'. Screenshot it.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "verify",
+          "action_url": "https://explorer.solana.com/address/GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3",
+          "content_kit_id": null
+        },
+        {
+          "id": "d6m2",
+          "title": "Post the vault story",
+          "description": "Post about the vault on X: the deed, the 420.69M lock threshold, the immutable program. Template below.",
+          "difficulty": "hard",
+          "points": 30,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "proof-07"
+        },
+        {
+          "id": "d6m3",
+          "title": "Discuss in TG",
+          "description": "Share your vault post in the Telegram group. Start a conversation about the game theory.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        }
+      ]
     },
     {
       "day": 7,
-      "date": "2026-09-27",
-      "theme": "The marathon never ends",
-      "platform": "All platforms",
+      "date": "2026-09-24",
+      "theme": "Marathon Recap",
       "missions": [
-        {"id": "d7m1", "title": "Post your best of week collage: your own top posts from the seven days.", "points": 10, "type": "post"},
-        {"id": "d7m2", "title": "Post a personal reflection: what the week proved to you.", "points": 10, "type": "post"},
-        {"id": "d7m3", "title": "Show up at the closing ceremony at 9 PM ET. Season 2 drops at the ceremony, before the applause dies.", "points": 10, "type": "event"}
-      ],
-      "ritual": "Closing ceremony 9 PM ET: honest week numbers, champions named, Season 2 revealed."
+        {
+          "id": "d7m1",
+          "title": "Generate your rank card",
+          "description": "Use the Rank Card Generator below to create your Mission Control rank card. Download it.",
+          "difficulty": "easy",
+          "points": 15,
+          "action_type": "local",
+          "action_url": "",
+          "content_kit_id": null
+        },
+        {
+          "id": "d7m2",
+          "title": "Post your rank card",
+          "description": "Post your rank card to X with your marathon recap. How many missions did you complete? What did you learn?",
+          "difficulty": "medium",
+          "points": 25,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "holder-07"
+        },
+        {
+          "id": "d7m3",
+          "title": "Send the marathon link",
+          "description": "Share the Mission Control link with one person outside the community. Show them what seven days looked like.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        }
+      ]
     }
   ],
   "scoring": {
-    "post": 10,
-    "video": 25,
-    "reply": 10,
-    "event": 10,
-    "daily_cap": 200,
-    "streak_rule": "Complete a mission on 4 of the 7 days and your week total earns a 1.5x multiplier.",
-    "titles": {
-      "1": "Kitten",
-      "3": "Cat",
-      "top10": "Top Cat",
-      "top3": "Alpha Cat"
-    }
-  }
+    "max_daily": 55,
+    "max_total": 385,
+    "streak_bonus": 10
+  },
+  "ranks": [
+    {"min_streak": 0, "title": "Observer", "color": "#7a8599"},
+    {"min_streak": 1, "title": "Kitten", "color": "#39ff88"},
+    {"min_streak": 3, "title": "Cat", "color": "#39ff88"},
+    {"min_streak": 5, "title": "Top Cat", "color": "#ffd700"},
+    {"min_streak": 7, "title": "Alpha Cat", "color": "#ffd700"}
+  ]
 }

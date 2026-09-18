@@ -2,340 +2,1865 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>$HUHCAT Mission Control</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mission Control - $HUHCAT Telemetry</title>
+<meta name="description" content="7-day marathon. 21 missions. Prove the cat is real, earn your rank, arm yourself with verified content. The continuity engine for HUHCAT holders.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jmthomasofficial.github.io/huhcat/mission-control/">
+<meta property="og:title" content="Mission Control - $HUHCAT Telemetry">
+<meta property="og:description" content="7-day marathon. 21 missions. The continuity engine for HUHCAT holders.">
+<meta property="og:image" content="https://jmthomasofficial.github.io/huhcat/og-image.jpg?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mission Control - $HUHCAT Telemetry">
+<meta name="twitter:description" content="7-day marathon. 21 missions. The continuity engine for HUHCAT holders.">
+<meta name="twitter:image" content="https://jmthomasofficial.github.io/huhcat/og-image.jpg?v=2">
+<link rel="icon" type="image/jpeg" href="../huhcat.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0e14;--card:#111721;--card2:#161e2b;--ink:#e8ecf4;--mut:#8a94a6;--green:#39ff88;--purple:#a78bfa;--gold:#ffd166;--red:#ff5d5d;--line:#232c3b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:80px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-a{color:var(--green);text-decoration:none}
-a:hover{text-decoration:underline}
-.tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);border:1px solid rgba(57,255,136,.35);padding:3px 10px;border-radius:99px;margin-bottom:10px}
-h1{font-size:clamp(28px,5vw,44px);line-height:1.1;font-weight:800}
-h2{font-size:22px;font-weight:700;margin-bottom:6px}
-.sub{color:var(--mut);font-size:15px}
-section{padding:44px 0;border-bottom:1px solid var(--line)}
-.grid{display:grid;gap:14px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.big{font-size:34px;font-weight:800;color:var(--green)}
-button{cursor:pointer;font:inherit;border:none;border-radius:10px;padding:12px 20px;font-weight:600;transition:.15s}
-.btn-g{background:var(--green);color:#04140a}
-.btn-g:hover{filter:brightness(1.15)}
-.btn-o{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.btn-o:hover{border-color:var(--green)}
-input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:12px;font:inherit}
-.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px;word-break:break-all}
-.chip{display:inline-block;background:rgba(57,255,136,.1);color:var(--green);font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px}
-.chip.t1{background:rgba(167,139,250,.12);color:var(--purple)}
-.chip.t0{background:rgba(255,209,102,.12);color:var(--gold)}
-.pill{font-size:12px;color:var(--mut)}
-.warn{color:var(--gold);font-size:13px}
-.ok{color:var(--green)}
-.err{color:var(--red)}
-footer{padding:34px 0;color:var(--mut);font-size:13px}
-.copybox{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:center;margin-top:8px}
-.copybox .mono{flex:1}
-canvas{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#000}
-.tmrow{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
-.tmrow button{padding:8px 14px;font-size:14px}
-.daycard{border-left:3px solid var(--green)}
-.daycard.done{border-left-color:var(--gold)}
-.daycard.today{border-left-color:var(--purple);box-shadow:0 0 30px -12px rgba(167,139,250,.5)}
-.mission{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);align-items:flex-start}
-.mission:first-of-type{border-top:none}
-.mission input{margin-top:4px;accent-color:var(--green);width:17px;height:17px;flex-shrink:0}
-.mission .mtitle{font-size:14.5px}
-.pts{font-weight:800;color:var(--gold);white-space:nowrap;font-size:13px}
-.tomorrow-item{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
-.tomorrow-item:first-child{border-top:none}
-.when{min-width:86px;font-weight:800;font-size:13px;color:var(--purple)}
-.progress{height:8px;background:var(--bg);border-radius:99px;overflow:hidden;margin-top:8px}
-.progress>div{height:100%;background:linear-gradient(90deg,var(--green),var(--gold))}
-@media(max-width:640px){.when{min-width:70px}}
-details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-top:10px;background:var(--card2)}
-summary{cursor:pointer;font-weight:600}
+:root {
+  --void: #030408;
+  --graphite: #0b0e17;
+  --graphite-card: #0f1422;
+  --slate: rgba(255, 255, 255, 0.08);
+  --slate-hover: rgba(255, 255, 255, 0.18);
+  --signal: #39ff88;
+  --signal-dim: rgba(57, 255, 136, 0.12);
+  --signal-glow: rgba(57, 255, 136, 0.45);
+  --cyan: #00e5ff;
+  --cyan-dim: rgba(0, 229, 255, 0.12);
+  --alert: #ff4757;
+  --alert-dim: rgba(255, 71, 87, 0.15);
+  --gold: #ffbe2e;
+  --gold-dim: rgba(255, 190, 46, 0.15);
+  --text: #f1f5f9;
+  --muted: #828d9f;
+  --mono: 'JetBrains Mono', monospace;
+  --display: 'Space Grotesk', sans-serif;
+  --body: 'Inter', sans-serif;
+  --radius: 14px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; background:var(--void); color-scheme:dark; }
+body {
+  font-family:var(--body); color:var(--text); background:var(--void);
+  -webkit-font-smoothing:antialiased; line-height:1.6;
+  padding-top:54px; min-height:100vh; position:relative; overflow-x:hidden;
+}
+a { color:var(--signal); text-decoration:none; transition:color 0.2s; }
+a:hover { color:#62ffa4; text-decoration:none; }
+img { max-width:100%; display:block; }
+::selection { background:var(--signal); color:#000; }
+
+/* scrollbar */
+::-webkit-scrollbar { width:8px; height:8px; }
+::-webkit-scrollbar-track { background:var(--void); }
+::-webkit-scrollbar-thumb { background:rgba(57,255,136,0.3); border-radius:8px; }
+::-webkit-scrollbar-thumb:hover { background:var(--signal); }
+
+/* ambient background grid */
+.cyber-grid {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(57, 255, 136, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 136, 0.025) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at 50% 10%, black 20%, transparent 75%);
+}
+.ambient-glow {
+  position:fixed; top:-150px; left:50%; transform:translateX(-50%);
+  width:900px; height:500px; border-radius:50%;
+  background:radial-gradient(circle, rgba(57,255,136,0.08) 0%, rgba(0,229,255,0.03) 45%, transparent 70%);
+  filter:blur(80px); pointer-events:none; z-index:0;
+}
+.wrap { max-width:1120px; margin:0 auto; padding:0 20px; position:relative; z-index:1; }
+
+/* ---- PULSE HEADER ---- */
+#pulse {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(3, 4, 8, 0.88); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--slate); height:54px;
+  display:flex; align-items:center;
+}
+.pulse-wrap {
+  width:100%; max-width:1120px; margin:0 auto; padding:0 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.pulse-left {
+  display:flex; align-items:center; gap:20px;
+  font-family:var(--mono); font-size:11.5px; letter-spacing:0.04em;
+  color:var(--muted); text-transform:uppercase;
+}
+.pulse-brand {
+  display:inline-flex; align-items:center; gap:8px; font-weight:700;
+  color:var(--text); font-size:12px; letter-spacing:0.08em;
+}
+.pulse-dot {
+  width:7px; height:7px; border-radius:50%; background:var(--signal);
+  box-shadow:0 0 10px var(--signal); animation:radar-ping 1.8s infinite;
+}
+@keyframes radar-ping { 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.4; transform:scale(0.85);} }
+.pulse-item { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+.pulse-val { color:var(--signal); font-weight:700; }
+.pulse-val.gold { color:var(--gold); }
+.pulse-val.cyan { color:var(--cyan); }
+
+.pulse-nav {
+  display:flex; align-items:center; gap:12px;
+}
+.pulse-nav a {
+  font-family:var(--mono); font-size:11px; color:var(--muted);
+  text-transform:uppercase; letter-spacing:0.05em; padding:4px 8px;
+  border-radius:6px; transition:0.2s;
+}
+.pulse-nav a:hover { color:var(--signal); background:rgba(57,255,136,0.06); }
+.sfx-toggle {
+  background:rgba(255,255,255,0.04); border:1px solid var(--slate);
+  color:var(--muted); font-family:var(--mono); font-size:10.5px;
+  padding:4px 9px; border-radius:6px; cursor:pointer; transition:0.2s;
+}
+.sfx-toggle:hover { border-color:var(--signal); color:var(--signal); }
+.sfx-toggle.active { color:var(--signal); border-color:var(--signal); background:var(--signal-dim); }
+
+/* ---- HERO SECTION ---- */
+.hero {
+  padding:72px 0 54px; text-align:center;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(57,255,136,0.06); border:1px solid rgba(57,255,136,0.25);
+  padding:6px 14px; border-radius:100px;
+  font-family:var(--mono); font-size:11px; font-weight:700;
+  color:var(--signal); letter-spacing:0.12em; text-transform:uppercase;
+  margin-bottom:20px;
+}
+.hero-badge-tag {
+  background:var(--signal); color:var(--void); font-size:9.5px;
+  padding:2px 6px; border-radius:4px; font-weight:800;
+}
+.hero h1 {
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(38px, 9vw, 76px); letter-spacing:-0.03em;
+  line-height:1.02; margin-bottom:14px;
+}
+.hero h1 .grad {
+  background:linear-gradient(135deg, #ffffff 40%, var(--signal) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.hero-sub {
+  font-family:var(--mono); font-size:14px; color:var(--muted);
+  letter-spacing:0.04em; max-width:620px; margin:0 auto 32px;
+  text-transform:uppercase;
+}
+
+/* heat meter HUD */
+.heat-hud {
+  max-width:540px; margin:0 auto 34px;
+  background:var(--graphite); border:1px solid var(--slate);
+  border-radius:12px; padding:16px 20px;
+}
+.heat-top {
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--mono); font-size:11px; text-transform:uppercase;
+  letter-spacing:0.08em; color:var(--muted); margin-bottom:10px;
+}
+.heat-top strong { color:var(--signal); }
+.heat-track {
+  height:8px; border-radius:4px; background:rgba(255,255,255,0.06);
+  overflow:hidden; position:relative;
+}
+.heat-fill {
+  height:100%; width:0%; border-radius:4px;
+  background:linear-gradient(90deg, var(--signal), #9dffc7, var(--cyan));
+  transition:width 0.8s cubic-bezier(0.16,1,0.3,1);
+  box-shadow:0 0 16px var(--signal-glow);
+}
+.heat-sub {
+  display:flex; justify-content:space-between; margin-top:10px;
+  font-family:var(--mono); font-size:10.5px; color:var(--muted);
+}
+
+.hero-actions {
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+}
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family:var(--mono); font-size:12.5px; font-weight:700;
+  padding:14px 24px; border-radius:10px; cursor:pointer;
+  border:1px solid transparent; transition:all 0.2s ease;
+  text-transform:uppercase; letter-spacing:0.06em; min-height:46px;
+}
+.btn-primary {
+  background:var(--signal); color:var(--void);
+  box-shadow:0 0 24px -4px var(--signal-glow);
+}
+.btn-primary:hover {
+  background:#26f477; transform:translateY(-2px);
+  box-shadow:0 0 34px -2px var(--signal-glow); color:var(--void);
+}
+.btn-ghost {
+  background:rgba(255,255,255,0.04); border-color:var(--slate);
+  color:var(--text);
+}
+.btn-ghost:hover {
+  border-color:var(--signal); color:var(--signal);
+  transform:translateY(-2px); background:rgba(57,255,136,0.05);
+}
+
+/* ---- SECTION SYSTEM ---- */
+section { padding:64px 0; border-top:1px solid var(--slate); position:relative; }
+.section-head { margin-bottom:28px; }
+.section-meta {
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:11px; color:var(--signal);
+  letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px;
+}
+.section-meta .num { color:var(--muted); }
+.section-title {
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(26px, 6vw, 42px); line-height:1.1; letter-spacing:-0.02em;
+}
+.section-desc {
+  font-size:14.5px; color:var(--muted); max-width:640px; margin-top:8px;
+  line-height:1.6;
+}
+
+/* ---- TOMORROW BOARD ---- */
+.tmr-container {
+  background:var(--graphite); border:1px solid var(--slate);
+  border-radius:var(--radius); padding:28px; position:relative; overflow:hidden;
+}
+.tmr-container::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--signal), var(--cyan), transparent);
+  animation:laser-scan 3.5s linear infinite;
+}
+@keyframes laser-scan { 0%{transform:translateX(-100%);} 100%{transform:translateX(100%);} }
+.tmr-grid {
+  display:grid; grid-template-columns:1fr 1.6fr; gap:32px; align-items:center;
+}
+.tmr-clock-box {
+  padding:20px; border-radius:10px; background:rgba(255,255,255,0.02);
+  border:1px solid var(--slate);
+}
+.tmr-clock-label {
+  font-family:var(--mono); font-size:11px; text-transform:uppercase;
+  letter-spacing:0.1em; color:var(--muted); margin-bottom:8px;
+}
+.tmr-clock {
+  font-family:var(--mono); font-size:clamp(30px, 6vw, 48px); font-weight:800;
+  color:var(--signal); letter-spacing:0.02em; line-height:1;
+}
+.tmr-state-tag {
+  display:inline-block; font-family:var(--mono); font-size:10px; font-weight:700;
+  padding:3px 8px; border-radius:4px; background:var(--signal-dim);
+  color:var(--signal); letter-spacing:0.08em; text-transform:uppercase;
+  margin-top:10px;
+}
+.tmr-brief {
+  font-size:14.5px; color:var(--text); line-height:1.65; margin-bottom:18px;
+}
+.tmr-cards {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px;
+}
+.tmr-card {
+  background:rgba(255,255,255,0.025); border:1px solid var(--slate);
+  border-radius:10px; padding:14px; position:relative;
+}
+.tmr-card .lock-svg {
+  position:absolute; top:12px; right:12px; width:14px; height:14px;
+  color:var(--muted); opacity:0.7;
+}
+.tmr-card .card-day {
+  font-family:var(--mono); font-size:10px; color:var(--signal);
+  letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;
+}
+.tmr-card .card-title {
+  font-family:var(--display); font-size:13.5px; font-weight:700;
+  color:var(--text); filter:blur(3.5px); user-select:none; transition:filter 0.3s;
+}
+.tmr-card.unlocked .card-title { filter:none; user-select:auto; }
+.tmr-card.unlocked .lock-svg { display:none; }
+
+/* ---- MISSION BOARD ---- */
+.day-strip {
+  display:flex; gap:8px; margin-bottom:28px; overflow-x:auto;
+  padding-bottom:6px; scrollbar-width:none;
+}
+.day-strip::-webkit-scrollbar { display:none; }
+.day-pill {
+  flex:1; min-width:110px; font-family:var(--mono); font-size:12px; font-weight:700;
+  padding:12px 14px; border-radius:10px; cursor:pointer;
+  border:1px solid var(--slate); background:var(--graphite); color:var(--muted);
+  text-align:left; transition:all 0.2s ease; position:relative;
+}
+.day-pill:hover { border-color:var(--signal); color:var(--text); }
+.day-pill.active {
+  background:var(--signal-dim); border-color:var(--signal); color:var(--signal);
+  box-shadow:0 0 16px -4px var(--signal-glow);
+}
+.day-pill.completed { border-color:rgba(57,255,136,0.4); }
+.day-pill.completed .day-state { color:var(--signal); }
+.day-pill.locked { opacity:0.45; cursor:not-allowed; }
+.day-pill .day-num { font-size:13px; font-weight:800; display:block; }
+.day-pill .day-state {
+  font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.06em;
+  margin-top:2px; display:block;
+}
+
+.mission-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:18px;
+}
+.mission-card {
+  background:var(--graphite-card); border:1px solid var(--slate);
+  border-radius:var(--radius); padding:24px; position:relative;
+  display:flex; flex-direction:column; justify-content:space-between;
+  transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.mission-card:hover {
+  border-color:rgba(57,255,136,0.35); transform:translateY(-2px);
+}
+.mission-card.done {
+  border-color:var(--signal);
+  box-shadow:0 0 24px -8px var(--signal-glow);
+  background:linear-gradient(180deg, rgba(57,255,136,0.04) 0%, var(--graphite-card) 60%);
+}
+.mc-header {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:12px;
+}
+.mc-day-tag {
+  font-family:var(--mono); font-size:10px; font-weight:700;
+  letter-spacing:0.1em; color:var(--muted); text-transform:uppercase;
+}
+.mc-diff-badge {
+  font-family:var(--mono); font-size:10px; font-weight:700;
+  padding:3px 8px; border-radius:100px; letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.mc-diff-badge.easy { background:var(--signal-dim); color:var(--signal); }
+.mc-diff-badge.medium { background:var(--gold-dim); color:var(--gold); }
+.mc-diff-badge.hard { background:var(--alert-dim); color:var(--alert); }
+
+.mc-title {
+  font-family:var(--display); font-weight:700; font-size:19px;
+  line-height:1.3; margin-bottom:8px;
+}
+.mc-desc {
+  font-size:13.5px; color:var(--muted); line-height:1.6; margin-bottom:16px;
+}
+.mc-reward-row {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:8px 12px; background:rgba(255,255,255,0.02);
+  border-radius:8px; border:1px solid var(--slate);
+  margin-bottom:16px; font-family:var(--mono); font-size:11.5px;
+}
+.mc-points { color:var(--gold); font-weight:700; }
+.mc-done-mark { color:var(--signal); font-weight:700; display:none; }
+.mission-card.done .mc-done-mark { display:inline; }
+
+.mc-action-row {
+  display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;
+}
+.mc-btn {
+  flex:1; min-width:110px; font-family:var(--mono); font-size:11.5px; font-weight:700;
+  padding:10px 14px; border-radius:8px; cursor:pointer; text-align:center;
+  border:1px solid var(--slate); background:rgba(255,255,255,0.03); color:var(--text);
+  transition:all 0.2s; display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  text-decoration:none;
+}
+.mc-btn:hover { border-color:var(--signal); color:var(--signal); text-decoration:none; }
+.mc-btn.btn-toggle {
+  background:var(--signal); color:var(--void); border-color:var(--signal);
+}
+.mc-btn.btn-toggle:hover { background:#24f475; color:var(--void); }
+.mc-btn.btn-toggle.active {
+  background:var(--signal-dim); color:var(--signal); border-color:var(--signal);
+}
+
+.mc-proof-box { display:flex; gap:8px; }
+.mc-proof-input {
+  flex:1; font-family:var(--mono); font-size:11.5px;
+  padding:9px 12px; border-radius:8px; border:1px solid var(--slate);
+  background:rgba(255,255,255,0.02); color:var(--text); min-width:0;
+  transition:border-color 0.2s;
+}
+.mc-proof-input:focus { outline:none; border-color:var(--signal); }
+.mc-proof-input::placeholder { color:rgba(130,141,159,0.5); }
+
+/* ---- CONTENT ARMORY ---- */
+.armory-controls {
+  display:flex; gap:12px; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; margin-bottom:20px;
+}
+.armory-filter-strip {
+  display:flex; gap:6px; flex-wrap:wrap;
+}
+.armory-chip {
+  font-family:var(--mono); font-size:11px; font-weight:700;
+  padding:8px 14px; border-radius:8px; cursor:pointer;
+  border:1px solid var(--slate); background:var(--graphite); color:var(--muted);
+  transition:0.2s; text-transform:uppercase; letter-spacing:0.04em;
+}
+.armory-chip:hover { border-color:var(--signal); color:var(--text); }
+.armory-chip.active {
+  background:var(--signal-dim); border-color:var(--signal); color:var(--signal);
+}
+.armory-search {
+  position:relative; min-width:240px;
+}
+.armory-search-input {
+  width:100%; font-family:var(--mono); font-size:12px;
+  padding:8px 14px 8px 34px; border-radius:8px;
+  border:1px solid var(--slate); background:var(--graphite);
+  color:var(--text); transition:border-color 0.2s;
+}
+.armory-search-input:focus { outline:none; border-color:var(--signal); }
+.armory-search-icon {
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  color:var(--muted); pointer-events:none;
+}
+
+.armory-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(330px, 1fr));
+  gap:16px;
+}
+.tpl-card {
+  background:var(--graphite-card); border:1px solid var(--slate);
+  border-radius:var(--radius); padding:20px; display:flex; flex-direction:column;
+  justify-content:space-between; transition:border-color 0.2s;
+}
+.tpl-card:hover { border-color:rgba(57,255,136,0.3); }
+.tpl-top {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:12px; font-family:var(--mono); font-size:10px; color:var(--muted);
+  text-transform:uppercase; letter-spacing:0.08em;
+}
+.tpl-category-badge {
+  color:var(--signal); background:var(--signal-dim); padding:2px 6px; border-radius:4px;
+}
+.tpl-body {
+  font-size:14px; line-height:1.55; margin-bottom:14px;
+  word-break:break-word; color:var(--text);
+}
+.tpl-customizer {
+  margin-bottom:14px; padding:10px 12px; border-radius:8px;
+  background:rgba(255,255,255,0.02); border:1px dashed rgba(57,255,136,0.3);
+}
+.tpl-customizer label {
+  display:block; font-family:var(--mono); font-size:10px; color:var(--signal);
+  text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;
+}
+.tpl-customizer-input {
+  width:100%; font-family:var(--mono); font-size:11.5px;
+  padding:6px 10px; border-radius:6px; border:1px solid var(--slate);
+  background:var(--void); color:var(--text);
+}
+.tpl-customizer-input:focus { outline:none; border-color:var(--signal); }
+
+.tpl-footer {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);
+}
+.tpl-char-count {
+  font-family:var(--mono); font-size:10.5px; color:var(--muted);
+}
+.tpl-char-count.safe { color:var(--signal); }
+.tpl-char-count.warn { color:var(--gold); }
+.tpl-buttons { display:flex; gap:8px; }
+.tpl-btn {
+  font-family:var(--mono); font-size:11.5px; font-weight:700;
+  padding:8px 14px; border-radius:6px; cursor:pointer;
+  border:1px solid var(--slate); background:rgba(255,255,255,0.04);
+  color:var(--text); transition:0.2s; display:inline-flex; align-items:center; gap:6px;
+  text-decoration:none;
+}
+.tpl-btn:hover { border-color:var(--signal); color:var(--signal); text-decoration:none; }
+.tpl-btn.primary {
+  background:var(--signal); color:var(--void); border-color:var(--signal);
+}
+.tpl-btn.primary:hover { background:#24f475; color:var(--void); }
+
+/* ---- RANK CARD GENERATOR ---- */
+.rank-box {
+  background:var(--graphite); border:1px solid var(--slate);
+  border-radius:var(--radius); padding:32px;
+}
+.rank-layout {
+  display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center;
+}
+.rank-card-preview {
+  max-width:440px; margin:0 auto; border-radius:14px; overflow:hidden;
+  border:2px solid var(--slate); box-shadow:0 12px 40px -10px rgba(0,0,0,0.8);
+  background:var(--void); position:relative;
+}
+#rank-canvas { width:100%; height:auto; display:block; }
+.rank-info { display:flex; flex-direction:column; gap:20px; }
+.rank-stats-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;
+}
+.rank-stat-tile {
+  background:var(--graphite-card); border:1px solid var(--slate);
+  border-radius:10px; padding:14px; text-align:center;
+}
+.rank-stat-val {
+  font-family:var(--display); font-weight:800; font-size:26px;
+  color:var(--signal); line-height:1.1;
+}
+.rank-stat-lbl {
+  font-family:var(--mono); font-size:10px; text-transform:uppercase;
+  letter-spacing:0.08em; color:var(--muted); margin-top:4px;
+}
+.rank-wallet-imprint {
+  display:flex; flex-direction:column; gap:6px;
+}
+.rank-wallet-imprint label {
+  font-family:var(--mono); font-size:11px; color:var(--muted);
+  text-transform:uppercase; letter-spacing:0.08em;
+}
+.rank-wallet-input {
+  font-family:var(--mono); font-size:12px; padding:10px 14px;
+  border-radius:8px; border:1px solid var(--slate); background:rgba(255,255,255,0.02);
+  color:var(--text);
+}
+.rank-wallet-input:focus { outline:none; border-color:var(--signal); }
+.rank-actions { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* ---- FACT VAULT ---- */
+.fact-bento {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:16px;
+}
+.fact-card {
+  background:var(--graphite-card); border:1px solid var(--slate);
+  border-radius:var(--radius); padding:22px; display:flex; flex-direction:column;
+  justify-content:space-between; transition:all 0.2s;
+}
+.fact-card:hover { border-color:rgba(57,255,136,0.3); transform:translateY(-2px); }
+.fact-top {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:10px;
+}
+.fact-tier-pill {
+  font-family:var(--mono); font-size:10px; font-weight:700;
+  padding:3px 8px; border-radius:100px; text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+.fact-tier-pill.t0 { background:var(--signal-dim); color:var(--signal); }
+.fact-tier-pill.t1 { background:var(--gold-dim); color:var(--gold); }
+.fact-claim {
+  font-family:var(--display); font-size:16px; font-weight:700;
+  color:var(--text); margin-bottom:8px; line-height:1.4;
+}
+.fact-detail {
+  font-size:13.5px; color:var(--muted); line-height:1.55; margin-bottom:14px;
+}
+.fact-footer {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);
+  font-family:var(--mono); font-size:11px;
+}
+.fact-source { color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:180px; }
+.fact-copy-btn {
+  background:transparent; border:1px solid var(--slate); color:var(--signal);
+  font-family:var(--mono); font-size:10.5px; padding:4px 9px; border-radius:6px;
+  cursor:pointer; transition:0.2s;
+}
+.fact-copy-btn:hover { background:var(--signal-dim); border-color:var(--signal); }
+
+/* ---- ELIGIBILITY CHECKER ---- */
+.eligibility-box {
+  background:var(--graphite); border:1px solid var(--slate);
+  border-radius:var(--radius); padding:28px; max-width:680px;
+}
+.eligibility-form { display:flex; gap:10px; margin:16px 0; }
+.eligibility-input {
+  flex:1; font-family:var(--mono); font-size:12.5px;
+  padding:12px 16px; border-radius:8px; border:1px solid var(--slate);
+  background:rgba(255,255,255,0.02); color:var(--text); min-width:0;
+}
+.eligibility-input:focus { outline:none; border-color:var(--signal); }
+.eligibility-result {
+  margin-top:16px; padding:16px; border-radius:10px;
+  background:var(--graphite-card); border:1px solid var(--slate); display:none;
+}
+.eligibility-result.show { display:block; }
+.er-status { font-family:var(--mono); font-size:13px; font-weight:700; margin-bottom:6px; }
+.er-status.pass { color:var(--signal); }
+.er-status.fail { color:var(--alert); }
+.er-detail { font-size:13px; color:var(--muted); line-height:1.55; }
+
+/* ---- FOOTER ---- */
+footer {
+  padding:64px 0 40px; border-top:1px solid var(--slate);
+  text-align:center; position:relative; z-index:1;
+}
+.footer-nav {
+  display:flex; gap:20px; justify-content:center; flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.footer-nav a {
+  font-family:var(--mono); font-size:12px; color:var(--muted);
+  text-transform:uppercase; letter-spacing:0.06em;
+}
+.footer-nav a:hover { color:var(--signal); }
+.footer-ca-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,0.03); border:1px solid var(--slate);
+  padding:8px 16px; border-radius:100px; font-family:var(--mono);
+  font-size:11.5px; color:var(--muted); cursor:pointer; transition:0.2s;
+  margin-bottom:18px; max-width:90%;
+}
+.footer-ca-badge:hover { border-color:var(--signal); color:var(--signal); }
+.footer-ca-text { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.footer-disclaimer {
+  font-size:12px; color:rgba(130,141,159,0.7); max-width:580px; margin:0 auto;
+  line-height:1.6;
+}
+
+/* ---- TOAST & PARTICLES ---- */
+.toast-notice {
+  position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(90px);
+  font-family:var(--mono); font-size:12px; font-weight:700;
+  padding:12px 22px; border-radius:8px; background:var(--signal);
+  color:var(--void); z-index:999; opacity:0; transition:all 0.25s ease;
+  pointer-events:none; box-shadow:0 10px 30px rgba(57,255,136,0.3);
+}
+.toast-notice.show { transform:translateX(-50%) translateY(0); opacity:1; }
+
+#particle-canvas {
+  position:fixed; inset:0; pointer-events:none; z-index:998;
+}
+
+/* ---- MOBILE RESPONSIVE ---- */
+@media (max-width:840px) {
+  .pulse-nav { display:none; }
+  .tmr-grid { grid-template-columns:1fr; gap:20px; }
+  .rank-layout { grid-template-columns:1fr; }
+  .eligibility-form { flex-direction:column; }
+}
+@media (max-width:640px) {
+  .pulse-left { gap:12px; font-size:10.5px; }
+  .pulse-item:nth-child(3) { display:none; }
+  .hero h1 { font-size:38px; }
+  .mission-grid { grid-template-columns:1fr; }
+  .armory-grid { grid-template-columns:1fr; }
+  .fact-bento { grid-template-columns:1fr; }
+  .rank-stats-grid { grid-template-columns:repeat(3, 1fr); }
+  .mc-action-row { flex-direction:column; }
+  .mc-btn { width:100%; }
+  section { padding:48px 0; }
+}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-<header style="padding:40px 0 10px">
-  <span class="tag">Season 1 · Prove the Cat</span>
-  <h1>$HUHCAT Mission Control</h1>
-  <p class="sub">One screen. Every day dated. The continuity system, live.</p>
+<div class="cyber-grid"></div>
+<div class="ambient-glow"></div>
+<canvas id="particle-canvas"></canvas>
+
+<!-- PULSE HEADER -->
+<header id="pulse">
+  <div class="pulse-wrap">
+    <div class="pulse-left">
+      <span class="pulse-brand"><span class="pulse-dot"></span> HUHCAT TELEMETRY</span>
+      <div class="pulse-item"><span class="pulse-val" id="p-day">DAY -</span></div>
+      <div class="pulse-item">REWARDS <span class="pulse-val cyan">0.75% SOL</span></div>
+      <div class="pulse-item">STREAK <span class="pulse-val gold" id="p-streak">0</span></div>
+      <div class="pulse-item" id="p-market-item" style="display:none;"><span class="pulse-val" id="p-price">$0.000</span></div>
+    </div>
+    <div class="pulse-nav">
+      <a href="#tomorrow">TOMORROW</a>
+      <a href="#missions">MISSIONS</a>
+      <a href="#armory">ARMORY</a>
+      <a href="#rank">RANK</a>
+      <a href="#facts">FACTS</a>
+      <button class="sfx-toggle" id="sfx-btn" title="Toggle cyber sound effects">SFX: ON</button>
+    </div>
+  </div>
 </header>
-</div>
 
-<section>
-<div class="wrap">
-  <span class="tag">The Tomorrow Board</span>
-  <h2>What happens next</h2>
-  <p class="sub">Always dated. Always visible. This is the whole point of the app.</p>
-  <div class="grid g2" style="margin-top:18px">
-    <div class="card" id="tomorrowBoard"></div>
-    <div>
-      <div class="card" id="walletCard">
-        <h2>Check your rewards eligibility</h2>
-        <p class="sub" style="margin:8px 0 12px">Paste your Solana address. Read-only. This page never asks for a seed phrase, a private key, or any approval, and it never will.</p>
-        <input type="text" id="wa" placeholder="Your Solana wallet address" spellcheck="false">
-        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
-          <button class="btn-g" onclick="checkWallet()">Check eligibility</button>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-badge">
+      <span class="hero-badge-tag">S1</span> CONTINUITY PROTOCOL // 7-DAY MARATHON
+    </div>
+    <h1>MISSION <span class="grad">CONTROL</span></h1>
+    <p class="hero-sub">7 Days. 21 Missions. The Continuity Engine for $HUHCAT.</p>
+
+    <!-- Heat HUD -->
+    <div class="heat-hud">
+      <div class="heat-top">
+        <span>Today's Execution Index</span>
+        <strong id="heat-pct">0% COMPLETE</strong>
+      </div>
+      <div class="heat-track">
+        <div class="heat-fill" id="heat-fill"></div>
+      </div>
+      <div class="heat-sub">
+        <span id="heat-stats">0 of 3 Missions Done Today</span>
+        <span id="heat-points">0 Total Points</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#missions" class="btn btn-primary">Engage Today's Missions</a>
+      <a href="#armory" class="btn btn-ghost">Open Content Armory</a>
+    </div>
+  </div>
+</section>
+
+<!-- TOMORROW BOARD -->
+<section id="tomorrow">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">01 //</span> CONTINUITY ENGINE</div>
+      <h2 class="section-title" id="tmr-head-title">The Tomorrow Board</h2>
+      <p class="section-desc">
+        Weak projects collapse when traders lose the thread because nobody knows if the deployer will still be posting updates tomorrow morning. We map the next seven days on Solana so you never wonder what tomorrow brings, displaying locked mission coordinates alongside verified distribution schedules directly in front of the entire community before anyone can spread doubt. Proof matters. Truth stays.
+      </p>
+    </div>
+
+    <div class="tmr-container">
+      <div class="tmr-grid">
+        <div class="tmr-clock-box">
+          <div class="tmr-clock-label" id="tmr-clock-lbl">NEXT MISSION DROP IN</div>
+          <div class="tmr-clock" id="tmr-clock">--:--:--</div>
+          <div class="tmr-state-tag" id="tmr-state-tag">PRE-LAUNCH</div>
         </div>
-        <div id="walletOut" style="margin-top:12px"></div>
-      </div>
-      <div class="card" style="margin-top:14px">
-        <h2>Contract</h2>
-        <div class="copybox"><span class="mono" id="ca">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span><button class="btn-o" style="padding:6px 12px" onclick="navigator.clipboard.writeText(document.getElementById('ca').textContent);this.textContent='Copied'">Copy</button></div>
-        <p class="pill" style="margin-top:8px">Always verify the contract on the official pages before buying. Links in the proof wall below.</p>
+        <div>
+          <p class="tmr-brief" id="tmr-brief">
+            Reading next sprint coordinates from program memory.
+          </p>
+          <div class="tmr-cards" id="tmr-cards"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<section>
-<div class="wrap">
-  <span class="tag">Season 1 · 21 to 27 September</span>
-  <h2>The seven day marathon</h2>
-  <p class="sub">One mission set per day. Every mission under fifteen minutes. Points for posted proof in the TG missions channel. Video missions earn more.</p>
-  <div class="grid" style="grid-template-columns:1fr;margin-top:18px" id="missionBoard"></div>
-  <div class="card" style="margin-top:14px">
-    <h2>Your week</h2>
-    <div id="progressOut"><p class="sub">Check a mission when you post its proof. Progress saves to this device.</p></div>
-    <div class="progress"><div id="progBar" style="width:0%"></div></div>
-    <p class="pill" style="margin-top:8px">Streak rule: complete a mission on 4 of the 7 days and your week total earns a 1.5x multiplier. Titles at season close: Kitten, Cat, Top Cat, Alpha Cat.</p>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-  <span class="tag">The Fact Vault</span>
-  <h2>Every claim, with its proof</h2>
-  <p class="sub">Every fact below is traceable to a source. If it cannot be traced, it does not ship. The tier shows how hard it was verified: T0 read from chain, T1 from the platform's own statements.</p>
-  <div id="factList" style="margin-top:16px"></div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-  <span class="tag">Decode it yourself</span>
-  <h2>The cat, read live from Solana</h2>
-  <p class="sub">This panel asks a public RPC for the image mint and decodes the answer in your browser. No server of ours touches it. If the picture renders, the claim is true.</p>
-  <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-    <button class="btn-g" onclick="decodeCat()">Read the chain now</button>
-    <span class="pill" id="decodeStatus" style="align-self:center"></span>
-  </div>
-  <div style="margin-top:16px"><canvas id="catCanvas" width="480" height="480"></canvas></div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-  <span class="tag">The Meme Factory</span>
-  <h2>Make one. Post it. That is a mission.</h2>
-  <p class="sub">Runs entirely in your browser. Nothing uploads anywhere. Top text, bottom text, download, post.</p>
-  <div style="margin-top:16px;max-width:480px">
-    <input type="text" id="mtop" placeholder="Top text" oninput="drawMeme()">
-    <input type="text" id="mbot" placeholder="Bottom text" oninput="drawMeme()" style="margin-top:10px">
-    <div class="tmrow">
-      <button class="btn-o" onclick="downloadMeme()">Download PNG</button>
+<!-- MISSION BOARD -->
+<section id="missions">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">02 //</span> OPERATIONAL SPRINT</div>
+      <h2 class="section-title">Daily Mission Matrix</h2>
+      <p class="section-desc">
+        Every single day of this marathon tests your conviction with three verifiable operations designed to anchor attention, verify on-chain artifacts, and cement community ownership before anyone can doubt the thesis. Check it yourself. No drift. We measure the distribution volume across thousands of transactions while third parties inspect the token metadata to confirm that the inscribed cat is genuinely stored in the account instead of an external web link or remote server. Math wins.
+      </p>
     </div>
-    <canvas id="memeCanvas" width="480" height="480"></canvas>
+
+    <div class="day-strip" id="day-strip"></div>
+    <div class="mission-grid" id="mission-grid"></div>
   </div>
-</div>
 </section>
 
-<section>
-<div class="wrap">
-  <span class="tag">The proof wall</span>
-  <h2>Do not take our word for any of it</h2>
-  <div class="grid g3" id="proofLinks" style="margin-top:14px"></div>
-  <p class="sub" style="margin-top:16px">$HUHCAT is a memecoin with no intrinsic value. Nothing on this page is financial advice. Assume it can go to zero and only risk what you can lose. Verify every claim on the chain yourself.</p>
-</div>
+<!-- CONTENT ARMORY -->
+<section id="armory">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">03 //</span> SOCIAL WEAPONRY</div>
+      <h2 class="section-title">Content Armory</h2>
+      <p class="section-desc">
+        Zero blank-canvas paralysis. Grab pre-written tweet weapons with full on-chain receipts. The numbers never lie.
+      </p>
+    </div>
+
+    <div class="armory-controls">
+      <div class="armory-filter-strip" id="armory-chips"></div>
+      <div class="armory-search">
+        <svg class="armory-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="armory-search-input" id="armory-query" placeholder="Filter by keyword...">
+      </div>
+    </div>
+
+    <div class="armory-grid" id="armory-grid"></div>
+  </div>
 </section>
 
-<div class="wrap">
+<!-- RANK CARD GENERATOR -->
+<section id="rank">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">04 //</span> PROOF OF CONVICTION</div>
+      <h2 class="section-title">Rank Card Generator</h2>
+      <p class="section-desc">
+        Your cryptographic identity card. Built straight inside your browser to record your active run and points tally. Save the image to your phone and drop it in the thread. When you complete seven consecutive days of verified tasks across the marathon, your card reflects your status as an Alpha Cat with verified on-chain receipts that anyone can confirm on Solscan.
+      </p>
+    </div>
+
+    <div class="rank-box">
+      <div class="rank-layout">
+        <div class="rank-card-preview">
+          <canvas id="rank-canvas" width="960" height="960"></canvas>
+        </div>
+
+        <div class="rank-info">
+          <div>
+            <div class="section-meta">TELEMETRY STATUS</div>
+            <h3 style="font-family:var(--display);font-size:28px;font-weight:800;" id="rank-name-display">Observer</h3>
+            <p style="color:var(--muted);font-size:14px;margin-top:4px;">
+              Stack daily checks to push your clearance rank from Kitten all the way to Alpha Cat.
+            </p>
+          </div>
+
+          <div class="rank-stats-grid">
+            <div class="rank-stat-tile">
+              <div class="rank-stat-val" id="rk-val-streak">0</div>
+              <div class="rank-stat-lbl">Streak Days</div>
+            </div>
+            <div class="rank-stat-tile">
+              <div class="rank-stat-val" id="rk-val-done">0/21</div>
+              <div class="rank-stat-lbl">Missions</div>
+            </div>
+            <div class="rank-stat-tile">
+              <div class="rank-stat-val" id="rk-val-points">0</div>
+              <div class="rank-stat-lbl">Points</div>
+            </div>
+          </div>
+
+          <div class="rank-wallet-imprint">
+            <label>Optional Wallet Imprint</label>
+            <input class="rank-wallet-input" id="rank-wallet-in" placeholder="Paste your wallet to imprint on card">
+          </div>
+
+          <div class="rank-actions">
+            <button class="btn btn-primary" id="btn-dl-rank">Download PNG (960×960)</button>
+            <a class="btn btn-ghost" id="btn-post-rank" href="#" target="_blank" rel="noopener">Post Rank on X</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACT VAULT -->
+<section id="facts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">05 //</span> ON-CHAIN TRUTH MATRIX</div>
+      <h2 class="section-title">The Fact Vault</h2>
+      <p class="section-desc">
+        Zero speculative hype. While every typical memecoin dies within seventy-two hours because deployers abandon their chats, this community continues deploying permanent decentralized infrastructure, verifiable holder tools, and automated fee distribution systems straight onto Solana mainnet without stopping for market noise. Read the facts. When someone on social media claims this is just another generic token with no substance, open the vault accounts, inspect the sealed authorities on Solscan, and show them how four hundred twenty million coins permanently back the original inscribed deed in byte-for-byte verified assembly code stored immutably inside the program account for all time. Math wins.
+      </p>
+    </div>
+
+    <div class="fact-bento" id="fact-bento"></div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY CHECKER -->
+<section id="eligibility">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">06 //</span> REWARDS GATEWAY</div>
+      <h2 class="section-title">Holder Rewards Eligibility Check</h2>
+      <p class="section-desc">
+        Hold more than twenty dollars of HUHCAT to receive creator fee payouts in SOL. When someone on social media claims this is just another generic token with no substance, open the vault accounts, inspect the sealed authorities on Solscan, and show them how four hundred twenty million coins permanently back the original inscribed deed in byte-for-byte verified assembly code. Math wins.
+      </p>
+    </div>
+
+    <div class="eligibility-box">
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:12px;">
+        Queries public Solana RPC endpoints in your browser. No wallet connection or transaction signature required.
+      </p>
+
+      <form class="eligibility-form" id="el-form">
+        <input class="eligibility-input" id="el-input" placeholder="Paste Solana wallet address" spellcheck="false" autocomplete="off" required>
+        <button class="btn btn-primary" type="submit">Verify Eligibility</button>
+      </form>
+
+      <div class="eligibility-result" id="el-result">
+        <div class="er-status" id="er-status">Scanning blockchain...</div>
+        <div class="er-detail" id="er-detail"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>Mission Control · Season 1 · Community built, holder run. The deployer is gone. The schedule is not.</p>
+  <div class="wrap">
+    <div class="footer-nav">
+      <a href="https://huhcatonsol.com" target="_blank" rel="noopener">huhcatonsol.com</a>
+      <a href="https://t.me/HuhCatSolGroupPortal" target="_blank" rel="noopener">Telegram Portal</a>
+      <a href="https://x.com/HuhCatOnSol_" target="_blank" rel="noopener">X Community</a>
+      <a href="https://jmthomasofficial.github.io/huhcatgame/" target="_blank" rel="noopener">Play Game</a>
+      <a href="https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener">Buy on pump.fun</a>
+      <a href="https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH" target="_blank" rel="noopener">Solscan Token</a>
+    </div>
+
+    <div class="footer-ca-badge" id="footer-ca-badge" title="Click to copy coin mint">
+      <span style="color:var(--signal);font-weight:700;">CA:</span>
+      <span class="footer-ca-text">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span>
+      <span style="font-size:10px;color:var(--signal);">[COPY]</span>
+    </div>
+
+    <p class="footer-disclaimer">
+      $HUHCAT is a decentralized memecoin with no team, no treasury, and no promises. On-chain claims are read from public RPC nodes. Always verify independently. Stay sharp. Act now.
+    </p>
+  </div>
 </footer>
-</div>
+
+<div class="toast-notice" id="toast">Copied to clipboard</div>
 
 <script>
-const RPCS = ["https://api.mainnet-beta.solana.com", "https://solana.publicnode.com"];
-const IMG_MINT = "DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r";
-const COIN = "A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH";
-let FACTS=null, MISSIONS=null, catImage=null;
+/* ================================================================
+   HUHCAT MISSION CONTROL // APEX TELEMETRY ENGINE
+   Client-side architecture. Zero external framework dependencies.
+   ================================================================ */
 
-async function rpc(method, params){
-  let lastErr;
-  for (const endpoint of RPCS){
-    for (let attempt=0; attempt<3; attempt++){
-      try{
-        const r = await fetch(endpoint, {method:"POST", headers:{"Content-Type":"application/json"},
-          body: JSON.stringify({jsonrpc:"2.0", id:1, method, params})});
-        const j = await r.json();
-        if (j.error) throw new Error(j.error.message);
-        return j.result;
-      }catch(e){ lastErr = e; await new Promise(res=>setTimeout(res, 800*(attempt+1))); }
-    }
+const MINT = 'A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH';
+const RPCS = ['https://api.mainnet-beta.solana.com', 'https://solana.publicnode.com'];
+const STORE_KEY = 'huhcat_mc_v2';
+
+let MISSIONS = null;
+let CONTENT = null;
+let FACTS = null;
+let CAT_IMAGE = null;
+let SFX_ENABLED = true;
+let STATE = loadState();
+
+// ---- PROCEDURAL WEB AUDIO SYNTHESIZER ----
+let audioCtx = null;
+function getAudioContext() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) audioCtx = new AudioContext();
   }
-  throw lastErr || new Error("all RPC endpoints refused");
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
 }
 
-function loadLocal(){ try{return JSON.parse(localStorage.getItem("huhcat_mc")||"{}")}catch(e){return{}} }
-function saveLocal(d){ localStorage.setItem("huhcat_mc", JSON.stringify(d)) }
+function playCyberBlip(freq = 800, duration = 0.035) {
+  if (!SFX_ENABLED) return;
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(freq * 0.4, ctx.currentTime + duration);
+    gain.gain.setValueAtTime(0.06, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.001, ctx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + duration);
+  } catch(e) {}
+}
 
-// ---------- TOMORROW BOARD ----------
-function renderTomorrow(){
-  const board = document.getElementById("tomorrowBoard");
+function playSuccessChime() {
+  if (!SFX_ENABLED) return;
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    notes.forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const start = ctx.currentTime + idx * 0.055;
+      const dur = 0.12;
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, start);
+      gain.gain.setValueAtTime(0.08, start);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + dur);
+    });
+  } catch(e) {}
+}
+
+// ---- PARTICLE SYSTEM ----
+const pCanvas = document.getElementById('particle-canvas');
+const pCtx = pCanvas.getContext('2d');
+let particles = [];
+function resizeCanvas() {
+  pCanvas.width = window.innerWidth;
+  pCanvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function triggerSparks(x, y) {
+  for (let i = 0; i < 42; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 2 + Math.random() * 6;
+    particles.push({
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 1.5,
+      life: 1,
+      decay: 0.02 + Math.random() * 0.025,
+      size: 2 + Math.random() * 3,
+      color: Math.random() > 0.3 ? '#39ff88' : '#00e5ff'
+    });
+  }
+}
+function updateParticles() {
+  pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.12; // gravity
+    p.life -= p.decay;
+    if (p.life <= 0) {
+      particles.splice(i, 1);
+      continue;
+    }
+    pCtx.globalAlpha = p.life;
+    pCtx.fillStyle = p.color;
+    pCtx.beginPath();
+    pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    pCtx.fill();
+  }
+  pCtx.globalAlpha = 1;
+  requestAnimationFrame(updateParticles);
+}
+requestAnimationFrame(updateParticles);
+
+// ---- PERSISTENT STATE ----
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) {
+      const s = JSON.parse(raw);
+      if (s.version === 2) return s;
+    }
+  } catch(e) {}
+  return { version: 2, streak: 0, missions: {}, points: 0, wallet: '' };
+}
+function saveState() {
+  localStorage.setItem(STORE_KEY, JSON.stringify(STATE));
+}
+function isMissionDone(id) {
+  return !!STATE.missions[id]?.done;
+}
+function getMissionProof(id) {
+  return STATE.missions[id]?.proof || '';
+}
+function toggleMission(id, proofVal, eventTarget) {
+  if (!STATE.missions[id]) STATE.missions[id] = { done: false, proof: '' };
+  const wasDone = STATE.missions[id].done;
+  STATE.missions[id].done = !wasDone;
+  if (proofVal !== undefined) STATE.missions[id].proof = proofVal;
+
+  if (!wasDone) {
+    playSuccessChime();
+    if (eventTarget) {
+      const rect = eventTarget.getBoundingClientRect();
+      triggerSparks(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    }
+    toast('Mission complete: points secured');
+  } else {
+    playCyberBlip(420, 0.04);
+  }
+
+  recalcScoreAndStreak();
+  saveState();
+  renderAll();
+}
+
+function recalcScoreAndStreak() {
   if (!MISSIONS) return;
-  const now = new Date();
-  const items = [];
-  const start = new Date(MISSIONS.start), end = new Date(MISSIONS.end);
-  const pre = start - now > 0;
-  if (pre){
-    items.push({when:"In " + Math.ceil((start-now)/86400000) + " days", what:"Marathon opens. Day 1: The cat is real. Missions drop 9:00 AM ET.", live:false});
-    items.push({when:"Every hour", what:"Holder rewards batches land in eligible wallets. Automatic, no claiming.", live:true});
-    items.push({when:"Sunday 9 PM ET", what:"The Week That Was: honest numbers, champions named, next season revealed.", live:false});
-  } else if (now <= end){
-    const day = MISSIONS.days.find(d => { const dd = new Date(d.date+"T23:59:59"); const ds = new Date(d.date+"T00:00:00"); return now>=ds && now<=dd; })
-              || MISSIONS.days[MISSIONS.days.length-1];
-    items.push({when:"Today", what:"Day " + day.day + ": " + day.theme + ". Missions on the board below.", live:true});
-    const nxt = MISSIONS.days.find(d => new Date(d.date+"T00:00:00") > now);
-    if (nxt) items.push({when:"Tomorrow", what:"Day " + nxt.day + ": " + nxt.theme + ".", live:false});
-    else items.push({when:"Tonight 9 PM ET", what:"Closing ceremony. Season 2 drops before the applause dies.", live:false});
-    items.push({when:"Every hour", what:"Rewards batches land in eligible wallets.", live:true});
-  } else {
-    items.push({when:"Now", what:"Season 1 is complete. Season 2 dates drop in TG. The rewards keep paying either way.", live:true});
-    items.push({when:"Every hour", what:"Holder rewards batches land in eligible wallets.", live:true});
+  const days = MISSIONS.days;
+  let streak = 0;
+  for (let i = 0; i < days.length; i++) {
+    const d = days[i];
+    const allDone = d.missions.every(m => isMissionDone(m.id));
+    if (allDone) { streak = i + 1; }
+    else break;
   }
-  board.innerHTML = items.map(i=>`<div class="tomorrow-item"><div class="when">${i.when}</div><div style="flex:1">${i.what}</div>${i.live?'<span class="chip">LIVE</span>':''}</div>`).join("");
-}
-
-// ---------- MISSIONS ----------
-function renderMissions(){
-  const board = document.getElementById("missionBoard");
-  const state = loadLocal();
-  const now = new Date();
-  MISSIONS.days.forEach(day=>{
-    const isToday = (new Date(day.date+"T00:00:00") <= now && now <= new Date(day.date+"T23:59:59"));
-    const cls = "card daycard" + (isToday ? " today" : "");
-    const missions = day.missions.map(m=>{
-      const checked = state[m.id] ? "checked" : "";
-      return `<div class="mission"><input type="checkbox" ${checked} onchange="toggleMission('${m.id}')"><div style="flex:1"><div class="mtitle">${m.title}</div></div><span class="pts">+${m.points}</span></div>`;
-    }).join("");
-    board.innerHTML += `<div class="${cls}"><div style="display:flex;justify-content:space-between;align-items:baseline"><h2 style="margin:0">Day ${day.day} · ${day.theme}</h2><span class="pill">${day.platform}</span></div><p class="pill" style="margin:4px 0 8px">${day.date}</p>${missions}<p class="pill" style="margin-top:10px">${day.ritual}</p></div>`;
-  });
-  updateProgress();
-}
-function toggleMission(id){
-  const s = loadLocal(); s[id] = !s[id]; saveLocal(s); updateProgress();
-}
-function updateProgress(){
-  const state = loadLocal();
-  let done=0, total=0, pts=0, daysHit=new Set();
-  MISSIONS.days.forEach(d=>{ d.missions.forEach(m=>{ total++; if(state[m.id]){done++;pts+=m.points;daysHit.add(d.day);} }) });
-  document.getElementById("progBar").style.width = (total?done/total*100:0)+"%";
-  const streakMult = daysHit.size>=4 ? 1.5 : 1;
-  document.getElementById("progressOut").innerHTML = `<span class="ok"><b>${done}</b> of ${total} missions</span> · <span class="pts">${Math.round(pts*streakMult)} points</span>${streakMult>1?' <span class="chip">STREAK 1.5x</span>':''} · <span class="pill">${daysHit.size} day(s) hit, 4 needed for the multiplier</span>`;
-}
-
-// ---------- FACTS ----------
-function renderFacts(){
-  document.getElementById("factList").innerHTML = FACTS.facts.map(f=>`
-    <details><summary>${f.claim} <span class="chip ${f.tier==='T0'?'t0':'t1'}">${f.tier}</span></summary>
-    <p style="margin:10px 0 6px;color:var(--mut)">${f.detail}</p>
-    <p class="pill">Source: ${f.source}</p>
-    <p class="pill">Verify it: ${f.verify}</p></details>`).join("");
-  document.getElementById("proofLinks").innerHTML = FACTS.proof_links.map(l=>`<a class="card" href="${l.url}" target="_blank" rel="noopener" style="display:block">${l.label} →</a>`).join("");
-}
-
-// ---------- WALLET ----------
-async function checkWallet(){
-  const out = document.getElementById("walletOut");
-  const addr = document.getElementById("wa").value.trim();
-  if (!/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr)){ out.innerHTML = '<p class="err">That does not look like a Solana address. Check it and paste again.</p>'; return; }
-  out.innerHTML = '<p class="pill">Reading the chain...</p>';
-  try{
-    const res = await rpc("getTokenAccountsByOwner", [addr, {mint: COIN}, {encoding:"jsonParsed"}]);
-    let bal = 0;
-    (res.value||[]).forEach(a=>{ bal += parseFloat(a.account.data.parsed.info.tokenAmount.uiAmount||0); });
-    const price = await fetch("https://api.dexscreener.com/latest/dex/tokens/"+COIN).then(r=>r.json()).then(j=>parseFloat(j.pairs?.[0]?.priceUsd)||null).catch(()=>null);
-    const usd = price ? bal*price : null;
-    if (bal > 0){
-      const eligible = usd !== null ? usd > 20 : null;
-      out.innerHTML = `<p><span class="big" style="font-size:26px">${bal.toLocaleString()}</span> HUHCAT${usd!==null?` <span class="pill">(about $${usd.toFixed(2)})</span>`:''}</p>` +
-        (eligible===null ? '<p class="warn">Balance read from chain. Live price unavailable right now, so check the $20 floor against the price on DexScreener.</p>'
-         : eligible ? '<p class="ok">Eligible. You are on the payout list. SOL lands automatically, several times an hour.</p>'
-         : `<p class="warn">Below the $20 floor. Add about $${(20-usd).toFixed(2)} more to start earning.</p>`);
-    } else {
-      out.innerHTML = '<p class="err">Zero HUHCAT found at that address. Holding more than $20 worth is what starts the rewards.</p>';
+  STATE.streak = streak;
+  STATE.points = 0;
+  for (const [id, val] of Object.entries(STATE.missions)) {
+    if (val.done) {
+      const m = findMission(id);
+      if (m) STATE.points += m.points;
     }
-  }catch(e){
-    out.innerHTML = '<p class="err">The public RPC refused the read. Rate limits happen.</p><p class="pill" style="margin-top:6px">Check it manually meanwhile: open <a href="https://solscan.io/account/' + addr + '" target="_blank" rel="noopener">your account on Solscan</a> and look for the HUHCAT token row. Holding more than $20 worth is the floor.</p>';
+  }
+  STATE.points += streak * (MISSIONS.scoring?.streak_bonus || 10);
+}
+
+function findMission(id) {
+  if (!MISSIONS) return null;
+  for (const d of MISSIONS.days) {
+    for (const m of d.missions) { if (m.id === id) return m; }
+  }
+  return null;
+}
+
+// ---- TIME & SCHEDULE CALCULATOR ----
+function getMarathonTimeline() {
+  if (!MISSIONS) return { current: 1, total: 7, state: 'loading' };
+  const now = new Date();
+  const start = new Date(MISSIONS.season.start);
+  const end = new Date(MISSIONS.season.end);
+
+  if (now < start) {
+    return { current: 0, total: 7, state: 'pre', start, end, msRemaining: start - now };
+  }
+  if (now > end) {
+    return { current: 8, total: 7, state: 'post', start, end, msRemaining: 0 };
+  }
+  const diffDays = Math.floor((now - start) / 86400000) + 1;
+  const nextDayMidnight = new Date(start.getTime() + diffDays * 86400000);
+  return {
+    current: Math.min(diffDays, 7),
+    total: 7,
+    state: 'active',
+    start,
+    end,
+    msRemaining: nextDayMidnight - now
+  };
+}
+
+function formatClock(ms) {
+  if (ms <= 0) return '00:00:00';
+  const totalSec = Math.floor(ms / 1000);
+  const h = String(Math.floor(totalSec / 3600)).padStart(2, '0');
+  const m = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+  const s = String(totalSec % 60).padStart(2, '0');
+  return `${h}:${m}:${s}`;
+}
+
+// ---- NOTIFICATIONS ----
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2200);
+}
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    playCyberBlip(1200, 0.04);
+    toast('Copied to clipboard');
+  } catch(e) {
+    toast('Copy failed: check browser permissions');
   }
 }
 
-// ---------- DECODER ----------
-async function decodeCat(){
-  const st = document.getElementById("decodeStatus");
-  st.textContent = "asking the RPC for the image mint...";
-  try{
-    const res = await rpc("getAccountInfo", [IMG_MINT, {encoding:"jsonParsed"}]);
-    const exts = res.value.data.parsed.info.extensions||[];
-    const meta = exts.find(e=>e.extension==="tokenMetadata");
-    const uri = meta?.state?.uri||"";
-    if (!uri.startsWith("data:image")){ st.textContent = "no on-chain image found"; return; }
-    const img = new Image();
-    img.onload = ()=>{
-      catImage = img;
-      const c = document.getElementById("catCanvas");
-      c.width = img.width; c.height = img.height;
-      c.getContext("2d").drawImage(img,0,0);
-      st.textContent = "decoded from chain, rendered in your browser. that is the proof.";
-      drawMeme();
-    };
-    img.src = uri;
-  }catch(e){ st.textContent = "RPC refused, try again in a moment"; }
-}
+// ---- RENDER: PULSE HEADER ----
+function renderPulse() {
+  const tl = getMarathonTimeline();
+  const elDay = document.getElementById('p-day');
+  const elStreak = document.getElementById('p-streak');
 
-// ---------- MEME ----------
-function drawMeme(){
-  const c = document.getElementById("memeCanvas"), x = c.getContext("2d");
-  x.fillStyle="#0a0e14"; x.fillRect(0,0,c.width,c.height);
-  if (catImage){
-    const s = Math.min(c.width/catImage.width, c.height/catImage.height);
-    const w = catImage.width*s, h = catImage.height*s;
-    x.drawImage(catImage,(c.width-w)/2,(c.height-h)/2,w,h);
+  if (tl.state === 'pre') {
+    elDay.textContent = `DROPS IN ${formatClock(tl.msRemaining)}`;
+  } else if (tl.state === 'active') {
+    elDay.textContent = `DAY ${tl.current} OF 7`;
   } else {
-    x.fillStyle="#232c3b"; x.font="14px sans-serif"; x.textAlign="center";
-    x.fillText("read the chain first, the cat goes here", c.width/2, c.height/2);
+    elDay.textContent = `S1 COMPLETE`;
   }
-  const top = document.getElementById("mtop").value, bot = document.getElementById("mbot").value;
-  x.font = "bold 30px Impact, sans-serif"; x.textAlign="center"; x.fillStyle="#fff";
-  x.strokeStyle="#000"; x.lineWidth=5; x.lineJoin="round";
-  [[top, 44],[bot, c.height-24]].forEach(([t,y])=>{ if(t){ x.strokeText(t.toUpperCase(), c.width/2, y, c.width-20); x.fillText(t.toUpperCase(), c.width/2, y, c.width-20); } });
-}
-function downloadMeme(){
-  const a = document.createElement("a");
-  a.download = "huhcat-meme.png";
-  a.href = document.getElementById("memeCanvas").toDataURL("image/png");
-  a.click();
+  elStreak.textContent = STATE.streak;
 }
 
-// ---------- BOOT ----------
-(async()=>{
-  const [f, m] = await Promise.all([
-    fetch("facts.json").then(r=>r.json()),
-    fetch("missions.json").then(r=>r.json())
+// ---- RENDER: HEAT HUD ----
+function renderHeatHud() {
+  const tl = getMarathonTimeline();
+  if (!MISSIONS) return;
+  const dayIndex = tl.state === 'active' ? tl.current - 1 : (tl.state === 'post' ? 6 : 0);
+  const day = MISSIONS.days[dayIndex];
+  if (!day) return;
+
+  const doneCount = day.missions.filter(m => isMissionDone(m.id)).length;
+  const totalMissions = day.missions.length;
+  const pct = Math.round((doneCount / totalMissions) * 100);
+
+  document.getElementById('heat-pct').textContent = `${pct}% COMPLETE`;
+  document.getElementById('heat-fill').style.width = `${pct}%`;
+  document.getElementById('heat-stats').textContent = `${doneCount} of ${totalMissions} Done for Day ${day.day}`;
+  document.getElementById('heat-points').textContent = `${STATE.points} Total Points`;
+}
+
+// ---- RENDER: TOMORROW BOARD ----
+function renderTomorrowBoard() {
+  const tl = getMarathonTimeline();
+  const titleEl = document.getElementById('tmr-head-title');
+  const clockEl = document.getElementById('tmr-clock');
+  const clockLbl = document.getElementById('tmr-clock-lbl');
+  const stateTag = document.getElementById('tmr-state-tag');
+  const briefEl = document.getElementById('tmr-brief');
+  const cardsEl = document.getElementById('tmr-cards');
+
+  if (tl.state === 'pre') {
+    titleEl.textContent = 'Marathon Launchpad';
+    clockLbl.textContent = 'TIME TO DAY 1 LAUNCH';
+    clockEl.textContent = formatClock(tl.msRemaining);
+    stateTag.textContent = 'COUNTDOWN ACTIVE';
+    briefEl.textContent = 'The 7-day continuity engine initiates at midnight. Three missions drop every 24 hours. The community verifies the cat.';
+    cardsEl.innerHTML = renderLockedCardsPreview(0);
+  } else if (tl.state === 'active') {
+    const nextIdx = tl.current; // 0-indexed next day
+    clockLbl.textContent = 'NEXT SPRINT UNLOCKS IN';
+    clockEl.textContent = formatClock(tl.msRemaining);
+    stateTag.textContent = `DAY ${tl.current} IN PROGRESS`;
+
+    if (nextIdx < MISSIONS.days.length) {
+      const nextDay = MISSIONS.days[nextIdx];
+      titleEl.textContent = `Tomorrow: ${nextDay.theme}`;
+      briefEl.textContent = `Sprint coordinates locked. Tomorrow at 00:00 ET, three new missions release for ${nextDay.theme}.`;
+      cardsEl.innerHTML = renderLockedCardsPreview(nextIdx);
+    } else {
+      titleEl.textContent = 'Final Sprint Active';
+      briefEl.textContent = 'This is Day 7 of 7: the marathon recap. Complete all operations, mint your rank card, and post receipts.';
+      cardsEl.innerHTML = '';
+    }
+  } else {
+    titleEl.textContent = 'Season 1 Mission Complete';
+    clockLbl.textContent = 'S1 FINALIZED';
+    clockEl.textContent = '00:00:00';
+    stateTag.textContent = 'SEASON 1 ARCHIVE';
+    briefEl.textContent = `Marathon concluded with ${STATE.streak} consecutive streak days secured. Stand by for Season 2 deployment.`;
+    cardsEl.innerHTML = '';
+  }
+}
+
+function renderLockedCardsPreview(dayIdx) {
+  if (!MISSIONS || dayIdx >= MISSIONS.days.length) return '';
+  const day = MISSIONS.days[dayIdx];
+  return day.missions.map(m => `
+    <div class="tmr-card">
+      <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div class="card-day">DAY ${day.day} // ${m.difficulty}</div>
+      <div class="card-title">${escapeHtml(m.title)}</div>
+    </div>
+  `).join('');
+}
+
+// ---- RENDER: DAY STRIP & MISSIONS ----
+let selectedDayIdx = -1;
+function renderDayStrip() {
+  const tl = getMarathonTimeline();
+  const strip = document.getElementById('day-strip');
+  if (!MISSIONS) return;
+
+  if (selectedDayIdx === -1) {
+    selectedDayIdx = tl.state === 'active' ? (tl.current - 1) : 0;
+  }
+
+  strip.innerHTML = MISSIONS.days.map((d, i) => {
+    const allDone = d.missions.every(m => isMissionDone(m.id));
+    const isFuture = (tl.state === 'active' && i >= tl.current) || tl.state === 'pre';
+    const isActive = i === selectedDayIdx;
+
+    let statusText = `${d.missions.filter(m => isMissionDone(m.id)).length}/3 DONE`;
+    if (allDone) statusText = 'VERIFIED';
+    if (isFuture) statusText = 'LOCKED';
+
+    return `
+      <div class="day-pill ${isActive ? 'active' : ''} ${allDone ? 'completed' : ''} ${isFuture ? 'locked' : ''}" data-day-idx="${i}">
+        <span class="day-num">DAY ${d.day}</span>
+        <span class="day-state">${statusText}</span>
+      </div>
+    `;
+  }).join('');
+
+  strip.querySelectorAll('.day-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const idx = parseInt(pill.dataset.dayIdx);
+      selectedDayIdx = idx;
+      playCyberBlip(750, 0.03);
+      renderDayStrip();
+      renderMissionGrid();
+    });
+  });
+}
+
+function renderMissionGrid() {
+  const grid = document.getElementById('mission-grid');
+  if (!MISSIONS || selectedDayIdx < 0 || selectedDayIdx >= MISSIONS.days.length) {
+    grid.innerHTML = '<p style="color:var(--muted)">Loading missions...</p>';
+    return;
+  }
+  const day = MISSIONS.days[selectedDayIdx];
+
+  grid.innerHTML = day.missions.map(m => {
+    const done = isMissionDone(m.id);
+    const proof = getMissionProof(m.id);
+    const intentUrl = buildTweetIntent(m.content_kit_id);
+
+    return `
+      <div class="mission-card ${done ? 'done' : ''}" data-id="${m.id}">
+        <div>
+          <div class="mc-header">
+            <span class="mc-day-tag">DAY ${day.day} // OPS</span>
+            <span class="mc-diff-badge ${m.difficulty}">${m.difficulty}</span>
+          </div>
+          <h3 class="mc-title">${escapeHtml(m.title)}</h3>
+          <p class="mc-desc">${escapeHtml(m.description)}</p>
+        </div>
+
+        <div>
+          <div class="mc-reward-row">
+            <span>REWARD</span>
+            <span class="mc-points">+${m.points} POINTS</span>
+            <span class="mc-done-mark">&#10003; COMPLETE</span>
+          </div>
+
+          <div class="mc-action-row">
+            ${m.action_type === 'post_x' && intentUrl ? `
+              <a class="mc-btn" href="${intentUrl}" target="_blank" rel="noopener">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Post on X
+              </a>` : ''}
+
+            ${m.action_url && m.action_type === 'verify' ? `
+              <a class="mc-btn" href="${m.action_url}" target="_blank" rel="noopener">
+                Verify Source &rarr;
+              </a>` : ''}
+
+            ${m.action_url && m.action_type === 'share_tg' ? `
+              <a class="mc-btn" href="${m.action_url}" target="_blank" rel="noopener">
+                Open Telegram &rarr;
+              </a>` : ''}
+
+            <button class="mc-btn btn-toggle ${done ? 'active' : ''}" data-toggle-id="${m.id}">
+              ${done ? '&#10003; Completed' : 'Mark Complete'}
+            </button>
+          </div>
+
+          <div class="mc-proof-box">
+            <input class="mc-proof-input" placeholder="Paste proof URL or tx hash (optional)" value="${escapeAttr(proof)}" data-proof-id="${m.id}">
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Bind events
+  grid.querySelectorAll('[data-toggle-id]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = btn.dataset.toggleId;
+      const input = grid.querySelector(`[data-proof-id="${id}"]`);
+      toggleMission(id, input ? input.value : '', e.target);
+    });
+  });
+
+  grid.querySelectorAll('[data-proof-id]').forEach(input => {
+    input.addEventListener('change', () => {
+      const id = input.dataset.proofId;
+      if (!STATE.missions[id]) STATE.missions[id] = { done: false, proof: '' };
+      STATE.missions[id].proof = input.value;
+      saveState();
+    });
+  });
+}
+
+function buildTweetIntent(kitId) {
+  if (!kitId || !CONTENT) return '';
+  const tpl = CONTENT.templates.find(t => t.id === kitId);
+  if (!tpl) return '';
+  return 'https://x.com/intent/post?text=' + encodeURIComponent(tpl.template);
+}
+
+// ---- RENDER: CONTENT ARMORY ----
+let activeArmoryCat = 'all';
+let armoryQuery = '';
+
+function renderArmoryFilters() {
+  const strip = document.getElementById('armory-chips');
+  if (!CONTENT) return;
+  const cats = ['all', 'proof', 'holder', 'quote', 'reply'];
+  const labels = {
+    all: 'All Weapons (27)',
+    proof: 'Proof Weapons',
+    holder: 'Holder Narratives',
+    quote: 'Quote Snipers',
+    reply: 'Reply Arsenal'
+  };
+
+  strip.innerHTML = cats.map(c => `
+    <button class="armory-chip ${c === activeArmoryCat ? 'active' : ''}" data-cat="${c}">
+      ${labels[c] || c}
+    </button>
+  `).join('');
+
+  strip.querySelectorAll('.armory-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeArmoryCat = btn.dataset.cat;
+      playCyberBlip(800, 0.025);
+      renderArmoryFilters();
+      renderArmoryGrid();
+    });
+  });
+}
+
+function renderArmoryGrid() {
+  const grid = document.getElementById('armory-grid');
+  if (!CONTENT) return;
+
+  let filtered = CONTENT.templates;
+  if (activeArmoryCat !== 'all') {
+    filtered = filtered.filter(t => t.category === activeArmoryCat);
+  }
+  if (armoryQuery.trim()) {
+    const q = armoryQuery.toLowerCase();
+    filtered = filtered.filter(t => t.template.toLowerCase().includes(q) || t.id.toLowerCase().includes(q));
+  }
+
+  if (!filtered.length) {
+    grid.innerHTML = `<p style="color:var(--muted);padding:20px;grid-column:1/-1;">No armory templates found matching query.</p>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(t => {
+    const hasPlaceholder = t.template.includes('[YOUR REASON]');
+    const initialText = t.template;
+    const charCount = initialText.length;
+    const isSafe = charCount <= 270;
+
+    return `
+      <div class="tpl-card" data-tpl-id="${t.id}">
+        <div>
+          <div class="tpl-top">
+            <span class="tpl-category-badge">${t.category.toUpperCase()}</span>
+            <span>DAY ${t.day === 0 ? 'FLEX' : t.day} // ${t.id}</span>
+          </div>
+
+          <div class="tpl-body" id="body-${t.id}">${escapeHtml(initialText)}</div>
+
+          ${hasPlaceholder ? `
+            <div class="tpl-customizer">
+              <label>Fill-in-the-blank personalization</label>
+              <input class="tpl-customizer-input" placeholder="e.g. dev dipped but holders built an on-chain beast" data-custom-for="${t.id}">
+            </div>
+          ` : ''}
+        </div>
+
+        <div class="tpl-footer">
+          <span class="tpl-char-count ${isSafe ? 'safe' : 'warn'}" id="count-${t.id}">${charCount} / 280</span>
+          <div class="tpl-buttons">
+            <button class="tpl-btn" data-copy-action="${t.id}">Copy</button>
+            <a class="tpl-btn primary" id="btn-post-${t.id}" href="https://x.com/intent/post?text=${encodeURIComponent(initialText)}" target="_blank" rel="noopener">Post</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Personalization events
+  grid.querySelectorAll('[data-custom-for]').forEach(input => {
+    input.addEventListener('input', () => {
+      const id = input.dataset.customFor;
+      const tplObj = CONTENT.templates.find(x => x.id === id);
+      if (!tplObj) return;
+
+      const reason = input.value.trim() || '[YOUR REASON]';
+      const updatedText = tplObj.template.replace('[YOUR REASON]', reason);
+
+      const bodyEl = document.getElementById(`body-${id}`);
+      const countEl = document.getElementById(`count-${id}`);
+      const postBtn = document.getElementById(`btn-post-${id}`);
+
+      if (bodyEl) bodyEl.textContent = updatedText;
+      if (countEl) {
+        countEl.textContent = `${updatedText.length} / 280`;
+        countEl.className = `tpl-char-count ${updatedText.length <= 270 ? 'safe' : 'warn'}`;
+      }
+      if (postBtn) {
+        postBtn.href = 'https://x.com/intent/post?text=' + encodeURIComponent(updatedText);
+      }
+    });
+  });
+
+  // Copy events
+  grid.querySelectorAll('[data-copy-action]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.copyAction;
+      const bodyEl = document.getElementById(`body-${id}`);
+      if (bodyEl) copyToClipboard(bodyEl.textContent);
+    });
+  });
+}
+
+document.getElementById('armory-query')?.addEventListener('input', (e) => {
+  armoryQuery = e.target.value;
+  renderArmoryGrid();
+});
+
+// ---- RENDER: RANK CARD ON CANVAS ----
+function getRankData() {
+  if (!MISSIONS) return { title: 'Observer', color: '#828d9f', min_streak: 0 };
+  const ranks = [...MISSIONS.ranks].sort((a, b) => b.min_streak - a.min_streak);
+  for (const r of ranks) {
+    if (STATE.streak >= r.min_streak) return r;
+  }
+  return ranks[ranks.length - 1];
+}
+
+function renderRankSection() {
+  const rank = getRankData();
+  const doneCount = Object.values(STATE.missions).filter(m => m.done).length;
+
+  document.getElementById('rank-name-display').textContent = rank.title;
+  document.getElementById('rk-val-streak').textContent = STATE.streak;
+  document.getElementById('rk-val-done').textContent = `${doneCount}/21`;
+  document.getElementById('rk-val-points').textContent = STATE.points;
+
+  const postText = `I hold $HUHCAT. Verified rank: ${rank.title}. Current streak: ${STATE.streak} days. ${doneCount}/21 missions completed. Decode the chain at https://huhcatonsol.com #HUHCAT @HuhCatOnSol_`;
+  document.getElementById('btn-post-rank').href = 'https://x.com/intent/post?text=' + encodeURIComponent(postText);
+
+  drawRankCanvas(rank, doneCount);
+}
+
+function drawRankCanvas(rank, doneCount) {
+  const canvas = document.getElementById('rank-canvas');
+  const ctx = canvas.getContext('2d');
+  const W = 960, H = 960;
+  canvas.width = W; canvas.height = H;
+
+  // Background
+  ctx.fillStyle = '#030408';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle grid
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
+  ctx.lineWidth = 1;
+  const gridSize = 48;
+  for (let x = 0; x < W; x += gridSize) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y < H; y += gridSize) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+
+  // Tactical Border
+  ctx.strokeStyle = rank.color;
+  ctx.lineWidth = 4;
+  ctx.strokeRect(48, 48, W - 96, H - 96);
+
+  // Tactical corner accents
+  ctx.fillStyle = rank.color;
+  const cSize = 20;
+  ctx.fillRect(48, 48, cSize, 4);
+  ctx.fillRect(48, 48, 4, cSize);
+  ctx.fillRect(W - 48 - cSize, 48, cSize, 4);
+  ctx.fillRect(W - 48 - 4, 48, 4, cSize);
+  ctx.fillRect(48, H - 48 - 4, cSize, 4);
+  ctx.fillRect(48, H - 48 - cSize, 4, cSize);
+  ctx.fillRect(W - 48 - cSize, H - 48 - 4, cSize, 4);
+  ctx.fillRect(W - 48 - 4, H - 48 - cSize, 4, cSize);
+
+  // Header Title
+  ctx.fillStyle = '#828d9f';
+  ctx.font = '700 16px "JetBrains Mono", monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('HUHCAT MISSION CONTROL // VERIFIED HOLDER TELEMETRY', W / 2, 94);
+
+  // Central Reticle
+  const catX = W / 2;
+  const catY = 270;
+  const catRadius = 110;
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(catX, catY, catRadius, 0, Math.PI * 2);
+  ctx.closePath();
+  ctx.clip();
+
+  if (CAT_IMAGE && CAT_IMAGE.complete && CAT_IMAGE.naturalWidth > 0) {
+    ctx.drawImage(CAT_IMAGE, catX - catRadius, catY - catRadius, catRadius * 2, catRadius * 2);
+  } else {
+    ctx.fillStyle = '#0f1422';
+    ctx.fill();
+    ctx.fillStyle = rank.color;
+    ctx.font = '800 64px "Space Grotesk", sans-serif';
+    ctx.fillText('HUH', catX, catY + 22);
+  }
+  ctx.restore();
+
+  // Glowing ring around cat
+  ctx.strokeStyle = rank.color;
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.arc(catX, catY, catRadius + 6, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Rank Display
+  ctx.fillStyle = rank.color;
+  ctx.font = '800 58px "Space Grotesk", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(rank.title.toUpperCase(), W / 2, 455);
+
+  // Streak Dots (7 days)
+  const totalDots = 7;
+  const dRadius = 12;
+  const dGap = 20;
+  const totalDotW = totalDots * (dRadius * 2) + (totalDots - 1) * dGap;
+  const startDotX = (W - totalDotW) / 2 + dRadius;
+
+  for (let i = 0; i < totalDots; i++) {
+    const x = startDotX + i * (dRadius * 2 + dGap);
+    const y = 515;
+    ctx.beginPath();
+    ctx.arc(x, y, dRadius, 0, Math.PI * 2);
+    if (i < STATE.streak) {
+      ctx.fillStyle = rank.color;
+      ctx.fill();
+    } else {
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+  }
+
+  // Stat Row
+  ctx.fillStyle = '#f1f5f9';
+  ctx.font = '800 42px "Space Grotesk", sans-serif';
+  ctx.fillText(`${doneCount}/21 MISSIONS`, W / 2, 620);
+
+  ctx.fillStyle = '#828d9f';
+  ctx.font = '700 22px "JetBrains Mono", monospace';
+  ctx.fillText(`STREAK: ${STATE.streak} DAYS  //  POINTS: ${STATE.points}`, W / 2, 670);
+
+  // Optional Wallet imprint
+  const walletAddr = (document.getElementById('rank-wallet-in')?.value || STATE.wallet || '').trim();
+  if (walletAddr) {
+    ctx.fillStyle = 'rgba(57,255,136,0.85)';
+    ctx.font = '500 15px "JetBrains Mono", monospace';
+    ctx.fillText(`IMPRINT: ${walletAddr.slice(0, 8)}...${walletAddr.slice(-8)}`, W / 2, 730);
+  }
+
+  // Barcode telemetry graphic
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+  const barY = 780;
+  const barW = 320;
+  const startBarX = (W - barW) / 2;
+  for (let b = 0; b < barW; b += 4) {
+    if ((b * 7) % 11 > 3) {
+      ctx.fillRect(startBarX + b, barY, 2, 28);
+    }
+  }
+
+  // Footer seal
+  ctx.fillStyle = '#525b6a';
+  ctx.font = '500 14px "JetBrains Mono", monospace';
+  ctx.fillText('SOLANA V1 INSCRIBED ARTIFACT  //  SEASON 01', W / 2, 850);
+  ctx.fillText('huhcatonsol.com', W / 2, 880);
+}
+
+document.getElementById('rank-wallet-in')?.addEventListener('input', (e) => {
+  STATE.wallet = e.target.value.trim();
+  saveState();
+  renderRankSection();
+});
+
+document.getElementById('btn-dl-rank')?.addEventListener('click', () => {
+  const canvas = document.getElementById('rank-canvas');
+  const link = document.createElement('a');
+  link.download = `huhcat-rank-${getRankData().title.toLowerCase()}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+  playCyberBlip(1000, 0.05);
+  toast('Rank card downloaded');
+});
+
+// ---- RENDER: FACT VAULT ----
+function renderFactVault() {
+  const bento = document.getElementById('fact-bento');
+  if (!FACTS) return;
+
+  bento.innerHTML = FACTS.facts.map(f => `
+    <div class="fact-card">
+      <div>
+        <div class="fact-top">
+          <span class="fact-tier-pill ${f.tier.toLowerCase()}">${f.tier === 'T0' ? 'ON-CHAIN FACT' : 'VERIFIED METRIC'}</span>
+          <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">${f.id}</span>
+        </div>
+        <div class="fact-claim">${escapeHtml(f.claim)}</div>
+        <div class="fact-detail">${escapeHtml(f.detail)}</div>
+      </div>
+
+      <div class="fact-footer">
+        <span class="fact-source" title="${escapeAttr(f.source)}">${escapeHtml(f.source)}</span>
+        <button class="fact-copy-btn" data-fact-citation="${escapeAttr(f.claim + ' (Source: ' + f.source + ')') }">Copy Citation</button>
+      </div>
+    </div>
+  `).join('');
+
+  bento.querySelectorAll('[data-fact-citation]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      copyToClipboard(btn.dataset.factCitation);
+    });
+  });
+}
+
+// ---- ELIGIBILITY CHECKER ----
+document.getElementById('el-form')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const addr = document.getElementById('el-input').value.trim();
+  if (!addr) return;
+
+  const resultBox = document.getElementById('el-result');
+  const statusEl = document.getElementById('er-status');
+  const detailEl = document.getElementById('er-detail');
+
+  resultBox.classList.add('show');
+  statusEl.textContent = 'Querying Solana Mainnet RPC...';
+  statusEl.className = 'er-status';
+  detailEl.textContent = '';
+  playCyberBlip(700, 0.03);
+
+  try {
+    const [balance, price] = await Promise.all([getTokenBalance(addr), fetchPrice()]);
+    const valUsd = balance * price;
+
+    if (balance === 0) {
+      statusEl.className = 'er-status fail';
+      statusEl.textContent = 'No $HUHCAT tokens detected.';
+      detailEl.textContent = 'This address currently holds zero tokens. Purchase on pump.fun to qualify for automatic distributions.';
+    } else if (valUsd < 20) {
+      statusEl.className = 'er-status fail';
+      statusEl.textContent = `Balance below $20 floor: $${valUsd.toFixed(2)} USD`;
+      detailEl.textContent = `You hold ${fmtNum(balance)} HUHCAT. Pump.fun requires a minimum $20 holding threshold for automatic distribution eligibility.`;
+    } else {
+      statusEl.className = 'er-status pass';
+      statusEl.textContent = `Eligible: $${valUsd.toFixed(2)} USD in $HUHCAT`;
+      detailEl.textContent = `You hold ${fmtNum(balance)} HUHCAT. You qualify for pro-rata creator fee distributions paid directly in SOL.`;
+      playSuccessChime();
+    }
+  } catch(err) {
+    statusEl.className = 'er-status fail';
+    statusEl.textContent = 'RPC Query Failed';
+    detailEl.innerHTML = `Public nodes timed out. <a href="https://solscan.io/account/${addr}" target="_blank" rel="noopener">Inspect your token accounts on Solscan &rarr;</a>`;
+  }
+});
+
+async function rpcRequest(method, params) {
+  for (const url of RPCS) {
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params })
+      });
+      const data = await res.json();
+      if (data.result !== undefined) return data.result;
+    } catch(e) { continue; }
+  }
+  throw new Error('RPC query exhausted');
+}
+
+async function getTokenBalance(owner) {
+  const result = await rpcRequest('getTokenAccountsByOwner', [
+    owner,
+    { mint: MINT },
+    { encoding: 'jsonParsed' }
   ]);
-  FACTS = f; MISSIONS = m;
-  renderTomorrow(); renderMissions(); renderFacts(); decodeCat(); drawMeme();
-})();
+  if (!result?.value?.length) return 0;
+  return result.value[0].account.data.parsed.info.tokenAmount.uiAmount || 0;
+}
+
+async function fetchPrice() {
+  try {
+    const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${MINT}`);
+    const data = await res.json();
+    const pair = data.pairs?.[0];
+    if (pair) {
+      const price = parseFloat(pair.priceUsd || 0);
+      const mc = pair.marketCap || pair.fdv;
+      if (price > 0) updateMarketDisplay(price, mc);
+      return price;
+    }
+  } catch(e) {}
+  return 0;
+}
+
+function updateMarketDisplay(price, mc) {
+  const item = document.getElementById('p-market-item');
+  const priceEl = document.getElementById('p-price');
+  if (item && priceEl) {
+    item.style.display = 'inline-flex';
+    priceEl.textContent = `$${price < 0.01 ? price.toFixed(6) : price.toFixed(4)}${mc ? ' (MC $' + fmtNum(mc) + ')' : ''}`;
+  }
+}
+
+function fmtNum(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+  return n.toFixed(2);
+}
+
+// ---- SFX TOGGLE ----
+document.getElementById('sfx-btn')?.addEventListener('click', (e) => {
+  SFX_ENABLED = !SFX_ENABLED;
+  e.target.textContent = `SFX: ${SFX_ENABLED ? 'ON' : 'OFF'}`;
+  e.target.className = `sfx-toggle ${SFX_ENABLED ? 'active' : ''}`;
+  if (SFX_ENABLED) playCyberBlip(1000, 0.04);
+});
+
+// ---- FOOTER CA COPY ----
+document.getElementById('footer-ca-badge')?.addEventListener('click', () => {
+  copyToClipboard(MINT);
+});
+
+// ---- UTILITIES ----
+function escapeHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escapeAttr(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ---- RENDER PIPELINE ----
+function renderAll() {
+  recalcScoreAndStreak();
+  renderPulse();
+  renderHeatHud();
+  renderTomorrowBoard();
+  renderDayStrip();
+  renderMissionGrid();
+  renderRankSection();
+}
+
+// ---- BOOT SEQUENCE ----
+async function initMissionControl() {
+  try {
+    const [mRes, cRes, fRes] = await Promise.all([
+      fetch('missions.json').then(r => r.json()),
+      fetch('content-kit.json').then(r => r.json()),
+      fetch('facts.json').then(r => r.json())
+    ]);
+    MISSIONS = mRes;
+    CONTENT = cRes;
+    FACTS = fRes;
+  } catch(e) {
+    document.getElementById('mission-grid').innerHTML = '<p style="color:var(--alert);padding:20px;">Telemetry feeds failed to load. Please refresh.</p>';
+    return;
+  }
+
+  // Pre-load cat asset for Canvas
+  CAT_IMAGE = new Image();
+  CAT_IMAGE.crossOrigin = 'anonymous';
+  CAT_IMAGE.src = '../huhcat.jpg';
+  CAT_IMAGE.onload = () => renderRankSection();
+
+  renderAll();
+  renderArmoryFilters();
+  renderArmoryGrid();
+  renderFactVault();
+
+  // Fetch live market data
+  fetchPrice();
+
+  // Active timers
+  setInterval(() => {
+    renderPulse();
+    renderTomorrowBoard();
+  }, 1000);
+
+  setInterval(fetchPrice, 45000);
+}
+
+window.addEventListener('DOMContentLoaded', initMissionControl);
 </script>
 </body>
 </html>

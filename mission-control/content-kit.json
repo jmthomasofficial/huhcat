@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "updated": "2026-09-18",
+  "templates": [
+    {
+      "id": "proof-01",
+      "category": "proof",
+      "day": 1,
+      "template": "The cat is real. His name is Bender. 3.4M followers on TikTok. Lives in Melbourne with Nellie Cage. $HUHCAT @HuhCatOnSol_ Proof: https://huhcatonsol.com/#proof",
+      "platform": "x"
+    },
+    {
+      "id": "proof-02",
+      "category": "proof",
+      "day": 2,
+      "template": "$HUHCAT coin mint: A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH. Mint and freeze authorities are null. 6 decimals. Verify on chain. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "proof-03",
+      "category": "proof",
+      "day": 6,
+      "template": "Sealed image mint: DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r. Supply exactly 1. Decimals 0. All 4 authorities null. The $HUHCAT image is sealed forever.",
+      "platform": "x"
+    },
+    {
+      "id": "proof-04",
+      "category": "proof",
+      "day": 6,
+      "template": "$HUHCAT vault program upgrade authority is burned. It's locked. Program: GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3. No one can change the rules. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "proof-05",
+      "category": "proof",
+      "day": 2,
+      "template": "$HUHCAT supply is 959,904,004.86. The claim threshold is 420,690,000. That's 43.83% of the supply. Math doesn't lie. https://huhcatonsol.com",
+      "platform": "x"
+    },
+    {
+      "id": "proof-06",
+      "category": "proof",
+      "day": 4,
+      "template": "Rewards are irreversible. Pump.fun confirmed it on 12 Sep. $HUHCAT holders get paid. $20 floor to be eligible. https://huhcatonsol.com/rewards",
+      "platform": "x"
+    },
+    {
+      "id": "proof-07",
+      "category": "proof",
+      "day": 4,
+      "template": "1.81 SOL. 1,807 payments. 207 batches. All in one hour on 17 Sep. The $HUHCAT rewards machine works. See the receipts: https://huhcatonsol.com/rewards",
+      "platform": "x"
+    },
+    {
+      "id": "proof-08",
+      "category": "proof",
+      "day": 3,
+      "template": "v1 activation slot was 447,120,000. The code is running. The community took over and built everything. $HUHCAT is unstoppable. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "proof-09",
+      "category": "proof",
+      "day": 2,
+      "template": "Fee schedule: 25 tiers. Peak is 0.950%. Floor is 0.050% at 98,240 SOL. Hard coded in the $HUHCAT vault. Check it on Solscan.",
+      "platform": "x"
+    },
+    {
+      "id": "proof-10",
+      "category": "proof",
+      "day": 7,
+      "template": "ELF sha256: bbc47f54...2367c. The binary matches the source. Fully verified. We trust math. $HUHCAT @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "holder-01",
+      "category": "holder",
+      "day": 3,
+      "template": "I hold $HUHCAT because [YOUR REASON]. The community built this from scratch after the deployer left. We own it now. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "holder-02",
+      "category": "holder",
+      "day": 4,
+      "template": "Got my $HUHCAT rewards today. Real SOL hitting my wallet. The $20 eligibility floor keeps it fair. Check your stash: https://huhcatonsol.com/rewards",
+      "platform": "x"
+    },
+    {
+      "id": "holder-03",
+      "category": "holder",
+      "day": 6,
+      "template": "[YOUR REASON] is why I added to my $HUHCAT bag today. The vault math is flawless. Upgrade authority burned. Sleep easy. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "holder-04",
+      "category": "holder",
+      "day": 3,
+      "template": "The deployer left. We didn't panic. We built. I hold $HUHCAT because of this community. [YOUR REASON] https://huhcatonsol.com",
+      "platform": "x"
+    },
+    {
+      "id": "holder-05",
+      "category": "holder",
+      "day": 5,
+      "template": "Playing the $HUHCAT game right now. https://jmthomasofficial.github.io/huhcatgame/ Holders building for holders. [YOUR REASON] @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "holder-06",
+      "category": "holder",
+      "day": 7,
+      "template": "Claim threshold is 420,690,000. We are getting closer. I am holding my $HUHCAT tight. [YOUR REASON]",
+      "platform": "x"
+    },
+    {
+      "id": "holder-07",
+      "category": "holder",
+      "day": 0,
+      "template": "I checked the $HUHCAT image mint. Supply 1. Authorities null. It is truly sealed. [YOUR REASON] Buy: https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH",
+      "platform": "x"
+    },
+    {
+      "id": "quote-01",
+      "category": "quote",
+      "day": 0,
+      "template": "Real cat. Real code. Real rewards. $HUHCAT @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "quote-02",
+      "category": "quote",
+      "day": 0,
+      "template": "We verified the math. Did you? $HUHCAT https://huhcatonsol.com/#proof",
+      "platform": "x"
+    },
+    {
+      "id": "quote-03",
+      "category": "quote",
+      "day": 0,
+      "template": "Burned authority. Null freeze. Sleep well. $HUHCAT",
+      "platform": "x"
+    },
+    {
+      "id": "quote-04",
+      "category": "quote",
+      "day": 1,
+      "template": "3.4M TikTok followers can't be wrong. Bender is $HUHCAT.",
+      "platform": "x"
+    },
+    {
+      "id": "quote-05",
+      "category": "quote",
+      "day": 5,
+      "template": "Deployer left. Holders built. Unstoppable. $HUHCAT",
+      "platform": "x"
+    },
+    {
+      "id": "reply-01",
+      "category": "reply",
+      "day": 0,
+      "template": "$HUHCAT is Bender from Melbourne. The community took over. We earn real rewards. https://huhcatonsol.com",
+      "platform": "x"
+    },
+    {
+      "id": "reply-02",
+      "category": "reply",
+      "day": 0,
+      "template": "Check the proof. Authorities null. Upgrade burned. $HUHCAT is safe. https://huhcatonsol.com/#proof",
+      "platform": "x"
+    },
+    {
+      "id": "reply-03",
+      "category": "reply",
+      "day": 4,
+      "template": "1.81 SOL distributed in one hour on 17 Sep. It pays to hold $HUHCAT.",
+      "platform": "x"
+    },
+    {
+      "id": "reply-04",
+      "category": "reply",
+      "day": 5,
+      "template": "Real cat with 3.4M followers. Dev left. Community built a rewards vault. $HUHCAT",
+      "platform": "x"
+    },
+    {
+      "id": "reply-05",
+      "category": "reply",
+      "day": 0,
+      "template": "Just read the facts. Math doesn't lie. $HUHCAT https://huhcatonsol.com",
+      "platform": "x"
+    }
+  ]
+}
