@@ -1,7 +1,7 @@
 {
   "handoff.md": {
-    "mtime": 1789704113.318663,
-    "ast_hash": "1490c6e21d5de24da349f10d1b77aa8c",
+    "mtime": 1789705267.0331526,
+    "ast_hash": "b70f78ce8fa0c3befedc8f541cdb2c72",
     "semantic_hash": ""
   },
   "index.html": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "mission-control/index.html": {
-    "mtime": 1789704077.9731233,
-    "ast_hash": "a23ca5f0529266545a743b5e3a60328a",
+    "mtime": 1789705229.1234615,
+    "ast_hash": "cd3587c73e9c13cced6eeba0053e18a8",
     "semantic_hash": ""
   },
   "tiel-research/01-cto-playbook.md": {
@@ -372,6 +372,11 @@
   "mission-control/factory-victory.jpg": {
     "mtime": 1789703884.026592,
     "ast_hash": "8340536687d430cb6d9ac3d3931d2389",
+    "semantic_hash": ""
+  },
+  "mission-control/war-room-bg.jpg": {
+    "mtime": 1789704392.826167,
+    "ast_hash": "4f107652c8bed76df300cc48ba635f08",
     "semantic_hash": ""
   }
 }

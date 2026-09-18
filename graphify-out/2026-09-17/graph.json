@@ -1484,8 +1484,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "meme_factory_100",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "meme-factory-100.md"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "meme_factory_100_huhcat_100_viral_meme_video_studio_master_manual",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "huhcat 100 viral meme & video studio master manual"
     },
     {
@@ -1506,8 +1506,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "meme_factory_100_part_1_how_to_create_meme_videos_step_by_step_using_free_ai_engines",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "part 1: how to create meme videos step by step using free ai engines"
     },
     {
@@ -1517,8 +1517,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "meme_factory_100_engine_1_qwen_video_studio_at_chat_qwen_ai_recommended",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "engine 1: qwen video studio at chat.qwen.ai (recommended)"
     },
     {
@@ -1528,8 +1528,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "meme_factory_100_engine_2_meta_ai_video_animate_meta_ai",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "engine 2: meta ai video & animate (meta.ai)"
     },
     {
@@ -1539,8 +1539,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "meme_factory_100_engine_3_grok_imagine_on_x",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "engine 3: grok imagine on x"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "meme_factory_100_engine_4_google_videofx_labs_google_fx",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "engine 4: google videofx (labs.google/fx)"
     },
     {
@@ -1561,8 +1561,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "meme_factory_100_engine_5_hailuo_ai_by_minimax_hailuoai_video",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "engine 5: hailuo ai by minimax (hailuoai.video)"
     },
     {
@@ -1671,8 +1671,8 @@
       "source_location": "L284",
       "_origin": "ast",
       "id": "meme_factory_100_part_3_the_100_viral_meme_video_studio_arsenals",
-      "community": 35,
-      "community_name": "Lane: Solana & Crypto Lore",
+      "community": 34,
+      "community_name": "Lane: Wall Street & Whales",
       "norm_label": "part 3: the 100 viral meme & video studio arsenals"
     },
     {
@@ -4118,92 +4118,59 @@
       "norm_label": "handoff.md"
     },
     {
-      "label": "HUHCAT Project Handoff - Solana Theme, Ascending Candlestick Canvas & High-Contrast Typography",
+      "label": "HUHCAT Project Handoff - Heartfelt Community Message & War Room Love Letter",
       "file_type": "document",
       "source_file": "handoff.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
+      "id": "handoff_huhcat_project_handoff_heartfelt_community_message_war_room_love_letter",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "huhcat project handoff - solana theme, ascending candlestick canvas & high-contrast typography"
+      "norm_label": "huhcat project handoff - heartfelt community message & war room love letter"
     },
     {
-      "label": "1. Visual Architecture & Solana Gladiator Centerpiece",
+      "label": "1. Community Love Letter Deployment",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L15",
+      "source_location": "L13",
       "_origin": "ast",
-      "id": "handoff_1_visual_architecture_solana_gladiator_centerpiece",
+      "id": "handoff_1_community_love_letter_deployment",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "1. visual architecture & solana gladiator centerpiece"
+      "norm_label": "1. community love letter deployment"
     },
     {
-      "label": "Solana & Gladiator Design Language",
+      "label": "Strategic Visual Architecture",
       "file_type": "document",
       "source_file": "handoff.md",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "handoff_solana_gladiator_design_language",
+      "id": "handoff_strategic_visual_architecture",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "solana & gladiator design language"
+      "norm_label": "strategic visual architecture"
     },
     {
-      "label": "2. Real-Time Ascending Candlestick Background Engine",
+      "label": "Core Message Themes",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L28",
+      "source_location": "L24",
       "_origin": "ast",
-      "id": "handoff_2_real_time_ascending_candlestick_background_engine",
+      "id": "handoff_core_message_themes",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "2. real-time ascending candlestick background engine"
+      "norm_label": "core message themes"
     },
     {
-      "label": "Candlestick Canvas Specifications",
+      "label": "2. Verification & Quality Audit",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
-      "id": "handoff_candlestick_canvas_specifications",
+      "id": "handoff_2_verification_quality_audit",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "candlestick canvas specifications"
-    },
-    {
-      "label": "3. High-Contrast Typography & Readability Overhaul",
-      "file_type": "document",
-      "source_file": "handoff.md",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "handoff_3_high_contrast_typography_readability_overhaul",
-      "community": 0,
-      "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "3. high-contrast typography & readability overhaul"
-    },
-    {
-      "label": "Readability Enhancements",
-      "file_type": "document",
-      "source_file": "handoff.md",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "handoff_readability_enhancements",
-      "community": 0,
-      "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "readability enhancements"
-    },
-    {
-      "label": "4. Compliance and Quality Verification",
-      "file_type": "document",
-      "source_file": "handoff.md",
-      "source_location": "L55",
-      "_origin": "ast",
-      "id": "handoff_4_compliance_and_quality_verification",
-      "community": 0,
-      "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "4. compliance and quality verification"
+      "norm_label": "2. verification & quality audit"
     },
     {
       "label": "tiel-research/01-cto-playbook.md",
@@ -8765,51 +8732,40 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "handoff",
-      "target": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
+      "target": "handoff_huhcat_project_handoff_heartfelt_community_message_war_room_love_letter",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "handoff.md",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_1_visual_architecture_solana_gladiator_centerpiece",
+      "source": "handoff_huhcat_project_handoff_heartfelt_community_message_war_room_love_letter",
+      "target": "handoff_1_community_love_letter_deployment",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "handoff.md",
-      "source_location": "L28",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_2_real_time_ascending_candlestick_background_engine",
+      "source": "handoff_huhcat_project_handoff_heartfelt_community_message_war_room_love_letter",
+      "target": "handoff_2_verification_quality_audit",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "handoff.md",
-      "source_location": "L42",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_3_high_contrast_typography_readability_overhaul",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L55",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_4_compliance_and_quality_verification",
+      "source": "handoff_1_community_love_letter_deployment",
+      "target": "handoff_core_message_themes",
       "confidence_score": 1.0
     },
     {
@@ -8819,30 +8775,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_1_visual_architecture_solana_gladiator_centerpiece",
-      "target": "handoff_solana_gladiator_design_language",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L31",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_2_real_time_ascending_candlestick_background_engine",
-      "target": "handoff_candlestick_canvas_specifications",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_3_high_contrast_typography_readability_overhaul",
-      "target": "handoff_readability_enhancements",
+      "source": "handoff_1_community_love_letter_deployment",
+      "target": "handoff_strategic_visual_architecture",
       "confidence_score": 1.0
     },
     {
@@ -8946,5 +8880,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a904a6e2238eb4053735bf93d138e307309ca039"
+  "built_at_commit": "45238d0fdfb47e8e276860ee7147dfd3a1a7ce49"
 }

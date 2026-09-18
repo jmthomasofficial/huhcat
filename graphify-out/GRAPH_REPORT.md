@@ -1,16 +1,16 @@
 # Graph Report - huhcat  (2026-09-17)
 
 ## Corpus Check
-- 43 files · ~496,825 words
+- 43 files · ~520,202 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 398 nodes · 412 edges · 44 communities (42 shown, 2 thin omitted)
+- 394 nodes · 408 edges · 44 communities (42 shown, 2 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ce472056`
+- Built from commit: `a942b87b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,8 +66,8 @@
 ## Communities (44 total, 2 thin omitted)
 
 ### Community 0 - "HUHCAT Website Handoff — CA Verification & Alignment"
-Cohesion: 0.20
-Nodes (9): 1. Grid Void Elimination & Gladiator Art Banners, 2. Countdown Clock Central Time Calibration, 3. Responsive Mechanics & Mobile Ergonomics, 4. Verification & Parity Audit, Calibration Changes, Continuity Doctrine Citadel Banner, HUHCAT Project Handoff - Grid Void Elimination, Gladiator Artworks & Central Time Countdown Calibration, Responsive Breakpoints (+1 more)
+Cohesion: 0.33
+Nodes (5): 1. Robot Jargon Purge & 6th Grade Language Translation, 2. Verification & Quality Audit, Community Love Letter 6th Grade Polish, HUHCAT Project Handoff - 6th Grade Language Simplification & Robot Jargon Purge, Specific Phrases Replaced
 
 ### Community 1 - "a"
 Cohesion: 0.11
@@ -146,12 +146,12 @@ Cohesion: 0.12
 Nodes (16): #076 // Alien UFO Tractor Beam Abduction, #077 // Presidential Debate Podium Face-Off, #078 // Deep Sea Submarine Giant Squid Encounter, #079 // Jurassic Park T-Rex Stare Down, #080 // Formula 1 Pit Stop 1.8-Second Tire Change, #081 // Olympic 100m Sprint Gold Medal, #082 // Mount Everest Summit Coffee Sip, #083 // Heavy Metal Concert Stage Dive (+8 more)
 
 ### Community 34 - "Lane: Wall Street & Whales"
-Cohesion: 0.12
-Nodes (16): #001 // The Boardroom Hostile Takeover, #002 // CNBC Live Bell Interview, #003 // NYSE Opening Bell Chaos, #004 // The Bloomberg Terminal Stare, #005 // The Federal Reserve Money Printer, #006 // Swiss Underground Gold Vault Audit, #007 // Forbes Magazine 30 Under 30 Cover, #008 // Monaco Superyacht Whale Summit (+8 more)
+Cohesion: 0.08
+Nodes (24): #001 // The Boardroom Hostile Takeover, #002 // CNBC Live Bell Interview, #003 // NYSE Opening Bell Chaos, #004 // The Bloomberg Terminal Stare, #005 // The Federal Reserve Money Printer, #006 // Swiss Underground Gold Vault Audit, #007 // Forbes Magazine 30 Under 30 Cover, #008 // Monaco Superyacht Whale Summit (+16 more)
 
 ### Community 35 - "Lane: Solana & Crypto Lore"
-Cohesion: 0.08
-Nodes (24): #016 // Solana Breakpoint Mainstage Speaker, #017 // The Pump.fun Graduation Celebration, #018 // The Raydium Liquidity Pool Lifeguard, #019 // The Solana Saga Phone Billboard, #020 // Token-2022 Laser Inscription Lab, #021 // Gas Fee Smackdown vs Ethereum Bank, #022 // The Green Candlestick Tower Climb, #023 // Telegram Raid Command Center (+16 more)
+Cohesion: 0.12
+Nodes (16): #016 // Solana Breakpoint Mainstage Speaker, #017 // The Pump.fun Graduation Celebration, #018 // The Raydium Liquidity Pool Lifeguard, #019 // The Solana Saga Phone Billboard, #020 // Token-2022 Laser Inscription Lab, #021 // Gas Fee Smackdown vs Ethereum Bank, #022 // The Green Candlestick Tower Climb, #023 // Telegram Raid Command Center (+8 more)
 
 ### Community 36 - "Lane: Cinema & Pop Culture"
 Cohesion: 0.12
@@ -174,24 +174,24 @@ Cohesion: 0.22
 Nodes (9): 1. YouTube Shorts (Videos), 2. TikTok Profile (Videos), 3. TikTok Stories (Video Feeds and Photo Carousels), 4. X Profile (Images and Videos), 5. X Community (Images and Videos), 6. Instagram Profile Feed (Images and Videos), 7. Instagram Reels (Videos and Images), 8. Pinterest (Images and Videos) (+1 more)
 
 ## Knowledge Gaps
-- **279 isolated node(s):** `dd`, `nc`, `rc`, `lc`, `te` (+274 more)
+- **277 isolated node(s):** `dd`, `nc`, `rc`, `lc`, `te` (+272 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Part 3: The 100 Viral Meme & Video Studio Arsenals` connect `Lane: Solana & Crypto Lore` to `Lane: Wild, Absurd & Cosmic`, `Lane: Wall Street & Whales`, `Lane: Cinema & Pop Culture`, `Lane: Everyday Relatable`, `Lane: History & Masterpiece Art`, `Lane: Chad & Victory`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
-- **Why does `HUHCAT 100 Viral Meme & Video Studio Master Manual` connect `Lane: Solana & Crypto Lore` to `Part 2: Cross-Platform Deployment Playbook`?**
+- **Why does `Part 3: The 100 Viral Meme & Video Studio Arsenals` connect `Lane: Wall Street & Whales` to `Lane: Wild, Absurd & Cosmic`, `Lane: Solana & Crypto Lore`, `Lane: Cinema & Pop Culture`, `Lane: Everyday Relatable`, `Lane: History & Masterpiece Art`, `Lane: Chad & Victory`?**
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
+- **Why does `HUHCAT 100 Viral Meme & Video Studio Master Manual` connect `Lane: Wall Street & Whales` to `Part 2: Cross-Platform Deployment Playbook`?**
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `Lane: Wall Street & Whales` connect `Lane: Wall Street & Whales` to `Lane: Solana & Crypto Lore`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **What connects `dd`, `nc`, `rc` to the rest of the system?**
-  _279 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _277 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `a` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `index-C1purPdB.js` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Xt` be split into smaller, more focused modules?**
   _Cohesion score 0.10452961672473868 - nodes in this community are weakly interconnected._
+- **Should `sd` be split into smaller, more focused modules?**
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

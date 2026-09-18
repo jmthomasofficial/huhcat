@@ -1,7 +1,7 @@
 {
   "handoff.md": {
-    "mtime": 1789703746.760883,
-    "ast_hash": "b675b89b5283330093ffaacee17cdcc0",
+    "mtime": 1789705002.7056367,
+    "ast_hash": "f4ff4e67c090e2832c218061f27d7d97",
     "semantic_hash": ""
   },
   "index.html": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "mission-control/missions.json": {
-    "mtime": 1789703705.4572718,
-    "ast_hash": "b15b95d2be18d4ef3aa91e8e79f22417",
+    "mtime": 1789704013.8689568,
+    "ast_hash": "23a46f25b7d0f1e041ba7bd45292cff1",
     "semantic_hash": ""
   },
   "tiel_research.py": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "mission-control/index.html": {
-    "mtime": 1789703702.7803788,
-    "ast_hash": "9597a4a6ca17207ab24cb0fbe38b8c43",
+    "mtime": 1789704933.187402,
+    "ast_hash": "fbb1cb1e7c4e45c1e402c6a3dca32464",
     "semantic_hash": ""
   },
   "tiel-research/01-cto-playbook.md": {
@@ -362,6 +362,21 @@
   "build_video_meme_factory.py": {
     "mtime": 1789702694.3432794,
     "ast_hash": "a681967adcddadde2dfdad00a1a522f8",
+    "semantic_hash": ""
+  },
+  "mission-control/doctrine-citadel.jpg": {
+    "mtime": 1789703884.0285928,
+    "ast_hash": "e2b12bc248675d4a5da3160e2cca5d44",
+    "semantic_hash": ""
+  },
+  "mission-control/factory-victory.jpg": {
+    "mtime": 1789703884.026592,
+    "ast_hash": "8340536687d430cb6d9ac3d3931d2389",
+    "semantic_hash": ""
+  },
+  "mission-control/war-room-bg.jpg": {
+    "mtime": 1789704392.826167,
+    "ast_hash": "4f107652c8bed76df300cc48ba635f08",
     "semantic_hash": ""
   }
 }
