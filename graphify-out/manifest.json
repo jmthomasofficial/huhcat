@@ -1,7 +1,7 @@
 {
   "handoff.md": {
-    "mtime": 1789703006.4593036,
-    "ast_hash": "c1ae5880746e9ef44a07049ff46cd19b",
+    "mtime": 1789703447.5187483,
+    "ast_hash": "c87614be61e537a8dff203fbe7d51191",
     "semantic_hash": ""
   },
   "index.html": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "mission-control/index.html": {
-    "mtime": 1789702920.6931674,
-    "ast_hash": "1b95726084ba4d7bc8e6b3717c739e9a",
+    "mtime": 1789703419.3794968,
+    "ast_hash": "ce4ec6f08b583fea492ac69c5bb60553",
     "semantic_hash": ""
   },
   "tiel-research/01-cto-playbook.md": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "generate_meme_docs.py": {
-    "mtime": 1789702669.6487858,
-    "ast_hash": "0ebd6f7f91305ef47cb009e3bd8503e0",
+    "mtime": 1789703165.314654,
+    "ast_hash": "f4672502b25d907ccf5ab41242af6771",
     "semantic_hash": ""
   },
   "mission-control/meme-factory.json": {
@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "MEME-FACTORY-100.md": {
-    "mtime": 1789702700.5720272,
-    "ast_hash": "e883d5ca5913abae6a66e7e6b178e8ee",
+    "mtime": 1789703168.3738453,
+    "ast_hash": "ad500458d547c97dac84b9066c58f135",
     "semantic_hash": ""
   },
   "build_video_meme_factory.py": {
