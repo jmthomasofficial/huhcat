@@ -1,16 +1,16 @@
 # Graph Report - huhcat  (2026-09-17)
 
 ## Corpus Check
-- 43 files · ~430,952 words
+- 43 files · ~496,825 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 397 nodes · 411 edges · 44 communities (42 shown, 2 thin omitted)
+- 398 nodes · 412 edges · 44 communities (42 shown, 2 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a904a6e2`
+- Built from commit: `ce472056`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,8 +66,8 @@
 ## Communities (44 total, 2 thin omitted)
 
 ### Community 0 - "HUHCAT Website Handoff — CA Verification & Alignment"
-Cohesion: 0.22
-Nodes (8): 1. Visual Architecture & Solana Gladiator Centerpiece, 2. Real-Time Ascending Candlestick Background Engine, 3. High-Contrast Typography & Readability Overhaul, 4. Compliance and Quality Verification, Candlestick Canvas Specifications, HUHCAT Project Handoff - Solana Theme, Ascending Candlestick Canvas & High-Contrast Typography, Readability Enhancements, Solana & Gladiator Design Language
+Cohesion: 0.20
+Nodes (9): 1. Grid Void Elimination & Gladiator Art Banners, 2. Countdown Clock Central Time Calibration, 3. Responsive Mechanics & Mobile Ergonomics, 4. Verification & Parity Audit, Calibration Changes, Continuity Doctrine Citadel Banner, HUHCAT Project Handoff - Grid Void Elimination, Gladiator Artworks & Central Time Countdown Calibration, Responsive Breakpoints (+1 more)
 
 ### Community 1 - "a"
 Cohesion: 0.11
@@ -174,7 +174,7 @@ Cohesion: 0.22
 Nodes (9): 1. YouTube Shorts (Videos), 2. TikTok Profile (Videos), 3. TikTok Stories (Video Feeds and Photo Carousels), 4. X Profile (Images and Videos), 5. X Community (Images and Videos), 6. Instagram Profile Feed (Images and Videos), 7. Instagram Reels (Videos and Images), 8. Pinterest (Images and Videos) (+1 more)
 
 ## Knowledge Gaps
-- **278 isolated node(s):** `dd`, `nc`, `rc`, `lc`, `te` (+273 more)
+- **279 isolated node(s):** `dd`, `nc`, `rc`, `lc`, `te` (+274 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -182,13 +182,13 @@ Nodes (9): 1. YouTube Shorts (Videos), 2. TikTok Profile (Videos), 3. TikTok Sto
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Part 3: The 100 Viral Meme & Video Studio Arsenals` connect `Lane: Solana & Crypto Lore` to `Lane: Wild, Absurd & Cosmic`, `Lane: Wall Street & Whales`, `Lane: Cinema & Pop Culture`, `Lane: Everyday Relatable`, `Lane: History & Masterpiece Art`, `Lane: Chad & Victory`?**
-  _High betweenness centrality (0.086) - this node is a cross-community bridge._
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Why does `HUHCAT 100 Viral Meme & Video Studio Master Manual` connect `Lane: Solana & Crypto Lore` to `Part 2: Cross-Platform Deployment Playbook`?**
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `Lane: Wall Street & Whales` connect `Lane: Wall Street & Whales` to `Lane: Solana & Crypto Lore`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **What connects `dd`, `nc`, `rc` to the rest of the system?**
-  _278 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _279 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `a` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `index-C1purPdB.js` be split into smaller, more focused modules?**

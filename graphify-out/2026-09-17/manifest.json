@@ -1,7 +1,7 @@
 {
   "handoff.md": {
-    "mtime": 1789703447.5187483,
-    "ast_hash": "c87614be61e537a8dff203fbe7d51191",
+    "mtime": 1789703746.760883,
+    "ast_hash": "b675b89b5283330093ffaacee17cdcc0",
     "semantic_hash": ""
   },
   "index.html": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "mission-control/missions.json": {
-    "mtime": 1789700570.2135055,
-    "ast_hash": "d7a9f824a3665d0ba00532b8596a080d",
+    "mtime": 1789703705.4572718,
+    "ast_hash": "b15b95d2be18d4ef3aa91e8e79f22417",
     "semantic_hash": ""
   },
   "tiel_research.py": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "mission-control/index.html": {
-    "mtime": 1789703419.3794968,
-    "ast_hash": "ce4ec6f08b583fea492ac69c5bb60553",
+    "mtime": 1789703702.7803788,
+    "ast_hash": "9597a4a6ca17207ab24cb0fbe38b8c43",
     "semantic_hash": ""
   },
   "tiel-research/01-cto-playbook.md": {

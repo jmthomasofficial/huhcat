@@ -4118,92 +4118,103 @@
       "norm_label": "handoff.md"
     },
     {
-      "label": "HUHCAT Project Handoff - Solana Theme, Ascending Candlestick Canvas & High-Contrast Typography",
+      "label": "HUHCAT Project Handoff - Grid Void Elimination, Gladiator Artworks & Central Time Countdown Calibration",
       "file_type": "document",
       "source_file": "handoff.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
+      "id": "handoff_huhcat_project_handoff_grid_void_elimination_gladiator_artworks_central_time_countdown_calibration",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "huhcat project handoff - solana theme, ascending candlestick canvas & high-contrast typography"
+      "norm_label": "huhcat project handoff - grid void elimination, gladiator artworks & central time countdown calibration"
     },
     {
-      "label": "1. Visual Architecture & Solana Gladiator Centerpiece",
+      "label": "1. Grid Void Elimination & Gladiator Art Banners",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L15",
+      "source_location": "L13",
       "_origin": "ast",
-      "id": "handoff_1_visual_architecture_solana_gladiator_centerpiece",
+      "id": "handoff_1_grid_void_elimination_gladiator_art_banners",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "1. visual architecture & solana gladiator centerpiece"
+      "norm_label": "1. grid void elimination & gladiator art banners"
     },
     {
-      "label": "Solana & Gladiator Design Language",
+      "label": "Studio Victory Arena Banner",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L18",
+      "source_location": "L16",
       "_origin": "ast",
-      "id": "handoff_solana_gladiator_design_language",
+      "id": "handoff_studio_victory_arena_banner",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "solana & gladiator design language"
+      "norm_label": "studio victory arena banner"
     },
     {
-      "label": "2. Real-Time Ascending Candlestick Background Engine",
+      "label": "Continuity Doctrine Citadel Banner",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L28",
+      "source_location": "L23",
       "_origin": "ast",
-      "id": "handoff_2_real_time_ascending_candlestick_background_engine",
+      "id": "handoff_continuity_doctrine_citadel_banner",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "2. real-time ascending candlestick background engine"
+      "norm_label": "continuity doctrine citadel banner"
     },
     {
-      "label": "Candlestick Canvas Specifications",
+      "label": "2. Countdown Clock Central Time Calibration",
       "file_type": "document",
       "source_file": "handoff.md",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "handoff_candlestick_canvas_specifications",
+      "id": "handoff_2_countdown_clock_central_time_calibration",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "candlestick canvas specifications"
+      "norm_label": "2. countdown clock central time calibration"
     },
     {
-      "label": "3. High-Contrast Typography & Readability Overhaul",
+      "label": "Calibration Changes",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L42",
+      "source_location": "L34",
       "_origin": "ast",
-      "id": "handoff_3_high_contrast_typography_readability_overhaul",
+      "id": "handoff_calibration_changes",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "3. high-contrast typography & readability overhaul"
+      "norm_label": "calibration changes"
     },
     {
-      "label": "Readability Enhancements",
+      "label": "3. Responsive Mechanics & Mobile Ergonomics",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L45",
+      "source_location": "L41",
       "_origin": "ast",
-      "id": "handoff_readability_enhancements",
+      "id": "handoff_3_responsive_mechanics_mobile_ergonomics",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "readability enhancements"
+      "norm_label": "3. responsive mechanics & mobile ergonomics"
     },
     {
-      "label": "4. Compliance and Quality Verification",
+      "label": "Responsive Breakpoints",
       "file_type": "document",
       "source_file": "handoff.md",
-      "source_location": "L55",
+      "source_location": "L44",
       "_origin": "ast",
-      "id": "handoff_4_compliance_and_quality_verification",
+      "id": "handoff_responsive_breakpoints",
       "community": 0,
       "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
-      "norm_label": "4. compliance and quality verification"
+      "norm_label": "responsive breakpoints"
+    },
+    {
+      "label": "4. Verification & Parity Audit",
+      "file_type": "document",
+      "source_file": "handoff.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "handoff_4_verification_parity_audit",
+      "community": 0,
+      "community_name": "HUHCAT Website Handoff \u2014 CA Verification & Alignment",
+      "norm_label": "4. verification & parity audit"
     },
     {
       "label": "tiel-research/01-cto-playbook.md",
@@ -8765,62 +8776,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "handoff",
-      "target": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
+      "target": "handoff_huhcat_project_handoff_grid_void_elimination_gladiator_artworks_central_time_countdown_calibration",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "handoff.md",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_1_visual_architecture_solana_gladiator_centerpiece",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_2_real_time_ascending_candlestick_background_engine",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L42",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_3_high_contrast_typography_readability_overhaul",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L55",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_huhcat_project_handoff_solana_theme_ascending_candlestick_canvas_high_contrast_typography",
-      "target": "handoff_4_compliance_and_quality_verification",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "handoff.md",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_1_visual_architecture_solana_gladiator_centerpiece",
-      "target": "handoff_solana_gladiator_design_language",
+      "source": "handoff_huhcat_project_handoff_grid_void_elimination_gladiator_artworks_central_time_countdown_calibration",
+      "target": "handoff_1_grid_void_elimination_gladiator_art_banners",
       "confidence_score": 1.0
     },
     {
@@ -8830,19 +8797,74 @@
       "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_2_real_time_ascending_candlestick_background_engine",
-      "target": "handoff_candlestick_canvas_specifications",
+      "source": "handoff_huhcat_project_handoff_grid_void_elimination_gladiator_artworks_central_time_countdown_calibration",
+      "target": "handoff_2_countdown_clock_central_time_calibration",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "handoff.md",
-      "source_location": "L45",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "handoff_3_high_contrast_typography_readability_overhaul",
-      "target": "handoff_readability_enhancements",
+      "source": "handoff_huhcat_project_handoff_grid_void_elimination_gladiator_artworks_central_time_countdown_calibration",
+      "target": "handoff_3_responsive_mechanics_mobile_ergonomics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "handoff.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "handoff_huhcat_project_handoff_grid_void_elimination_gladiator_artworks_central_time_countdown_calibration",
+      "target": "handoff_4_verification_parity_audit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "handoff.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "handoff_1_grid_void_elimination_gladiator_art_banners",
+      "target": "handoff_continuity_doctrine_citadel_banner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "handoff.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "handoff_1_grid_void_elimination_gladiator_art_banners",
+      "target": "handoff_studio_victory_arena_banner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "handoff.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "handoff_2_countdown_clock_central_time_calibration",
+      "target": "handoff_calibration_changes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "handoff.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "handoff_3_responsive_mechanics_mobile_ergonomics",
+      "target": "handoff_responsive_breakpoints",
       "confidence_score": 1.0
     },
     {
@@ -8946,5 +8968,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a904a6e2238eb4053735bf93d138e307309ca039"
+  "built_at_commit": "ce47205678fa5e447f05482f5ed6d985a335e065"
 }
