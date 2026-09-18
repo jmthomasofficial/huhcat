@@ -404,6 +404,132 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
   line-height:1.68;
 }
 
+/* ---- COMMUNITY LOVE LETTER ---- */
+.community-letter-section {
+  padding:44px 0 20px;
+  position:relative;
+  z-index:2;
+}
+.community-letter-card {
+  position:relative;
+  max-width:920px;
+  margin:0 auto;
+  background:linear-gradient(165deg, rgba(22, 16, 46, 0.92) 0%, rgba(9, 13, 24, 0.95) 55%, rgba(6, 7, 13, 0.98) 100%);
+  border:1.5px solid rgba(153, 69, 255, 0.48);
+  border-radius:18px;
+  padding:42px 46px;
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.88),
+    0 0 35px -5px rgba(153, 69, 255, 0.32),
+    0 0 22px -3px rgba(20, 241, 149, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 0.16);
+  overflow:hidden;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.community-letter-card:hover {
+  border-color:rgba(20, 241, 149, 0.75);
+  transform:translateY(-2px);
+  box-shadow:
+    0 32px 75px -15px rgba(0, 0, 0, 0.92),
+    0 0 45px -2px rgba(20, 241, 149, 0.38),
+    0 0 35px -3px rgba(153, 69, 255, 0.38);
+}
+.community-letter-glow {
+  position:absolute;
+  top:-110px;
+  left:50%;
+  transform:translateX(-50%);
+  width:640px;
+  height:240px;
+  background:radial-gradient(circle, rgba(153, 69, 255, 0.38) 0%, rgba(20, 241, 149, 0.20) 45%, transparent 70%);
+  filter:blur(60px);
+  pointer-events:none;
+  z-index:0;
+}
+.community-letter-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:11.5px;
+  font-weight:800;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--signal);
+  background:rgba(20, 241, 149, 0.12);
+  border:1px solid rgba(20, 241, 149, 0.35);
+  padding:5px 14px;
+  border-radius:100px;
+  margin-bottom:18px;
+}
+.community-letter-title {
+  font-family:var(--display);
+  font-size:clamp(26px, 3.8vw, 38px);
+  font-weight:800;
+  letter-spacing:-0.025em;
+  line-height:1.15;
+  color:#ffffff;
+  margin-bottom:24px;
+  text-align:center;
+}
+.community-letter-title .grad {
+  background:linear-gradient(135deg, #ffffff 20%, #14f195 65%, #9945ff 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.community-letter-body {
+  position:relative;
+  z-index:1;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--muted-bright);
+  margin-bottom:20px;
+  text-align:left;
+}
+.community-letter-sign {
+  position:relative;
+  z-index:1;
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(255, 255, 255, 0.1);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  font-family:var(--mono);
+  font-size:13px;
+}
+.community-letter-sign-name {
+  color:var(--signal);
+  font-weight:800;
+  letter-spacing:0.06em;
+}
+.community-letter-sign-sub {
+  color:var(--muted);
+  font-size:12px;
+}
+.community-letter-seal {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:11.5px;
+  font-weight:700;
+  color:var(--gold);
+  background:rgba(255, 190, 46, 0.1);
+  border:1px solid rgba(255, 190, 46, 0.35);
+  padding:5px 12px;
+  border-radius:6px;
+  letter-spacing:0.04em;
+}
+@media (max-width:640px) {
+  .community-letter-card { padding:28px 20px; }
+  .community-letter-body { font-size:14.5px; line-height:1.7; }
+  .community-letter-sign { flex-direction:column; align-items:flex-start; }
+}
+
 /* ---- TOMORROW BOARD ---- */
 .tmr-container {
   background:var(--graphite); border:1px solid var(--slate);
@@ -1106,6 +1232,7 @@ footer {
       <div class="pulse-item">STREAK <span class="pulse-val signal" id="p-streak">0</span></div>
     </div>
     <div class="pulse-nav">
+      <a href="#community-letter">MESSAGE</a>
       <a href="#tomorrow">TOMORROW</a>
       <a href="#missions">MISSIONS</a>
       <a href="#armory">ARMORY</a>
@@ -1196,6 +1323,51 @@ footer {
             <span class="meta-tag">⚡ VERIFIED FIRST</span>
             <span class="meta-text">Inscribed inside Solana transaction history. Never going away.</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY WAR ROOM LOVE LETTER -->
+<section id="community-letter" class="community-letter-section">
+  <div class="wrap">
+    <div class="community-letter-card">
+      <div class="community-letter-glow"></div>
+      <span class="hud-bracket bracket-tl"></span>
+      <span class="hud-bracket bracket-tr"></span>
+      <span class="hud-bracket bracket-bl"></span>
+      <span class="hud-bracket bracket-br"></span>
+
+      <div style="text-align:center;">
+        <div class="community-letter-badge">
+          <span class="pulse-indicator"></span> BROADCAST FROM THE WAR ROOM // DIRECT TRANSMISSION TO YOU
+        </div>
+        <h2 class="community-letter-title">
+          A Message For <span class="grad">Our Community</span>
+        </h2>
+      </div>
+
+      <p class="community-letter-body">
+        Look around you for a second. Take a breath. Most traders buy a random ticker on a decentralized exchange, watch a developer dump his personal stash, panic at the sight of red candles, and run away with empty pockets. You chose to stay right here and hold your ground.
+      </p>
+      <p class="community-letter-body">
+        We have bathed in blood. We watched paper hands abandon the chat room while charts bled down ninety percent. We absorbed every punch the crypto market could throw at our community and we never bent. When market panics tore through decentralized liquidity pools and wiped out thousands of derivative tokens across crypto, our community stood firm inside the chat room, buying red dips, laughing through the chaos, and holding the line with diamond hands while lesser traders surrendered their bags to algorithms. Unbreakable. Unshakable. Pure conviction.
+      </p>
+      <p class="community-letter-body">
+        Old folklore claims that a cat has nine lives. Nine lives are for mortal animals. HUHCAT is immortal. Long before pump portals existed, this cat was permanently inscribed into the genesis architecture of the Solana blockchain as the first feline inscription in network history. The genesis transaction is sealed on the base ledger, meaning zero developers possess the ability to pull liquidity, zero centralized authorities can delete the block, and the bytes remain locked inside Solana history until the network shuts off. Permanent digital heritage.
+      </p>
+      <p class="community-letter-body">
+        Now look ahead at what we are building together across the next seven days. One hundred million dollars in market value is an achievable target when five thousand holders move together as one disciplined army. This marathon belongs to you. Every meme you deploy, every raid you lead, and every single point you log pushes our collective rank higher toward the summit. Never sit on the sidelines while internet history gets written. Stand with us. Lock your focus. Take what is yours.
+      </p>
+
+      <div class="community-letter-sign">
+        <div>
+          <div class="community-letter-sign-name">Forever in the trenches,</div>
+          <div class="community-letter-sign-sub">The HUHCAT Community War Room</div>
+        </div>
+        <div class="community-letter-seal">
+          <span>⚡ VERIFIED FIRST CAT INSCRIBED ON SOLANA</span>
         </div>
       </div>
     </div>
