@@ -243,6 +243,57 @@ img { max-width:100%; display:block; }
 
 .hero-actions { display:flex; gap:14px; justify-content:flex-start; flex-wrap:wrap; margin-bottom:20px; }
 
+/* ---- DROP KIT (post these) ---- */
+#drop-kit { padding-top:36px; }
+.drop-how {
+  display:flex; flex-wrap:wrap; gap:8px; margin:0 0 18px;
+}
+.drop-how span {
+  font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--muted-bright);
+  background:rgba(20,241,149,0.08); border:1px solid rgba(20,241,149,0.22);
+  border-radius:999px; padding:6px 10px;
+}
+.drop-grid {
+  display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:14px;
+}
+.drop-card {
+  background:var(--graphite-card); border:1px solid var(--slate-purple);
+  border-radius:14px; overflow:hidden; display:flex; flex-direction:column;
+}
+.drop-media {
+  position:relative; aspect-ratio:9/16; background:#000; cursor:pointer;
+}
+.drop-media img, .drop-media video {
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.drop-media video { position:absolute; inset:0; }
+.drop-play {
+  position:absolute; left:10px; bottom:10px; z-index:2;
+  font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.08em;
+  color:#06070d; background:var(--signal); border-radius:999px; padding:4px 8px;
+}
+.drop-body { padding:12px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.drop-title {
+  font-family:var(--display); font-weight:800; font-size:15px; line-height:1.2;
+  color:var(--text-bright);
+}
+.drop-btns { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.drop-btn {
+  min-height:44px; border-radius:10px; border:1px solid var(--slate-purple);
+  background:rgba(255,255,255,0.04); color:var(--text-bright);
+  font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.06em;
+  text-transform:uppercase; cursor:pointer;
+}
+.drop-btn:hover { border-color:var(--signal); color:var(--signal); }
+.drop-btn-post {
+  grid-column:1 / -1;
+  background:linear-gradient(135deg, var(--signal) 0%, var(--cyan) 100%);
+  border-color:transparent; color:#06070d;
+}
+.drop-btn-post:hover { color:#06070d; filter:brightness(1.08); }
+.drop-btn:disabled { opacity:0.35; cursor:default; }
+
 /* telemetry pills strip */
 .hero-hud-strip { display:flex; gap:10px; flex-wrap:wrap; }
 .hud-pill {
@@ -1220,7 +1271,8 @@ footer {
 }
 @media (max-width:1100px) {
   .pulse-item-target { display:none !important; }
-  .pnav-link:not([href="#missions"]):not([href="#factory"]):not([href="#community-letter"]) { display:none !important; }
+  .pnav-link:not([href="#missions"]):not([href="#factory"]):not([href="#drop-kit"]) { display:none !important; }
+  .drop-grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
   .pulse-nav { gap:4px; }
   .pulse-nav a { padding:6px 8px; font-size:11px; }
 }
@@ -1260,6 +1312,11 @@ footer {
   .factory-banner-desc { font-size:13px; margin-bottom:12px; }
   .factory-banner-actions { flex-direction:column; }
   .factory-banner-actions .factory-btn { width:100%; }
+  .drop-grid {
+    display:flex; overflow-x:auto; gap:12px; padding-bottom:10px;
+    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  }
+  .drop-card { flex:0 0 min(78vw, 280px); scroll-snap-align:start; }
   .rank-stats-grid { grid-template-columns:repeat(3, 1fr); }
   .mc-action-row { flex-direction:column; }
   .mc-btn { width:100%; }
@@ -1333,6 +1390,7 @@ footer {
       <div class="pulse-item pulse-item-sec">STREAK <span class="pulse-val signal" id="p-streak">0</span></div>
     </div>
     <div class="pulse-nav">
+      <a href="#drop-kit" class="pnav-link">POST THESE</a>
       <a href="#community-letter" class="pnav-link">MESSAGE</a>
       <a href="#tomorrow" class="pnav-link pnav-sec">TOMORROW</a>
       <a href="#missions" class="pnav-link">MISSIONS</a>
@@ -1374,8 +1432,8 @@ footer {
         </div>
 
         <div class="hero-actions">
-          <a href="#missions" class="btn btn-primary">Engage Today's Missions</a>
-          <a href="#armory" class="btn btn-ghost">Open Content Armory</a>
+          <a href="#drop-kit" class="btn btn-primary">Post these</a>
+          <a href="#missions" class="btn btn-ghost">Today's missions</a>
         </div>
 
         <div class="hero-hud-strip">
@@ -1427,6 +1485,25 @@ footer {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- RAID DROPS -->
+<section id="drop-kit">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-meta"><span class="num">00 //</span> RAID DROPS</div>
+      <h2 class="section-title">Post these</h2>
+      <p class="section-desc">
+        Save the pic or the clip. Copy the text. Hit Post. On a phone, Post opens your share sheet with the file ready. Credit on the art is via @huhcat_official. This room does not own the cat.
+      </p>
+    </div>
+    <div class="drop-how">
+      <span>1. Save pic or clip</span>
+      <span>2. Copy text</span>
+      <span>3. Post</span>
+    </div>
+    <div class="drop-grid" id="drop-grid"></div>
   </div>
 </section>
 
@@ -2591,9 +2668,134 @@ async function copyToClipboard(text) {
     await navigator.clipboard.writeText(text);
     playCyberBlip(1200, 0.04);
     toast('Copied to clipboard');
+    return true;
   } catch(e) {
-    toast('Copy failed: check permissions');
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      if (!ok) throw new Error('exec');
+      playCyberBlip(1200, 0.04);
+      toast('Copied to clipboard');
+      return true;
+    } catch (e2) {
+      toast('Copy failed: check permissions');
+      return false;
+    }
   }
+}
+
+let DROP_KIT = null;
+
+function dropCaption(item) {
+  const foot = (DROP_KIT && DROP_KIT.footer) || '$HUHCAT';
+  return `${item.line}\n\n${foot}`;
+}
+
+function dropUrl(file) {
+  return `drop-kit/${file}`;
+}
+
+function downloadDropFile(file, label) {
+  const url = dropUrl(file);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = file;
+  a.rel = 'noopener';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  toast(label || 'Saved. Check Downloads.');
+}
+
+async function copyDropCaption(id) {
+  const item = DROP_KIT.items.find(x => x.id === id);
+  if (!item) return;
+  await copyToClipboard(dropCaption(item));
+}
+
+async function postDrop(id) {
+  const item = DROP_KIT.items.find(x => x.id === id);
+  if (!item) return;
+  const caption = dropCaption(item);
+  const file = item.clip || item.still;
+  const url = dropUrl(file);
+  try {
+    await navigator.clipboard.writeText(caption);
+  } catch (e) {}
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('fetch');
+    const blob = await res.blob();
+    const media = new File([blob], file, { type: blob.type || 'application/octet-stream' });
+    if (navigator.canShare && navigator.canShare({ files: [media] })) {
+      await navigator.share({ files: [media], text: caption, title: item.title });
+      toast('Share sheet opened. Caption is copied too.');
+      return;
+    }
+    await downloadDropFile(file, 'File saved. Attach it on X.');
+  } catch (e) {
+    await downloadDropFile(file, 'File saved. Attach it on X.');
+  }
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(caption), '_blank', 'noopener');
+}
+
+function playDropClip(id) {
+  const card = document.querySelector(`[data-drop="${id}"]`);
+  if (!card) return;
+  const vid = card.querySelector('video');
+  const img = card.querySelector('img');
+  if (!vid) return;
+  if (vid.classList.contains('is-on')) {
+    vid.pause();
+    vid.classList.remove('is-on');
+    vid.style.display = 'none';
+    if (img) img.style.display = '';
+    return;
+  }
+  document.querySelectorAll('#drop-grid video.is-on').forEach(v => {
+    v.pause();
+    v.classList.remove('is-on');
+    v.style.display = 'none';
+  });
+  document.querySelectorAll('#drop-grid img').forEach(i => { i.style.display = ''; });
+  if (img) img.style.display = 'none';
+  vid.style.display = 'block';
+  vid.classList.add('is-on');
+  vid.muted = true;
+  vid.playsInline = true;
+  vid.play().catch(() => {});
+}
+
+function renderDropKit() {
+  const grid = document.getElementById('drop-grid');
+  if (!grid || !DROP_KIT) return;
+  grid.innerHTML = DROP_KIT.items.map(item => {
+    const still = item.still ? dropUrl(item.still) : '';
+    const clip = item.clip ? dropUrl(item.clip) : '';
+    return `<article class="drop-card" data-drop="${item.id}">
+      <div class="drop-media" onclick="playDropClip('${item.id}')">
+        ${still ? `<img src="${still}" alt="${item.title}" width="360" height="640" loading="lazy">` : ''}
+        ${clip ? `<video src="${clip}" loop muted playsinline preload="none" style="display:none"></video>
+        <span class="drop-play">TAP TO PLAY</span>` : ''}
+      </div>
+      <div class="drop-body">
+        <div class="drop-title">${item.title}</div>
+        <div class="drop-btns">
+          <button class="drop-btn" ${item.still ? `onclick="downloadDropFile('${item.still}','Pic saved.')"` : 'disabled'}>Save pic</button>
+          <button class="drop-btn" ${item.clip ? `onclick="downloadDropFile('${item.clip}','Clip saved.')"` : 'disabled'}>Save clip</button>
+          <button class="drop-btn" onclick="copyDropCaption('${item.id}')">Copy text</button>
+          <button class="drop-btn drop-btn-post" onclick="postDrop('${item.id}')">Post</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
 }
 
 // ---- RENDER: PULSE HEADER ----
@@ -3326,6 +3528,10 @@ async function initMissionControl() {
   renderArmoryGrid();
   renderFactoryFilters();
   renderFactoryGrid();
+  fetch('drop-kit.json').then(r => r.json()).then(data => {
+    DROP_KIT = data;
+    renderDropKit();
+  }).catch(() => {});
   document.getElementById('factory-query')?.addEventListener('input', renderFactoryGrid);
 
   // Active timers

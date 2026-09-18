@@ -1,0 +1,77 @@
+{
+  "updated": "2026-09-18",
+  "ca": "A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH",
+  "footer": "$HUHCAT\nCA: A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH\nhttps://jmthomasofficial.github.io/huhcat/mission-control/",
+  "items": [
+    {
+      "id": "100m-face",
+      "title": "Faces at $100M",
+      "still": "100m-face.jpg",
+      "clip": "100m-face.mp4",
+      "line": "Our faces when we hit the $100M target."
+    },
+    {
+      "id": "chat-charges",
+      "title": "Rewards hit the chat",
+      "still": "chat-charges.jpg",
+      "clip": "chat-charges.mp4",
+      "line": "Someone posts a rewards receipt. The whole chat:"
+    },
+    {
+      "id": "community",
+      "title": "Deployer left",
+      "still": "community.jpg",
+      "clip": "community.mp4",
+      "line": "The deployer left. The community stayed."
+    },
+    {
+      "id": "headphones",
+      "title": "Listening to the space",
+      "still": "headphones.jpg",
+      "clip": "headphones.mp4",
+      "line": "Listening to the space."
+    },
+    {
+      "id": "just-a-jpeg",
+      "title": "Just a JPEG?",
+      "still": "just-a-jpeg.jpg",
+      "clip": "just-a-jpeg.mp4",
+      "line": "Just a JPEG? The picture is in the block. Solana v1 Mainnet."
+    },
+    {
+      "id": "looking-back",
+      "title": "Looking back",
+      "still": "looking-back.jpg",
+      "clip": "looking-back.mp4",
+      "line": "Looking back at everyone who sold."
+    },
+    {
+      "id": "paid-napping",
+      "title": "Paid in SOL",
+      "still": "paid-napping.jpg",
+      "clip": "paid-napping.mp4",
+      "line": "Getting paid in SOL while I nap. Hold more than $20. Watch your wallet."
+    },
+    {
+      "id": "scale",
+      "title": "The bag",
+      "still": "scale.jpg",
+      "clip": "scale.mp4",
+      "line": "Weighing the bag."
+    },
+    {
+      "id": "sol-landed",
+      "title": "SOL landed",
+      "still": "sol-landed.jpg",
+      "clip": "sol-landed.mp4",
+      "line": "SOL just landed."
+    },
+    {
+      "id": "still-holding",
+      "title": "Still holding",
+      "still": "still-holding.jpg",
+      "clip": "still-holding.mp4",
+      "line": "Still holding."
+    }
+  ]
+}
