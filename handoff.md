@@ -6,6 +6,8 @@ Surface: `mission-control/index.html`
 Backup: `G:\JMXTHEGHOST\huhcat\_backups\mission-control_20260917_233922\`
 Live URL: https://jmthomasofficial.github.io/huhcat/mission-control/
 
+Phone lag fix (this session): phones no longer run the 60fps stair-step canvas, the particle canvas, or live backdrop-blur. Desktop is unchanged.
+
 Not financial advice.
 
 ---
