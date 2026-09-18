@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mission Control - $HUHCAT Telemetry</title>
-<meta name="description" content="7-day marathon. 21 missions. Prove the cat is real, earn your rank, arm yourself with verified content. The continuity engine for HUHCAT holders.">
+<title>Mission Control - $HUHCAT 7-Day Marathon</title>
+<meta name="description" content="7-day continuity marathon. 21 missions. Organize the community, deploy viral content, earn your rank. The official war room for HUHCAT holders.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jmthomasofficial.github.io/huhcat/mission-control/">
-<meta property="og:title" content="Mission Control - $HUHCAT Telemetry">
-<meta property="og:description" content="7-day marathon. 21 missions. The continuity engine for HUHCAT holders.">
+<meta property="og:title" content="Mission Control - $HUHCAT 7-Day Marathon">
+<meta property="og:description" content="7-day continuity marathon. 21 missions. The official war room for HUHCAT holders.">
 <meta property="og:image" content="https://jmthomasofficial.github.io/huhcat/og-image.jpg?v=2">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mission Control - $HUHCAT Telemetry">
-<meta name="twitter:description" content="7-day marathon. 21 missions. The continuity engine for HUHCAT holders.">
+<meta name="twitter:title" content="Mission Control - $HUHCAT 7-Day Marathon">
+<meta name="twitter:description" content="7-day continuity marathon. 21 missions. The official war room for HUHCAT holders.">
 <meta name="twitter:image" content="https://jmthomasofficial.github.io/huhcat/og-image.jpg?v=2">
 <link rel="icon" type="image/jpeg" href="../huhcat.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,6 @@
   --graphite: #0b0e17;
   --graphite-card: #0f1422;
   --slate: rgba(255, 255, 255, 0.08);
-  --slate-hover: rgba(255, 255, 255, 0.18);
   --signal: #39ff88;
   --signal-dim: rgba(57, 255, 136, 0.12);
   --signal-glow: rgba(57, 255, 136, 0.45);
@@ -64,7 +63,7 @@ img { max-width:100%; display:block; }
   position:fixed; inset:0; z-index:0; pointer-events:none;
   background-image:
     linear-gradient(rgba(57, 255, 136, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(57, 255, 136, 0.025) 1px, transparent 1px);
+    linear-gradient(90deg, 90deg, rgba(57, 255, 136, 0.025) 1px, transparent 1px);
   background-size:48px 48px;
   mask-image:radial-gradient(ellipse at 50% 10%, black 20%, transparent 75%);
 }
@@ -106,9 +105,7 @@ img { max-width:100%; display:block; }
 .pulse-val.gold { color:var(--gold); }
 .pulse-val.cyan { color:var(--cyan); }
 
-.pulse-nav {
-  display:flex; align-items:center; gap:12px;
-}
+.pulse-nav { display:flex; align-items:center; gap:12px; }
 .pulse-nav a {
   font-family:var(--mono); font-size:11px; color:var(--muted);
   text-transform:uppercase; letter-spacing:0.05em; padding:4px 8px;
@@ -124,9 +121,7 @@ img { max-width:100%; display:block; }
 .sfx-toggle.active { color:var(--signal); border-color:var(--signal); background:var(--signal-dim); }
 
 /* ---- HERO SECTION ---- */
-.hero {
-  padding:72px 0 54px; text-align:center;
-}
+.hero { padding:72px 0 54px; text-align:center; }
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(57,255,136,0.06); border:1px solid rgba(57,255,136,0.25);
@@ -181,9 +176,7 @@ img { max-width:100%; display:block; }
   font-family:var(--mono); font-size:10.5px; color:var(--muted);
 }
 
-.hero-actions {
-  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
-}
+.hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 .btn {
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   font-family:var(--mono); font-size:12.5px; font-weight:700;
@@ -222,7 +215,7 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
   font-size:clamp(26px, 6vw, 42px); line-height:1.1; letter-spacing:-0.02em;
 }
 .section-desc {
-  font-size:14.5px; color:var(--muted); max-width:640px; margin-top:8px;
+  font-size:14.5px; color:var(--muted); max-width:680px; margin-top:8px;
   line-height:1.6;
 }
 
@@ -351,7 +344,7 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
 .mc-desc {
   font-size:13.5px; color:var(--muted); line-height:1.6; margin-bottom:16px;
 }
-.mc-reward-row {
+.mc-points-row {
   display:flex; align-items:center; justify-content:space-between;
   padding:8px 12px; background:rgba(255,255,255,0.02);
   border-radius:8px; border:1px solid var(--slate);
@@ -395,9 +388,7 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
   display:flex; gap:12px; justify-content:space-between; align-items:center;
   flex-wrap:wrap; margin-bottom:20px;
 }
-.armory-filter-strip {
-  display:flex; gap:6px; flex-wrap:wrap;
-}
+.armory-filter-strip { display:flex; gap:6px; flex-wrap:wrap; }
 .armory-chip {
   font-family:var(--mono); font-size:11px; font-weight:700;
   padding:8px 14px; border-radius:8px; cursor:pointer;
@@ -408,9 +399,7 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
 .armory-chip.active {
   background:var(--signal-dim); border-color:var(--signal); color:var(--signal);
 }
-.armory-search {
-  position:relative; min-width:240px;
-}
+.armory-search { position:relative; min-width:240px; }
 .armory-search-input {
   width:100%; font-family:var(--mono); font-size:12px;
   padding:8px 14px 8px 34px; border-radius:8px;
@@ -464,9 +453,7 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
   display:flex; justify-content:space-between; align-items:center;
   padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);
 }
-.tpl-char-count {
-  font-family:var(--mono); font-size:10.5px; color:var(--muted);
-}
+.tpl-char-count { font-family:var(--mono); font-size:10.5px; color:var(--muted); }
 .tpl-char-count.safe { color:var(--signal); }
 .tpl-char-count.warn { color:var(--gold); }
 .tpl-buttons { display:flex; gap:8px; }
@@ -513,84 +500,35 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
   font-family:var(--mono); font-size:10px; text-transform:uppercase;
   letter-spacing:0.08em; color:var(--muted); margin-top:4px;
 }
-.rank-wallet-imprint {
-  display:flex; flex-direction:column; gap:6px;
-}
-.rank-wallet-imprint label {
-  font-family:var(--mono); font-size:11px; color:var(--muted);
-  text-transform:uppercase; letter-spacing:0.08em;
-}
-.rank-wallet-input {
-  font-family:var(--mono); font-size:12px; padding:10px 14px;
-  border-radius:8px; border:1px solid var(--slate); background:rgba(255,255,255,0.02);
-  color:var(--text);
-}
-.rank-wallet-input:focus { outline:none; border-color:var(--signal); }
 .rank-actions { display:flex; gap:12px; flex-wrap:wrap; }
 
-/* ---- FACT VAULT ---- */
-.fact-bento {
+/* ---- CONTINUITY DOCTRINE ---- */
+.doctrine-grid {
   display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
   gap:16px;
 }
-.fact-card {
+.doctrine-card {
   background:var(--graphite-card); border:1px solid var(--slate);
   border-radius:var(--radius); padding:22px; display:flex; flex-direction:column;
   justify-content:space-between; transition:all 0.2s;
 }
-.fact-card:hover { border-color:rgba(57,255,136,0.3); transform:translateY(-2px); }
-.fact-top {
+.doctrine-card:hover { border-color:rgba(57,255,136,0.3); transform:translateY(-2px); }
+.doctrine-top {
   display:flex; justify-content:space-between; align-items:center;
   margin-bottom:10px;
 }
-.fact-tier-pill {
+.doctrine-pill {
   font-family:var(--mono); font-size:10px; font-weight:700;
   padding:3px 8px; border-radius:100px; text-transform:uppercase;
-  letter-spacing:0.08em;
+  letter-spacing:0.08em; background:var(--signal-dim); color:var(--signal);
 }
-.fact-tier-pill.t0 { background:var(--signal-dim); color:var(--signal); }
-.fact-tier-pill.t1 { background:var(--gold-dim); color:var(--gold); }
-.fact-claim {
-  font-family:var(--display); font-size:16px; font-weight:700;
-  color:var(--text); margin-bottom:8px; line-height:1.4;
+.doctrine-title {
+  font-family:var(--display); font-size:18px; font-weight:700;
+  color:var(--text); margin-bottom:8px; line-height:1.3;
 }
-.fact-detail {
-  font-size:13.5px; color:var(--muted); line-height:1.55; margin-bottom:14px;
+.doctrine-body {
+  font-size:13.5px; color:var(--muted); line-height:1.6;
 }
-.fact-footer {
-  display:flex; justify-content:space-between; align-items:center;
-  padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);
-  font-family:var(--mono); font-size:11px;
-}
-.fact-source { color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:180px; }
-.fact-copy-btn {
-  background:transparent; border:1px solid var(--slate); color:var(--signal);
-  font-family:var(--mono); font-size:10.5px; padding:4px 9px; border-radius:6px;
-  cursor:pointer; transition:0.2s;
-}
-.fact-copy-btn:hover { background:var(--signal-dim); border-color:var(--signal); }
-
-/* ---- ELIGIBILITY CHECKER ---- */
-.eligibility-box {
-  background:var(--graphite); border:1px solid var(--slate);
-  border-radius:var(--radius); padding:28px; max-width:680px;
-}
-.eligibility-form { display:flex; gap:10px; margin:16px 0; }
-.eligibility-input {
-  flex:1; font-family:var(--mono); font-size:12.5px;
-  padding:12px 16px; border-radius:8px; border:1px solid var(--slate);
-  background:rgba(255,255,255,0.02); color:var(--text); min-width:0;
-}
-.eligibility-input:focus { outline:none; border-color:var(--signal); }
-.eligibility-result {
-  margin-top:16px; padding:16px; border-radius:10px;
-  background:var(--graphite-card); border:1px solid var(--slate); display:none;
-}
-.eligibility-result.show { display:block; }
-.er-status { font-family:var(--mono); font-size:13px; font-weight:700; margin-bottom:6px; }
-.er-status.pass { color:var(--signal); }
-.er-status.fail { color:var(--alert); }
-.er-detail { font-size:13px; color:var(--muted); line-height:1.55; }
 
 /* ---- FOOTER ---- */
 footer {
@@ -629,25 +567,20 @@ footer {
   pointer-events:none; box-shadow:0 10px 30px rgba(57,255,136,0.3);
 }
 .toast-notice.show { transform:translateX(-50%) translateY(0); opacity:1; }
-
-#particle-canvas {
-  position:fixed; inset:0; pointer-events:none; z-index:998;
-}
+#particle-canvas { position:fixed; inset:0; pointer-events:none; z-index:998; }
 
 /* ---- MOBILE RESPONSIVE ---- */
 @media (max-width:840px) {
   .pulse-nav { display:none; }
   .tmr-grid { grid-template-columns:1fr; gap:20px; }
   .rank-layout { grid-template-columns:1fr; }
-  .eligibility-form { flex-direction:column; }
 }
 @media (max-width:640px) {
   .pulse-left { gap:12px; font-size:10.5px; }
-  .pulse-item:nth-child(3) { display:none; }
   .hero h1 { font-size:38px; }
   .mission-grid { grid-template-columns:1fr; }
   .armory-grid { grid-template-columns:1fr; }
-  .fact-bento { grid-template-columns:1fr; }
+  .doctrine-grid { grid-template-columns:1fr; }
   .rank-stats-grid { grid-template-columns:repeat(3, 1fr); }
   .mc-action-row { flex-direction:column; }
   .mc-btn { width:100%; }
@@ -665,18 +598,17 @@ footer {
 <header id="pulse">
   <div class="pulse-wrap">
     <div class="pulse-left">
-      <span class="pulse-brand"><span class="pulse-dot"></span> HUHCAT TELEMETRY</span>
+      <span class="pulse-brand"><span class="pulse-dot"></span> HUHCAT WAR ROOM</span>
       <div class="pulse-item"><span class="pulse-val" id="p-day">DAY -</span></div>
-      <div class="pulse-item">REWARDS <span class="pulse-val cyan">0.75% SOL</span></div>
+      <div class="pulse-item">MARATHON <span class="pulse-val cyan">SEASON 1</span></div>
       <div class="pulse-item">STREAK <span class="pulse-val gold" id="p-streak">0</span></div>
-      <div class="pulse-item" id="p-market-item" style="display:none;"><span class="pulse-val" id="p-price">$0.000</span></div>
     </div>
     <div class="pulse-nav">
       <a href="#tomorrow">TOMORROW</a>
       <a href="#missions">MISSIONS</a>
       <a href="#armory">ARMORY</a>
       <a href="#rank">RANK</a>
-      <a href="#facts">FACTS</a>
+      <a href="#doctrine">DOCTRINE</a>
       <button class="sfx-toggle" id="sfx-btn" title="Toggle cyber sound effects">SFX: ON</button>
     </div>
   </div>
@@ -720,7 +652,7 @@ footer {
       <div class="section-meta"><span class="num">01 //</span> CONTINUITY ENGINE</div>
       <h2 class="section-title" id="tmr-head-title">The Tomorrow Board</h2>
       <p class="section-desc">
-        Weak projects collapse when traders lose the thread because nobody knows if the deployer will still be posting updates tomorrow morning. We map the next seven days on Solana so you never wonder what tomorrow brings, displaying locked mission coordinates alongside verified distribution schedules directly in front of the entire community before anyone can spread doubt. Proof matters. Truth stays.
+        Weak projects collapse when traders lose the thread because nobody knows if the deployer will still be posting updates tomorrow morning, which is why we map the next seven days on Solana so you never wonder what tomorrow brings, displaying locked mission coordinates alongside verified distribution schedules directly in front of the entire community before anyone can spread doubt or panic. Proof matters. Truth stays.
       </p>
     </div>
 
@@ -749,7 +681,7 @@ footer {
       <div class="section-meta"><span class="num">02 //</span> OPERATIONAL SPRINT</div>
       <h2 class="section-title">Daily Mission Matrix</h2>
       <p class="section-desc">
-        Every single day of this marathon tests your conviction with three verifiable operations designed to anchor attention, verify on-chain artifacts, and cement community ownership before anyone can doubt the thesis. Check it yourself. No drift. We measure the distribution volume across thousands of transactions while third parties inspect the token metadata to confirm that the inscribed cat is genuinely stored in the account instead of an external web link or remote server. Math wins.
+        Every single day of this marathon tests your conviction with three verifiable operations designed to anchor attention, verify on-chain artifacts, and cement community ownership before anyone can doubt the thesis. Check it yourself. No drift. We coordinate actions across hundreds of active community members to build permanent holding momentum on Solana. Math wins.
       </p>
     </div>
 
@@ -765,7 +697,7 @@ footer {
       <div class="section-meta"><span class="num">03 //</span> SOCIAL WEAPONRY</div>
       <h2 class="section-title">Content Armory</h2>
       <p class="section-desc">
-        Zero blank-canvas paralysis. Grab pre-written tweet weapons with full on-chain receipts. The numbers never lie.
+        Zero blank-canvas paralysis. Grab pre-written tweet weapons with verified community narratives. The numbers never lie.
       </p>
     </div>
 
@@ -788,7 +720,7 @@ footer {
       <div class="section-meta"><span class="num">04 //</span> PROOF OF CONVICTION</div>
       <h2 class="section-title">Rank Card Generator</h2>
       <p class="section-desc">
-        Your cryptographic identity card. Built straight inside your browser to record your active run and points tally. Save the image to your phone and drop it in the thread. When you complete seven consecutive days of verified tasks across the marathon, your card reflects your status as an Alpha Cat with verified on-chain receipts that anyone can confirm on Solscan.
+        Your cryptographic identity card. Built straight inside your browser to record your active run and points tally. When you complete seven consecutive days of verified tasks across this marathon, your card reflects your status as an Alpha Cat with verified proof of conviction that demonstrates you were here building the foundation while short-term speculators were getting washed out across the timeline. Save the image to your phone and drop it in the thread.
       </p>
     </div>
 
@@ -822,11 +754,6 @@ footer {
             </div>
           </div>
 
-          <div class="rank-wallet-imprint">
-            <label>Optional Wallet Imprint</label>
-            <input class="rank-wallet-input" id="rank-wallet-in" placeholder="Paste your wallet to imprint on card">
-          </div>
-
           <div class="rank-actions">
             <button class="btn btn-primary" id="btn-dl-rank">Download PNG (960×960)</button>
             <a class="btn btn-ghost" id="btn-post-rank" href="#" target="_blank" rel="noopener">Post Rank on X</a>
@@ -837,45 +764,68 @@ footer {
   </div>
 </section>
 
-<!-- FACT VAULT -->
-<section id="facts">
+<!-- CONTINUITY DOCTRINE -->
+<section id="doctrine">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-meta"><span class="num">05 //</span> ON-CHAIN TRUTH MATRIX</div>
-      <h2 class="section-title">The Fact Vault</h2>
+      <div class="section-meta"><span class="num">05 //</span> WAR ROOM INTEL</div>
+      <h2 class="section-title">The Continuity Doctrine</h2>
       <p class="section-desc">
-        Zero speculative hype. While every typical memecoin dies within seventy-two hours because deployers abandon their chats, this community continues deploying permanent decentralized infrastructure, verifiable holder tools, and automated fee distribution systems straight onto Solana mainnet without stopping for market noise. Read the facts. When someone on social media claims this is just another generic token with no substance, open the vault accounts, inspect the sealed authorities on Solscan, and show them how four hundred twenty million coins permanently back the original inscribed deed in byte-for-byte verified assembly code stored immutably inside the program account for all time. Math wins.
+        While every typical memecoin dies within seventy-two hours because deployers abandon their chats, this community continues deploying permanent decentralized infrastructure, verifiable holder tools, and community coordinate systems straight onto Solana mainnet without stopping for market noise. When outsiders ask why a community takeover succeeds where developer tokens fail, point directly to our structured sprint architecture, our daily raid coordination, and the undeniable reality that an active holder collective working in public will always outlast a solitary developer who dumps his supply and abandons his community within forty-eight hours of launch. Read the doctrine. Act now.
       </p>
     </div>
 
-    <div class="fact-bento" id="fact-bento"></div>
-  </div>
-</section>
+    <div class="doctrine-grid">
+      <div class="doctrine-card">
+        <div>
+          <div class="doctrine-top">
+            <span class="doctrine-pill">PILLAR 01</span>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">RETENTION ENGINE</span>
+          </div>
+          <h3 class="doctrine-title">The 7-Day Sprint Cadence</h3>
+          <p class="doctrine-body">
+            Human psychology cannot sustain indefinite holding without clear checkpoints, which is why breaking decentralized community action into structured seven-day operational sprints creates a visible finish line that transforms passive spectator wallets into dedicated cultural ambassadors who understand the long-term mission.
+          </p>
+        </div>
+      </div>
 
-<!-- ELIGIBILITY CHECKER -->
-<section id="eligibility">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-meta"><span class="num">06 //</span> REWARDS GATEWAY</div>
-      <h2 class="section-title">Holder Rewards Eligibility Check</h2>
-      <p class="section-desc">
-        Hold more than twenty dollars of HUHCAT to receive creator fee payouts in SOL. When someone on social media claims this is just another generic token with no substance, open the vault accounts, inspect the sealed authorities on Solscan, and show them how four hundred twenty million coins permanently back the original inscribed deed in byte-for-byte verified assembly code. Math wins.
-      </p>
-    </div>
+      <div class="doctrine-card">
+        <div>
+          <div class="doctrine-top">
+            <span class="doctrine-pill">PILLAR 02</span>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">DECENTRALIZED OPS</span>
+          </div>
+          <h3 class="doctrine-title">The Takeover Advantage</h3>
+          <p class="doctrine-body">
+            Developer-led coins suffer from a single point of failure: the founder's wallet. Once the original deployer walks, that dump risk drops to zero. What remains is pure community ownership and decentralized distribution.
+          </p>
+        </div>
+      </div>
 
-    <div class="eligibility-box">
-      <p style="font-size:13.5px;color:var(--muted);margin-bottom:12px;">
-        Queries public Solana RPC endpoints in your browser. No wallet connection or transaction signature required.
-      </p>
+      <div class="doctrine-card">
+        <div>
+          <div class="doctrine-top">
+            <span class="doctrine-pill">PILLAR 03</span>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">BEHAVIORAL SYNC</span>
+          </div>
+          <h3 class="doctrine-title">The IKEA Effect in Crypto</h3>
+          <p class="doctrine-body">
+            Behavioral science proves that individuals value things exponentially more when they contribute labor to assemble them. Every meme deployed, score logged, and peer enlisted bonds holder conviction far beyond simple chart speculation.
+          </p>
+        </div>
+      </div>
 
-      <form class="eligibility-form" id="el-form">
-        <input class="eligibility-input" id="el-input" placeholder="Paste Solana wallet address" spellcheck="false" autocomplete="off" required>
-        <button class="btn btn-primary" type="submit">Verify Eligibility</button>
-      </form>
-
-      <div class="eligibility-result" id="el-result">
-        <div class="er-status" id="er-status">Scanning blockchain...</div>
-        <div class="er-detail" id="er-detail"></div>
+      <div class="doctrine-card">
+        <div>
+          <div class="doctrine-top">
+            <span class="doctrine-pill">PILLAR 04</span>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">CULTURAL REACH</span>
+          </div>
+          <h3 class="doctrine-title">Authentic Internet Heritage</h3>
+          <p class="doctrine-body">
+            Bender is an authentic internet icon with 3.4 million TikTok fans and over 100 million organic hearts. Most tokens fabricate lore from scratch. HUHCAT represents pre-existing global internet culture.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -909,17 +859,15 @@ footer {
 
 <script>
 /* ================================================================
-   HUHCAT MISSION CONTROL // APEX TELEMETRY ENGINE
-   Client-side architecture. Zero external framework dependencies.
+   HUHCAT MISSION CONTROL // WAR ROOM TELEMETRY
+   Zero overlap with huhcatonsol.com and huhcatonsol.com/rewards.
    ================================================================ */
 
 const MINT = 'A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH';
-const RPCS = ['https://api.mainnet-beta.solana.com', 'https://solana.publicnode.com'];
 const STORE_KEY = 'huhcat_mc_v2';
 
 let MISSIONS = null;
 let CONTENT = null;
-let FACTS = null;
 let CAT_IMAGE = null;
 let SFX_ENABLED = true;
 let STATE = loadState();
@@ -961,7 +909,7 @@ function playSuccessChime() {
   try {
     const ctx = getAudioContext();
     if (!ctx) return;
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, idx) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
@@ -979,7 +927,7 @@ function playSuccessChime() {
   } catch(e) {}
 }
 
-// ---- PARTICLE SYSTEM ----
+// ---- CANVAS PARTICLE ENGINE ----
 const pCanvas = document.getElementById('particle-canvas');
 const pCtx = pCanvas.getContext('2d');
 let particles = [];
@@ -991,7 +939,7 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 function triggerSparks(x, y) {
-  for (let i = 0; i < 42; i++) {
+  for (let i = 0; i < 40; i++) {
     const angle = Math.random() * Math.PI * 2;
     const speed = 2 + Math.random() * 6;
     particles.push({
@@ -1011,7 +959,7 @@ function updateParticles() {
     const p = particles[i];
     p.x += p.vx;
     p.y += p.vy;
-    p.vy += 0.12; // gravity
+    p.vy += 0.12;
     p.life -= p.decay;
     if (p.life <= 0) {
       particles.splice(i, 1);
@@ -1037,7 +985,7 @@ function loadState() {
       if (s.version === 2) return s;
     }
   } catch(e) {}
-  return { version: 2, streak: 0, missions: {}, points: 0, wallet: '' };
+  return { version: 2, streak: 0, missions: {}, points: 0 };
 }
 function saveState() {
   localStorage.setItem(STORE_KEY, JSON.stringify(STATE));
@@ -1060,7 +1008,7 @@ function toggleMission(id, proofVal, eventTarget) {
       const rect = eventTarget.getBoundingClientRect();
       triggerSparks(rect.left + rect.width / 2, rect.top + rect.height / 2);
     }
-    toast('Mission complete: points secured');
+    toast('Mission secured: points locked in');
   } else {
     playCyberBlip(420, 0.04);
   }
@@ -1088,7 +1036,7 @@ function recalcScoreAndStreak() {
       if (m) STATE.points += m.points;
     }
   }
-  STATE.points += streak * (MISSIONS.scoring?.streak_bonus || 10);
+  STATE.points += streak * (MISSIONS.scoring?.streak_bonus || 15);
 }
 
 function findMission(id) {
@@ -1133,20 +1081,20 @@ function formatClock(ms) {
   return `${h}:${m}:${s}`;
 }
 
-// ---- NOTIFICATIONS ----
 function toast(msg) {
   const el = document.getElementById('toast');
   el.textContent = msg;
   el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 2200);
 }
+
 async function copyToClipboard(text) {
   try {
     await navigator.clipboard.writeText(text);
     playCyberBlip(1200, 0.04);
     toast('Copied to clipboard');
   } catch(e) {
-    toast('Copy failed: check browser permissions');
+    toast('Copy failed: check permissions');
   }
 }
 
@@ -1202,7 +1150,7 @@ function renderTomorrowBoard() {
     briefEl.textContent = 'The 7-day continuity engine initiates at midnight. Three missions drop every 24 hours. The community verifies the cat.';
     cardsEl.innerHTML = renderLockedCardsPreview(0);
   } else if (tl.state === 'active') {
-    const nextIdx = tl.current; // 0-indexed next day
+    const nextIdx = tl.current;
     clockLbl.textContent = 'NEXT SPRINT UNLOCKS IN';
     clockEl.textContent = formatClock(tl.msRemaining);
     stateTag.textContent = `DAY ${tl.current} IN PROGRESS`;
@@ -1214,7 +1162,7 @@ function renderTomorrowBoard() {
       cardsEl.innerHTML = renderLockedCardsPreview(nextIdx);
     } else {
       titleEl.textContent = 'Final Sprint Active';
-      briefEl.textContent = 'This is Day 7 of 7: the marathon recap. Complete all operations, mint your rank card, and post receipts.';
+      briefEl.textContent = 'This is Day 7 of 7: the marathon epilogue. Complete all operations, mint your rank card, and post receipts.';
       cardsEl.innerHTML = '';
     }
   } else {
@@ -1303,8 +1251,8 @@ function renderMissionGrid() {
         </div>
 
         <div>
-          <div class="mc-reward-row">
-            <span>REWARD</span>
+          <div class="mc-points-row">
+            <span>MISSION VALUE</span>
             <span class="mc-points">+${m.points} POINTS</span>
             <span class="mc-done-mark">&#10003; COMPLETE</span>
           </div>
@@ -1318,7 +1266,7 @@ function renderMissionGrid() {
 
             ${m.action_url && m.action_type === 'verify' ? `
               <a class="mc-btn" href="${m.action_url}" target="_blank" rel="noopener">
-                Verify Source &rarr;
+                Inspect Source &rarr;
               </a>` : ''}
 
             ${m.action_url && m.action_type === 'share_tg' ? `
@@ -1339,7 +1287,6 @@ function renderMissionGrid() {
     `;
   }).join('');
 
-  // Bind events
   grid.querySelectorAll('[data-toggle-id]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.dataset.toggleId;
@@ -1372,12 +1319,15 @@ let armoryQuery = '';
 function renderArmoryFilters() {
   const strip = document.getElementById('armory-chips');
   if (!CONTENT) return;
-  const cats = ['all', 'proof', 'holder', 'quote', 'reply'];
+  const cats = ['all', 'takeover', 'meme', 'thesis', 'game', 'conviction', 'sniper', 'reply'];
   const labels = {
-    all: 'All Weapons (27)',
-    proof: 'Proof Weapons',
-    holder: 'Holder Narratives',
-    quote: 'Quote Snipers',
+    all: 'All Weapons (24)',
+    takeover: 'Takeover Rally',
+    meme: 'Meme Artillery',
+    thesis: 'Continuity Thesis',
+    game: 'Gamer Challenges',
+    conviction: 'Conviction Posts',
+    sniper: 'Timeline Snipers',
     reply: 'Reply Arsenal'
   };
 
@@ -1450,7 +1400,6 @@ function renderArmoryGrid() {
     `;
   }).join('');
 
-  // Personalization events
   grid.querySelectorAll('[data-custom-for]').forEach(input => {
     input.addEventListener('input', () => {
       const id = input.dataset.customFor;
@@ -1475,7 +1424,6 @@ function renderArmoryGrid() {
     });
   });
 
-  // Copy events
   grid.querySelectorAll('[data-copy-action]').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.copyAction;
@@ -1509,7 +1457,7 @@ function renderRankSection() {
   document.getElementById('rk-val-done').textContent = `${doneCount}/21`;
   document.getElementById('rk-val-points').textContent = STATE.points;
 
-  const postText = `I hold $HUHCAT. Verified rank: ${rank.title}. Current streak: ${STATE.streak} days. ${doneCount}/21 missions completed. Decode the chain at https://huhcatonsol.com #HUHCAT @HuhCatOnSol_`;
+  const postText = `I hold $HUHCAT. Verified rank: ${rank.title}. Current streak: ${STATE.streak} days. ${doneCount}/21 marathon operations completed. The takeover is live at https://jmthomasofficial.github.io/huhcat/mission-control/ #HUHCAT @HuhCatOnSol_`;
   document.getElementById('btn-post-rank').href = 'https://x.com/intent/post?text=' + encodeURIComponent(postText);
 
   drawRankCanvas(rank, doneCount);
@@ -1557,7 +1505,7 @@ function drawRankCanvas(rank, doneCount) {
   ctx.fillStyle = '#828d9f';
   ctx.font = '700 16px "JetBrains Mono", monospace';
   ctx.textAlign = 'center';
-  ctx.fillText('HUHCAT MISSION CONTROL // VERIFIED HOLDER TELEMETRY', W / 2, 94);
+  ctx.fillText('HUHCAT MISSION CONTROL // CONTINUITY MARATHON S1', W / 2, 94);
 
   // Central Reticle
   const catX = W / 2;
@@ -1619,23 +1567,15 @@ function drawRankCanvas(rank, doneCount) {
   // Stat Row
   ctx.fillStyle = '#f1f5f9';
   ctx.font = '800 42px "Space Grotesk", sans-serif';
-  ctx.fillText(`${doneCount}/21 MISSIONS`, W / 2, 620);
+  ctx.fillText(`${doneCount}/21 OPERATIONS`, W / 2, 620);
 
   ctx.fillStyle = '#828d9f';
   ctx.font = '700 22px "JetBrains Mono", monospace';
   ctx.fillText(`STREAK: ${STATE.streak} DAYS  //  POINTS: ${STATE.points}`, W / 2, 670);
 
-  // Optional Wallet imprint
-  const walletAddr = (document.getElementById('rank-wallet-in')?.value || STATE.wallet || '').trim();
-  if (walletAddr) {
-    ctx.fillStyle = 'rgba(57,255,136,0.85)';
-    ctx.font = '500 15px "JetBrains Mono", monospace';
-    ctx.fillText(`IMPRINT: ${walletAddr.slice(0, 8)}...${walletAddr.slice(-8)}`, W / 2, 730);
-  }
-
   // Barcode telemetry graphic
   ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
-  const barY = 780;
+  const barY = 750;
   const barW = 320;
   const startBarX = (W - barW) / 2;
   for (let b = 0; b < barW; b += 4) {
@@ -1647,15 +1587,9 @@ function drawRankCanvas(rank, doneCount) {
   // Footer seal
   ctx.fillStyle = '#525b6a';
   ctx.font = '500 14px "JetBrains Mono", monospace';
-  ctx.fillText('SOLANA V1 INSCRIBED ARTIFACT  //  SEASON 01', W / 2, 850);
-  ctx.fillText('huhcatonsol.com', W / 2, 880);
+  ctx.fillText('DECENTRALIZED COMMUNITY TAKEOVER // MARATHON PROOF', W / 2, 830);
+  ctx.fillText('jmthomasofficial.github.io/huhcat/mission-control/', W / 2, 860);
 }
-
-document.getElementById('rank-wallet-in')?.addEventListener('input', (e) => {
-  STATE.wallet = e.target.value.trim();
-  saveState();
-  renderRankSection();
-});
 
 document.getElementById('btn-dl-rank')?.addEventListener('click', () => {
   const canvas = document.getElementById('rank-canvas');
@@ -1666,132 +1600,6 @@ document.getElementById('btn-dl-rank')?.addEventListener('click', () => {
   playCyberBlip(1000, 0.05);
   toast('Rank card downloaded');
 });
-
-// ---- RENDER: FACT VAULT ----
-function renderFactVault() {
-  const bento = document.getElementById('fact-bento');
-  if (!FACTS) return;
-
-  bento.innerHTML = FACTS.facts.map(f => `
-    <div class="fact-card">
-      <div>
-        <div class="fact-top">
-          <span class="fact-tier-pill ${f.tier.toLowerCase()}">${f.tier === 'T0' ? 'ON-CHAIN FACT' : 'VERIFIED METRIC'}</span>
-          <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">${f.id}</span>
-        </div>
-        <div class="fact-claim">${escapeHtml(f.claim)}</div>
-        <div class="fact-detail">${escapeHtml(f.detail)}</div>
-      </div>
-
-      <div class="fact-footer">
-        <span class="fact-source" title="${escapeAttr(f.source)}">${escapeHtml(f.source)}</span>
-        <button class="fact-copy-btn" data-fact-citation="${escapeAttr(f.claim + ' (Source: ' + f.source + ')') }">Copy Citation</button>
-      </div>
-    </div>
-  `).join('');
-
-  bento.querySelectorAll('[data-fact-citation]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      copyToClipboard(btn.dataset.factCitation);
-    });
-  });
-}
-
-// ---- ELIGIBILITY CHECKER ----
-document.getElementById('el-form')?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const addr = document.getElementById('el-input').value.trim();
-  if (!addr) return;
-
-  const resultBox = document.getElementById('el-result');
-  const statusEl = document.getElementById('er-status');
-  const detailEl = document.getElementById('er-detail');
-
-  resultBox.classList.add('show');
-  statusEl.textContent = 'Querying Solana Mainnet RPC...';
-  statusEl.className = 'er-status';
-  detailEl.textContent = '';
-  playCyberBlip(700, 0.03);
-
-  try {
-    const [balance, price] = await Promise.all([getTokenBalance(addr), fetchPrice()]);
-    const valUsd = balance * price;
-
-    if (balance === 0) {
-      statusEl.className = 'er-status fail';
-      statusEl.textContent = 'No $HUHCAT tokens detected.';
-      detailEl.textContent = 'This address currently holds zero tokens. Purchase on pump.fun to qualify for automatic distributions.';
-    } else if (valUsd < 20) {
-      statusEl.className = 'er-status fail';
-      statusEl.textContent = `Balance below $20 floor: $${valUsd.toFixed(2)} USD`;
-      detailEl.textContent = `You hold ${fmtNum(balance)} HUHCAT. Pump.fun requires a minimum $20 holding threshold for automatic distribution eligibility.`;
-    } else {
-      statusEl.className = 'er-status pass';
-      statusEl.textContent = `Eligible: $${valUsd.toFixed(2)} USD in $HUHCAT`;
-      detailEl.textContent = `You hold ${fmtNum(balance)} HUHCAT. You qualify for pro-rata creator fee distributions paid directly in SOL.`;
-      playSuccessChime();
-    }
-  } catch(err) {
-    statusEl.className = 'er-status fail';
-    statusEl.textContent = 'RPC Query Failed';
-    detailEl.innerHTML = `Public nodes timed out. <a href="https://solscan.io/account/${addr}" target="_blank" rel="noopener">Inspect your token accounts on Solscan &rarr;</a>`;
-  }
-});
-
-async function rpcRequest(method, params) {
-  for (const url of RPCS) {
-    try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params })
-      });
-      const data = await res.json();
-      if (data.result !== undefined) return data.result;
-    } catch(e) { continue; }
-  }
-  throw new Error('RPC query exhausted');
-}
-
-async function getTokenBalance(owner) {
-  const result = await rpcRequest('getTokenAccountsByOwner', [
-    owner,
-    { mint: MINT },
-    { encoding: 'jsonParsed' }
-  ]);
-  if (!result?.value?.length) return 0;
-  return result.value[0].account.data.parsed.info.tokenAmount.uiAmount || 0;
-}
-
-async function fetchPrice() {
-  try {
-    const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${MINT}`);
-    const data = await res.json();
-    const pair = data.pairs?.[0];
-    if (pair) {
-      const price = parseFloat(pair.priceUsd || 0);
-      const mc = pair.marketCap || pair.fdv;
-      if (price > 0) updateMarketDisplay(price, mc);
-      return price;
-    }
-  } catch(e) {}
-  return 0;
-}
-
-function updateMarketDisplay(price, mc) {
-  const item = document.getElementById('p-market-item');
-  const priceEl = document.getElementById('p-price');
-  if (item && priceEl) {
-    item.style.display = 'inline-flex';
-    priceEl.textContent = `$${price < 0.01 ? price.toFixed(6) : price.toFixed(4)}${mc ? ' (MC $' + fmtNum(mc) + ')' : ''}`;
-  }
-}
-
-function fmtNum(n) {
-  if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
-  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
-  return n.toFixed(2);
-}
 
 // ---- SFX TOGGLE ----
 document.getElementById('sfx-btn')?.addEventListener('click', (e) => {
@@ -1824,14 +1632,12 @@ function renderAll() {
 // ---- BOOT SEQUENCE ----
 async function initMissionControl() {
   try {
-    const [mRes, cRes, fRes] = await Promise.all([
+    const [mRes, cRes] = await Promise.all([
       fetch('missions.json').then(r => r.json()),
-      fetch('content-kit.json').then(r => r.json()),
-      fetch('facts.json').then(r => r.json())
+      fetch('content-kit.json').then(r => r.json())
     ]);
     MISSIONS = mRes;
     CONTENT = cRes;
-    FACTS = fRes;
   } catch(e) {
     document.getElementById('mission-grid').innerHTML = '<p style="color:var(--alert);padding:20px;">Telemetry feeds failed to load. Please refresh.</p>';
     return;
@@ -1846,18 +1652,12 @@ async function initMissionControl() {
   renderAll();
   renderArmoryFilters();
   renderArmoryGrid();
-  renderFactVault();
-
-  // Fetch live market data
-  fetchPrice();
 
   // Active timers
   setInterval(() => {
     renderPulse();
     renderTomorrowBoard();
   }, 1000);
-
-  setInterval(fetchPrice, 45000);
 }
 
 window.addEventListener('DOMContentLoaded', initMissionControl);

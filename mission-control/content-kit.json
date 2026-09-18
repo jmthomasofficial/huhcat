@@ -1,194 +1,173 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-09-18",
   "templates": [
     {
-      "id": "proof-01",
-      "category": "proof",
+      "id": "takeover-01",
+      "category": "takeover",
       "day": 1,
-      "template": "The cat is real. His name is Bender. 3.4M followers on TikTok. Lives in Melbourne with Nellie Cage. $HUHCAT @HuhCatOnSol_ Proof: https://huhcatonsol.com/#proof",
+      "template": "The deployer walked away. Most tokens die right there. Instead, the community took over the wheel and started building. This is decentralized ownership in real time. $HUHCAT @HuhCatOnSol_",
       "platform": "x"
     },
     {
-      "id": "proof-02",
-      "category": "proof",
+      "id": "takeover-02",
+      "category": "takeover",
+      "day": 1,
+      "template": "A dev coin relies on one person who can sell and vanish. A community takeover relies on hundreds of holders who refuse to quit. I know which one I would rather back. $HUHCAT",
+      "platform": "x"
+    },
+    {
+      "id": "takeover-03",
+      "category": "takeover",
+      "day": 1,
+      "template": "Zero developer supply hanging over the chart. The community took over and built their own war room. That is real resilience on Solana. $HUHCAT @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "meme-01",
+      "category": "meme",
       "day": 2,
-      "template": "$HUHCAT coin mint: A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH. Mint and freeze authorities are null. 6 decimals. Verify on chain. @HuhCatOnSol_",
+      "template": "The real cat behind the coin is Bender from Melbourne with 3.4 million fans on TikTok. You cannot manufacture that kind of cultural reach. Put some respect on the face. $HUHCAT @HuhCatOnSol_",
       "platform": "x"
     },
     {
-      "id": "proof-03",
-      "category": "proof",
-      "day": 6,
-      "template": "Sealed image mint: DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r. Supply exactly 1. Decimals 0. All 4 authorities null. The $HUHCAT image is sealed forever.",
-      "platform": "x"
-    },
-    {
-      "id": "proof-04",
-      "category": "proof",
-      "day": 6,
-      "template": "$HUHCAT vault program upgrade authority is burned. It's locked. Program: GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3. No one can change the rules. @HuhCatOnSol_",
-      "platform": "x"
-    },
-    {
-      "id": "proof-05",
-      "category": "proof",
+      "id": "meme-02",
+      "category": "meme",
       "day": 2,
-      "template": "$HUHCAT supply is 959,904,004.86. The claim threshold is 420,690,000. That's 43.83% of the supply. Math doesn't lie. https://huhcatonsol.com",
+      "template": "Whenever the timeline gets noisy, just post the cat face. Bender has been breaking the internet for years. Now he belongs to Solana. $HUHCAT",
       "platform": "x"
     },
     {
-      "id": "proof-06",
-      "category": "proof",
-      "day": 4,
-      "template": "Rewards are irreversible. Pump.fun confirmed it on 12 Sep. $HUHCAT holders get paid. $20 floor to be eligible. https://huhcatonsol.com/rewards",
-      "platform": "x"
-    },
-    {
-      "id": "proof-07",
-      "category": "proof",
-      "day": 4,
-      "template": "1.81 SOL. 1,807 payments. 207 batches. All in one hour on 17 Sep. The $HUHCAT rewards machine works. See the receipts: https://huhcatonsol.com/rewards",
-      "platform": "x"
-    },
-    {
-      "id": "proof-08",
-      "category": "proof",
-      "day": 3,
-      "template": "v1 activation slot was 447,120,000. The code is running. The community took over and built everything. $HUHCAT is unstoppable. @HuhCatOnSol_",
-      "platform": "x"
-    },
-    {
-      "id": "proof-09",
-      "category": "proof",
+      "id": "meme-03",
+      "category": "meme",
       "day": 2,
-      "template": "Fee schedule: 25 tiers. Peak is 0.950%. Floor is 0.050% at 98,240 SOL. Hard coded in the $HUHCAT vault. Check it on Solscan.",
+      "template": "Over 100 million likes on TikTok before anyone even launched a coin. That is organic internet history right there. $HUHCAT @HuhCatOnSol_",
       "platform": "x"
     },
     {
-      "id": "proof-10",
-      "category": "proof",
-      "day": 7,
-      "template": "ELF sha256: bbc47f54...2367c. The binary matches the source. Fully verified. We trust math. $HUHCAT @HuhCatOnSol_",
-      "platform": "x"
-    },
-    {
-      "id": "holder-01",
-      "category": "holder",
-      "day": 3,
-      "template": "I hold $HUHCAT because [YOUR REASON]. The community built this from scratch after the deployer left. We own it now. @HuhCatOnSol_",
-      "platform": "x"
-    },
-    {
-      "id": "holder-02",
-      "category": "holder",
+      "id": "game-01",
+      "category": "game",
       "day": 4,
-      "template": "Got my $HUHCAT rewards today. Real SOL hitting my wallet. The $20 eligibility floor keeps it fair. Check your stash: https://huhcatonsol.com/rewards",
+      "template": "Just clocked a new high score in the official $HUHCAT browser game. Think you can beat my run? Try it directly in your browser: https://jmthomasofficial.github.io/huhcatgame/ @HuhCatOnSol_",
       "platform": "x"
     },
     {
-      "id": "holder-03",
-      "category": "holder",
-      "day": 6,
-      "template": "[YOUR REASON] is why I added to my $HUHCAT bag today. The vault math is flawless. Upgrade authority burned. Sleep easy. @HuhCatOnSol_",
+      "id": "game-02",
+      "category": "game",
+      "day": 4,
+      "template": "While other projects promise roadmap vaporware for next year, the $HUHCAT community already shipped a playable browser game. Play it here: https://jmthomasofficial.github.io/huhcatgame/",
       "platform": "x"
     },
     {
-      "id": "holder-04",
-      "category": "holder",
-      "day": 3,
-      "template": "The deployer left. We didn't panic. We built. I hold $HUHCAT because of this community. [YOUR REASON] https://huhcatonsol.com",
-      "platform": "x"
-    },
-    {
-      "id": "holder-05",
-      "category": "holder",
+      "id": "thesis-01",
+      "category": "thesis",
       "day": 5,
-      "template": "Playing the $HUHCAT game right now. https://jmthomasofficial.github.io/huhcatgame/ Holders building for holders. [YOUR REASON] @HuhCatOnSol_",
+      "template": "Why do 99% of memecoins die after 3 days? Lack of continuity. Once the launch hype fades, teams abandon their chats. We build seven days ahead on a rolling sprint. $HUHCAT @HuhCatOnSol_",
       "platform": "x"
     },
     {
-      "id": "holder-06",
-      "category": "holder",
+      "id": "thesis-02",
+      "category": "thesis",
+      "day": 5,
+      "template": "Continuity beats hype every single time. A community that stays organized across a multi-day marathon builds muscle that paper hands can never break. $HUHCAT",
+      "platform": "x"
+    },
+    {
+      "id": "thesis-03",
+      "category": "thesis",
+      "day": 5,
+      "template": "The difference between gambling on a random launch and holding with a takeover collective is operational discipline. We map the horizon. $HUHCAT @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "conviction-01",
+      "category": "conviction",
+      "day": 6,
+      "template": "I hold $HUHCAT because [YOUR REASON]. When market volatility shakes out tourists, the builders keep shipping. That is how permanent value gets forged on chain. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "conviction-02",
+      "category": "conviction",
+      "day": 6,
+      "template": "Nobody is coming to save a memecoin except the holders willing to work for it. That is why I added to my $HUHCAT position today: [YOUR REASON]. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "conviction-03",
+      "category": "conviction",
+      "day": 6,
+      "template": "Seven days of organized community effort changes the entire trajectory of a coin. I am standing with the $HUHCAT collective because [YOUR REASON].",
+      "platform": "x"
+    },
+    {
+      "id": "rank-01",
+      "category": "rank",
       "day": 7,
-      "template": "Claim threshold is 420,690,000. We are getting closer. I am holding my $HUHCAT tight. [YOUR REASON]",
+      "template": "Just finished the 7-day continuity marathon with the $HUHCAT community. Streak secured. Check my verified clearance rank on the timeline. We are just getting started. @HuhCatOnSol_",
       "platform": "x"
     },
     {
-      "id": "holder-07",
-      "category": "holder",
-      "day": 0,
-      "template": "I checked the $HUHCAT image mint. Supply 1. Authorities null. It is truly sealed. [YOUR REASON] Buy: https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH",
+      "id": "rank-02",
+      "category": "rank",
+      "day": 7,
+      "template": "Season 1 completed. 21 operations checked off. The $HUHCAT room is organized, disciplined, and ready for what comes next. @HuhCatOnSol_",
+      "platform": "x"
+    },
+    {
+      "id": "sniper-01",
+      "category": "sniper",
+      "day": 3,
+      "template": "If you are looking for an actual community takeover with zero dev dump risk, look at $HUHCAT. The deployer walked, the community organized, and the war room is live: https://jmthomasofficial.github.io/huhcat/mission-control/",
+      "platform": "x"
+    },
+    {
+      "id": "sniper-02",
+      "category": "sniper",
+      "day": 3,
+      "template": "Most tokens cannot survive 48 hours without their founder. $HUHCAT took over the project, shipped a custom game, and launched a 7-day marathon. Built different.",
       "platform": "x"
     },
     {
       "id": "quote-01",
       "category": "quote",
-      "day": 0,
-      "template": "Real cat. Real code. Real rewards. $HUHCAT @HuhCatOnSol_",
+      "day": 5,
+      "template": "This is what happens when community members stop acting like passive passengers and start acting like owners. $HUHCAT @HuhCatOnSol_",
       "platform": "x"
     },
     {
       "id": "quote-02",
       "category": "quote",
       "day": 0,
-      "template": "We verified the math. Did you? $HUHCAT https://huhcatonsol.com/#proof",
+      "template": "Real cat. Real takeover. Real community work ethic. $HUHCAT",
       "platform": "x"
     },
     {
       "id": "quote-03",
       "category": "quote",
       "day": 0,
-      "template": "Burned authority. Null freeze. Sleep well. $HUHCAT",
-      "platform": "x"
-    },
-    {
-      "id": "quote-04",
-      "category": "quote",
-      "day": 1,
-      "template": "3.4M TikTok followers can't be wrong. Bender is $HUHCAT.",
-      "platform": "x"
-    },
-    {
-      "id": "quote-05",
-      "category": "quote",
-      "day": 5,
-      "template": "Deployer left. Holders built. Unstoppable. $HUHCAT",
+      "template": "Seven days ahead of the curve while others cannot plan seven minutes ahead. $HUHCAT",
       "platform": "x"
     },
     {
       "id": "reply-01",
       "category": "reply",
-      "day": 0,
-      "template": "$HUHCAT is Bender from Melbourne. The community took over. We earn real rewards. https://huhcatonsol.com",
+      "day": 2,
+      "template": "Bender is the real cat with 3.4M TikTok followers. Now backed by an active community takeover on Solana. $HUHCAT",
       "platform": "x"
     },
     {
       "id": "reply-02",
       "category": "reply",
       "day": 0,
-      "template": "Check the proof. Authorities null. Upgrade burned. $HUHCAT is safe. https://huhcatonsol.com/#proof",
+      "template": "The deployer left on day one. We took over the project and organized a full operational war room. $HUHCAT",
       "platform": "x"
     },
     {
       "id": "reply-03",
       "category": "reply",
-      "day": 4,
-      "template": "1.81 SOL distributed in one hour on 17 Sep. It pays to hold $HUHCAT.",
-      "platform": "x"
-    },
-    {
-      "id": "reply-04",
-      "category": "reply",
-      "day": 5,
-      "template": "Real cat with 3.4M followers. Dev left. Community built a rewards vault. $HUHCAT",
-      "platform": "x"
-    },
-    {
-      "id": "reply-05",
-      "category": "reply",
       "day": 0,
-      "template": "Just read the facts. Math doesn't lie. $HUHCAT https://huhcatonsol.com",
+      "template": "Check the Mission Control dashboard to see how our community coordinates daily sprints: https://jmthomasofficial.github.io/huhcat/mission-control/ $HUHCAT",
       "platform": "x"
     }
   ]

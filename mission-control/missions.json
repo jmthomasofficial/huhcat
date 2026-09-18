@@ -1,7 +1,7 @@
 {
   "season": {
     "id": 1,
-    "name": "PROVE THE CAT",
+    "name": "THE CONTINUITY MARATHON",
     "start": "2026-09-18T00:00:00-04:00",
     "end": "2026-09-24T23:59:59-04:00"
   },
@@ -9,36 +9,36 @@
     {
       "day": 1,
       "date": "2026-09-18",
-      "theme": "The Cat is Real",
+      "theme": "The Takeover Rally",
       "missions": [
         {
           "id": "d1m1",
-          "title": "Decode the cat",
-          "description": "Open the proof panel on huhcatonsol.com and watch the image decode from the chain in your browser. Screenshot it.",
-          "difficulty": "easy",
-          "points": 10,
-          "action_type": "verify",
-          "action_url": "https://huhcatonsol.com/#proof",
-          "content_kit_id": "proof-01"
-        },
-        {
-          "id": "d1m2",
-          "title": "Post your first proof",
-          "description": "Post about the on-chain inscription to X. Use the Content Armory below for a ready template, or write your own.",
-          "difficulty": "medium",
-          "points": 20,
-          "action_type": "post_x",
-          "action_url": "",
-          "content_kit_id": "proof-02"
-        },
-        {
-          "id": "d1m3",
-          "title": "Drop it in the room",
-          "description": "Share your proof post (or any HUHCAT fact) in the Telegram group. Let the room see you showed up.",
+          "title": "Enter the War Room",
+          "description": "Join the official Telegram portal, introduce your handle, and declare your presence for the 7-day marathon.",
           "difficulty": "easy",
           "points": 10,
           "action_type": "share_tg",
           "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        },
+        {
+          "id": "d1m2",
+          "title": "Broadcast the Takeover",
+          "description": "Publish a post to X explaining why community takeovers outlast developer-owned tokens. Ready template below in the Armory.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "takeover-01"
+        },
+        {
+          "id": "d1m3",
+          "title": "Verify Official Channels",
+          "description": "Confirm you follow @HuhCatOnSol_ on X and bookmark the Mission Control dashboard for daily check-ins.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "verify",
+          "action_url": "https://x.com/HuhCatOnSol_",
           "content_kit_id": null
         }
       ]
@@ -46,59 +46,22 @@
     {
       "day": 2,
       "date": "2026-09-19",
-      "theme": "Numbers Talk",
+      "theme": "Meme Artillery",
       "missions": [
         {
           "id": "d2m1",
-          "title": "Read the fee schedule",
-          "description": "Open pump.fun/docs/fees and find the current HUHCAT tier. Know the number before you post it.",
+          "title": "Deploy Bender to the Timeline",
+          "description": "Post a high-energy Huh Cat meme to X tagging @HuhCatOnSol_ and using the $HUHCAT cashtag. Remind Solana that Bender has 3.4M organic fans.",
           "difficulty": "easy",
-          "points": 10,
-          "action_type": "verify",
-          "action_url": "https://pump.fun/docs/fees",
-          "content_kit_id": null
+          "points": 15,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "meme-01"
         },
         {
           "id": "d2m2",
-          "title": "Post the numbers",
-          "description": "Share a verified metric about HUHCAT on X: the supply, the fee rate, or the measured payout data. Template ready below.",
-          "difficulty": "medium",
-          "points": 20,
-          "action_type": "post_x",
-          "action_url": "",
-          "content_kit_id": "proof-04"
-        },
-        {
-          "id": "d2m3",
-          "title": "Check your own wallet",
-          "description": "Open huhcatonsol.com/rewards, paste your wallet, see what the cat paid you. Screenshot the result.",
-          "difficulty": "easy",
-          "points": 15,
-          "action_type": "verify",
-          "action_url": "https://huhcatonsol.com/rewards",
-          "content_kit_id": null
-        }
-      ]
-    },
-    {
-      "day": 3,
-      "date": "2026-09-20",
-      "theme": "The Room Grows",
-      "missions": [
-        {
-          "id": "d3m1",
-          "title": "Bring one person",
-          "description": "Send the Telegram invite link to one person who would find HUHCAT interesting. Not spam. One real invite.",
-          "difficulty": "medium",
-          "points": 20,
-          "action_type": "share_tg",
-          "action_url": "https://t.me/HuhCatSolGroupPortal",
-          "content_kit_id": null
-        },
-        {
-          "id": "d3m2",
-          "title": "Reply to someone curious",
-          "description": "Find someone on X asking about new Solana projects or memecoins. Reply with a HUHCAT fact (not hype). Use the Reply Arsenal below.",
+          "title": "Raid a Trending Cat Post",
+          "description": "Find a trending Solana meme thread and drop the iconic Huh Cat reaction video or GIF with a sharp one-liner.",
           "difficulty": "medium",
           "points": 20,
           "action_type": "post_x",
@@ -106,13 +69,50 @@
           "content_kit_id": "reply-01"
         },
         {
+          "id": "d2m3",
+          "title": "Share Meme Fuel in TG",
+          "description": "Upload a fresh Huh Cat image, sticker, or reaction template directly into the Telegram group chat.",
+          "difficulty": "easy",
+          "points": 10,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-09-20",
+      "theme": "Network Infiltration",
+      "missions": [
+        {
+          "id": "d3m1",
+          "title": "Enlist One Real Holder",
+          "description": "Personally message one disciplined crypto trader you respect and introduce them to the HUHCAT community takeover thesis.",
+          "difficulty": "hard",
+          "points": 25,
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
+          "content_kit_id": null
+        },
+        {
+          "id": "d3m2",
+          "title": "Target an Alpha Call Account",
+          "description": "Reply under an influential Solana trader asking for project suggestions with our community-led thesis. No spam, pure conviction.",
+          "difficulty": "medium",
+          "points": 20,
+          "action_type": "post_x",
+          "action_url": "",
+          "content_kit_id": "sniper-01"
+        },
+        {
           "id": "d3m3",
-          "title": "Play the game",
-          "description": "Open the HUHCAT browser game, play one round, screenshot your score. Post it if you want.",
+          "title": "Engage Community Raids",
+          "description": "Interact with and repost at least three fellow $HUHCAT community members' posts from the past 24 hours.",
           "difficulty": "easy",
           "points": 10,
           "action_type": "verify",
-          "action_url": "https://jmthomasofficial.github.io/huhcatgame/",
+          "action_url": "https://x.com/search?q=%24HUHCAT&f=live",
           "content_kit_id": null
         }
       ]
@@ -120,32 +120,32 @@
     {
       "day": 4,
       "date": "2026-09-21",
-      "theme": "Rewards Receipt",
+      "theme": "Gamer Command",
       "missions": [
         {
           "id": "d4m1",
-          "title": "Post your rewards proof",
-          "description": "Check your rewards on huhcatonsol.com/rewards and post the SOL you have received. Real numbers. Your numbers.",
+          "title": "Set a High Score",
+          "description": "Launch the official HUHCAT browser game, survive multiple pipe obstacles, and take a screenshot of your top score.",
           "difficulty": "medium",
-          "points": 25,
-          "action_type": "post_x",
-          "action_url": "",
-          "content_kit_id": "holder-04"
+          "points": 20,
+          "action_type": "verify",
+          "action_url": "https://jmthomasofficial.github.io/huhcatgame/",
+          "content_kit_id": null
         },
         {
           "id": "d4m2",
-          "title": "Explain how rewards work",
-          "description": "Post a short explanation of how HUHCAT holder rewards work. Use the Content Armory for a fact-checked template.",
+          "title": "Post Your Score Challenge",
+          "description": "Tweet your game screenshot and challenge the Solana timeline to beat your personal best. Link the game.",
           "difficulty": "medium",
           "points": 20,
           "action_type": "post_x",
           "action_url": "",
-          "content_kit_id": "proof-05"
+          "content_kit_id": "game-01"
         },
         {
           "id": "d4m3",
-          "title": "Share the receipts in TG",
-          "description": "Drop your rewards screenshot or your X post link in the Telegram group.",
+          "title": "Post Score in Telegram",
+          "description": "Drop your gaming screenshot into the Telegram room to claim bragging rights on today's leaderboard.",
           "difficulty": "easy",
           "points": 10,
           "action_type": "share_tg",
@@ -157,22 +157,22 @@
     {
       "day": 5,
       "date": "2026-09-22",
-      "theme": "Builder's Log",
+      "theme": "The Anti-Vaporware Manifesto",
       "missions": [
         {
           "id": "d5m1",
-          "title": "List what exists",
-          "description": "Post on X about what the community has built so far: website, game, proof system, rewards tracker, mission control. All holder-built.",
-          "difficulty": "medium",
-          "points": 20,
+          "title": "Author a Thesis Post",
+          "description": "Publish a thoughtful post on X breaking down why 99 percent of tokens die after three days and how HUHCAT solves continuity.",
+          "difficulty": "hard",
+          "points": 30,
           "action_type": "post_x",
           "action_url": "",
-          "content_kit_id": "holder-05"
+          "content_kit_id": "thesis-01"
         },
         {
           "id": "d5m2",
-          "title": "Quote a proof post",
-          "description": "Find an existing HUHCAT proof post on X (yours or someone else's) and quote-tweet it with your take.",
+          "title": "Quote-Tweet the Masterplan",
+          "description": "Quote-tweet the official @HuhCatOnSol_ marathon announcement with your personal thoughts on holding culture.",
           "difficulty": "medium",
           "points": 20,
           "action_type": "post_x",
@@ -181,12 +181,12 @@
         },
         {
           "id": "d5m3",
-          "title": "Verify the vault source",
-          "description": "Open the vault source code on GitHub. Confirm the program exists. That is the Builder's Log.",
+          "title": "Rally the Chat",
+          "description": "Drop a high-conviction message in the Telegram community room reinforcing why decentralized holders do not fold under red candles.",
           "difficulty": "easy",
           "points": 10,
-          "action_type": "verify",
-          "action_url": "https://github.com/weareallgoingtomake1t/huhcat",
+          "action_type": "share_tg",
+          "action_url": "https://t.me/HuhCatSolGroupPortal",
           "content_kit_id": null
         }
       ]
@@ -194,34 +194,34 @@
     {
       "day": 6,
       "date": "2026-09-23",
-      "theme": "The Vault",
+      "theme": "Diamond Defense",
       "missions": [
         {
           "id": "d6m1",
-          "title": "Read the vault state",
-          "description": "Open the vault program on Solana Explorer. Check that the upgrade authority reads 'none'. Screenshot it.",
-          "difficulty": "medium",
-          "points": 20,
+          "title": "Audit the Timeline",
+          "description": "Scan recent mentions of $HUHCAT on X. Like, bookmark, and leave substantive comments on at least five holder posts.",
+          "difficulty": "easy",
+          "points": 15,
           "action_type": "verify",
-          "action_url": "https://explorer.solana.com/address/GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3",
+          "action_url": "https://x.com/search?q=%24HUHCAT&f=live",
           "content_kit_id": null
         },
         {
           "id": "d6m2",
-          "title": "Post the vault story",
-          "description": "Post about the vault on X: the deed, the 420.69M lock threshold, the immutable program. Template below.",
+          "title": "Publish a Conviction Thread",
+          "description": "Draft a multi-part post or detailed statement detailing your personal conviction in holder-built infrastructure.",
           "difficulty": "hard",
-          "points": 30,
+          "points": 25,
           "action_type": "post_x",
           "action_url": "",
-          "content_kit_id": "proof-07"
+          "content_kit_id": "conviction-01"
         },
         {
           "id": "d6m3",
-          "title": "Discuss in TG",
-          "description": "Share your vault post in the Telegram group. Start a conversation about the game theory.",
-          "difficulty": "easy",
-          "points": 10,
+          "title": "Voice Room Attendance",
+          "description": "Join the community Telegram voice chat or X Space to discuss sprint coordination and next steps.",
+          "difficulty": "medium",
+          "points": 15,
           "action_type": "share_tg",
           "action_url": "https://t.me/HuhCatSolGroupPortal",
           "content_kit_id": null
@@ -231,34 +231,34 @@
     {
       "day": 7,
       "date": "2026-09-24",
-      "theme": "Marathon Recap",
+      "theme": "Marathon Epilogue",
       "missions": [
         {
           "id": "d7m1",
-          "title": "Generate your rank card",
-          "description": "Use the Rank Card Generator below to create your Mission Control rank card. Download it.",
+          "title": "Mint Your Rank Card",
+          "description": "Generate your final Season 1 Rank Card below. Download the 960x960 graphic directly to your device.",
           "difficulty": "easy",
           "points": 15,
-          "action_type": "local",
-          "action_url": "",
+          "action_type": "verify",
+          "action_url": "#rank",
           "content_kit_id": null
         },
         {
           "id": "d7m2",
-          "title": "Post your rank card",
-          "description": "Post your rank card to X with your marathon recap. How many missions did you complete? What did you learn?",
-          "difficulty": "medium",
-          "points": 25,
+          "title": "Broadcast Your Rank",
+          "description": "Post your completed Rank Card to X with your 7-day sprint recap, tagging @HuhCatOnSol_ to lock in your permanent record.",
+          "difficulty": "hard",
+          "points": 30,
           "action_type": "post_x",
           "action_url": "",
-          "content_kit_id": "holder-07"
+          "content_kit_id": "rank-01"
         },
         {
           "id": "d7m3",
-          "title": "Send the marathon link",
-          "description": "Share the Mission Control link with one person outside the community. Show them what seven days looked like.",
-          "difficulty": "medium",
-          "points": 20,
+          "title": "Share Final Proof in TG",
+          "description": "Post your Rank Card and marathon proof in the Telegram room to receive your community honors before Season 2.",
+          "difficulty": "easy",
+          "points": 15,
           "action_type": "share_tg",
           "action_url": "https://t.me/HuhCatSolGroupPortal",
           "content_kit_id": null
@@ -267,15 +267,15 @@
     }
   ],
   "scoring": {
-    "max_daily": 55,
-    "max_total": 385,
-    "streak_bonus": 10
+    "max_daily": 60,
+    "max_total": 420,
+    "streak_bonus": 15
   },
   "ranks": [
-    {"min_streak": 0, "title": "Observer", "color": "#7a8599"},
+    {"min_streak": 0, "title": "Observer", "color": "#828d9f"},
     {"min_streak": 1, "title": "Kitten", "color": "#39ff88"},
-    {"min_streak": 3, "title": "Cat", "color": "#39ff88"},
-    {"min_streak": 5, "title": "Top Cat", "color": "#ffd700"},
-    {"min_streak": 7, "title": "Alpha Cat", "color": "#ffd700"}
+    {"min_streak": 3, "title": "Cat", "color": "#00e5ff"},
+    {"min_streak": 5, "title": "Top Cat", "color": "#ffbe2e"},
+    {"min_streak": 7, "title": "Alpha Cat", "color": "#ff4757"}
   ]
 }
