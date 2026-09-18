@@ -1,0 +1,147 @@
+{
+  "handoff.md": {
+    "mtime": 1789562899.932875,
+    "ast_hash": "253ddb53b1f65d55161c103ed0de33d4",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1789562559.4261358,
+    "ast_hash": "277b9742e7e8c2b3eb6509cc24898118",
+    "semantic_hash": ""
+  },
+  "huhcat.jpg": {
+    "mtime": 1789469559.0460443,
+    "ast_hash": "de2bdea86761aa7fc2c2e360bed81904",
+    "semantic_hash": ""
+  },
+  "huhcat_official.png": {
+    "mtime": 1789469559.0460443,
+    "ast_hash": "de2bdea86761aa7fc2c2e360bed81904",
+    "semantic_hash": ""
+  },
+  "base64-decode-proof.png": {
+    "mtime": 1789469279.6581447,
+    "ast_hash": "03a02f275f97f9fe3a3c9e8b405ed158",
+    "semantic_hash": ""
+  },
+  "chart-drawing-cat.jpg": {
+    "mtime": 1789469279.6536024,
+    "ast_hash": "404e0f1298134a0e959d61981b86c74a",
+    "semantic_hash": ""
+  },
+  "huhcat-tiktok-lore.png": {
+    "mtime": 1789469348.0721877,
+    "ast_hash": "0c339e0b50aa9152c1864a21a96a51be",
+    "semantic_hash": ""
+  },
+  "solana-inscription-proof.png": {
+    "mtime": 1789469279.6602416,
+    "ast_hash": "f120cb831721dd9c67979cd419a3ee74",
+    "semantic_hash": ""
+  },
+  "huhcat-hero-badass.jpg": {
+    "mtime": 1789562080.3920121,
+    "ast_hash": "6d877aef11ea669cdd767c793acc24a2",
+    "semantic_hash": ""
+  },
+  "huhcat-video.mp4": {
+    "mtime": 1789471396.8070333,
+    "ast_hash": "be7039d33c724863a81d5fff158cff9b",
+    "semantic_hash": ""
+  },
+  "og-image.jpg": {
+    "mtime": 1789473686.2336736,
+    "ast_hash": "95fbb1f22ca047d4adcd21f2fbbdea9e",
+    "semantic_hash": ""
+  },
+  "huhcat-game-splash.jpg": {
+    "mtime": 1789484280.8203776,
+    "ast_hash": "11f15c799e79c153440465e1d97c6611",
+    "semantic_hash": ""
+  },
+  "game/assets/index-C1purPdB.js": {
+    "mtime": 1789485659.4238658,
+    "ast_hash": "8846a11c3b4a70fea49a766660ede611",
+    "semantic_hash": ""
+  },
+  "game/index.html": {
+    "mtime": 1789485659.4233172,
+    "ast_hash": "4bc214ff724f00e14787a1a992729d22",
+    "semantic_hash": ""
+  },
+  "game/cat_dead.png": {
+    "mtime": 1789482350.1367402,
+    "ast_hash": "1d790395a67e58d522c51e9d944563cf",
+    "semantic_hash": ""
+  },
+  "game/cat_huh.png": {
+    "mtime": 1789482350.1337404,
+    "ast_hash": "6b087f1b5587dd5b714da0de7e7ff23d",
+    "semantic_hash": ""
+  },
+  "game/cat_idle.png": {
+    "mtime": 1789482350.1218174,
+    "ast_hash": "d3e8dee30b395564cb4f1dd6e8482c7b",
+    "semantic_hash": ""
+  },
+  "game/chart-drawing-cat.jpg": {
+    "mtime": 1789469279.6536024,
+    "ast_hash": "404e0f1298134a0e959d61981b86c74a",
+    "semantic_hash": ""
+  },
+  "game/huhcat-hero.jpg": {
+    "mtime": 1789472061.1038144,
+    "ast_hash": "3502c079ee1e1cbed96d0528e49764ab",
+    "semantic_hash": ""
+  },
+  "game/huhcat.png": {
+    "mtime": 1789469559.0460443,
+    "ast_hash": "de2bdea86761aa7fc2c2e360bed81904",
+    "semantic_hash": ""
+  },
+  "game/og-image.jpg": {
+    "mtime": 1789485496.455126,
+    "ast_hash": "32e3a523771c864f7a53d6a51e8445a3",
+    "semantic_hash": ""
+  },
+  "game/splash.jpg": {
+    "mtime": 1789484280.8203776,
+    "ast_hash": "11f15c799e79c153440465e1d97c6611",
+    "semantic_hash": ""
+  },
+  "huhcat-game-og.jpg": {
+    "mtime": 1789485496.455126,
+    "ast_hash": "32e3a523771c864f7a53d6a51e8445a3",
+    "semantic_hash": ""
+  },
+  "game/huh.mp3": {
+    "mtime": 1789482089.0522153,
+    "ast_hash": "3cdc51b66efe5ccf17424ac1d4a2a615",
+    "semantic_hash": ""
+  },
+  "game/huh.wav": {
+    "mtime": 1789482127.2337058,
+    "ast_hash": "b3ac4692cd6ab66636a3aff116c7facd",
+    "semantic_hash": ""
+  },
+  "game/huh2.mp3": {
+    "mtime": 1789482127.1600811,
+    "ast_hash": "e2a0cb29ed845651b7fc8e2d43d785a5",
+    "semantic_hash": ""
+  },
+  "onchain-sprite.json": {
+    "mtime": 1789495878.1515362,
+    "ast_hash": "dcb4c50006e4b4f75b6b40743573f877",
+    "semantic_hash": ""
+  },
+  "RESEARCH/SOLANA-V1-INSCRIPTIONS.md": {
+    "mtime": 1789495228.7362318,
+    "ast_hash": "6c25004e02af995a0b9795a1f0c74d82",
+    "semantic_hash": ""
+  },
+  "huhcat-hero-general.jpg": {
+    "mtime": 1789562080.3920121,
+    "ast_hash": "6d877aef11ea669cdd767c793acc24a2",
+    "semantic_hash": ""
+  }
+}

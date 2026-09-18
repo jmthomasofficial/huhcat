@@ -1,16 +1,16 @@
 # Graph Report - huhcat  (2026-09-17)
 
 ## Corpus Check
-- 43 files · ~430,952 words
+- 43 files · ~430,368 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 397 nodes · 411 edges · 44 communities (42 shown, 2 thin omitted)
+- 395 nodes · 409 edges · 43 communities (41 shown, 2 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a904a6e2`
+- Built from commit: `87dc8c49`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,7 +43,6 @@
 - Lane: Everyday Relatable
 - Lane: History & Masterpiece Art
 - Lane: Chad & Victory
-- Part 2: Cross-Platform Deployment Playbook
 
 ## God Nodes (most connected - your core abstractions)
 1. `Lane: Wall Street & Whales` - 16 edges
@@ -63,11 +62,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (44 total, 2 thin omitted)
+## Communities (43 total, 2 thin omitted)
 
 ### Community 0 - "HUHCAT Website Handoff — CA Verification & Alignment"
-Cohesion: 0.22
-Nodes (8): 1. Visual Architecture & Solana Gladiator Centerpiece, 2. Real-Time Ascending Candlestick Background Engine, 3. High-Contrast Typography & Readability Overhaul, 4. Compliance and Quality Verification, Candlestick Canvas Specifications, HUHCAT Project Handoff - Solana Theme, Ascending Candlestick Canvas & High-Contrast Typography, Readability Enhancements, Solana & Gladiator Design Language
+Cohesion: 0.29
+Nodes (6): 1. Cross-Platform Distribution Architecture (#distribution), 2. Interactive Mission Control Hub Integration, 3. Compliance and Quality Verification, HUHCAT Project Handoff - Cross-Platform Deployment Manual & 100 Meme Video Engine, The 8 Verified Distribution Surfaces, UI Controls and Quick Actions
 
 ### Community 1 - "a"
 Cohesion: 0.11
@@ -146,12 +145,12 @@ Cohesion: 0.12
 Nodes (16): #076 // Alien UFO Tractor Beam Abduction, #077 // Presidential Debate Podium Face-Off, #078 // Deep Sea Submarine Giant Squid Encounter, #079 // Jurassic Park T-Rex Stare Down, #080 // Formula 1 Pit Stop 1.8-Second Tire Change, #081 // Olympic 100m Sprint Gold Medal, #082 // Mount Everest Summit Coffee Sip, #083 // Heavy Metal Concert Stage Dive (+8 more)
 
 ### Community 34 - "Lane: Wall Street & Whales"
-Cohesion: 0.12
-Nodes (16): #001 // The Boardroom Hostile Takeover, #002 // CNBC Live Bell Interview, #003 // NYSE Opening Bell Chaos, #004 // The Bloomberg Terminal Stare, #005 // The Federal Reserve Money Printer, #006 // Swiss Underground Gold Vault Audit, #007 // Forbes Magazine 30 Under 30 Cover, #008 // Monaco Superyacht Whale Summit (+8 more)
+Cohesion: 0.06
+Nodes (33): #001 // The Boardroom Hostile Takeover, #002 // CNBC Live Bell Interview, #003 // NYSE Opening Bell Chaos, #004 // The Bloomberg Terminal Stare, #005 // The Federal Reserve Money Printer, #006 // Swiss Underground Gold Vault Audit, #007 // Forbes Magazine 30 Under 30 Cover, #008 // Monaco Superyacht Whale Summit (+25 more)
 
 ### Community 35 - "Lane: Solana & Crypto Lore"
-Cohesion: 0.08
-Nodes (24): #016 // Solana Breakpoint Mainstage Speaker, #017 // The Pump.fun Graduation Celebration, #018 // The Raydium Liquidity Pool Lifeguard, #019 // The Solana Saga Phone Billboard, #020 // Token-2022 Laser Inscription Lab, #021 // Gas Fee Smackdown vs Ethereum Bank, #022 // The Green Candlestick Tower Climb, #023 // Telegram Raid Command Center (+16 more)
+Cohesion: 0.12
+Nodes (16): #016 // Solana Breakpoint Mainstage Speaker, #017 // The Pump.fun Graduation Celebration, #018 // The Raydium Liquidity Pool Lifeguard, #019 // The Solana Saga Phone Billboard, #020 // Token-2022 Laser Inscription Lab, #021 // Gas Fee Smackdown vs Ethereum Bank, #022 // The Green Candlestick Tower Climb, #023 // Telegram Raid Command Center (+8 more)
 
 ### Community 36 - "Lane: Cinema & Pop Culture"
 Cohesion: 0.12
@@ -169,29 +168,25 @@ Nodes (16): #061 // Mona Lisa Louvre Masterpiece, #062 // Coronation as King of 
 Cohesion: 0.18
 Nodes (11): #091 // Slow-Motion Walk Away From Explosion, #092 // The Met Gala Gold Avant-Garde Suit, #093 // The Golden Throne Room of Conviction, #094 // Celestial Divine Ascension, #095 // Supercar Garage Green Lambo Choice, #096 // Helicopter Landing on Mega Yacht Helipad, #097 // The Last Holder on Earth Standing Tall, #098 // Supreme Court Justice Continuity Ruling (+3 more)
 
-### Community 43 - "Part 2: Cross-Platform Deployment Playbook"
-Cohesion: 0.22
-Nodes (9): 1. YouTube Shorts (Videos), 2. TikTok Profile (Videos), 3. TikTok Stories (Video Feeds and Photo Carousels), 4. X Profile (Images and Videos), 5. X Community (Images and Videos), 6. Instagram Profile Feed (Images and Videos), 7. Instagram Reels (Videos and Images), 8. Pinterest (Images and Videos) (+1 more)
-
 ## Knowledge Gaps
-- **278 isolated node(s):** `dd`, `nc`, `rc`, `lc`, `te` (+273 more)
+- **277 isolated node(s):** `dd`, `nc`, `rc`, `lc`, `te` (+272 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Part 3: The 100 Viral Meme & Video Studio Arsenals` connect `Lane: Solana & Crypto Lore` to `Lane: Wild, Absurd & Cosmic`, `Lane: Wall Street & Whales`, `Lane: Cinema & Pop Culture`, `Lane: Everyday Relatable`, `Lane: History & Masterpiece Art`, `Lane: Chad & Victory`?**
-  _High betweenness centrality (0.086) - this node is a cross-community bridge._
-- **Why does `HUHCAT 100 Viral Meme & Video Studio Master Manual` connect `Lane: Solana & Crypto Lore` to `Part 2: Cross-Platform Deployment Playbook`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `Lane: Wall Street & Whales` connect `Lane: Wall Street & Whales` to `Lane: Solana & Crypto Lore`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+- **Why does `Part 3: The 100 Viral Meme & Video Studio Arsenals` connect `Lane: Wall Street & Whales` to `Lane: Wild, Absurd & Cosmic`, `Lane: Solana & Crypto Lore`, `Lane: Cinema & Pop Culture`, `Lane: Everyday Relatable`, `Lane: History & Masterpiece Art`, `Lane: Chad & Victory`?**
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
 - **What connects `dd`, `nc`, `rc` to the rest of the system?**
-  _278 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _277 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `a` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `index-C1purPdB.js` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Xt` be split into smaller, more focused modules?**
   _Cohesion score 0.10452961672473868 - nodes in this community are weakly interconnected._
+- **Should `sd` be split into smaller, more focused modules?**
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+- **Should `Vo` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
