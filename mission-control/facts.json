@@ -1,0 +1,112 @@
+{
+  "updated": "2026-09-17",
+  "facts": [
+    {
+      "id": "rewards_live",
+      "claim": "Holding $HUHCAT pays you in SOL, automatically, several times an hour.",
+      "detail": "Creator fee routed to holders by pump.fun. Pro-rata by balance. No claiming, no staking.",
+      "source": "pump.fun announcement, 12 Sep 2026",
+      "tier": "T0",
+      "verify": "Watch your own wallet after holding more than $20 worth."
+    },
+    {
+      "id": "floor_20",
+      "claim": "The eligibility floor is holding more than $20 worth.",
+      "detail": "Below that you are a spectator, above it you are on the payout list.",
+      "source": "pump.fun announcement, 12 Sep 2026",
+      "tier": "T1",
+      "verify": "Hold a small amount, watch which transfers land."
+    },
+    {
+      "id": "hour_measurement",
+      "claim": "One measured hour: 1.81 SOL to holders across 1,807 payments in 207 batches.",
+      "detail": "Measured directly from chain on 17 Sep 2026. Distribution volume drifts with trading, the mechanism does not.",
+      "source": "chain read, 17 Sep 2026",
+      "tier": "T0",
+      "verify": "Sum any hour yourself from the distribution wallet activity."
+    },
+    {
+      "id": "irreversible",
+      "claim": "Once a token is Holder Rewards it cannot be changed.",
+      "detail": "pump.fun's own rule, stated verbatim in their launch announcement.",
+      "source": "pump.fun announcement, 12 Sep 2026",
+      "tier": "T1",
+      "verify": "Read the announcement yourself."
+    },
+    {
+      "id": "fee_schedule",
+      "claim": "The rate is set by market cap tier, from a peak of 0.950 percent down to a floor of 0.050 percent.",
+      "detail": "25 tiers, published in SOL. The rate moves both directions as market cap moves. No one on this team sets it.",
+      "source": "pump.fun/docs/fees, read live 17 Sep 2026",
+      "tier": "T0",
+      "verify": "Open pump.fun/docs/fees."
+    },
+    {
+      "id": "inscription",
+      "claim": "The first image inscribed on Solana in a v1 transaction is this cat.",
+      "detail": "Minutes after v1 activated on 15 Sep 2026, slot 447120000. An exhaustive scan of 729 blocks examined 881,986 transactions, found 12 using v1, and exactly 1 carried an image.",
+      "source": "the deployer's published scan, v1scan-results.json",
+      "tier": "T1",
+      "verify": "Decode the metadata yourself on the explorer."
+    },
+    {
+      "id": "onchain_image",
+      "claim": "The image is stored on chain. No IPFS, no link, no server.",
+      "detail": "A JPEG of the real Huh Cat, base64 encoded inside the token metadata of the image mint.",
+      "source": "chain read, 17 Sep 2026",
+      "tier": "T0",
+      "verify": "The decoder on this page reads it live from a public RPC."
+    },
+    {
+      "id": "sealed",
+      "claim": "The image mint is sealed. Supply is 1 and all four authorities are revoked.",
+      "detail": "Mint, freeze, metadata pointer, metadata update: all null. Sealed 17 Sep 2026 between 02:35 and 02:36 UTC in six transactions.",
+      "source": "chain read, 17 Sep 2026",
+      "tier": "T0",
+      "verify": "Open the image mint on any explorer."
+    },
+    {
+      "id": "vault",
+      "claim": "The 1 of 1 deed sits in a vault nobody controls.",
+      "detail": "No admin, no pause, no upgrade authority, no close. The deployed program matches its published source byte for byte. Claim: lock 420,690,000 HUHCAT and the deed is yours. Return: hand the deed back and every locked coin comes back to you.",
+      "source": "chain read and source audit, 17 Sep 2026",
+      "tier": "T0",
+      "verify": "The vault program and its source are linked in the proof wall."
+    },
+    {
+      "id": "threshold",
+      "claim": "420,690,000 HUHCAT is 43.83 percent of all supply.",
+      "detail": "Supply reads 959,904,004 as of 17 Sep 2026. The threshold is fixed in program state and cannot be changed by anyone.",
+      "source": "chain read, 17 Sep 2026",
+      "tier": "T0",
+      "verify": "Read the vault state account on any explorer."
+    },
+    {
+      "id": "deployer_gone",
+      "claim": "The deployer launched the coin and left. The wallet now holds zero.",
+      "detail": "The community took over. Every account, site, and tool since is holder-built.",
+      "source": "chain read, 17 Sep 2026",
+      "tier": "T0",
+      "verify": "Check the deployer wallet balance yourself."
+    },
+    {
+      "id": "real_cat",
+      "claim": "The cat is real. Bender, from Melbourne, owned by Nellie Cage.",
+      "detail": "3.4 million TikTok followers and 104.5 million hearts, live on 17 Sep 2026. Featured by SBS News. This community does not own or represent the cat. We credit the public content.",
+      "source": "TikTok and SBS News, checked 17 Sep 2026",
+      "tier": "T1",
+      "verify": "Open the cat's TikTok and the SBS story, both linked in the proof wall."
+    }
+  ],
+  "proof_links": [
+    {"label": "Coin on Solscan", "url": "https://solscan.io/token/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH"},
+    {"label": "Image mint on Explorer", "url": "https://explorer.solana.com/address/DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r"},
+    {"label": "Vault program", "url": "https://solscan.io/account/GGTQ55p33VCfuP42oFKV1QyrSkmbwkEsFJrrpkRqcZc3"},
+    {"label": "Vault source on GitHub", "url": "https://github.com/weareallgoingtomake1t/huhcat"},
+    {"label": "Fee schedule", "url": "https://pump.fun/docs/fees"},
+    {"label": "SBS News: the cat before the coin", "url": "https://www.sbs.com.au/news/article/we-met-huh-cat-and-heres-how-the-melbourne-feline-became-a-major-internet-meme/0fyauilgs"},
+    {"label": "The cat's TikTok", "url": "https://www.tiktok.com/@huhcat_official"},
+    {"label": "Buy on pump.fun", "url": "https://pump.fun/coin/A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH"}
+  ],
+  "contract": "A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH"
+}

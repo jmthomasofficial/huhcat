@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$HUHCAT Mission Control</title>
+<style>
+:root{--bg:#0a0e14;--card:#111721;--card2:#161e2b;--ink:#e8ecf4;--mut:#8a94a6;--green:#39ff88;--purple:#a78bfa;--gold:#ffd166;--red:#ff5d5d;--line:#232c3b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);border:1px solid rgba(57,255,136,.35);padding:3px 10px;border-radius:99px;margin-bottom:10px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.1;font-weight:800}
+h2{font-size:22px;font-weight:700;margin-bottom:6px}
+.sub{color:var(--mut);font-size:15px}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.big{font-size:34px;font-weight:800;color:var(--green)}
+button{cursor:pointer;font:inherit;border:none;border-radius:10px;padding:12px 20px;font-weight:600;transition:.15s}
+.btn-g{background:var(--green);color:#04140a}
+.btn-g:hover{filter:brightness(1.15)}
+.btn-o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-o:hover{border-color:var(--green)}
+input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:12px;font:inherit}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px;word-break:break-all}
+.chip{display:inline-block;background:rgba(57,255,136,.1);color:var(--green);font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px}
+.chip.t1{background:rgba(167,139,250,.12);color:var(--purple)}
+.chip.t0{background:rgba(255,209,102,.12);color:var(--gold)}
+.pill{font-size:12px;color:var(--mut)}
+.warn{color:var(--gold);font-size:13px}
+.ok{color:var(--green)}
+.err{color:var(--red)}
+footer{padding:34px 0;color:var(--mut);font-size:13px}
+.copybox{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:center;margin-top:8px}
+.copybox .mono{flex:1}
+canvas{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#000}
+.tmrow{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.tmrow button{padding:8px 14px;font-size:14px}
+.daycard{border-left:3px solid var(--green)}
+.daycard.done{border-left-color:var(--gold)}
+.daycard.today{border-left-color:var(--purple);box-shadow:0 0 30px -12px rgba(167,139,250,.5)}
+.mission{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);align-items:flex-start}
+.mission:first-of-type{border-top:none}
+.mission input{margin-top:4px;accent-color:var(--green);width:17px;height:17px;flex-shrink:0}
+.mission .mtitle{font-size:14.5px}
+.pts{font-weight:800;color:var(--gold);white-space:nowrap;font-size:13px}
+.tomorrow-item{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.tomorrow-item:first-child{border-top:none}
+.when{min-width:86px;font-weight:800;font-size:13px;color:var(--purple)}
+.progress{height:8px;background:var(--bg);border-radius:99px;overflow:hidden;margin-top:8px}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--green),var(--gold))}
+@media(max-width:640px){.when{min-width:70px}}
+details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-top:10px;background:var(--card2)}
+summary{cursor:pointer;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header style="padding:40px 0 10px">
+  <span class="tag">Season 1 · Prove the Cat</span>
+  <h1>$HUHCAT Mission Control</h1>
+  <p class="sub">One screen. Every day dated. The continuity system, live.</p>
+</header>
+</div>
+
+<section>
+<div class="wrap">
+  <span class="tag">The Tomorrow Board</span>
+  <h2>What happens next</h2>
+  <p class="sub">Always dated. Always visible. This is the whole point of the app.</p>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card" id="tomorrowBoard"></div>
+    <div>
+      <div class="card" id="walletCard">
+        <h2>Check your rewards eligibility</h2>
+        <p class="sub" style="margin:8px 0 12px">Paste your Solana address. Read-only. This page never asks for a seed phrase, a private key, or any approval, and it never will.</p>
+        <input type="text" id="wa" placeholder="Your Solana wallet address" spellcheck="false">
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn-g" onclick="checkWallet()">Check eligibility</button>
+        </div>
+        <div id="walletOut" style="margin-top:12px"></div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h2>Contract</h2>
+        <div class="copybox"><span class="mono" id="ca">A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH</span><button class="btn-o" style="padding:6px 12px" onclick="navigator.clipboard.writeText(document.getElementById('ca').textContent);this.textContent='Copied'">Copy</button></div>
+        <p class="pill" style="margin-top:8px">Always verify the contract on the official pages before buying. Links in the proof wall below.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <span class="tag">Season 1 · 21 to 27 September</span>
+  <h2>The seven day marathon</h2>
+  <p class="sub">One mission set per day. Every mission under fifteen minutes. Points for posted proof in the TG missions channel. Video missions earn more.</p>
+  <div class="grid" style="grid-template-columns:1fr;margin-top:18px" id="missionBoard"></div>
+  <div class="card" style="margin-top:14px">
+    <h2>Your week</h2>
+    <div id="progressOut"><p class="sub">Check a mission when you post its proof. Progress saves to this device.</p></div>
+    <div class="progress"><div id="progBar" style="width:0%"></div></div>
+    <p class="pill" style="margin-top:8px">Streak rule: complete a mission on 4 of the 7 days and your week total earns a 1.5x multiplier. Titles at season close: Kitten, Cat, Top Cat, Alpha Cat.</p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <span class="tag">The Fact Vault</span>
+  <h2>Every claim, with its proof</h2>
+  <p class="sub">Every fact below is traceable to a source. If it cannot be traced, it does not ship. The tier shows how hard it was verified: T0 read from chain, T1 from the platform's own statements.</p>
+  <div id="factList" style="margin-top:16px"></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <span class="tag">Decode it yourself</span>
+  <h2>The cat, read live from Solana</h2>
+  <p class="sub">This panel asks a public RPC for the image mint and decodes the answer in your browser. No server of ours touches it. If the picture renders, the claim is true.</p>
+  <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+    <button class="btn-g" onclick="decodeCat()">Read the chain now</button>
+    <span class="pill" id="decodeStatus" style="align-self:center"></span>
+  </div>
+  <div style="margin-top:16px"><canvas id="catCanvas" width="480" height="480"></canvas></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <span class="tag">The Meme Factory</span>
+  <h2>Make one. Post it. That is a mission.</h2>
+  <p class="sub">Runs entirely in your browser. Nothing uploads anywhere. Top text, bottom text, download, post.</p>
+  <div style="margin-top:16px;max-width:480px">
+    <input type="text" id="mtop" placeholder="Top text" oninput="drawMeme()">
+    <input type="text" id="mbot" placeholder="Bottom text" oninput="drawMeme()" style="margin-top:10px">
+    <div class="tmrow">
+      <button class="btn-o" onclick="downloadMeme()">Download PNG</button>
+    </div>
+    <canvas id="memeCanvas" width="480" height="480"></canvas>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <span class="tag">The proof wall</span>
+  <h2>Do not take our word for any of it</h2>
+  <div class="grid g3" id="proofLinks" style="margin-top:14px"></div>
+  <p class="sub" style="margin-top:16px">$HUHCAT is a memecoin with no intrinsic value. Nothing on this page is financial advice. Assume it can go to zero and only risk what you can lose. Verify every claim on the chain yourself.</p>
+</div>
+</section>
+
+<div class="wrap">
+<footer>
+  <p>Mission Control · Season 1 · Community built, holder run. The deployer is gone. The schedule is not.</p>
+</footer>
+</div>
+
+<script>
+const RPC = "https://api.mainnet-beta.solana.com";
+const IMG_MINT = "DVD4qXDVgjwUTyfPaAdmvZJYb5CWuse2cmisYoTH9g5r";
+const COIN = "A9AHYeqb7nQk7LZUraw7rBCzYRjy2DRvE6NqWfFHKRdH";
+let FACTS=null, MISSIONS=null, catImage=null;
+
+async function rpc(method, params){
+  const r = await fetch(RPC, {method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({jsonrpc:"2.0", id:1, method, params})});
+  const j = await r.json();
+  if (j.error) throw new Error(j.error.message);
+  return j.result;
+}
+
+function loadLocal(){ try{return JSON.parse(localStorage.getItem("huhcat_mc")||"{}")}catch(e){return{}} }
+function saveLocal(d){ localStorage.setItem("huhcat_mc", JSON.stringify(d)) }
+
+// ---------- TOMORROW BOARD ----------
+function renderTomorrow(){
+  const board = document.getElementById("tomorrowBoard");
+  if (!MISSIONS) return;
+  const now = new Date();
+  const items = [];
+  const start = new Date(MISSIONS.start), end = new Date(MISSIONS.end);
+  const pre = start - now > 0;
+  if (pre){
+    items.push({when:"In " + Math.ceil((start-now)/86400000) + " days", what:"Marathon opens. Day 1: The cat is real. Missions drop 9:00 AM ET.", live:false});
+    items.push({when:"Every hour", what:"Holder rewards batches land in eligible wallets. Automatic, no claiming.", live:true});
+    items.push({when:"Sunday 9 PM ET", what:"The Week That Was: honest numbers, champions named, next season revealed.", live:false});
+  } else if (now <= end){
+    const day = MISSIONS.days.find(d => { const dd = new Date(d.date+"T23:59:59"); const ds = new Date(d.date+"T00:00:00"); return now>=ds && now<=dd; })
+              || MISSIONS.days[MISSIONS.days.length-1];
+    items.push({when:"Today", what:"Day " + day.day + ": " + day.theme + ". Missions on the board below.", live:true});
+    const nxt = MISSIONS.days.find(d => new Date(d.date+"T00:00:00") > now);
+    if (nxt) items.push({when:"Tomorrow", what:"Day " + nxt.day + ": " + nxt.theme + ".", live:false});
+    else items.push({when:"Tonight 9 PM ET", what:"Closing ceremony. Season 2 drops before the applause dies.", live:false});
+    items.push({when:"Every hour", what:"Rewards batches land in eligible wallets.", live:true});
+  } else {
+    items.push({when:"Now", what:"Season 1 is complete. Season 2 dates drop in TG. The rewards keep paying either way.", live:true});
+    items.push({when:"Every hour", what:"Holder rewards batches land in eligible wallets.", live:true});
+  }
+  board.innerHTML = items.map(i=>`<div class="tomorrow-item"><div class="when">${i.when}</div><div style="flex:1">${i.what}</div>${i.live?'<span class="chip">LIVE</span>':''}</div>`).join("");
+}
+
+// ---------- MISSIONS ----------
+function renderMissions(){
+  const board = document.getElementById("missionBoard");
+  const state = loadLocal();
+  const now = new Date();
+  MISSIONS.days.forEach(day=>{
+    const isToday = (new Date(day.date+"T00:00:00") <= now && now <= new Date(day.date+"T23:59:59"));
+    const cls = "card daycard" + (isToday ? " today" : "");
+    const missions = day.missions.map(m=>{
+      const checked = state[m.id] ? "checked" : "";
+      return `<div class="mission"><input type="checkbox" ${checked} onchange="toggleMission('${m.id}')"><div style="flex:1"><div class="mtitle">${m.title}</div></div><span class="pts">+${m.points}</span></div>`;
+    }).join("");
+    board.innerHTML += `<div class="${cls}"><div style="display:flex;justify-content:space-between;align-items:baseline"><h2 style="margin:0">Day ${day.day} · ${day.theme}</h2><span class="pill">${day.platform}</span></div><p class="pill" style="margin:4px 0 8px">${day.date}</p>${missions}<p class="pill" style="margin-top:10px">${day.ritual}</p></div>`;
+  });
+  updateProgress();
+}
+function toggleMission(id){
+  const s = loadLocal(); s[id] = !s[id]; saveLocal(s); updateProgress();
+}
+function updateProgress(){
+  const state = loadLocal();
+  let done=0, total=0, pts=0, daysHit=new Set();
+  MISSIONS.days.forEach(d=>{ d.missions.forEach(m=>{ total++; if(state[m.id]){done++;pts+=m.points;daysHit.add(d.day);} }) });
+  document.getElementById("progBar").style.width = (total?done/total*100:0)+"%";
+  const streakMult = daysHit.size>=4 ? 1.5 : 1;
+  document.getElementById("progressOut").innerHTML = `<span class="ok"><b>${done}</b> of ${total} missions</span> · <span class="pts">${Math.round(pts*streakMult)} points</span>${streakMult>1?' <span class="chip">STREAK 1.5x</span>':''} · <span class="pill">${daysHit.size} day(s) hit, 4 needed for the multiplier</span>`;
+}
+
+// ---------- FACTS ----------
+function renderFacts(){
+  document.getElementById("factList").innerHTML = FACTS.facts.map(f=>`
+    <details><summary>${f.claim} <span class="chip ${f.tier==='T0'?'t0':'t1'}">${f.tier}</span></summary>
+    <p style="margin:10px 0 6px;color:var(--mut)">${f.detail}</p>
+    <p class="pill">Source: ${f.source}</p>
+    <p class="pill">Verify it: ${f.verify}</p></details>`).join("");
+  document.getElementById("proofLinks").innerHTML = FACTS.proof_links.map(l=>`<a class="card" href="${l.url}" target="_blank" rel="noopener" style="display:block">${l.label} →</a>`).join("");
+}
+
+// ---------- WALLET ----------
+async function checkWallet(){
+  const out = document.getElementById("walletOut");
+  const addr = document.getElementById("wa").value.trim();
+  if (!/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr)){ out.innerHTML = '<p class="err">That does not look like a Solana address. Check it and paste again.</p>'; return; }
+  out.innerHTML = '<p class="pill">Reading the chain...</p>';
+  try{
+    const res = await rpc("getTokenAccountsByOwner", [addr, {mint: COIN}, {encoding:"jsonParsed"}]);
+    let bal = 0;
+    (res.value||[]).forEach(a=>{ bal += parseFloat(a.account.data.parsed.info.tokenAmount.uiAmount||0); });
+    const price = await fetch("https://api.dexscreener.com/latest/dex/tokens/"+COIN).then(r=>r.json()).then(j=>parseFloat(j.pairs?.[0]?.priceUsd)||null).catch(()=>null);
+    const usd = price ? bal*price : null;
+    if (bal > 0){
+      const eligible = usd !== null ? usd > 20 : null;
+      out.innerHTML = `<p><span class="big" style="font-size:26px">${bal.toLocaleString()}</span> HUHCAT${usd!==null?` <span class="pill">(about $${usd.toFixed(2)})</span>`:''}</p>` +
+        (eligible===null ? '<p class="warn">Balance read from chain. Live price unavailable right now, so check the $20 floor against the price on DexScreener.</p>'
+         : eligible ? '<p class="ok">Eligible. You are on the payout list. SOL lands automatically, several times an hour.</p>'
+         : `<p class="warn">Below the $20 floor. Add about $${(20-usd).toFixed(2)} more to start earning.</p>`);
+    } else {
+      out.innerHTML = '<p class="err">Zero HUHCAT found at that address. Holding more than $20 worth is what starts the rewards.</p>';
+    }
+  }catch(e){
+    out.innerHTML = '<p class="err">The public RPC refused the read. Rate limits happen. Wait a moment and try again.</p>';
+  }
+}
+
+// ---------- DECODER ----------
+async function decodeCat(){
+  const st = document.getElementById("decodeStatus");
+  st.textContent = "asking the RPC for the image mint...";
+  try{
+    const res = await rpc("getAccountInfo", [IMG_MINT, {encoding:"jsonParsed"}]);
+    const exts = res.value.data.parsed.info.extensions||[];
+    const meta = exts.find(e=>e.extension==="tokenMetadata");
+    const uri = meta?.state?.uri||"";
+    if (!uri.startsWith("data:image")){ st.textContent = "no on-chain image found"; return; }
+    const img = new Image();
+    img.onload = ()=>{
+      catImage = img;
+      const c = document.getElementById("catCanvas");
+      c.width = img.width; c.height = img.height;
+      c.getContext("2d").drawImage(img,0,0);
+      st.textContent = "decoded from chain, rendered in your browser. that is the proof.";
+      drawMeme();
+    };
+    img.src = uri;
+  }catch(e){ st.textContent = "RPC refused, try again in a moment"; }
+}
+
+// ---------- MEME ----------
+function drawMeme(){
+  const c = document.getElementById("memeCanvas"), x = c.getContext("2d");
+  x.fillStyle="#0a0e14"; x.fillRect(0,0,c.width,c.height);
+  if (catImage){
+    const s = Math.min(c.width/catImage.width, c.height/catImage.height);
+    const w = catImage.width*s, h = catImage.height*s;
+    x.drawImage(catImage,(c.width-w)/2,(c.height-h)/2,w,h);
+  } else {
+    x.fillStyle="#232c3b"; x.font="14px sans-serif"; x.textAlign="center";
+    x.fillText("read the chain first, the cat goes here", c.width/2, c.height/2);
+  }
+  const top = document.getElementById("mtop").value, bot = document.getElementById("mbot").value;
+  x.font = "bold 30px Impact, sans-serif"; x.textAlign="center"; x.fillStyle="#fff";
+  x.strokeStyle="#000"; x.lineWidth=5; x.lineJoin="round";
+  [[top, 44],[bot, c.height-24]].forEach(([t,y])=>{ if(t){ x.strokeText(t.toUpperCase(), c.width/2, y, c.width-20); x.fillText(t.toUpperCase(), c.width/2, y, c.width-20); } });
+}
+function downloadMeme(){
+  const a = document.createElement("a");
+  a.download = "huhcat-meme.png";
+  a.href = document.getElementById("memeCanvas").toDataURL("image/png");
+  a.click();
+}
+
+// ---------- BOOT ----------
+(async()=>{
+  const [f, m] = await Promise.all([
+    fetch("facts.json").then(r=>r.json()),
+    fetch("missions.json").then(r=>r.json())
+  ]);
+  FACTS = f; MISSIONS = m;
+  renderTomorrow(); renderMissions(); renderFacts(); decodeCat(); drawMeme();
+})();
+</script>
+</body>
+</html>
