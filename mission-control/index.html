@@ -47,13 +47,17 @@
   --display: 'Space Grotesk', sans-serif;
   --body: 'Inter', sans-serif;
   --radius: 14px;
+  --pulse-bar: 64px;
+  --pulse-safe-top: env(safe-area-inset-top, 0px);
+  --pulse-safe-x: env(safe-area-inset-left, 0px);
+  --pulse-safe-r: env(safe-area-inset-right, 0px);
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; background:var(--void); color-scheme:dark; }
+html { scroll-behavior:smooth; scroll-padding-top:calc(var(--pulse-bar) + var(--pulse-safe-top) + 16px); background:var(--void); color-scheme:dark; }
 body {
   font-family:var(--body); color:var(--text-bright); background:var(--void);
   -webkit-font-smoothing:antialiased; font-size:15px; line-height:1.65;
-  padding-top:54px; min-height:100vh; position:relative; overflow-x:hidden;
+  padding-top:calc(var(--pulse-bar) + var(--pulse-safe-top)); min-height:100vh; position:relative; overflow-x:hidden;
 }
 a { color:var(--signal); text-decoration:none; transition:color 0.2s; }
 a:hover { color:#62ffa4; text-decoration:none; }
@@ -102,50 +106,78 @@ img { max-width:100%; display:block; }
 /* ---- PULSE HEADER ---- */
 #pulse {
   position:fixed; top:0; left:0; right:0; z-index:100;
-  background:rgba(3, 4, 8, 0.88); backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--slate); height:54px;
+  background:rgba(3, 4, 8, 0.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(153, 69, 255, 0.22);
+  box-shadow:0 4px 20px rgba(0, 0, 0, 0.55);
+  min-height:calc(var(--pulse-bar) + var(--pulse-safe-top));
+  height:auto;
+  padding-top:var(--pulse-safe-top);
   display:flex; align-items:center;
+  overflow:visible;
 }
 .pulse-wrap {
-  width:100%; max-width:1120px; margin:0 auto; padding:0 20px;
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  width:100%; max-width:1400px; margin:0 auto;
+  padding:12px max(28px, calc(20px + var(--pulse-safe-r))) 12px max(28px, calc(20px + var(--pulse-safe-x)));
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+  box-sizing:border-box; min-height:var(--pulse-bar); overflow:visible;
 }
 .pulse-left {
-  display:flex; align-items:center; gap:20px;
-  font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em;
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--mono); font-size:12px; letter-spacing:0.04em;
   color:var(--muted); text-transform:uppercase;
+  flex:0 1 auto; min-width:0; overflow:visible;
 }
 .pulse-brand {
-  display:inline-flex; align-items:center; gap:8px; font-weight:800;
-  color:var(--text-bright); font-size:13.5px; letter-spacing:0.08em;
+  display:inline-flex; align-items:center; gap:10px; font-weight:800;
+  color:#ffffff !important; font-size:14px; letter-spacing:0.06em;
+  white-space:nowrap !important; flex:0 0 auto !important; text-decoration:none !important;
+  line-height:1.3; padding:6px 2px; cursor:pointer;
+  transition:opacity 0.2s; overflow:visible;
 }
+.pulse-brand:hover { opacity:0.9; color:#ffffff !important; }
+.pulse-brand-text {
+  display:inline-block; white-space:nowrap; line-height:1.3;
+  overflow:visible; padding:1px 0;
+}
+.pulse-brand-rest { display:inline; }
 .pulse-dot {
-  width:7px; height:7px; border-radius:50%; background:var(--signal);
-  box-shadow:0 0 10px var(--signal); animation:radar-ping 1.8s infinite;
+  width:8px; height:8px; border-radius:50%; background:var(--signal);
+  box-shadow:0 0 10px var(--signal), 0 0 18px rgba(20,241,149,0.6);
+  animation:radar-ping 1.8s infinite ease-in-out; flex-shrink:0;
 }
 @keyframes radar-ping { 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.4; transform:scale(0.85);} }
-.pulse-item { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+.pulse-item {
+  display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
+  flex:0 0 auto; padding:6px 11px; border-radius:7px;
+  background:rgba(255, 255, 255, 0.035); border:1px solid rgba(255, 255, 255, 0.08);
+  font-size:11.5px; line-height:1.3;
+}
+.pulse-item-countdown {
+  background:rgba(20, 241, 149, 0.09); border-color:rgba(20, 241, 149, 0.3);
+}
 .pulse-val { color:var(--signal); font-weight:700; }
 .pulse-val.gold { color:var(--gold); }
 .pulse-val.cyan { color:var(--cyan); }
 
-.pulse-nav { display:flex; align-items:center; gap:12px; }
+.pulse-nav { display:flex; align-items:center; gap:6px; flex:0 0 auto; }
 .pulse-nav a {
-  font-family:var(--mono); font-size:12.5px; font-weight:700; color:var(--muted);
-  text-transform:uppercase; letter-spacing:0.05em; padding:5px 10px;
-  border-radius:6px; transition:0.2s;
+  font-family:var(--mono); font-size:11.5px; font-weight:700; color:var(--muted);
+  text-transform:uppercase; letter-spacing:0.05em; padding:7px 10px;
+  border-radius:6px; transition:0.2s; white-space:nowrap; flex-shrink:0;
+  line-height:1.3;
 }
 .pulse-nav a:hover { color:var(--signal); background:rgba(20,241,149,0.08); }
 .sfx-toggle {
   background:rgba(255,255,255,0.04); border:1px solid var(--slate);
-  color:var(--muted); font-family:var(--mono); font-size:12px; font-weight:700;
-  padding:5px 10px; border-radius:6px; cursor:pointer; transition:0.2s;
+  color:var(--muted); font-family:var(--mono); font-size:11.5px; font-weight:700;
+  padding:7px 12px; border-radius:6px; cursor:pointer; transition:0.2s;
+  white-space:nowrap; flex-shrink:0; line-height:1.3;
 }
 .sfx-toggle:hover { border-color:var(--signal); color:var(--signal); }
 .sfx-toggle.active { color:var(--signal); border-color:var(--signal); background:var(--signal-dim); }
 
 /* ---- HERO SECTION ---- */
-.hero { padding:64px 0 54px; position:relative; }
+.hero { padding:44px 0 54px; position:relative; }
 .hero-grid-layout {
   display:grid; grid-template-columns:1.15fr 0.85fr;
   gap:44px; align-items:center;
@@ -357,7 +389,7 @@ img { max-width:100%; display:block; }
   color:var(--signal); font-weight:700; white-space:nowrap;
 }
 .hero-artwork-meta .meta-text {
-  color:var(--muted); font-size:12.5px;
+  color:var(--muted); font-size:12.5px; line-height:1.45;
 }
 
 .btn {
@@ -520,9 +552,12 @@ section { padding:64px 0; border-top:1px solid var(--slate); position:relative; 
   color:var(--gold);
   background:rgba(255, 190, 46, 0.1);
   border:1px solid rgba(255, 190, 46, 0.35);
-  padding:5px 12px;
+  padding:7px 12px;
   border-radius:6px;
-  letter-spacing:0.04em;
+  letter-spacing:0.03em;
+  line-height:1.4;
+  white-space:normal;
+  max-width:100%;
 }
 @media (max-width:640px) {
   .community-letter-card { padding:28px 20px; }
@@ -1179,13 +1214,33 @@ footer {
   .factory-grid { grid-template-columns:repeat(2, 1fr); }
   .factory-banner-card { grid-column:span 2; }
 }
+@media (max-width:1520px) {
+  .pulse-item-sec { display:none !important; }
+  .pnav-sec { display:none !important; }
+}
+@media (max-width:1100px) {
+  .pulse-item-target { display:none !important; }
+  .pnav-link:not([href="#missions"]):not([href="#factory"]):not([href="#community-letter"]) { display:none !important; }
+  .pulse-nav { gap:4px; }
+  .pulse-nav a { padding:6px 8px; font-size:11px; }
+}
 @media (max-width:840px) {
-  .pulse-nav { display:none; }
+  .pulse-nav a { display:none !important; }
   .tmr-grid { grid-template-columns:1fr; gap:20px; }
   .rank-layout { grid-template-columns:1fr; }
 }
 @media (max-width:640px) {
-  .pulse-left { gap:12px; font-size:10.5px; }
+  :root { --pulse-bar: 60px; }
+  .pulse-wrap {
+    padding:10px max(16px, calc(12px + var(--pulse-safe-r))) 10px max(16px, calc(12px + var(--pulse-safe-x)));
+    gap:10px;
+  }
+  .pulse-left { gap:10px; }
+  .pulse-brand { font-size:13px; gap:8px; padding:6px 0; letter-spacing:0.05em; }
+  .pulse-dot { width:8px; height:8px; }
+  .pulse-item-countdown { padding:6px 10px; font-size:11px; }
+  .sfx-toggle { padding:6px 10px; font-size:11px; }
+  .hero { padding:28px 0 40px; }
   .hero h1 { font-size:36px; }
   .hero-artwork-frame { max-width:340px; }
   .hero-chip { font-size:8.5px; padding:4px 7px; }
@@ -1210,6 +1265,15 @@ footer {
   .mc-btn { width:100%; }
   section { padding:48px 0; }
 }
+@media (max-width:420px) {
+  .pulse-wrap {
+    padding:10px max(14px, calc(10px + var(--pulse-safe-r))) 10px max(14px, calc(10px + var(--pulse-safe-x)));
+    gap:8px;
+  }
+  .pulse-brand { font-size:13px; letter-spacing:0.05em; }
+  .pulse-item-countdown { padding:6px 8px; font-size:10.5px; }
+  .sfx-toggle { display:none !important; }
+}
 </style>
 </head>
 <body>
@@ -1225,21 +1289,23 @@ footer {
 <header id="pulse">
   <div class="pulse-wrap">
     <div class="pulse-left">
-      <span class="pulse-brand"><span class="pulse-dot"></span> HUHCAT WAR ROOM</span>
-      <div class="pulse-item"><span class="pulse-val" id="p-day">DAY -</span></div>
-      <div class="pulse-item">MARATHON <span class="pulse-val cyan">SEASON 1</span></div>
-      <div class="pulse-item">TARGET <span class="pulse-val gold">$100M CAP</span></div>
-      <div class="pulse-item">STREAK <span class="pulse-val signal" id="p-streak">0</span></div>
+      <a href="#" class="pulse-brand" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+        <span class="pulse-dot"></span><span class="pulse-brand-text">HUHCAT<span class="pulse-brand-rest"> WAR ROOM</span></span>
+      </a>
+      <div class="pulse-item pulse-item-countdown"><span class="pulse-val" id="p-day">DAY -</span></div>
+      <div class="pulse-item pulse-item-sec">MARATHON <span class="pulse-val cyan">SEASON 1</span></div>
+      <div class="pulse-item pulse-item-target">TARGET <span class="pulse-val gold">$100M CAP</span></div>
+      <div class="pulse-item pulse-item-sec">STREAK <span class="pulse-val signal" id="p-streak">0</span></div>
     </div>
     <div class="pulse-nav">
-      <a href="#community-letter">MESSAGE</a>
-      <a href="#tomorrow">TOMORROW</a>
-      <a href="#missions">MISSIONS</a>
-      <a href="#armory">ARMORY</a>
-      <a href="#factory">VIDEO STUDIO</a>
-      <a href="#distribution">DEPLOYMENT</a>
-      <a href="#rank">RANK</a>
-      <a href="#doctrine">DOCTRINE</a>
+      <a href="#community-letter" class="pnav-link">MESSAGE</a>
+      <a href="#tomorrow" class="pnav-link pnav-sec">TOMORROW</a>
+      <a href="#missions" class="pnav-link">MISSIONS</a>
+      <a href="#armory" class="pnav-link">ARMORY</a>
+      <a href="#factory" class="pnav-link">STUDIO</a>
+      <a href="#distribution" class="pnav-link">DEPLOY</a>
+      <a href="#rank" class="pnav-link pnav-sec">RANK</a>
+      <a href="#doctrine" class="pnav-link pnav-sec">DOCTRINE</a>
       <button class="sfx-toggle" id="sfx-btn" title="Toggle cyber sound effects">SFX: ON</button>
     </div>
   </div>
@@ -1320,8 +1386,8 @@ footer {
 
           <!-- Bottom Telemetry Caption Under Artwork -->
           <div class="hero-artwork-meta">
-            <span class="meta-tag">⚡ VERIFIED FIRST</span>
-            <span class="meta-text">The first cat picture ever saved on Solana. Here forever.</span>
+            <span class="meta-tag">⚡ V1 MAINNET</span>
+            <span class="meta-text">The first cat picture inscribed on Solana v1 Mainnet.</span>
           </div>
         </div>
       </div>
@@ -1352,13 +1418,13 @@ footer {
         Look around you for a second. Take a breath. Most people buy a random coin, watch some greedy developer dump his tokens, panic the moment the price dips, and run away with empty pockets. You did not run. You stayed right here and held your ground.
       </p>
       <p class="community-letter-body">
-        We have bathed in blood. We watched weak hands panic and leave the chat room while the price crashed down ninety percent. We took every punch the market could throw at us, and we never broke. When market panics wiped out thousands of copycat coins across crypto and shook out millions of scared traders on every chain, our community stood together inside the chat room, buying the dips, laughing through the crazy times, and holding the line with diamond hands while everyone else gave up their bags and ran for the exits. Unbreakable. Unshakable. Immortal. United. Pure strength.
+        We have been through the hard days. We watched people panic and leave the chat when the price dropped. We took every punch the market could throw at us, and we never broke. When other coins vanished and scared traders ran for the exits, our community stayed in the chat, bought the dips, laughed through the crazy times, and held the line. Unbreakable. Unshakable. United.
       </p>
       <p class="community-letter-body">
-        They say cats have nine lives. But nine lives are for ordinary cats. HUHCAT can never die. Long before copycat meme coins existed, our cat picture was permanently burned directly into the Solana blockchain as the very first cat picture ever stamped into the network. No bad developer can ever steal the money. No company can shut it down. Nobody on earth can ever delete our cat from the blockchain. This cat belongs to all of us forever.
+        They say cats have nine lives. That is for ordinary cats. This is the first cat picture inscribed on Solana v1 Mainnet. The picture lives on the chain itself, and it is sealed. A website can go down. This picture does not. The person who launched the coin left, and that wallet is empty. Nobody can print more coins. This cat belongs to the community.
       </p>
       <p class="community-letter-body">
-        Now look at what we are building together over the next seven days. Reaching one hundred million dollars is completely real when five thousand believers move together as one united family. This mission belongs to you. Every meme you share, every friend you invite, and every daily mission you complete lifts all of us higher toward the summit. Never sit on the sidelines while history is being made. Stand with us. Lock in. Rise. Take what is ours.
+        Now look at what we are building together over the next seven days. The mission is one hundred million dollars in market cap. That is our target, not a promise. It only happens if this community moves as one family. Every meme you share, every friend you invite, and every daily mission you complete lifts all of us. Do not sit this out. Stand with us. Lock in. Rise.
       </p>
 
       <div class="community-letter-sign">
@@ -1367,7 +1433,7 @@ footer {
           <div class="community-letter-sign-sub">The HUHCAT Community War Room</div>
         </div>
         <div class="community-letter-seal">
-          <span>⚡ THE FIRST CAT PICTURE EVER SAVED ON SOLANA</span>
+          <span>⚡ FIRST CAT PICTURE INSCRIBED ON SOLANA V1 MAINNET</span>
         </div>
       </div>
     </div>

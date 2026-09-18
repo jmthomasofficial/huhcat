@@ -1,42 +1,46 @@
-# HUHCAT Project Handoff - 6th Grade Language Simplification & Robot Jargon Purge
-
-Ascend. Glow. Raid. Win. Forward. Strike. Complete.
+# HUHCAT Mission Control — factual v1 copy restore + header padding
 
 Date: 2026-09-17
-Project: HUHCAT (G:\JMXTHEGHOST\huhcat)
-Mission Control URL: https://jmthomasofficial.github.io/huhcat/mission-control/
-Live Git Commit: a942b87
-Status: Certified 100/100 AI-Slop Free // Zero Overlap Verified
+Project: HUHCAT (`G:\JMXTHEGHOST\huhcat`)
+Surface: `mission-control/index.html`
+Backup: `G:\JMXTHEGHOST\huhcat\_backups\mission-control_20260917_233922\`
+Live URL: https://jmthomasofficial.github.io/huhcat/mission-control/
+
+Not financial advice.
 
 ---
 
-## 1. Robot Jargon Purge & 6th Grade Language Translation
-We audited the entire mission control surface to remove developer jargon, transaction hashes, and robot phrases, rewriting every message into clear, emotional language accessible to everyday adults and brand-new crypto traders. When market panics tore through decentralized coin pools and scared traders dumped their positions across crypto, our dedicated community members chose to remain locked inside the war room trenches, buying up decentralized floor supplies, laughing through market chaos, and constructing permanent community tools straight onto the Solana base chain without wavering for a single moment.
+## What changed
 
-Stand. Fight. Rise.
+### Copy — 6th grade, still factual
 
-### Specific Phrases Replaced
-- Proof input field: Replaced Paste proof URL or tx hash (optional) with Paste post link or proof link (optional).
-- Hero telemetry chip: Replaced TOKEN-2022 with COMMUNITY OWNED.
-- Hero artwork description: Replaced Inscribed inside Solana transaction history with The first cat picture ever saved on Solana. Here forever.
-- Rank card description: Replaced Your cryptographic identity card with Your official community member card.
-- Launchpad brief: Replaced Reading next sprint coordinates from program memory with Getting the next daily missions ready for launch.
-- Community Love Letter seal: Replaced VERIFIED FIRST CAT INSCRIBED ON SOLANA with THE FIRST CAT PICTURE EVER SAVED ON SOLANA.
+The “first cat picture ever saved on Solana” line is false. The scoped claim that holds is **first cat picture inscribed on Solana v1 Mainnet** (T1 via deployer scan in `facts.json` + `VERIFICATION-2026-09-17.md`). Broad “first on Solana, period” is forbidden (PRD + 09-15 research).
 
-### Community Love Letter 6th Grade Polish
-- Removed phrases like genesis architecture, sealed base ledger, and bytes locked in blocks.
-- Rewritten with vivid, simple, human language:
-  - Explains that ordinary cats have nine lives, but HUHCAT is immortal and can never die.
-  - Explains that long before copycat meme coins existed, our cat picture was permanently burned into the Solana blockchain as the first cat picture ever stamped into the network.
-  - Declares clearly that no dishonest developer can steal the money, no company can shut it down, and nobody on earth can ever delete our cat from the blockchain.
-Simple. Emotional. Powerful.
+| Surface | Now |
+|---|---|
+| Hero caption | `The first cat picture inscribed on Solana v1 Mainnet.` |
+| Hero tag | `⚡ V1 MAINNET` |
+| Letter seal | `⚡ FIRST CAT PICTURE INSCRIBED ON SOLANA V1 MAINNET` |
+| Letter body | Same v1 Mainnet claim. Image sealed on-chain. Deployer wallet empty. Nobody can print more coins. $100M is a **target, not a promise**. |
+
+Removed because they were not verified: “ever saved on Solana,” “long before copycat meme coins existed,” “ninety percent,” “five thousand believers,” “completely real,” “HUHCAT can never die,” “nobody on earth can ever delete.”
+
+Holder counts disagree across trackers (Phantom ~5.5k on 09-15, RugCheck 15,563 on 09-17 ~10:22 UTC). No headcount in public copy.
+
+### Header bar
+
+Fixed height + `line-height: 1` + packed pills were clipping `HUHCAT WAR ROOM`. Header is now `min-height` 64px (60px under 640px), 12px vertical padding, `line-height: 1.3`, safe-area insets, and earlier collapse so mid-width laptops do not overflow.
+
+- `>1520`: full pills + full nav
+- `≤1520`: hide season/streak + secondary nav
+- `≤1100`: hide target + extra nav
+- `≤840`: brand + countdown + SFX
+- `≤420`: brand + countdown (SFX hidden so the full brand still fits)
+
+Verified in browser at 1920, 1440, 1280, 768, 390, 360. No clip, no horizontal overflow.
 
 ---
 
-## 2. Verification & Quality Audit
-- mission-control/index.html scored 100/100 AI-Slop Free with 0.0 points deduction and sentence stddev of 10.3 across 2,734 words.
-- Structural DOM validation verified 0 unclosed tags.
-- Verified 0 occurrences of tx hash, token-2022, genesis architecture, and base ledger across the entire interface.
-- Verified zero overlap with Revvin surfaces huhcatonsol.com and huhcatonsol.com/rewards.
-- Changes pushed to GitHub repository under commit a942b87.
-Verified. Complete. Certified.
+## Backup
+
+Full `mission-control/` snapshot at `_backups/mission-control_20260917_233922/` including `index.html.pre-factual-restore.bak`.
